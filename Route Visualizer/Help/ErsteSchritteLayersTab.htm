@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="de" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Der Ebenen-Tab</title>
+<style type="text/css">
+.auto-style1 {
+	font-family: "Courier New", Courier, monospace;
+}
+.auto-style2 {
+	text-align: left;
+}
+</style>
+</head>
+
+<body>
+
+<h4>Der Ebenen-Tab</h4>
+<p>In diesem Fenster werden zwei Tabellen angezeigt. Die Ebenen in der oberen, die 
+dazugehörigen Zoomstufen unten.</p>
+<p>Eine Ebene ist eine Überkategorie um die Kacheln einzusortieren. Um Kacheln 
+zu erstellen, wird ein Gitter über die Weltkarte gelegt und dann an den Linien 
+zerteilt. Es entstehen so kleine Ausschnitte der Karte, die über die Zeilen- und 
+Spaltennummer identifiziert werden können. Je detailreicher die Karte, desto 
+feiner muss das Gitter sein.</p>
+<p>Ebenen 
+könnten z. B. "Relief" oder "Wasser" sein. Die entsprechenden Kacheln werden dann 
+von <em>Route Visualizer</em> zusammengesetzt, um das Bild der Karte darzustellen. Dabei 
+wird mit der Ebene angefangen, die den niedrigsten Sortierindex hat. Diese 
+bildet also den Hintergrund. Alle anderen Ebenen (auch die Routen werden als Ebene 
+behandelt) werden darüber gezeichnet.</p>
+<h5>Kacheln von maps-for-free.com herunterladen</h5>
+<p>Eine Quelle von Kacheln, die problemlos in Route Visualizer verwendet werden 
+können, ist <a href="http://maps-for-free.com/">maps-for-free.com</a>. Folge 
+dieser Anleitung, um diese Kacheln zu verwenden. Hier wird exemplarisch gezeigt 
+wie die Relief-Kacheln in Zoomstufe fünf heruntergeladen und in <em>Route Visualizer</em> 
+verwendet werden können. Die anderen Kacheln können nach dem gleichen Schema 
+eingefügt werden.</p>
+<p>Gehe auf die Interseite <a href="http://maps-for-free.com/">maps-for-free.com</a>. 
+Klicke dort auf Imprint/Tutorial. In der Kopfzeile des neu erschienenen Fensters 
+klicke auf Download. Dort steht: "All relief maps and layers can be downloaded 
+using the following URL pattern:
+<a href="http://maps-for-free.com/zips/relief02.tgz">
+http://maps-for-free.com/zips/relief02.tgz</a>". Wir möchten die Relief-Kacheln 
+in Zoomstufe fünf herunterladen. Das bedeutet wir gehen auf die Internetseite
+<a href="http://maps-for-free.com/zips/relief05.tgz">
+http://maps-for-free.com/zips/relief05.tgz</a>. Nun sollte der Download 
+starten.</p>
+<p>Wenn der Download abgeschlossen ist, habt ihr im gewählten Zielordner eine 
+Datei <span class="auto-style1">relief05.tgz</span>. Diese muss jetzt entpackt werden. Dazu empfehle ich 7-zip. 
+Dieses Programm könnt ihr von der <a href="http://www.7-zip.de/">7-zip-Homepage</a> 
+herunterladen. Macht dann einen Rechtsklick auf <span class="auto-style1">relief05.tgz</span>, wählt 
+"7-Zip" und 
+dann "Hier entpacken". Ihr habt dann eine Datei <span class="auto-style1">relief05.tar</span> im selben Verzeichnis 
+wie die <span class="auto-style1">relief05.tgz</span>-Datei. Macht jetzt Rechtsklick auf die 
+<span class="auto-style1">relief05.tar</span>-Datei, 
+wählt "7-Zip" und dann "Entpacken nach "relief05\"". Wenn das Entpacken 
+abgeschlossen ist, habt ihr einen neuen Ordner <span class="auto-style1">relief05</span>, wieder im selben 
+Verzeichnis. Darin befindet sich der Ordner <span class="auto-style1">z5</span>, in diesem die Ordner 
+<span class="auto-style1">row0</span> bis 
+<span class="auto-style1">row31</span>. Darin sind die einzelnen Kacheln gespeichert. In 
+<span class="auto-style1">row0</span> z. B. die Kacheln 
+<span class="auto-style1">5_0-0.jpg</span> bis <span class="auto-style1">5_31-0.jpg</span>. Die erste Zahl gibt hierbei die Zoomstufe an (hier 5), 
+die zweite die Spalte (hier 0 bis 31) und die dritte die Zeile (hier 0). Nicht 
+verwunderlich, dass im <span class="auto-style1">row0</span>-Ordner alle Kacheln an der letzten Stelle des 
+Dateinamens eine null stehen haben. Eine weitere wichtige Eigenschaft ist die 
+Kachel-Größe in Pixeln. Diese finden wir, indem wir auf eine der jpg-Dateien 
+rechtsklicken und auf "Eigenschaften" klicken. Im neuen Fenster klicken wir auf 
+den Reiter "Details". Unter "Bild - Abmessungen" finden wir die Größe des Bildes, 
+256 Pixel breit und 256 Pixel hoch.</p>
+<p>Jetzt müssen wir <em>Route Visualizer</em> mitteilen, wo er die Kacheln finden kann. 
+Startet dazu <em>Route Visualizer</em> und geht in den Ebenen-Tab. Am besten fügen wir 
+eine neue Ebene hinzu. Dazu klickt in die letzte Zeile der Ebenen-Tabelle und 
+gebt einen neuen Namen ein, z. B. "Relief". Beim Sortierindex solltet ihr eine 
+möglichst niedrige Zahl verwenden, da eine Reliefkarte den Hintergrund der Karte 
+darstellt. Wasser oder Straßen sollen auf die Reliefkarte gezeichnet werden, 
+deshalb sollten diese dann eine höhere Nummer haben als die Relief-Ebene. 
+Verwendet also z. B. 0 als Sortierindex.</p>
+<p>Jetzt müssen wir in der Kachel-Tabelle die Felder ausfüllen. Klickt dazu 
+wieder in die letzte Zeile der Kachel-Tabelle. Das füllt automatisch die 
+Ebenen-Spalte aus. Dort sollte jetzt der vorher eingegebene Name der Ebene 
+stehen. Wenn nicht, wählt in der Ebenen-Tabelle die neu erstellte Ebene aus.</p>
+<p>Der Zoomwert der heruntergeladenen Kacheln ist fünf, wir geben also in die 
+zweite Spalte 5 ein. Die Kachel-Breite und -Höhe, wir erinnern uns, sind jeweils 
+256. Jetzt das schwierigste, der Pfad. Als erstes geben wir mal den Pfad zum 
+<span class="auto-style1">z5</span>-Ordner (der im <span class="auto-style1">relief05</span>-Ordner) 
+liegt, an. Bei mir ist das <span class="auto-style1">
+C:\Users\UserName\Downloads\relief05\z5</span>. 
+In diesem Ordner sind ja die Kacheln in den Ordnern <span class="auto-style1">row0</span> bis 
+<span class="auto-style1">row31</span> abgelegt. Wir ergänzen also den Pfad zu
+<span class="auto-style1">
+C:\Users\UserName\Downloads\relief05\row{R}</span>. 
+Das <span class="auto-style1">{R}</span> bedeutet hier Rowindex (Zeilenindex). Wenn 
+<em>Route Visualizer</em> Kacheln der Zeile 8 braucht, ersetzt das Programm
+<span class="auto-style1">{R}</span> einfach durch 8 und 
+sucht dann also im Pfad <span class="auto-style1">
+C:\Users\UserName\Downloads\relief05\row8</span>. 
+Dort sind aber viele Dateien enthalten. Oben haben wir aber schon gesehen, nach 
+welchem Schema diese benannt sind: <span class="auto-style1">Zoomwert_Spalte-Zeile.jpg</span>. 
+Wir erweitern also den Pfad zu <span class="auto-style1">
+C:\Users\UserName\Downloads\relief05\row{R}\{Z}_{C}-{R}.jpg</span>. 
+Braucht <em>Route Visualizer</em> jetzt also z. B. die Kachel aus Zeile 8 und Spalte 5 
+(mit Zoomwert 5) ersetzt das Programm <span class="auto-style1">{R}</span> durch den Zeilenindex, 
+<span class="auto-style1">{C}</span> durch den 
+Spaltenindex und <span class="auto-style1">{Z}</span> durch den Zoomwert und 
+verwendet somit die Datei <span class="auto-style1">
+C:\Users\UserName\Downloads\relief05\row8\5_5-8.jpg</span>.</p>
+<p>Das war's auch schon. Wenn du zum <em>Route Visualizer</em>-Tab zurückkehrst, solltest du links unten deine neu hinzugefügte Ebene sehen und eine Zoomstufe auswählen können.</p>
+<p>Du kannst jetzt weitere Tiles herunterladen 
+und hinzufügen. Die Tabellen werden dadurch natürlich immer voller. Bei mir 
+steht in der Ebenen-Tabelle z. B. folgendes:</p>
+<table style="width: 100%">
+	<tr>
+		<th class="auto-style2">Name</th>
+		<th class="auto-style2">Sortierindex</th>
+	</tr>
+	<tr>
+		<td>Admin</td>
+		<td>3</td>
+	</tr>
+	<tr>
+		<td>Country</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td>Crop</td>
+		<td>5</td>
+	</tr>
+	<tr>
+		<td>Forest</td>
+		<td>6</td>
+	</tr>
+	<tr>
+		<td>Grass</td>
+		<td>7</td>
+	</tr>
+	<tr>
+		<td>Ice</td>
+		<td>8</td>
+	</tr>
+	<tr>
+		<td>Relief</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td>Sand</td>
+		<td>9</td>
+	</tr>
+	<tr>
+		<td>Streets</td>
+		<td>4</td>
+	</tr>
+	<tr>
+		<td>Swamp</td>
+		<td>10</td>
+	</tr>
+	<tr>
+		<td>Tundra</td>
+		<td>11</td>
+	</tr>
+	<tr>
+		<td>Water</td>
+		<td>2</td>
+	</tr>
+</table>
+<p>Exemplarisch schaut die Kacheln-Tabelle, wenn ich in der Ebenen-Tabelle 
+Relief wähle, so aus:</p>
+<table style="width: 100%">
+	<tr>
+		<th class="auto-style2">Ebene</th>
+		<th class="auto-style2">Zoom</th>
+		<th class="auto-style2">Tile-Breite</th>
+		<th class="auto-style2">Tile-Höhe</th>
+		<th class="auto-style2">Pfad</th>
+	</tr>
+	<tr>
+		<td>Relief</td>
+		<td>0</td>
+		<td>256</td>
+		<td>256</td>
+		<td>C:\Users\UserName\Tiles\relief00\z0\row{R}\{Z}_{C}-{R}.jpg</td>
+	</tr>
+	<tr>
+		<td>Relief</td>
+		<td>1</td>
+		<td>256</td>
+		<td>256</td>
+		<td>C:\Users\UserName\Tiles\relief01\z1\row{R}\{Z}_{C}-{R}.jpg</td>
+	</tr>
+	<tr>
+		<td>Relief</td>
+		<td>2</td>
+		<td>256</td>
+		<td>256</td>
+		<td>C:\Users\UserName\Tiles\relief02\z2\row{R}\{Z}_{C}-{R}.jpg</td>
+	</tr>
+	<tr>
+		<td>Relief</td>
+		<td>3</td>
+		<td>256</td>
+		<td>256</td>
+		<td>C:\Users\UserName\Tiles\relief03\z3\row{R}\{Z}_{C}-{R}.jpg</td>
+	</tr>
+	<tr>
+		<td>Relief</td>
+		<td>4</td>
+		<td>256</td>
+		<td>256</td>
+		<td>C:\Users\UserName\Tiles\relief04\z4\row{R}\{Z}_{C}-{R}.jpg</td>
+	</tr>
+	<tr>
+		<td>Relief</td>
+		<td>5</td>
+		<td>256</td>
+		<td>256</td>
+		<td>C:\Users\UserName\Tiles\relief05\z5\row{R}\{Z}_{C}-{R}.jpg</td>
+	</tr>
+	<tr>
+		<td>Relief</td>
+		<td>6</td>
+		<td>256</td>
+		<td>256</td>
+		<td>C:\Users\UserName\Tiles\relief06\z6\row{R}\{Z}_{C}-{R}.jpg</td>
+	</tr>
+	<tr>
+		<td>Relief</td>
+		<td>7</td>
+		<td>256</td>
+		<td>256</td>
+		<td>C:\Users\UserName\Tiles\relief07\z7\row{R}\{Z}_{C}-{R}.jpg</td>
+	</tr>
+	<tr>
+		<td>Relief</td>
+		<td>8</td>
+		<td>256</td>
+		<td>256</td>
+		<td>C:\Users\UserName\Tiles\relief08\z8\row{R}\{Z}_{C}-{R}.jpg</td>
+	</tr>
+	<tr>
+		<td>Relief</td>
+		<td>9</td>
+		<td>256</td>
+		<td>256</td>
+		<td>C:\Users\UserName\Tiles\relief09\z9\row{R}\{Z}_{C}-{R}.jpg</td>
+	</tr>
+</table>
+<p>Eigentlich könnte hier noch der Pfad angepasst werden, z. B. zu <span class="auto-style1">C:\Users\UserName\Tiles\relief09\z{Z}\row{R}\{Z}_{C}-{R}.jpg</span>. 
+Das macht allerdings keinen Unterschied.</p>
+<h5>Kacheln anderer Quellen</h5>
+<p>Wenn ihr Kacheln anderer Quellen habt, könnt ihr diese auch in Route 
+Visualizer verwenden, wenn ihr das Benennungsschema erkennt. Dieses müsst ihr 
+dann in der Pfad-Spalte der Kachel-Tabelle angeben.</p>
+
+</body>
+
+</html>
