@@ -8,4 +8,4 @@
 
 
 
-kml-Dateien sind möglicherweise aus Google Earth bekannt. Sie können auch mit Hilfe verschiedener Routing-Websiten (z. B. [gpsies.com](http://www.gpsies.com)) und GPS-Geräten erstellt werden. Wenn du Dateien in anderen Formaten hast, findest du im Internet sicher einen Converter. Die Karten in Route Visualizer stammen von Kacheln, kleinen Ausschnitten aus einer größeren Karte, die wieder zusammengesetzt werden um die entsprechende Karte für deine Route zu erstellen.
+kml-Dateien sind möglicherweise aus Google Earth bekannt. Sie können auch mit Hilfe verschiedener Routing-Websiten (z. B. [gpsies.com](http://www.gpsies.com)) und GPS-Geräten erstellt werden. Wenn du Dateien in anderen Formaten hast, findest du im Internet sicher einen Converter. Die Karten in Route Visualizer bestehen aus Kacheln, kleinen Ausschnitten aus einer größeren Karte, die wieder zusammengesetzt werden um die entsprechende Karte für deine Route zu erstellen.
