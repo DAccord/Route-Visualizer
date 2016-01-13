@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="ImageType" value="Folder">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Willkommen">
+		<param name="Local" value="Main.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Erste Schritte">
+		<param name="Local" value="ErsteSchritte.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Der Route Visualizer-Tab">
+			<param name="Local" value="ErsteSchritteRouteVisualizerTab.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Der Ebenen-Tab">
+			<param name="Local" value="ErsteSchritteLayersTab.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Sonstiges">
+		<param name="Local" value="Changelog.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Changelog und geplante &Auml;nderungen">
+			<param name="Local" value="Changelog.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Fehlerbehandlung">
+			<param name="Local" value="Fehler.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Fragen und Antworten">
+			<param name="Local" value="FAQ.htm">
+			</OBJECT>
+	</UL>
+</UL>
+</BODY></HTML>
