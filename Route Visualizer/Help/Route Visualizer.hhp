@@ -1,0 +1,22 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=..\Hilfe.chm
+Contents file=Table of Contents.hhc
+Default topic=Main.htm
+Display compile progress=No
+Index file=Index.hhk
+Language=0x407 Deutsch (Deutschland)
+Title=Route Visualizer-Hilfe
+
+
+[FILES]
+Changelog.htm
+ErsteSchritte.htm
+ErsteSchritteRouteVisualizerTab.htm
+Fehler.htm
+Main.htm
+ErsteSchritteLayersTab.htm
+FAQ.htm
+
+[INFOTYPES]
+
