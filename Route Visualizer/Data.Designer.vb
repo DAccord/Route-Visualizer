@@ -1174,8 +1174,10 @@ Partial Public Class Data
             Me.columnID.AutoIncrement = true
             Me.columnID.AutoIncrementSeed = 1
             Me.columnID.AllowDBNull = false
-            Me.columnID.Unique = true
-            Me.columnVisibility.DefaultValue = CType(true,Boolean)
+            Me.columnID.Unique = True
+            Me.columnRouteLineWidth.DefaultValue = CType(20, Integer)
+            Me.columnRouteColor.DefaultValue = CType("255, 0, 0", String)
+            Me.columnVisibility.DefaultValue = CType(True, Boolean)
             Me.columnRouteAlpha.DefaultValue = CType(255,Integer)
         End Sub
         

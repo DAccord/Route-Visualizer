@@ -12,7 +12,7 @@
   <xs:element name="Data" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Data" msprop:Generator_UserDSName="Data">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Layer" msprop:Generator_TableClassName="LayerDataTable" msprop:Generator_TableVarName="tableLayer" msprop:Generator_RowChangedName="LayerRowChanged" msprop:Generator_TablePropName="Layer" msprop:Generator_RowDeletingName="LayerRowDeleting" msprop:Generator_RowChangingName="LayerRowChanging" msprop:Generator_RowEvHandlerName="LayerRowChangeEventHandler" msprop:Generator_RowDeletedName="LayerRowDeleted" msprop:Generator_RowClassName="LayerRow" msprop:Generator_UserTableName="Layer" msprop:Generator_RowEvArgName="LayerRowChangeEvent">
+        <xs:element name="Layer" msprop:Generator_TableClassName="LayerDataTable" msprop:Generator_TableVarName="tableLayer" msprop:Generator_TablePropName="Layer" msprop:Generator_RowDeletingName="LayerRowDeleting" msprop:Generator_RowChangingName="LayerRowChanging" msprop:Generator_RowEvHandlerName="LayerRowChangeEventHandler" msprop:Generator_RowDeletedName="LayerRowDeleted" msprop:Generator_UserTableName="Layer" msprop:Generator_RowChangedName="LayerRowChanged" msprop:Generator_RowEvArgName="LayerRowChangeEvent" msprop:Generator_RowClassName="LayerRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -21,7 +21,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Zoom" msprop:Generator_TableClassName="ZoomDataTable" msprop:Generator_TableVarName="tableZoom" msprop:Generator_RowChangedName="ZoomRowChanged" msprop:Generator_TablePropName="Zoom" msprop:Generator_RowDeletingName="ZoomRowDeleting" msprop:Generator_RowChangingName="ZoomRowChanging" msprop:Generator_RowEvHandlerName="ZoomRowChangeEventHandler" msprop:Generator_RowDeletedName="ZoomRowDeleted" msprop:Generator_RowClassName="ZoomRow" msprop:Generator_UserTableName="Zoom" msprop:Generator_RowEvArgName="ZoomRowChangeEvent">
+        <xs:element name="Zoom" msprop:Generator_TableClassName="ZoomDataTable" msprop:Generator_TableVarName="tableZoom" msprop:Generator_TablePropName="Zoom" msprop:Generator_RowDeletingName="ZoomRowDeleting" msprop:Generator_RowChangingName="ZoomRowChanging" msprop:Generator_RowEvHandlerName="ZoomRowChangeEventHandler" msprop:Generator_RowDeletedName="ZoomRowDeleted" msprop:Generator_UserTableName="Zoom" msprop:Generator_RowChangedName="ZoomRowChanged" msprop:Generator_RowEvArgName="ZoomRowChangeEvent" msprop:Generator_RowClassName="ZoomRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -33,13 +33,13 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Routefile" msprop:Generator_TableClassName="RoutefileDataTable" msprop:Generator_TableVarName="tableRoutefile" msprop:Generator_RowChangedName="RoutefileRowChanged" msprop:Generator_TablePropName="Routefile" msprop:Generator_RowDeletingName="RoutefileRowDeleting" msprop:Generator_RowChangingName="RoutefileRowChanging" msprop:Generator_RowEvHandlerName="RoutefileRowChangeEventHandler" msprop:Generator_RowDeletedName="RoutefileRowDeleted" msprop:Generator_RowClassName="RoutefileRow" msprop:Generator_UserTableName="Routefile" msprop:Generator_RowEvArgName="RoutefileRowChangeEvent">
+        <xs:element name="Routefile" msprop:Generator_TableClassName="RoutefileDataTable" msprop:Generator_TableVarName="tableRoutefile" msprop:Generator_TablePropName="Routefile" msprop:Generator_RowDeletingName="RoutefileRowDeleting" msprop:Generator_RowChangingName="RoutefileRowChanging" msprop:Generator_RowEvHandlerName="RoutefileRowChangeEventHandler" msprop:Generator_RowDeletedName="RoutefileRowDeleted" msprop:Generator_UserTableName="Routefile" msprop:Generator_RowChangedName="RoutefileRowChanged" msprop:Generator_RowEvArgName="RoutefileRowChangeEvent" msprop:Generator_RowClassName="RoutefileRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
               <xs:element name="Path" msprop:Generator_ColumnVarNameInTable="columnPath" msprop:Generator_ColumnPropNameInRow="Path" msprop:Generator_ColumnPropNameInTable="PathColumn" msprop:Generator_UserColumnName="Path" type="xs:string" minOccurs="0" />
-              <xs:element name="RouteLineWidth" msprop:Generator_ColumnVarNameInTable="columnRouteLineWidth" msprop:Generator_ColumnPropNameInRow="RouteLineWidth" msprop:Generator_ColumnPropNameInTable="RouteLineWidthColumn" msprop:Generator_UserColumnName="RouteLineWidth" type="xs:int" minOccurs="0" />
-              <xs:element name="RouteColor" msprop:Generator_ColumnVarNameInTable="columnRouteColor" msprop:Generator_ColumnPropNameInRow="RouteColor" msprop:Generator_ColumnPropNameInTable="RouteColorColumn" msprop:Generator_UserColumnName="RouteColor" type="xs:string" minOccurs="0" />
+              <xs:element name="RouteLineWidth" msprop:Generator_ColumnVarNameInTable="columnRouteLineWidth" msprop:Generator_ColumnPropNameInRow="RouteLineWidth" msprop:Generator_ColumnPropNameInTable="RouteLineWidthColumn" msprop:Generator_UserColumnName="RouteLineWidth" type="xs:int" default="20" minOccurs="0" />
+              <xs:element name="RouteColor" msprop:Generator_ColumnVarNameInTable="columnRouteColor" msprop:Generator_ColumnPropNameInRow="RouteColor" msprop:Generator_ColumnPropNameInTable="RouteColorColumn" msprop:Generator_UserColumnName="RouteColor" type="xs:string" default="255, 0, 0" minOccurs="0" />
               <xs:element name="Visibility" msprop:Generator_ColumnVarNameInTable="columnVisibility" msprop:Generator_ColumnPropNameInRow="Visibility" msprop:Generator_ColumnPropNameInTable="VisibilityColumn" msprop:Generator_UserColumnName="Visibility" type="xs:boolean" default="true" minOccurs="0" />
               <xs:element name="RouteAlpha" msprop:Generator_ColumnVarNameInTable="columnRouteAlpha" msprop:Generator_ColumnPropNameInRow="RouteAlpha" msprop:Generator_ColumnPropNameInTable="RouteAlphaColumn" msprop:Generator_UserColumnName="RouteAlpha" type="xs:int" default="255" minOccurs="0" />
             </xs:sequence>
@@ -62,7 +62,7 @@
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="Layer_Zoom" msdata:parent="Layer" msdata:child="Zoom" msdata:parentkey="ID" msdata:childkey="LayerID" msprop:Generator_UserChildTable="Zoom" msprop:Generator_ChildPropName="GetZoomRows" msprop:Generator_UserRelationName="Layer_Zoom" msprop:Generator_RelationVarName="relationLayer_Zoom" msprop:Generator_UserParentTable="Layer" msprop:Generator_ParentPropName="LayerRow" />
+      <msdata:Relationship name="Layer_Zoom" msdata:parent="Layer" msdata:child="Zoom" msdata:parentkey="ID" msdata:childkey="LayerID" msprop:Generator_UserChildTable="Zoom" msprop:Generator_ChildPropName="GetZoomRows" msprop:Generator_UserRelationName="Layer_Zoom" msprop:Generator_ParentPropName="LayerRow" msprop:Generator_RelationVarName="relationLayer_Zoom" msprop:Generator_UserParentTable="Layer" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
