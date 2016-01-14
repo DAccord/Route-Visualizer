@@ -11,7 +11,7 @@
 *Route Visualizer* wurde auf Windows 10 getestet. Sollte allerdings ab Windows Vista laufen. 
 
 Screenshot des Programms:  
-![Screenshot](https://github.com/DAccord/Route-Visualizer/blob/master/Route%20Visualizer/Help/Images/Screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Screenshot.png)
 
-Beispielbild als <tt>jpg</tt>:
-![Beispielbild](https://github.com/DAccord/Route-Visualizer/blob/master/Route%20Visualizer/Help/Images/Testbild.jpg)
+Beispielbild als <tt>jpg</tt>-Datei (Zoomstufe 8 mit Kacheln Relief, Water und Admin von [maps-for-free.com](http://maps-for-free.com/)):
+![Beispielbild](https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Testbild.jpg)
