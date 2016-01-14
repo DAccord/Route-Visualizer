@@ -1,5 +1,3 @@
-**Dieses Projekt befindet sich derzeit im Aufbau.**
-
 # Route Visualizer
 
 *Route Visualizer* ist ein Programm um Koordinaten aus <tt>kml</tt>-Dateien auf eine Karte zu zeichnen. Das Resultat ist eine hochaufgelöste Bilddatei.
