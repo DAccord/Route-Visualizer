@@ -31,6 +31,12 @@ Public Class frm_Main
                     Select row.Field(Of Int32)("Zoomvalue")
                     Distinct.ToList
         CMB_Zoom.DataSource = DistZooms
+
+        If My.Application.Info.Version.Major = 0 Then
+            Me.Text = "Route Visualizer v" & String.Format("{0}.{1}.{2}", My.Application.Info.Version.Major.ToString, My.Application.Info.Version.Minor, My.Application.Info.Version.Build) & " beta"
+        Else
+            Me.Text = "Route Visualizer v" & String.Format("{0}.{1}.{2}", My.Application.Info.Version.Major.ToString, My.Application.Info.Version.Minor, My.Application.Info.Version.Build)
+        End If
     End Sub
 
     Sub GUIEnabling(EnabledState As Boolean)

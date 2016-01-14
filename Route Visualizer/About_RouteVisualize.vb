@@ -13,7 +13,11 @@
         ' TODO: Customize the application's assembly information in the "Application" pane of the project 
         '    properties dialog (under the "Project" menu).
         Me.LabelProductName.Text = My.Application.Info.ProductName
-        Me.LabelVersion.Text = String.Format("Version {0}", My.Application.Info.Version.ToString)
+        If My.Application.Info.Version.Major = 0 Then
+            Me.LabelVersion.Text = "Route Visualizer v" & String.Format("{0}.{1}.{2}", My.Application.Info.Version.Major.ToString, My.Application.Info.Version.Minor, My.Application.Info.Version.Build) & " beta"
+        Else
+            Me.LabelVersion.Text = "Route Visualizer v" & String.Format("{0}.{1}.{2}", My.Application.Info.Version.Major.ToString, My.Application.Info.Version.Minor, My.Application.Info.Version.Build)
+        End If
         Me.LabelCopyright.Text = My.Application.Info.Copyright
         Me.L_Description.Text = My.Application.Info.Description
     End Sub
