@@ -32,27 +32,15 @@ Partial Class frm_Main
         Me.SplitContainer3 = New System.Windows.Forms.SplitContainer()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.LayerDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Sortindex = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LayerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Data = New Route_Visualizer.Data()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.ZoomDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.LayerBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ZoomBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.GB_Route = New System.Windows.Forms.GroupBox()
         Me.DGV_Route = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumnVisibility = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.DataGridViewTextBoxColumnPath = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumnRouteLineWidth = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumnRouteColor = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumnRouteAlpha = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CMS_DGV_Route = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.AlleAuswählenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -60,7 +48,6 @@ Partial Class frm_Main
         Me.AuswahlUmkehrenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripSeparator()
         Me.SpeicherortÖffnenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RoutefileBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.GB_AdditionalTiles = New System.Windows.Forms.GroupBox()
@@ -99,12 +86,23 @@ Partial Class frm_Main
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HilfeAnzeigenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ÜberToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem5 = New System.Windows.Forms.ToolStripSeparator()
-        Me.GithubÖffnenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.TSSL_EscToAbort = New System.Windows.Forms.ToolStripStatusLabel()
         Me.TSSL_Progress = New System.Windows.Forms.ToolStripStatusLabel()
         Me.TSPB_Progress = New System.Windows.Forms.ToolStripProgressBar()
+        Me.DataGridViewTextBoxColumnPath = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumnRouteLineWidth = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumnRouteColor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RoutefileBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Data = New Route_Visualizer.Data()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LayerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.LayerBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ZoomBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabPage3.SuspendLayout()
         CType(Me.SplitContainer3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -113,11 +111,8 @@ Partial Class frm_Main
         Me.SplitContainer3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.LayerDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayerBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Data, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.ZoomDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LayerBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ZoomBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage1.SuspendLayout()
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -127,7 +122,6 @@ Partial Class frm_Main
         Me.GB_Route.SuspendLayout()
         CType(Me.DGV_Route, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CMS_DGV_Route.SuspendLayout()
-        CType(Me.RoutefileBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -146,6 +140,10 @@ Partial Class frm_Main
         Me.TabControl1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
+        CType(Me.RoutefileBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Data, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayerBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LayerBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ZoomBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -222,28 +220,11 @@ Partial Class frm_Main
         Me.LayerDataGridView.Size = New System.Drawing.Size(876, 250)
         Me.LayerDataGridView.TabIndex = 2
         '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "Name"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Name"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
         'Sortindex
         '
         Me.Sortindex.DataPropertyName = "Sortindex"
         Me.Sortindex.HeaderText = "Sortierindex"
         Me.Sortindex.Name = "Sortindex"
-        '
-        'LayerBindingSource
-        '
-        Me.LayerBindingSource.DataMember = "Layer"
-        Me.LayerBindingSource.DataSource = Me.Data
-        '
-        'Data
-        '
-        Me.Data.DataSetName = "Data"
-        Me.Data.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'GroupBox2
         '
@@ -270,47 +251,6 @@ Partial Class frm_Main
         Me.ZoomDataGridView.Name = "ZoomDataGridView"
         Me.ZoomDataGridView.Size = New System.Drawing.Size(876, 248)
         Me.ZoomDataGridView.TabIndex = 2
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "LayerID"
-        Me.DataGridViewTextBoxColumn4.DataSource = Me.LayerBindingSource1
-        Me.DataGridViewTextBoxColumn4.DisplayMember = "Name"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Ebene"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.DataGridViewTextBoxColumn4.ValueMember = "ID"
-        '
-        'LayerBindingSource1
-        '
-        Me.LayerBindingSource1.DataMember = "Layer"
-        Me.LayerBindingSource1.DataSource = Me.Data
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Zoomvalue"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Zoom"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "Tilewidth"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Kachel-Breite"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "Tileheight"
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Kachel-Höhe"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        '
-        'DataGridViewTextBoxColumn10
-        '
-        Me.DataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumn10.DataPropertyName = "Path"
-        Me.DataGridViewTextBoxColumn10.HeaderText = "Pfad"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
         '
         'ZoomBindingSource1
         '
@@ -382,32 +322,6 @@ Partial Class frm_Main
         Me.DataGridViewTextBoxColumnVisibility.ToolTipText = "Sichtbarkeit"
         Me.DataGridViewTextBoxColumnVisibility.Width = 32
         '
-        'DataGridViewTextBoxColumnPath
-        '
-        Me.DataGridViewTextBoxColumnPath.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.DataGridViewTextBoxColumnPath.DataPropertyName = "Path"
-        Me.DataGridViewTextBoxColumnPath.HeaderText = "Pfad"
-        Me.DataGridViewTextBoxColumnPath.MinimumWidth = 100
-        Me.DataGridViewTextBoxColumnPath.Name = "DataGridViewTextBoxColumnPath"
-        '
-        'DataGridViewTextBoxColumnRouteLineWidth
-        '
-        Me.DataGridViewTextBoxColumnRouteLineWidth.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.DataGridViewTextBoxColumnRouteLineWidth.DataPropertyName = "RouteLineWidth"
-        Me.DataGridViewTextBoxColumnRouteLineWidth.HeaderText = "RLB"
-        Me.DataGridViewTextBoxColumnRouteLineWidth.Name = "DataGridViewTextBoxColumnRouteLineWidth"
-        Me.DataGridViewTextBoxColumnRouteLineWidth.ToolTipText = "Routenlinienbreite"
-        Me.DataGridViewTextBoxColumnRouteLineWidth.Width = 59
-        '
-        'DataGridViewTextBoxColumnRouteColor
-        '
-        Me.DataGridViewTextBoxColumnRouteColor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
-        Me.DataGridViewTextBoxColumnRouteColor.DataPropertyName = "RouteColor"
-        Me.DataGridViewTextBoxColumnRouteColor.HeaderText = "RF"
-        Me.DataGridViewTextBoxColumnRouteColor.Name = "DataGridViewTextBoxColumnRouteColor"
-        Me.DataGridViewTextBoxColumnRouteColor.ToolTipText = "Routenfarbe"
-        Me.DataGridViewTextBoxColumnRouteColor.Width = 50
-        '
         'DataGridViewTextBoxColumnRouteAlpha
         '
         Me.DataGridViewTextBoxColumnRouteAlpha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
@@ -451,11 +365,6 @@ Partial Class frm_Main
         Me.SpeicherortÖffnenToolStripMenuItem.Name = "SpeicherortÖffnenToolStripMenuItem"
         Me.SpeicherortÖffnenToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
         Me.SpeicherortÖffnenToolStripMenuItem.Text = "Speicherort öffnen"
-        '
-        'RoutefileBindingSource
-        '
-        Me.RoutefileBindingSource.DataMember = "Routefile"
-        Me.RoutefileBindingSource.DataSource = Me.Data
         '
         'SplitContainer1
         '
@@ -648,7 +557,7 @@ Partial Class frm_Main
         Me.CMB_Zoom.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CMB_Zoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CMB_Zoom.FormattingEnabled = True
-        Me.CMB_Zoom.Location = New System.Drawing.Point(61, 221)
+        Me.CMB_Zoom.Location = New System.Drawing.Point(61, 214)
         Me.CMB_Zoom.Name = "CMB_Zoom"
         Me.CMB_Zoom.Size = New System.Drawing.Size(121, 28)
         Me.CMB_Zoom.TabIndex = 1
@@ -657,7 +566,7 @@ Partial Class frm_Main
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(3, 221)
+        Me.Label1.Location = New System.Drawing.Point(3, 218)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(52, 20)
         Me.Label1.TabIndex = 0
@@ -672,7 +581,7 @@ Partial Class frm_Main
         Me.CLB_Layers.FormattingEnabled = True
         Me.CLB_Layers.Location = New System.Drawing.Point(3, 3)
         Me.CLB_Layers.Name = "CLB_Layers"
-        Me.CLB_Layers.Size = New System.Drawing.Size(179, 212)
+        Me.CLB_Layers.Size = New System.Drawing.Size(179, 205)
         Me.CLB_Layers.TabIndex = 0
         '
         'GB_Preview
@@ -792,7 +701,7 @@ Partial Class frm_Main
         '
         'HelpToolStripMenuItem
         '
-        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HilfeAnzeigenToolStripMenuItem, Me.ÜberToolStripMenuItem, Me.ToolStripMenuItem5, Me.GithubÖffnenToolStripMenuItem})
+        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HilfeAnzeigenToolStripMenuItem, Me.ÜberToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
         Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.HelpToolStripMenuItem.Text = "&Hilfe"
@@ -809,17 +718,6 @@ Partial Class frm_Main
         Me.ÜberToolStripMenuItem.Name = "ÜberToolStripMenuItem"
         Me.ÜberToolStripMenuItem.Size = New System.Drawing.Size(212, 22)
         Me.ÜberToolStripMenuItem.Text = "Über..."
-        '
-        'ToolStripMenuItem5
-        '
-        Me.ToolStripMenuItem5.Name = "ToolStripMenuItem5"
-        Me.ToolStripMenuItem5.Size = New System.Drawing.Size(209, 6)
-        '
-        'GithubÖffnenToolStripMenuItem
-        '
-        Me.GithubÖffnenToolStripMenuItem.Name = "GithubÖffnenToolStripMenuItem"
-        Me.GithubÖffnenToolStripMenuItem.Size = New System.Drawing.Size(212, 22)
-        Me.GithubÖffnenToolStripMenuItem.Text = "Github-Repository öffnen"
         '
         'StatusStrip1
         '
@@ -852,6 +750,95 @@ Partial Class frm_Main
         Me.TSPB_Progress.Size = New System.Drawing.Size(100, 16)
         Me.TSPB_Progress.Visible = False
         '
+        'DataGridViewTextBoxColumnPath
+        '
+        Me.DataGridViewTextBoxColumnPath.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumnPath.DataPropertyName = "Path"
+        Me.DataGridViewTextBoxColumnPath.HeaderText = "Pfad"
+        Me.DataGridViewTextBoxColumnPath.MinimumWidth = 100
+        Me.DataGridViewTextBoxColumnPath.Name = "DataGridViewTextBoxColumnPath"
+        '
+        'DataGridViewTextBoxColumnRouteLineWidth
+        '
+        Me.DataGridViewTextBoxColumnRouteLineWidth.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.DataGridViewTextBoxColumnRouteLineWidth.DataPropertyName = "RouteLineWidth"
+        Me.DataGridViewTextBoxColumnRouteLineWidth.HeaderText = "RLB"
+        Me.DataGridViewTextBoxColumnRouteLineWidth.Name = "DataGridViewTextBoxColumnRouteLineWidth"
+        Me.DataGridViewTextBoxColumnRouteLineWidth.ToolTipText = "Routenlinienbreite"
+        Me.DataGridViewTextBoxColumnRouteLineWidth.Width = 59
+        '
+        'DataGridViewTextBoxColumnRouteColor
+        '
+        Me.DataGridViewTextBoxColumnRouteColor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.DataGridViewTextBoxColumnRouteColor.DataPropertyName = "RouteColor"
+        Me.DataGridViewTextBoxColumnRouteColor.HeaderText = "RF"
+        Me.DataGridViewTextBoxColumnRouteColor.Name = "DataGridViewTextBoxColumnRouteColor"
+        Me.DataGridViewTextBoxColumnRouteColor.ToolTipText = "Routenfarbe"
+        Me.DataGridViewTextBoxColumnRouteColor.Width = 50
+        '
+        'RoutefileBindingSource
+        '
+        Me.RoutefileBindingSource.DataMember = "Routefile"
+        Me.RoutefileBindingSource.DataSource = Me.Data
+        '
+        'Data
+        '
+        Me.Data.DataSetName = "Data"
+        Me.Data.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "Name"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Name"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'LayerBindingSource
+        '
+        Me.LayerBindingSource.DataMember = "Layer"
+        Me.LayerBindingSource.DataSource = Me.Data
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "LayerID"
+        Me.DataGridViewTextBoxColumn4.DataSource = Me.LayerBindingSource1
+        Me.DataGridViewTextBoxColumn4.DisplayMember = "Name"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "Ebene"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.DataGridViewTextBoxColumn4.ValueMember = "ID"
+        '
+        'LayerBindingSource1
+        '
+        Me.LayerBindingSource1.DataMember = "Layer"
+        Me.LayerBindingSource1.DataSource = Me.Data
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Zoomvalue"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Zoom"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "Tilewidth"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Kachel-Breite"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "Tileheight"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "Kachel-Höhe"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DataGridViewTextBoxColumn10.DataPropertyName = "Path"
+        Me.DataGridViewTextBoxColumn10.HeaderText = "Pfad"
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        '
         'ZoomBindingSource
         '
         Me.ZoomBindingSource.DataMember = "Zoom"
@@ -880,11 +867,8 @@ Partial Class frm_Main
         Me.SplitContainer3.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.LayerDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayerBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Data, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.ZoomDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LayerBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ZoomBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage1.ResumeLayout(False)
         Me.SplitContainer2.Panel1.ResumeLayout(False)
@@ -894,7 +878,6 @@ Partial Class frm_Main
         Me.GB_Route.ResumeLayout(False)
         CType(Me.DGV_Route, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CMS_DGV_Route.ResumeLayout(False)
-        CType(Me.RoutefileBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.Panel1.ResumeLayout(False)
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -917,6 +900,10 @@ Partial Class frm_Main
         Me.MenuStrip1.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
+        CType(Me.RoutefileBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Data, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayerBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LayerBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ZoomBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -1006,8 +993,6 @@ Partial Class frm_Main
     Friend WithEvents RoutenZusammenfassenToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem4 As ToolStripSeparator
     Friend WithEvents SpeicherortÖffnenToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem5 As ToolStripSeparator
-    Friend WithEvents GithubÖffnenToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewComboBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
