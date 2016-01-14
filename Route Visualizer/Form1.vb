@@ -774,7 +774,7 @@ Public Class frm_Main
         End If
     End Sub
 
-    Private Sub GithubÖffnenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GithubÖffnenToolStripMenuItem.Click
+    Private Sub GithubÖffnenToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Process.Start("https://github.com/DAccord/RouteVisualizer")
     End Sub
 
