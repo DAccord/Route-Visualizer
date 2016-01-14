@@ -8,7 +8,7 @@
 * Schnelle Hilfe findest du im [Wiki](https://github.com/DAccord/Route-Visualizer/wiki).
 * Wenn du einen Fehler gefunden hast oder einen Vorschlag für eine neue Funktion hast, erstelle ein [Issue](https://github.com/DAccord/Route-Visualizer/issues).
 
-*Route Visualizer* wurde auf Windows 10 getestet. Sollte allerdings ab Windows Vista laufen. 
+*Route Visualizer* wurde auf Windows 10 getestet. Wenn die [Systemvoraussetzungen](https://github.com/DAccord/Route-Visualizer/wiki/Systemvoraussetzungen) erfüllt sind, sollte es aber ab Windows Vista laufen.
 
 Screenshot des Programms:  
 ![Screenshot](https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Screenshot.png)
