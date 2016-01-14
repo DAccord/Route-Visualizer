@@ -87,7 +87,7 @@ Public Class frm_Main
         Dim Zoom As Integer
         Me.Invoke(Sub()
                       If CMB_Zoom.SelectedItem Is Nothing AndAlso Not Cancel Then
-                          MessageBox.Show("Wähle eine Zoomstufe bevor du mit der Kartenerstellung beginnst!")
+                          MessageBox.Show("Wähle eine Zoomstufe bevor du mit der Kartenerstellung beginnst!", "Zoomstufe wählen", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                           Cancel = True
                       End If
                       Zoom = CInt(CMB_Zoom.SelectedItem.ToString)
@@ -95,21 +95,14 @@ Public Class frm_Main
 
         Me.Invoke(Sub()
                       If CLB_Layers.CheckedItems.Count = 0 AndAlso Not Cancel Then
-                          MessageBox.Show("Wähle mindestens eine Ebene aus bevor du mit der Kartenerstellung beginnst!")
-                          Cancel = True
-                      End If
-                  End Sub)
-
-        Me.Invoke(Sub()
-                      If CMB_Zoom.SelectedItem Is Nothing AndAlso Not Cancel Then
-                          MessageBox.Show("Wähle eine Zoomstufe bevor du mit der Kartenerstellung beginnst!")
+                          MessageBox.Show("Wähle mindestens eine Ebene aus bevor du mit der Kartenerstellung beginnst!", "Ebene wählen", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                           Cancel = True
                       End If
                   End Sub)
 
         Me.Invoke(Sub()
                       If Data.Routefile.Rows.Count = 0 AndAlso Not Cancel Then
-                          MessageBox.Show("Importiere mindestens eine kml-Datei bevor du mit der Kartenerstellung beginnst!")
+                          MessageBox.Show("Importiere mindestens eine kml-Datei bevor du mit der Kartenerstellung beginnst!", "kml-Datei importieren", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                           Cancel = True
                       End If
                   End Sub)
@@ -152,7 +145,7 @@ Public Class frm_Main
         Dim RRs() As RoutefileRow = CType(Data.Routefile.Select("Visibility = " & True & " AND RouteLineWidth > 0"), RoutefileRow())
         If RRs.Length = 0 Then
             MessageBox.Show("Es gibt keine Routendateien, die gezeichnet werden können. Das kann folgende Gründe haben: " & Environment.NewLine & "- Die Sichtbarkeit aller Routen ist deaktiviert." &
-                            Environment.NewLine & "- Keine Route hat eine Linienbreite größer als 0.")
+                            Environment.NewLine & "- Keine Route hat eine Linienbreite größer als 0.", "Keine Routendateien", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Me.Invoke(Sub()
                           GUIEnabling(True)
                       End Sub)
@@ -172,7 +165,7 @@ Public Class frm_Main
         Next
 
         If MyCoordinates.Count = 0 Then
-            MessageBox.Show("Aus den gewählten Dateien konnten keine Koordinaten importiert werden!")
+            MessageBox.Show("Aus den gewählten Dateien konnten keine Koordinaten importiert werden!", "Keine Koordinaten gefunden", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Me.Invoke(Sub()
                           GUIEnabling(True)
                       End Sub)
@@ -394,7 +387,7 @@ Public Class frm_Main
 
     Private Sub frm_Main_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If TH.IsAlive() Then
-            If MessageBox.Show("Die Erstellung einer Karte ist noch nicht abgeschlossen. Wirklich beenden?", "Beenden", MessageBoxButtons.YesNo) = DialogResult.No Then
+            If MessageBox.Show("Die Erstellung einer Karte ist noch nicht abgeschlossen. Wirklich beenden?", "Beenden?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
                 e.Cancel = True
                 Exit Sub
             Else
