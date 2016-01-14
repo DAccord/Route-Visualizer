@@ -284,7 +284,7 @@ Partial Class frm_Main
         '
         Me.SplitContainer2.Panel2.Controls.Add(Me.SplitContainer1)
         Me.SplitContainer2.Size = New System.Drawing.Size(882, 554)
-        Me.SplitContainer2.SplitterDistance = 279
+        Me.SplitContainer2.SplitterDistance = 282
         Me.SplitContainer2.TabIndex = 9
         '
         'GB_Route
@@ -293,7 +293,7 @@ Partial Class frm_Main
         Me.GB_Route.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GB_Route.Location = New System.Drawing.Point(0, 0)
         Me.GB_Route.Name = "GB_Route"
-        Me.GB_Route.Size = New System.Drawing.Size(882, 279)
+        Me.GB_Route.Size = New System.Drawing.Size(882, 282)
         Me.GB_Route.TabIndex = 1
         Me.GB_Route.TabStop = False
         Me.GB_Route.Text = "Route"
@@ -310,7 +310,7 @@ Partial Class frm_Main
         Me.DGV_Route.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGV_Route.Location = New System.Drawing.Point(3, 23)
         Me.DGV_Route.Name = "DGV_Route"
-        Me.DGV_Route.Size = New System.Drawing.Size(876, 253)
+        Me.DGV_Route.Size = New System.Drawing.Size(876, 256)
         Me.DGV_Route.TabIndex = 0
         '
         'DataGridViewTextBoxColumnVisibility
@@ -380,7 +380,7 @@ Partial Class frm_Main
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.GB_Preview)
-        Me.SplitContainer1.Size = New System.Drawing.Size(882, 271)
+        Me.SplitContainer1.Size = New System.Drawing.Size(882, 268)
         Me.SplitContainer1.SplitterDistance = 386
         Me.SplitContainer1.TabIndex = 8
         '
@@ -397,7 +397,7 @@ Partial Class frm_Main
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(386, 271)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(386, 268)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'GB_AdditionalTiles
@@ -407,7 +407,7 @@ Partial Class frm_Main
         Me.GB_AdditionalTiles.Location = New System.Drawing.Point(195, 0)
         Me.GB_AdditionalTiles.Margin = New System.Windows.Forms.Padding(2, 0, 0, 0)
         Me.GB_AdditionalTiles.Name = "GB_AdditionalTiles"
-        Me.GB_AdditionalTiles.Size = New System.Drawing.Size(191, 271)
+        Me.GB_AdditionalTiles.Size = New System.Drawing.Size(191, 268)
         Me.GB_AdditionalTiles.TabIndex = 3
         Me.GB_AdditionalTiles.TabStop = False
         Me.GB_AdditionalTiles.Text = "Zusätzliche Kacheln"
@@ -438,7 +438,7 @@ Partial Class frm_Main
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(185, 245)
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(185, 242)
         Me.TableLayoutPanel3.TabIndex = 0
         '
         'NUD_AdditionalTilesSouth
@@ -528,7 +528,7 @@ Partial Class frm_Main
         Me.GB_Layers.Location = New System.Drawing.Point(0, 0)
         Me.GB_Layers.Margin = New System.Windows.Forms.Padding(0, 0, 2, 0)
         Me.GB_Layers.Name = "GB_Layers"
-        Me.GB_Layers.Size = New System.Drawing.Size(191, 271)
+        Me.GB_Layers.Size = New System.Drawing.Size(191, 268)
         Me.GB_Layers.TabIndex = 0
         Me.GB_Layers.TabStop = False
         Me.GB_Layers.Text = "Ebenen"
@@ -548,8 +548,7 @@ Partial Class frm_Main
         Me.TableLayoutPanel4.RowCount = 2
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(185, 245)
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(185, 242)
         Me.TableLayoutPanel4.TabIndex = 1
         '
         'CMB_Zoom
@@ -557,7 +556,7 @@ Partial Class frm_Main
         Me.CMB_Zoom.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CMB_Zoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CMB_Zoom.FormattingEnabled = True
-        Me.CMB_Zoom.Location = New System.Drawing.Point(61, 214)
+        Me.CMB_Zoom.Location = New System.Drawing.Point(61, 211)
         Me.CMB_Zoom.Name = "CMB_Zoom"
         Me.CMB_Zoom.Size = New System.Drawing.Size(121, 28)
         Me.CMB_Zoom.TabIndex = 1
@@ -566,7 +565,7 @@ Partial Class frm_Main
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(3, 218)
+        Me.Label1.Location = New System.Drawing.Point(3, 215)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(52, 20)
         Me.Label1.TabIndex = 0
@@ -581,7 +580,7 @@ Partial Class frm_Main
         Me.CLB_Layers.FormattingEnabled = True
         Me.CLB_Layers.Location = New System.Drawing.Point(3, 3)
         Me.CLB_Layers.Name = "CLB_Layers"
-        Me.CLB_Layers.Size = New System.Drawing.Size(179, 205)
+        Me.CLB_Layers.Size = New System.Drawing.Size(179, 202)
         Me.CLB_Layers.TabIndex = 0
         '
         'GB_Preview
@@ -590,7 +589,7 @@ Partial Class frm_Main
         Me.GB_Preview.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GB_Preview.Location = New System.Drawing.Point(0, 0)
         Me.GB_Preview.Name = "GB_Preview"
-        Me.GB_Preview.Size = New System.Drawing.Size(492, 271)
+        Me.GB_Preview.Size = New System.Drawing.Size(492, 268)
         Me.GB_Preview.TabIndex = 7
         Me.GB_Preview.TabStop = False
         Me.GB_Preview.Text = "Vorschau (Doppelkick für Originalgröße)"
@@ -600,7 +599,7 @@ Partial Class frm_Main
         Me.PB_Preview.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PB_Preview.Location = New System.Drawing.Point(3, 23)
         Me.PB_Preview.Name = "PB_Preview"
-        Me.PB_Preview.Size = New System.Drawing.Size(486, 245)
+        Me.PB_Preview.Size = New System.Drawing.Size(486, 242)
         Me.PB_Preview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PB_Preview.TabIndex = 6
         Me.PB_Preview.TabStop = False
