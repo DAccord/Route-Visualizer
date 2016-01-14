@@ -44,6 +44,7 @@ Partial Class frm_Main
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ZoomBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.GB_Route = New System.Windows.Forms.GroupBox()
@@ -105,7 +106,6 @@ Partial Class frm_Main
         Me.TSSL_Progress = New System.Windows.Forms.ToolStripStatusLabel()
         Me.TSPB_Progress = New System.Windows.Forms.ToolStripProgressBar()
         Me.ZoomBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ZoomBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabPage3.SuspendLayout()
         CType(Me.SplitContainer3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer3.Panel1.SuspendLayout()
@@ -118,6 +118,7 @@ Partial Class frm_Main
         Me.GroupBox2.SuspendLayout()
         CType(Me.ZoomDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayerBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ZoomBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage1.SuspendLayout()
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer2.Panel1.SuspendLayout()
@@ -146,7 +147,6 @@ Partial Class frm_Main
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         CType(Me.ZoomBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ZoomBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'OFD_ImportRoute
@@ -258,10 +258,12 @@ Partial Class frm_Main
         '
         'ZoomDataGridView
         '
+        Me.ZoomDataGridView.AutoGenerateColumns = False
         Me.ZoomDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.ZoomDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ZoomDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ZoomDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn10})
+        Me.ZoomDataGridView.DataSource = Me.ZoomBindingSource1
         Me.ZoomDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ZoomDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
         Me.ZoomDataGridView.Location = New System.Drawing.Point(3, 23)
@@ -309,6 +311,11 @@ Partial Class frm_Main
         Me.DataGridViewTextBoxColumn10.DataPropertyName = "Path"
         Me.DataGridViewTextBoxColumn10.HeaderText = "Pfad"
         Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        '
+        'ZoomBindingSource1
+        '
+        Me.ZoomBindingSource1.DataMember = "Layer_Zoom"
+        Me.ZoomBindingSource1.DataSource = Me.LayerBindingSource
         '
         'TabPage1
         '
@@ -850,11 +857,6 @@ Partial Class frm_Main
         Me.ZoomBindingSource.DataMember = "Zoom"
         Me.ZoomBindingSource.DataSource = Me.Data
         '
-        'ZoomBindingSource1
-        '
-        Me.ZoomBindingSource1.DataMember = "Layer_Zoom"
-        Me.ZoomBindingSource1.DataSource = Me.LayerBindingSource
-        '
         'frm_Main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
@@ -883,6 +885,7 @@ Partial Class frm_Main
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.ZoomDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayerBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ZoomBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage1.ResumeLayout(False)
         Me.SplitContainer2.Panel1.ResumeLayout(False)
         Me.SplitContainer2.Panel2.ResumeLayout(False)
@@ -915,7 +918,6 @@ Partial Class frm_Main
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         CType(Me.ZoomBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ZoomBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -11,6 +11,7 @@ Public Class frm_Main
     Dim TH As New Threading.Thread(AddressOf UpdatePreviewNew)
     Dim SaveOption As New SaveOptions
     Dim UpdateBackground As Boolean = False
+    Dim DistZooms As List(Of Integer)
 
     Private Sub frm_Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If File.Exists(Path.Combine(Application.StartupPath, "Data.xml")) Then
@@ -26,9 +27,9 @@ Public Class frm_Main
         CLB_Layers.DataSource = LayerDataView
         CLB_Layers.DisplayMember = "Name"
 
-        Dim DistZooms = From row In Data.Zoom
-                        Select row.Field(Of Int32)("Zoomvalue")
-                        Distinct.ToList
+        DistZooms = From row In Data.Zoom
+                    Select row.Field(Of Int32)("Zoomvalue")
+                    Distinct.ToList
         CMB_Zoom.DataSource = DistZooms
     End Sub
 
@@ -149,6 +150,14 @@ Public Class frm_Main
         Dim Result As Image
         Dim MyCoordinates As New List(Of Coordinate)
         Dim RRs() As RoutefileRow = CType(Data.Routefile.Select("Visibility = " & True & " AND RouteLineWidth > 0"), RoutefileRow())
+        If RRs.Length = 0 Then
+            MessageBox.Show("Es gibt keine Routendateien, die gezeichnet werden können. Das kann folgende Gründe haben: " & Environment.NewLine & "- Die Sichtbarkeit aller Routen ist deaktiviert." &
+                            Environment.NewLine & "- Keine Route hat eine Linienbreite größer als 0.")
+            Me.Invoke(Sub()
+                          GUIEnabling(True)
+                      End Sub)
+            Exit Sub
+        End If
         Dim ReadCoordinates(RRs.Length - 1) As List(Of Coordinate)
         Dim cnt As Integer = -1
         For Each RR As RoutefileRow In RRs
@@ -336,7 +345,7 @@ Public Class frm_Main
                 If Z.Contains("<coordinates>") Then
                     Found = 0
                     If Z.Length > "<coordinates>".Length Then
-                        Z = Z.Substring(" <coordinates > ".Length).Trim()
+                        Z = Z.Substring("<coordinates>".Length).Trim()
                         CRaw = Z.Split(CType(", ", Char()))
                         If CRaw.Count >= 2 Then
                             Result.Add(New Coordinate(Double.Parse(CRaw(1), enUS), Double.Parse(CRaw(0), enUS)))
@@ -779,6 +788,28 @@ Public Class frm_Main
     Private Sub ÜberToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ÜberToolStripMenuItem.Click
         Dim About_Box As New About_RouteVisualize
         About_Box.ShowDialog()
+    End Sub
+
+    Private Sub ZoomDataGridView_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles ZoomDataGridView.CellValueChanged
+        If ZoomDataGridView.Columns(e.ColumnIndex).Name = "DataGridViewTextBoxColumn4" OrElse ZoomDataGridView.Columns(e.ColumnIndex).Name = "DataGridViewTextBoxColumn5" Then
+            Dim OldSelectedValue As Integer = CInt(CMB_Zoom.SelectedItem)
+            Dim PossibleZoomValues As New List(Of Integer)
+            For i As Integer = 0 To CLB_Layers.Items.Count - 1
+                If CLB_Layers.GetItemChecked(i) Then
+                    Dim DRV As DataRowView = CType(CLB_Layers.Items(i), DataRowView)
+                    Dim LR As LayerRow = CType(DRV.Row, LayerRow)
+                    For Each ZR As ZoomRow In LR.GetChildRows("Layer_Zoom")
+                        PossibleZoomValues.Add(ZR.Zoomvalue)
+                    Next
+                End If
+            Next
+            PossibleZoomValues = PossibleZoomValues.Distinct.ToList()
+            PossibleZoomValues.Sort()
+            CMB_Zoom.DataSource = PossibleZoomValues
+            If PossibleZoomValues.Contains(OldSelectedValue) Then
+                CMB_Zoom.SelectedItem = OldSelectedValue
+            End If
+        End If
     End Sub
 End Class
 
