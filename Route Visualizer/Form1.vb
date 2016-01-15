@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports System.Text
+Imports System.Xml.Serialization
 Imports Route_Visualizer
 Imports Route_Visualizer.Data
 
@@ -161,13 +162,13 @@ Public Class frm_Main
         Dim cnt As Integer = -1
         For Each RR As RoutefileRow In RRs
             cnt += 1
-            Dim Res As List(Of Coordinate) = ReadCoordinatesFromKML(RR)
+            Dim Res As List(Of Coordinate) = ImportCoordinatesFromFile(RR)
             ReadCoordinates(cnt) = Res
             If Res.Count = 0 Then
                 Log.AppendLine(String.Format("Aus der Datei """"{0}"" konnten keine Koordinaten importiert werden.", RR.Path))
                 Continue For
             End If
-            MyCoordinates.AddRange(ReadCoordinatesFromKML(RR))
+            MyCoordinates.AddRange(Res)
         Next
 
         If MyCoordinates.Count = 0 Then
@@ -320,6 +321,34 @@ Public Class frm_Main
             End If
         End If
     End Sub
+
+    Private Function ReadCoordinatesFromGPX(RR As RoutefileRow) As List(Of Coordinate)
+        Dim ser As New XmlSerializer(GetType(gpx.gpxType))
+        Dim Result As New List(Of Coordinate)
+        Using FS As New FileStream(RR.Path, FileMode.Open)
+            Dim info As gpx.gpxType = CType(ser.Deserialize(FS), gpx.gpxType)
+            Dim tracks() As gpx.trkType = info.trk
+            For Each track As gpx.trkType In tracks
+                For Each seg As gpx.trksegType In track.trkseg
+                    For Each wpt As gpx.wptType In seg.trkpt
+                        Result.Add(New Coordinate(wpt.lat, wpt.lon))
+                    Next
+                Next
+            Next
+        End Using
+        Return Result
+    End Function
+
+    Function ImportCoordinatesFromFile(RR As RoutefileRow) As List(Of Coordinate)
+        Dim Result As New List(Of Coordinate)
+        Select Case Path.GetExtension(RR.Path).ToLower
+            Case ".kml"
+                Result = ReadCoordinatesFromKML(RR)
+            Case ".gpx"
+                Result = ReadCoordinatesFromGPX(RR)
+        End Select
+        Return Result
+    End Function
 
     Private Function ReadCoordinatesFromKML(RR As RoutefileRow) As List(Of Coordinate)
         Dim Result As New List(Of Coordinate)
@@ -518,7 +547,7 @@ Public Class frm_Main
         If e.KeyCode = Keys.Escape AndAlso TH.ThreadState = Threading.ThreadState.Running Then
             TH.Abort()
             GUIEnabling(True)
-            End If
+        End If
     End Sub
 
     Private Sub SpeichernToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SpeichernToolStripMenuItem.Click
@@ -744,9 +773,6 @@ Public Class frm_Main
     End Sub
 
     Private Sub RoutenZusammenfassenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RoutenZusammenfassenToolStripMenuItem.Click
-        'Preview = False
-        'SaveLayers = True
-        'RoutesSeparately = False
         SaveOption = New SaveOptions(False, True, False)
         If TH.IsAlive() Then
             Exit Sub
