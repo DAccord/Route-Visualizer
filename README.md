@@ -4,6 +4,7 @@
 
 * Die aktuelle Version kannst du [hier](https://github.com/DAccord/Route-Visualizer/releases/latest) herunter laden. Zum ausführen wird mindestens das Microsoft .NET Framework 4 benötigt. Wenn nicht installiert, kannst du es [hier](https://www.microsoft.com/de-de/download/details.aspx?id=17851) (Webinstaller) oder [hier](https://www.microsoft.com/de-de/download/details.aspx?id=17718) (eigenständiger Installer) herunter laden.
 * Schnelle Hilfe findest du im [Wiki](https://github.com/DAccord/Route-Visualizer/wiki).
+* Dort findest du auch das komplette [Changelog](https://github.com/DAccord/Route-Visualizer/wiki/Changelog).
 * Wenn du einen Fehler gefunden hast oder einen Vorschlag für eine neue Funktion hast, erstelle ein [Issue](https://github.com/DAccord/Route-Visualizer/issues).
 
 *Route Visualizer* wurde auf Windows 10 getestet. Wenn die [Systemvoraussetzungen](https://github.com/DAccord/Route-Visualizer/wiki/Systemvoraussetzungen) erfüllt sind, sollte es aber ab Windows Vista laufen.
@@ -15,4 +16,4 @@ Beispielbild als <tt>jpg</tt>-Datei (Zoomstufe 8 mit Kacheln Relief, Water und A
 ![Beispielbild](https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Testbild.jpg)
 
 ### Quellcode
-*Route Visualizer* wird in Visual Basic (Windows Forms Application) entwickelt. Der Quellcode kann am komfortabelsten mit "Visual Studio Community 2015" betrachtet und bearbeitet werden. "Visual Studio Community 2015" kann [hier](https://www.visualstudio.com/de-de/downloads/download-visual-studio-vs.aspx) herunter geladen werden.
+*Route Visualizer* wird in Visual Basic (Windows Forms Application) entwickelt. Der Quellcode kann am komfortabelsten mit "Visual Studio Community 2015" betrachtet und bearbeitet werden. Einfach "Visual Studio Community 2015" [hier](https://www.visualstudio.com/de-de/downloads/download-visual-studio-vs.aspx) herunter laden und installieren, den [Quellcode als Zip](https://github.com/DAccord/Route-Visualizer/archive/master.zip) herunter laden und die <tt>Route Visualizer.sln</tt>-Datei in "Visual Studio" öffnen.
