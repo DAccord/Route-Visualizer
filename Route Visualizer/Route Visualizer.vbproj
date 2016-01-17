@@ -121,6 +121,9 @@
     <Compile Include="frm_Preview.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="gpx.vb">
+      <DependentUpon>gpx.xsd</DependentUpon>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -168,6 +171,9 @@
     </None>
     <None Include="Data.xss">
       <DependentUpon>Data.xsd</DependentUpon>
+    </None>
+    <None Include="gpx.xsd">
+      <SubType>Designer</SubType>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

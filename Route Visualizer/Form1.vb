@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports System.Text
+Imports System.Xml.Serialization
 Imports Route_Visualizer
 Imports Route_Visualizer.Data
 
@@ -161,17 +162,18 @@ Public Class frm_Main
         Dim cnt As Integer = -1
         For Each RR As RoutefileRow In RRs
             cnt += 1
-            Dim Res As List(Of Coordinate) = ReadCoordinatesFromKML(RR)
+            Dim Res As List(Of Coordinate) = ImportCoordinatesFromFile(RR)
             ReadCoordinates(cnt) = Res
             If Res.Count = 0 Then
-                Log.AppendLine(String.Format("Aus der Datei """"{0}"" konnten keine Koordinaten importiert werden.", RR.Path))
+                Log.AppendLine(String.Format("Aus der Datei {0} konnten keine Koordinaten importiert werden.", RR.Path))
                 Continue For
             End If
-            MyCoordinates.AddRange(ReadCoordinatesFromKML(RR))
+            MyCoordinates.AddRange(Res)
         Next
 
         If MyCoordinates.Count = 0 Then
-            MessageBox.Show("Aus den gewählten Dateien konnten keine Koordinaten importiert werden!", "Keine Koordinaten gefunden", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Log.AppendLine(String.Format("Aus keiner der gewählten Dateien konnten Koordinaten importiert werden. Kartenerstellung abgebrochen."))
+            WriteLog(Starttime)
             Me.Invoke(Sub()
                           GUIEnabling(True)
                       End Sub)
@@ -299,16 +301,8 @@ Public Class frm_Main
         Me.Invoke(Sub()
                       GUIEnabling(True)
                   End Sub)
-        If Log.ToString.Length <> 0 Then
-            Log.Insert(0, String.Format("Aufgetretene Fehler während der Bilderzeugung am {0} um {1}:" & Environment.NewLine & Environment.NewLine, Starttime.ToShortDateString, Starttime.ToLongTimeString))
-            Using sw As StreamWriter = File.CreateText(Path.Combine(Application.StartupPath, "Log.txt"))
-                sw.Write(Log.ToString)
-            End Using
-            If MessageBox.Show("Während der Bilderzeugung sind Fehler aufgetreten. Diese sind in der Log-Datei verzeichnet (" & Path.Combine(Application.StartupPath, "Log.txt") & ")." & Environment.NewLine &
-                            "Möchtest du diese Datei jetzt öffnen?", "Fehler während der Bilderzeugung", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
-                Process.Start(Path.Combine(Application.StartupPath, "Log.txt"))
-            End If
-        End If
+
+        WriteLog(Starttime)
 
         If Not SaveOption.Preview AndAlso Not SaveOption.SaveLayersSeparately AndAlso Not SaveOption.SaveRoutesSeparately Then
             If MessageBox.Show("Bilderstellung abgeschlossen. Möchtest du die Datei öffnen?", "Datei öffnen?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
@@ -320,6 +314,53 @@ Public Class frm_Main
             End If
         End If
     End Sub
+
+    Private Sub WriteLog(Starttime As DateTime)
+        If Log.ToString.Length <> 0 Then
+            Log.Insert(0, String.Format("Aufgetretene Fehler während der Bilderzeugung am {0} um {1}:" & Environment.NewLine & Environment.NewLine, Starttime.ToShortDateString, Starttime.ToLongTimeString))
+            Using sw As StreamWriter = File.CreateText(Path.Combine(Application.StartupPath, "Log.txt"))
+                sw.Write(Log.ToString)
+            End Using
+            If MessageBox.Show("Während der Bilderzeugung sind Fehler aufgetreten. Diese sind in der Log-Datei verzeichnet (" & Path.Combine(Application.StartupPath, "Log.txt") & ")." & Environment.NewLine &
+                            "Möchtest du diese Datei jetzt öffnen?", "Fehler während der Bilderzeugung", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+                Process.Start(Path.Combine(Application.StartupPath, "Log.txt"))
+            End If
+        End If
+    End Sub
+
+    Private Function ReadCoordinatesFromGPX(RR As RoutefileRow) As List(Of Coordinate)
+        Dim ser As New XmlSerializer(GetType(gpx.gpxType))
+        Dim Result As New List(Of Coordinate)
+        Using FS As New FileStream(RR.Path, FileMode.Open)
+            Dim info As New gpx.gpxType
+            Try
+                info = CType(ser.Deserialize(FS), gpx.gpxType)
+            Catch ex As Exception
+                Log.AppendLine(ex.GetType.ToString & " beim Einlesen der Datei " & RR.Path & ": " & ex.Message & Environment.NewLine() & ex.InnerException.ToString & Environment.NewLine & ex.InnerException.StackTrace)
+                Return Result
+            End Try
+            Dim tracks() As gpx.trkType = info.trk
+            For Each track As gpx.trkType In tracks
+                For Each seg As gpx.trksegType In track.trkseg
+                    For Each wpt As gpx.wptType In seg.trkpt
+                        Result.Add(New Coordinate(wpt.lat, wpt.lon))
+                    Next
+                Next
+            Next
+        End Using
+        Return Result
+    End Function
+
+    Function ImportCoordinatesFromFile(RR As RoutefileRow) As List(Of Coordinate)
+        Dim Result As New List(Of Coordinate)
+        Select Case Path.GetExtension(RR.Path).ToLower
+            Case ".kml"
+                Result = ReadCoordinatesFromKML(RR)
+            Case ".gpx"
+                Result = ReadCoordinatesFromGPX(RR)
+        End Select
+        Return Result
+    End Function
 
     Private Function ReadCoordinatesFromKML(RR As RoutefileRow) As List(Of Coordinate)
         Dim Result As New List(Of Coordinate)
@@ -518,7 +559,7 @@ Public Class frm_Main
         If e.KeyCode = Keys.Escape AndAlso TH.ThreadState = Threading.ThreadState.Running Then
             TH.Abort()
             GUIEnabling(True)
-            End If
+        End If
     End Sub
 
     Private Sub SpeichernToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SpeichernToolStripMenuItem.Click
@@ -744,9 +785,6 @@ Public Class frm_Main
     End Sub
 
     Private Sub RoutenZusammenfassenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RoutenZusammenfassenToolStripMenuItem.Click
-        'Preview = False
-        'SaveLayers = True
-        'RoutesSeparately = False
         SaveOption = New SaveOptions(False, True, False)
         If TH.IsAlive() Then
             Exit Sub
