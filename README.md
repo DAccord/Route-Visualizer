@@ -15,4 +15,4 @@ Beispielbild als <tt>jpg</tt>-Datei (Zoomstufe 8 mit Kacheln Relief, Water und A
 ![Beispielbild](https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Testbild.jpg)
 
 ### Quellcode
-*Route Visualizer* wird in Visual Basic (Windows Forms Application) entwickelt. Der Quellcode kann am komfortabelsten mit "Visual Studio Community 2015" betrachtet und bearbeitet werden. "Visual Studio Community 2015" kann [hier](https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx) herunter geladen werden.
+*Route Visualizer* wird in Visual Basic (Windows Forms Application) entwickelt. Der Quellcode kann am komfortabelsten mit "Visual Studio Community 2015" betrachtet und bearbeitet werden. "Visual Studio Community 2015" kann [hier](https://www.visualstudio.com/de-de/downloads/download-visual-studio-vs.aspx) herunter geladen werden.
