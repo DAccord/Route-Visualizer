@@ -9,7 +9,7 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("Route Visualizer")>
-<Assembly: AssemblyDescription("Route Visualizer ist ein Programm um Koordinaten aus kml-Dateien auf eine Karte zu zeichnen. Das Resultat ist eine hochaufgelöste Bilddatei.")>
+<Assembly: AssemblyDescription("Route Visualizer ist ein Programm um Koordinaten aus kml- und gpx-Dateien auf eine Karte zu zeichnen. Das Resultat ist eine hochaufgelöste Bilddatei.")>
 <Assembly: AssemblyCompany("")>
 <Assembly: AssemblyProduct("Route Visualizer")>
 <Assembly: AssemblyCopyright("Copyright © DAccord 2015")>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("0.1.0.0")>
-<Assembly: AssemblyFileVersion("0.1.0.0")>
+<Assembly: AssemblyVersion("0.2.0.0")>
+<Assembly: AssemblyFileVersion("0.2.0.0")>
