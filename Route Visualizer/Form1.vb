@@ -236,7 +236,7 @@ Public Class frm_Main
             Dim RR As RoutefileRow
             For j As Integer = 0 To ReadCoordinates.Length - 1
                 RR = RRs(j)
-                Dim RoutePen As New Pen(Color.FromArgb(CInt(RR.RouteColor.Replace(" ", "").Split(CType(", ", Char()))(0)), CInt(RR.RouteColor.Replace(" ", "").Split(CType(", ", Char()))(1)), CInt(RR.RouteColor.Replace(" ", "").Split(CType(", ", Char()))(2))), RR.RouteLineWidth)
+                Dim RoutePen As New Pen(Color.FromArgb(RR.RouteAlpha, CInt(RR.RouteColor.Replace(" ", "").Split(CType(", ", Char()))(0)), CInt(RR.RouteColor.Replace(" ", "").Split(CType(", ", Char()))(1)), CInt(RR.RouteColor.Replace(" ", "").Split(CType(", ", Char()))(2))), RR.RouteLineWidth)
                 RoutePen.EndCap = Drawing2D.LineCap.Round
                 RoutePen.StartCap = Drawing2D.LineCap.Round
                 For i As Integer = 0 To ReadCoordinates(j).Count - 2
