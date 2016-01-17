@@ -1,6 +1,6 @@
 # Route Visualizer
 
-*Route Visualizer* ist ein Programm um Koordinaten aus <tt>kml</tt>- oder <tt>gpx</tt>-Dateien auf eine Karte zu zeichnen. Das Resultat ist eine hochaufgelöste Bilddatei.
+*Route Visualizer* ist ein Programm um Koordinaten aus <tt>kml</tt>- oder <tt>gpx</tt>-Dateien (ab v0.2.0-beta) auf eine Karte zu zeichnen. Das Resultat ist eine hochaufgelöste Bilddatei.
 
 * Die aktuelle Version kannst du [hier](https://github.com/DAccord/Route-Visualizer/releases/latest) herunter laden. Zum ausführen wird mindestens das Microsoft .NET Framework 4 benötigt. Wenn nicht installiert, kannst du es [hier](https://www.microsoft.com/de-de/download/details.aspx?id=17851) (Webinstaller) oder [hier](https://www.microsoft.com/de-de/download/details.aspx?id=17718) (eigenständiger Installer) herunter laden.
 * Schnelle Hilfe findest du im [Wiki](https://github.com/DAccord/Route-Visualizer/wiki).
