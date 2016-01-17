@@ -645,7 +645,7 @@ Partial Class frm_Main
         Me.CMB_Zoom.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CMB_Zoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CMB_Zoom.FormattingEnabled = True
-        Me.CMB_Zoom.Location = New System.Drawing.Point(61, 218)
+        Me.CMB_Zoom.Location = New System.Drawing.Point(61, 211)
         Me.CMB_Zoom.Name = "CMB_Zoom"
         Me.CMB_Zoom.Size = New System.Drawing.Size(121, 28)
         Me.CMB_Zoom.TabIndex = 1
@@ -654,7 +654,7 @@ Partial Class frm_Main
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(3, 218)
+        Me.Label1.Location = New System.Drawing.Point(3, 215)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(52, 20)
         Me.Label1.TabIndex = 0
@@ -669,7 +669,7 @@ Partial Class frm_Main
         Me.CLB_Layers.FormattingEnabled = True
         Me.CLB_Layers.Location = New System.Drawing.Point(3, 3)
         Me.CLB_Layers.Name = "CLB_Layers"
-        Me.CLB_Layers.Size = New System.Drawing.Size(179, 209)
+        Me.CLB_Layers.Size = New System.Drawing.Size(179, 202)
         Me.CLB_Layers.TabIndex = 0
         '
         'GB_Preview

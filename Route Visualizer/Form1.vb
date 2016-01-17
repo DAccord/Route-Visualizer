@@ -97,7 +97,9 @@ Public Class frm_Main
                           MessageBox.Show("Wähle eine Zoomstufe bevor du mit der Kartenerstellung beginnst!", "Zoomstufe wählen", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                           Cancel = True
                       End If
-                      Zoom = CInt(CMB_Zoom.SelectedItem.ToString)
+                      If Not Cancel Then
+                          Zoom = CInt(CMB_Zoom.SelectedItem.ToString)
+                      End If
                   End Sub)
 
         Me.Invoke(Sub()
