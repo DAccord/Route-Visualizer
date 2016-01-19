@@ -11,7 +11,7 @@ Public Class frm_Main
     Dim Log As New StringBuilder
     Dim TH As New Threading.Thread(AddressOf UpdatePreviewNew)
     Dim SaveOption As New SaveOptions
-    Dim UpdateBackground As Boolean = False
+    Dim UpdateBackground As Boolean = True
     Dim DistZooms As List(Of Integer)
 
     Private Sub frm_Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -56,7 +56,7 @@ Public Class frm_Main
         TSSL_EscToAbort.Visible = Not EnabledState
     End Sub
 
-    Private Function CreateLayerImage(ByVal ZR As ZoomRow, MinMaxTiles() As Point) As Image
+    Public Function CreateLayerImage(ByVal ZR As ZoomRow, MinMaxTiles() As Point) As Image
         Dim Result As Image = New Bitmap((MinMaxTiles(1).X - MinMaxTiles(0).X + 1) * ZR.Tilewidth, (MinMaxTiles(1).Y - MinMaxTiles(0).Y + 1) * ZR.Tileheight)
 
         Using g As Graphics = Graphics.FromImage(Result)
@@ -80,7 +80,7 @@ Public Class frm_Main
         Return Result
     End Function
 
-    Private Sub UpdatePreviewNew()
+    Public Sub UpdatePreviewNew()
         Dim Starttime As DateTime = DateTime.Now
         Dim TilePen As New Pen(New SolidBrush(Color.Blue), 5)
         Dim CurrentZoomRow As ZoomRow
@@ -330,7 +330,7 @@ Public Class frm_Main
         End If
     End Sub
 
-    Private Function ReadCoordinatesFromGPX(RR As RoutefileRow) As List(Of Coordinate)
+    Public Function ReadCoordinatesFromGPX(RR As RoutefileRow) As List(Of Coordinate)
         Dim ser As New XmlSerializer(GetType(gpx.gpxType))
         Dim Result As New List(Of Coordinate)
         Using FS As New FileStream(RR.Path, FileMode.Open)
@@ -353,7 +353,7 @@ Public Class frm_Main
         Return Result
     End Function
 
-    Function ImportCoordinatesFromFile(RR As RoutefileRow) As List(Of Coordinate)
+    Public Function ImportCoordinatesFromFile(RR As RoutefileRow) As List(Of Coordinate)
         Dim Result As New List(Of Coordinate)
         Select Case Path.GetExtension(RR.Path).ToLower
             Case ".kml"
@@ -364,7 +364,7 @@ Public Class frm_Main
         Return Result
     End Function
 
-    Private Function ReadCoordinatesFromKML(RR As RoutefileRow) As List(Of Coordinate)
+    Public Function ReadCoordinatesFromKML(RR As RoutefileRow) As List(Of Coordinate)
         Dim Result As New List(Of Coordinate)
         Dim enUS As Globalization.CultureInfo = New Globalization.CultureInfo("en-US")
         If RR.IsPathNull OrElse Not File.Exists(RR.Path) Then
@@ -374,7 +374,7 @@ Public Class frm_Main
             Dim Z As String
             Dim CRaw() As String
             Dim Found As Integer = -1
-            Do While Not r.EndOfStream AndAlso Found <> 1
+            Do While Not r.EndOfStream 'AndAlso Found <> 1
                 Z = r.ReadLine.Trim
                 If Z.Contains("<coordinates>") AndAlso Z.Contains("</coordinates>") Then
                     Z = Z.Substring("<coordinates>".Length, Z.Length - "</coordinates>".Length - "<coordinates>".Length)
