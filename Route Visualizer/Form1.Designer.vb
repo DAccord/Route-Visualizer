@@ -24,11 +24,6 @@ Partial Class frm_Main
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Main))
-        Me.OFD_ImportRoute = New System.Windows.Forms.OpenFileDialog()
-        Me.SFD_SaveImage = New System.Windows.Forms.SaveFileDialog()
-        Me.FBD_SaveLayersSeperately = New System.Windows.Forms.FolderBrowserDialog()
-        Me.OFD_OwnImage = New System.Windows.Forms.OpenFileDialog()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.SplitContainer3 = New System.Windows.Forms.SplitContainer()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.LayerDataGridView = New System.Windows.Forms.DataGridView()
@@ -45,7 +40,6 @@ Partial Class frm_Main
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ZoomBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.GB_Route = New System.Windows.Forms.GroupBox()
         Me.DGV_Route = New System.Windows.Forms.DataGridView()
@@ -81,6 +75,12 @@ Partial Class frm_Main
         Me.CLB_Layers = New System.Windows.Forms.CheckedListBox()
         Me.GB_Preview = New System.Windows.Forms.GroupBox()
         Me.PB_Preview = New System.Windows.Forms.PictureBox()
+        Me.OFD_ImportRoute = New System.Windows.Forms.OpenFileDialog()
+        Me.SFD_SaveImage = New System.Windows.Forms.SaveFileDialog()
+        Me.FBD_SaveLayersSeperately = New System.Windows.Forms.FolderBrowserDialog()
+        Me.OFD_OwnImage = New System.Windows.Forms.OpenFileDialog()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.FBD_Layer = New System.Windows.Forms.FolderBrowserDialog()
         Me.CD_Main = New System.Windows.Forms.ColorDialog()
@@ -104,7 +104,6 @@ Partial Class frm_Main
         Me.TSSL_Progress = New System.Windows.Forms.ToolStripStatusLabel()
         Me.TSPB_Progress = New System.Windows.Forms.ToolStripProgressBar()
         Me.ZoomBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TabPage3.SuspendLayout()
         CType(Me.SplitContainer3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer3.Panel1.SuspendLayout()
         Me.SplitContainer3.Panel2.SuspendLayout()
@@ -117,7 +116,6 @@ Partial Class frm_Main
         CType(Me.ZoomDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayerBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ZoomBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage1.SuspendLayout()
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer2.Panel1.SuspendLayout()
         Me.SplitContainer2.Panel2.SuspendLayout()
@@ -141,48 +139,18 @@ Partial Class frm_Main
         Me.TableLayoutPanel4.SuspendLayout()
         Me.GB_Preview.SuspendLayout()
         CType(Me.PB_Preview, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage3.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         CType(Me.ZoomBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'OFD_ImportRoute
-        '
-        Me.OFD_ImportRoute.Filter = "Unterstützte Formate|*.gpx;*.kml|gpx-Dateien|*.gpx|kml-Dateien|*.kml"
-        Me.OFD_ImportRoute.Multiselect = True
-        Me.OFD_ImportRoute.Title = "Bitte wähle die zu importierenden kml-Dateien"
-        '
-        'SFD_SaveImage
-        '
-        Me.SFD_SaveImage.Filter = "jpg-Datei|*.jpg|png-Datei|*.png|bmp-Datei|*.bmp|gif-Datei|*.gif|tif-Datei|*.tif"
-        Me.SFD_SaveImage.Title = "Karte speichern"
-        '
-        'FBD_SaveLayersSeperately
-        '
-        Me.FBD_SaveLayersSeperately.Description = "Wähle den Ordner in welchem die einzelnen Dateien gespeichert werden sollen"
-        '
-        'OFD_OwnImage
-        '
-        Me.OFD_OwnImage.Filter = "Supported Graphics Types|*.bmp;*.gif;*.jpg;*.jpeg;*.png;*.tif;*.tiff"""
-        '
-        'TabPage3
-        '
-        Me.TabPage3.Controls.Add(Me.SplitContainer3)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(888, 560)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Ebenen"
-        Me.TabPage3.UseVisualStyleBackColor = True
-        '
         'SplitContainer3
         '
-        Me.SplitContainer3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SplitContainer3.Location = New System.Drawing.Point(3, 3)
+        resources.ApplyResources(Me.SplitContainer3, "SplitContainer3")
         Me.SplitContainer3.Name = "SplitContainer3"
-        Me.SplitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
         'SplitContainer3.Panel1
         '
@@ -191,20 +159,13 @@ Partial Class frm_Main
         'SplitContainer3.Panel2
         '
         Me.SplitContainer3.Panel2.Controls.Add(Me.GroupBox2)
-        Me.SplitContainer3.Size = New System.Drawing.Size(882, 554)
-        Me.SplitContainer3.SplitterDistance = 276
-        Me.SplitContainer3.TabIndex = 5
         '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.LayerDataGridView)
-        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
+        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(882, 276)
-        Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Ebenen"
         '
         'LayerDataGridView
         '
@@ -213,24 +174,21 @@ Partial Class frm_Main
         Me.LayerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.LayerDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.Sortindex})
         Me.LayerDataGridView.DataSource = Me.LayerBindingSource
-        Me.LayerDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
+        resources.ApplyResources(Me.LayerDataGridView, "LayerDataGridView")
         Me.LayerDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
-        Me.LayerDataGridView.Location = New System.Drawing.Point(3, 23)
         Me.LayerDataGridView.Name = "LayerDataGridView"
-        Me.LayerDataGridView.Size = New System.Drawing.Size(876, 250)
-        Me.LayerDataGridView.TabIndex = 2
         '
         'DataGridViewTextBoxColumn2
         '
         Me.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "Name"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Name"
+        resources.ApplyResources(Me.DataGridViewTextBoxColumn2, "DataGridViewTextBoxColumn2")
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         '
         'Sortindex
         '
         Me.Sortindex.DataPropertyName = "Sortindex"
-        Me.Sortindex.HeaderText = "Sortierindex"
+        resources.ApplyResources(Me.Sortindex, "Sortindex")
         Me.Sortindex.Name = "Sortindex"
         '
         'LayerBindingSource
@@ -246,13 +204,9 @@ Partial Class frm_Main
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.ZoomDataGridView)
-        Me.GroupBox2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupBox2.Location = New System.Drawing.Point(0, 0)
+        resources.ApplyResources(Me.GroupBox2, "GroupBox2")
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(882, 274)
-        Me.GroupBox2.TabIndex = 4
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Kacheln/Zoomstufen"
         '
         'ZoomDataGridView
         '
@@ -262,19 +216,16 @@ Partial Class frm_Main
         Me.ZoomDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ZoomDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn10})
         Me.ZoomDataGridView.DataSource = Me.ZoomBindingSource1
-        Me.ZoomDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
+        resources.ApplyResources(Me.ZoomDataGridView, "ZoomDataGridView")
         Me.ZoomDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
-        Me.ZoomDataGridView.Location = New System.Drawing.Point(3, 23)
         Me.ZoomDataGridView.Name = "ZoomDataGridView"
-        Me.ZoomDataGridView.Size = New System.Drawing.Size(876, 248)
-        Me.ZoomDataGridView.TabIndex = 2
         '
         'DataGridViewTextBoxColumn4
         '
         Me.DataGridViewTextBoxColumn4.DataPropertyName = "LayerID"
         Me.DataGridViewTextBoxColumn4.DataSource = Me.LayerBindingSource1
         Me.DataGridViewTextBoxColumn4.DisplayMember = "Name"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Ebene"
+        resources.ApplyResources(Me.DataGridViewTextBoxColumn4, "DataGridViewTextBoxColumn4")
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
         Me.DataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
@@ -288,26 +239,29 @@ Partial Class frm_Main
         'DataGridViewTextBoxColumn5
         '
         Me.DataGridViewTextBoxColumn5.DataPropertyName = "Zoomvalue"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Zoom"
+        Me.DataGridViewTextBoxColumn5.FillWeight = 101.0!
+        resources.ApplyResources(Me.DataGridViewTextBoxColumn5, "DataGridViewTextBoxColumn5")
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
         '
         'DataGridViewTextBoxColumn6
         '
         Me.DataGridViewTextBoxColumn6.DataPropertyName = "Tilewidth"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Kachel-Breite"
+        Me.DataGridViewTextBoxColumn6.FillWeight = 101.0!
+        resources.ApplyResources(Me.DataGridViewTextBoxColumn6, "DataGridViewTextBoxColumn6")
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
         '
         'DataGridViewTextBoxColumn7
         '
         Me.DataGridViewTextBoxColumn7.DataPropertyName = "Tileheight"
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Kachel-Höhe"
+        Me.DataGridViewTextBoxColumn7.FillWeight = 105.0!
+        resources.ApplyResources(Me.DataGridViewTextBoxColumn7, "DataGridViewTextBoxColumn7")
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
         '
         'DataGridViewTextBoxColumn10
         '
         Me.DataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.DataGridViewTextBoxColumn10.DataPropertyName = "Path"
-        Me.DataGridViewTextBoxColumn10.HeaderText = "Pfad"
+        resources.ApplyResources(Me.DataGridViewTextBoxColumn10, "DataGridViewTextBoxColumn10")
         Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
         '
         'ZoomBindingSource1
@@ -315,24 +269,11 @@ Partial Class frm_Main
         Me.ZoomBindingSource1.DataMember = "Layer_Zoom"
         Me.ZoomBindingSource1.DataSource = Me.LayerBindingSource
         '
-        'TabPage1
-        '
-        Me.TabPage1.Controls.Add(Me.SplitContainer2)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 29)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(888, 560)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Route Visualizer"
-        Me.TabPage1.UseVisualStyleBackColor = True
-        '
         'SplitContainer2
         '
-        Me.SplitContainer2.Dock = System.Windows.Forms.DockStyle.Fill
+        resources.ApplyResources(Me.SplitContainer2, "SplitContainer2")
         Me.SplitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
-        Me.SplitContainer2.Location = New System.Drawing.Point(3, 3)
         Me.SplitContainer2.Name = "SplitContainer2"
-        Me.SplitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal
         '
         'SplitContainer2.Panel1
         '
@@ -341,20 +282,13 @@ Partial Class frm_Main
         'SplitContainer2.Panel2
         '
         Me.SplitContainer2.Panel2.Controls.Add(Me.SplitContainer1)
-        Me.SplitContainer2.Size = New System.Drawing.Size(882, 554)
-        Me.SplitContainer2.SplitterDistance = 282
-        Me.SplitContainer2.TabIndex = 9
         '
         'GB_Route
         '
         Me.GB_Route.Controls.Add(Me.DGV_Route)
-        Me.GB_Route.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GB_Route.Location = New System.Drawing.Point(0, 0)
+        resources.ApplyResources(Me.GB_Route, "GB_Route")
         Me.GB_Route.Name = "GB_Route"
-        Me.GB_Route.Size = New System.Drawing.Size(882, 282)
-        Me.GB_Route.TabIndex = 1
         Me.GB_Route.TabStop = False
-        Me.GB_Route.Text = "Route"
         '
         'DGV_Route
         '
@@ -365,90 +299,74 @@ Partial Class frm_Main
         Me.DGV_Route.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumnVisibility, Me.DataGridViewTextBoxColumnPath, Me.DataGridViewTextBoxColumnRouteLineWidth, Me.DataGridViewTextBoxColumnRouteColor, Me.DataGridViewTextBoxColumnRouteAlpha})
         Me.DGV_Route.ContextMenuStrip = Me.CMS_DGV_Route
         Me.DGV_Route.DataSource = Me.RoutefileBindingSource
-        Me.DGV_Route.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DGV_Route.Location = New System.Drawing.Point(3, 23)
+        resources.ApplyResources(Me.DGV_Route, "DGV_Route")
         Me.DGV_Route.Name = "DGV_Route"
-        Me.DGV_Route.Size = New System.Drawing.Size(876, 256)
-        Me.DGV_Route.TabIndex = 0
         '
         'DataGridViewTextBoxColumnVisibility
         '
         Me.DataGridViewTextBoxColumnVisibility.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.DataGridViewTextBoxColumnVisibility.DataPropertyName = "Visibility"
-        Me.DataGridViewTextBoxColumnVisibility.HeaderText = "SB"
+        resources.ApplyResources(Me.DataGridViewTextBoxColumnVisibility, "DataGridViewTextBoxColumnVisibility")
         Me.DataGridViewTextBoxColumnVisibility.Name = "DataGridViewTextBoxColumnVisibility"
-        Me.DataGridViewTextBoxColumnVisibility.ToolTipText = "Sichtbarkeit"
-        Me.DataGridViewTextBoxColumnVisibility.Width = 32
         '
         'DataGridViewTextBoxColumnPath
         '
         Me.DataGridViewTextBoxColumnPath.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.DataGridViewTextBoxColumnPath.DataPropertyName = "Path"
-        Me.DataGridViewTextBoxColumnPath.HeaderText = "Pfad"
-        Me.DataGridViewTextBoxColumnPath.MinimumWidth = 100
+        resources.ApplyResources(Me.DataGridViewTextBoxColumnPath, "DataGridViewTextBoxColumnPath")
         Me.DataGridViewTextBoxColumnPath.Name = "DataGridViewTextBoxColumnPath"
         '
         'DataGridViewTextBoxColumnRouteLineWidth
         '
         Me.DataGridViewTextBoxColumnRouteLineWidth.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
         Me.DataGridViewTextBoxColumnRouteLineWidth.DataPropertyName = "RouteLineWidth"
-        Me.DataGridViewTextBoxColumnRouteLineWidth.HeaderText = "RLB"
+        resources.ApplyResources(Me.DataGridViewTextBoxColumnRouteLineWidth, "DataGridViewTextBoxColumnRouteLineWidth")
         Me.DataGridViewTextBoxColumnRouteLineWidth.Name = "DataGridViewTextBoxColumnRouteLineWidth"
-        Me.DataGridViewTextBoxColumnRouteLineWidth.ToolTipText = "Routenlinienbreite"
-        Me.DataGridViewTextBoxColumnRouteLineWidth.Width = 59
         '
         'DataGridViewTextBoxColumnRouteColor
         '
         Me.DataGridViewTextBoxColumnRouteColor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
         Me.DataGridViewTextBoxColumnRouteColor.DataPropertyName = "RouteColor"
-        Me.DataGridViewTextBoxColumnRouteColor.HeaderText = "RF"
+        resources.ApplyResources(Me.DataGridViewTextBoxColumnRouteColor, "DataGridViewTextBoxColumnRouteColor")
         Me.DataGridViewTextBoxColumnRouteColor.Name = "DataGridViewTextBoxColumnRouteColor"
-        Me.DataGridViewTextBoxColumnRouteColor.ToolTipText = "Routenfarbe"
-        Me.DataGridViewTextBoxColumnRouteColor.Width = 50
         '
         'DataGridViewTextBoxColumnRouteAlpha
         '
         Me.DataGridViewTextBoxColumnRouteAlpha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
         Me.DataGridViewTextBoxColumnRouteAlpha.DataPropertyName = "RouteAlpha"
-        Me.DataGridViewTextBoxColumnRouteAlpha.HeaderText = "RA"
+        resources.ApplyResources(Me.DataGridViewTextBoxColumnRouteAlpha, "DataGridViewTextBoxColumnRouteAlpha")
         Me.DataGridViewTextBoxColumnRouteAlpha.Name = "DataGridViewTextBoxColumnRouteAlpha"
-        Me.DataGridViewTextBoxColumnRouteAlpha.ToolTipText = "Transparenz"
-        Me.DataGridViewTextBoxColumnRouteAlpha.Width = 53
         '
         'CMS_DGV_Route
         '
         Me.CMS_DGV_Route.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AlleAuswählenToolStripMenuItem, Me.AlleAbwählenToolStripMenuItem, Me.AuswahlUmkehrenToolStripMenuItem, Me.ToolStripMenuItem4, Me.SpeicherortÖffnenToolStripMenuItem})
         Me.CMS_DGV_Route.Name = "CMS_DGV_Route"
-        Me.CMS_DGV_Route.Size = New System.Drawing.Size(177, 98)
+        resources.ApplyResources(Me.CMS_DGV_Route, "CMS_DGV_Route")
         '
         'AlleAuswählenToolStripMenuItem
         '
         Me.AlleAuswählenToolStripMenuItem.Name = "AlleAuswählenToolStripMenuItem"
-        Me.AlleAuswählenToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
-        Me.AlleAuswählenToolStripMenuItem.Text = "Alle auswählen"
+        resources.ApplyResources(Me.AlleAuswählenToolStripMenuItem, "AlleAuswählenToolStripMenuItem")
         '
         'AlleAbwählenToolStripMenuItem
         '
         Me.AlleAbwählenToolStripMenuItem.Name = "AlleAbwählenToolStripMenuItem"
-        Me.AlleAbwählenToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
-        Me.AlleAbwählenToolStripMenuItem.Text = "Alle abwählen"
+        resources.ApplyResources(Me.AlleAbwählenToolStripMenuItem, "AlleAbwählenToolStripMenuItem")
         '
         'AuswahlUmkehrenToolStripMenuItem
         '
         Me.AuswahlUmkehrenToolStripMenuItem.Name = "AuswahlUmkehrenToolStripMenuItem"
-        Me.AuswahlUmkehrenToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
-        Me.AuswahlUmkehrenToolStripMenuItem.Text = "Auswahl umkehren"
+        resources.ApplyResources(Me.AuswahlUmkehrenToolStripMenuItem, "AuswahlUmkehrenToolStripMenuItem")
         '
         'ToolStripMenuItem4
         '
         Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(173, 6)
+        resources.ApplyResources(Me.ToolStripMenuItem4, "ToolStripMenuItem4")
         '
         'SpeicherortÖffnenToolStripMenuItem
         '
         Me.SpeicherortÖffnenToolStripMenuItem.Name = "SpeicherortÖffnenToolStripMenuItem"
-        Me.SpeicherortÖffnenToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
-        Me.SpeicherortÖffnenToolStripMenuItem.Text = "Speicherort öffnen"
+        resources.ApplyResources(Me.SpeicherortÖffnenToolStripMenuItem, "SpeicherortÖffnenToolStripMenuItem")
         '
         'RoutefileBindingSource
         '
@@ -457,9 +375,8 @@ Partial Class frm_Main
         '
         'SplitContainer1
         '
-        Me.SplitContainer1.Dock = System.Windows.Forms.DockStyle.Fill
+        resources.ApplyResources(Me.SplitContainer1, "SplitContainer1")
         Me.SplitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
-        Me.SplitContainer1.Location = New System.Drawing.Point(0, 0)
         Me.SplitContainer1.Name = "SplitContainer1"
         '
         'SplitContainer1.Panel1
@@ -469,44 +386,24 @@ Partial Class frm_Main
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.GB_Preview)
-        Me.SplitContainer1.Size = New System.Drawing.Size(882, 268)
-        Me.SplitContainer1.SplitterDistance = 386
-        Me.SplitContainer1.TabIndex = 8
         '
         'TableLayoutPanel1
         '
-        Me.TableLayoutPanel1.ColumnCount = 2
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        resources.ApplyResources(Me.TableLayoutPanel1, "TableLayoutPanel1")
         Me.TableLayoutPanel1.Controls.Add(Me.GB_AdditionalTiles, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.GB_Layers, 0, 0)
-        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 1
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(386, 268)
-        Me.TableLayoutPanel1.TabIndex = 0
         '
         'GB_AdditionalTiles
         '
         Me.GB_AdditionalTiles.Controls.Add(Me.TableLayoutPanel3)
-        Me.GB_AdditionalTiles.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GB_AdditionalTiles.Location = New System.Drawing.Point(195, 0)
-        Me.GB_AdditionalTiles.Margin = New System.Windows.Forms.Padding(2, 0, 0, 0)
+        resources.ApplyResources(Me.GB_AdditionalTiles, "GB_AdditionalTiles")
         Me.GB_AdditionalTiles.Name = "GB_AdditionalTiles"
-        Me.GB_AdditionalTiles.Size = New System.Drawing.Size(191, 268)
-        Me.GB_AdditionalTiles.TabIndex = 3
         Me.GB_AdditionalTiles.TabStop = False
-        Me.GB_AdditionalTiles.Text = "Zusätzliche Kacheln"
         '
         'TableLayoutPanel3
         '
-        Me.TableLayoutPanel3.ColumnCount = 3
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33332!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334!))
+        resources.ApplyResources(Me.TableLayoutPanel3, "TableLayoutPanel3")
         Me.TableLayoutPanel3.Controls.Add(Me.NUD_AdditionalTilesSouth, 1, 5)
         Me.TableLayoutPanel3.Controls.Add(Me.NUD_AdditionalTilesWest, 0, 3)
         Me.TableLayoutPanel3.Controls.Add(Me.NUD_AdditionalTilesEast, 2, 3)
@@ -516,193 +413,142 @@ Partial Class frm_Main
         Me.TableLayoutPanel3.Controls.Add(Me.Label4, 0, 2)
         Me.TableLayoutPanel3.Controls.Add(Me.Label5, 1, 4)
         Me.TableLayoutPanel3.Controls.Add(Me.Btn_ResetAdditionalTiles, 0, 6)
-        Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel3.Location = New System.Drawing.Point(3, 23)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
-        Me.TableLayoutPanel3.RowCount = 7
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(185, 242)
-        Me.TableLayoutPanel3.TabIndex = 0
         '
         'NUD_AdditionalTilesSouth
         '
-        Me.NUD_AdditionalTilesSouth.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.NUD_AdditionalTilesSouth.Location = New System.Drawing.Point(64, 129)
+        resources.ApplyResources(Me.NUD_AdditionalTilesSouth, "NUD_AdditionalTilesSouth")
         Me.NUD_AdditionalTilesSouth.Name = "NUD_AdditionalTilesSouth"
-        Me.NUD_AdditionalTilesSouth.Size = New System.Drawing.Size(55, 27)
-        Me.NUD_AdditionalTilesSouth.TabIndex = 3
         '
         'NUD_AdditionalTilesWest
         '
-        Me.NUD_AdditionalTilesWest.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.NUD_AdditionalTilesWest.Location = New System.Drawing.Point(3, 76)
+        resources.ApplyResources(Me.NUD_AdditionalTilesWest, "NUD_AdditionalTilesWest")
         Me.NUD_AdditionalTilesWest.Name = "NUD_AdditionalTilesWest"
-        Me.NUD_AdditionalTilesWest.Size = New System.Drawing.Size(55, 27)
-        Me.NUD_AdditionalTilesWest.TabIndex = 1
         '
         'NUD_AdditionalTilesEast
         '
-        Me.NUD_AdditionalTilesEast.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.NUD_AdditionalTilesEast.Location = New System.Drawing.Point(125, 76)
+        resources.ApplyResources(Me.NUD_AdditionalTilesEast, "NUD_AdditionalTilesEast")
         Me.NUD_AdditionalTilesEast.Name = "NUD_AdditionalTilesEast"
-        Me.NUD_AdditionalTilesEast.Size = New System.Drawing.Size(57, 27)
-        Me.NUD_AdditionalTilesEast.TabIndex = 2
         '
         'NUD_AdditionalTilesNorth
         '
-        Me.NUD_AdditionalTilesNorth.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.NUD_AdditionalTilesNorth.Location = New System.Drawing.Point(64, 23)
+        resources.ApplyResources(Me.NUD_AdditionalTilesNorth, "NUD_AdditionalTilesNorth")
         Me.NUD_AdditionalTilesNorth.Name = "NUD_AdditionalTilesNorth"
-        Me.NUD_AdditionalTilesNorth.Size = New System.Drawing.Size(55, 27)
-        Me.NUD_AdditionalTilesNorth.TabIndex = 0
         '
         'Label2
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(64, 0)
+        resources.ApplyResources(Me.Label2, "Label2")
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(43, 20)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "Nord"
         '
         'Label3
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(125, 53)
+        resources.ApplyResources(Me.Label3, "Label3")
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(31, 20)
-        Me.Label3.TabIndex = 5
-        Me.Label3.Text = "Ost"
         '
         'Label4
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(3, 53)
+        resources.ApplyResources(Me.Label4, "Label4")
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(41, 20)
-        Me.Label4.TabIndex = 6
-        Me.Label4.Text = "West"
         '
         'Label5
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(64, 106)
+        resources.ApplyResources(Me.Label5, "Label5")
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(34, 20)
-        Me.Label5.TabIndex = 7
-        Me.Label5.Text = "Süd"
         '
         'Btn_ResetAdditionalTiles
         '
-        Me.Btn_ResetAdditionalTiles.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.Btn_ResetAdditionalTiles.AutoSize = True
+        resources.ApplyResources(Me.Btn_ResetAdditionalTiles, "Btn_ResetAdditionalTiles")
         Me.TableLayoutPanel3.SetColumnSpan(Me.Btn_ResetAdditionalTiles, 3)
-        Me.Btn_ResetAdditionalTiles.Location = New System.Drawing.Point(40, 162)
         Me.Btn_ResetAdditionalTiles.Name = "Btn_ResetAdditionalTiles"
-        Me.Btn_ResetAdditionalTiles.Size = New System.Drawing.Size(105, 30)
-        Me.Btn_ResetAdditionalTiles.TabIndex = 8
-        Me.Btn_ResetAdditionalTiles.Text = "Zurücksetzen"
         Me.Btn_ResetAdditionalTiles.UseVisualStyleBackColor = True
         '
         'GB_Layers
         '
         Me.GB_Layers.Controls.Add(Me.TableLayoutPanel4)
-        Me.GB_Layers.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GB_Layers.Location = New System.Drawing.Point(0, 0)
-        Me.GB_Layers.Margin = New System.Windows.Forms.Padding(0, 0, 2, 0)
+        resources.ApplyResources(Me.GB_Layers, "GB_Layers")
         Me.GB_Layers.Name = "GB_Layers"
-        Me.GB_Layers.Size = New System.Drawing.Size(191, 268)
-        Me.GB_Layers.TabIndex = 0
         Me.GB_Layers.TabStop = False
-        Me.GB_Layers.Text = "Ebenen"
         '
         'TableLayoutPanel4
         '
-        Me.TableLayoutPanel4.ColumnCount = 2
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        resources.ApplyResources(Me.TableLayoutPanel4, "TableLayoutPanel4")
         Me.TableLayoutPanel4.Controls.Add(Me.CMB_Zoom, 1, 1)
         Me.TableLayoutPanel4.Controls.Add(Me.Label1, 0, 1)
         Me.TableLayoutPanel4.Controls.Add(Me.CLB_Layers, 0, 0)
-        Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 23)
-        Me.TableLayoutPanel4.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
-        Me.TableLayoutPanel4.RowCount = 2
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(185, 242)
-        Me.TableLayoutPanel4.TabIndex = 1
         '
         'CMB_Zoom
         '
-        Me.CMB_Zoom.Dock = System.Windows.Forms.DockStyle.Fill
+        resources.ApplyResources(Me.CMB_Zoom, "CMB_Zoom")
         Me.CMB_Zoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CMB_Zoom.FormattingEnabled = True
-        Me.CMB_Zoom.Location = New System.Drawing.Point(61, 211)
         Me.CMB_Zoom.Name = "CMB_Zoom"
-        Me.CMB_Zoom.Size = New System.Drawing.Size(121, 28)
-        Me.CMB_Zoom.TabIndex = 1
         '
         'Label1
         '
-        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(3, 215)
+        resources.ApplyResources(Me.Label1, "Label1")
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(52, 20)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Zoom:"
         '
         'CLB_Layers
         '
         Me.CLB_Layers.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.CLB_Layers.CheckOnClick = True
         Me.TableLayoutPanel4.SetColumnSpan(Me.CLB_Layers, 2)
-        Me.CLB_Layers.Dock = System.Windows.Forms.DockStyle.Fill
+        resources.ApplyResources(Me.CLB_Layers, "CLB_Layers")
         Me.CLB_Layers.FormattingEnabled = True
-        Me.CLB_Layers.Location = New System.Drawing.Point(3, 3)
         Me.CLB_Layers.Name = "CLB_Layers"
-        Me.CLB_Layers.Size = New System.Drawing.Size(179, 202)
-        Me.CLB_Layers.TabIndex = 0
         '
         'GB_Preview
         '
         Me.GB_Preview.Controls.Add(Me.PB_Preview)
-        Me.GB_Preview.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GB_Preview.Location = New System.Drawing.Point(0, 0)
+        resources.ApplyResources(Me.GB_Preview, "GB_Preview")
         Me.GB_Preview.Name = "GB_Preview"
-        Me.GB_Preview.Size = New System.Drawing.Size(492, 268)
-        Me.GB_Preview.TabIndex = 7
         Me.GB_Preview.TabStop = False
-        Me.GB_Preview.Text = "Vorschau (Doppelkick für Originalgröße)"
         '
         'PB_Preview
         '
-        Me.PB_Preview.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PB_Preview.Location = New System.Drawing.Point(3, 23)
+        resources.ApplyResources(Me.PB_Preview, "PB_Preview")
         Me.PB_Preview.Name = "PB_Preview"
-        Me.PB_Preview.Size = New System.Drawing.Size(486, 242)
-        Me.PB_Preview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PB_Preview.TabIndex = 6
         Me.PB_Preview.TabStop = False
+        '
+        'OFD_ImportRoute
+        '
+        resources.ApplyResources(Me.OFD_ImportRoute, "OFD_ImportRoute")
+        Me.OFD_ImportRoute.Multiselect = True
+        '
+        'SFD_SaveImage
+        '
+        resources.ApplyResources(Me.SFD_SaveImage, "SFD_SaveImage")
+        '
+        'FBD_SaveLayersSeperately
+        '
+        resources.ApplyResources(Me.FBD_SaveLayersSeperately, "FBD_SaveLayersSeperately")
+        '
+        'OFD_OwnImage
+        '
+        resources.ApplyResources(Me.OFD_OwnImage, "OFD_OwnImage")
+        '
+        'TabPage3
+        '
+        Me.TabPage3.Controls.Add(Me.SplitContainer3)
+        resources.ApplyResources(Me.TabPage3, "TabPage3")
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'TabPage1
+        '
+        Me.TabPage1.Controls.Add(Me.SplitContainer2)
+        resources.ApplyResources(Me.TabPage1, "TabPage1")
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.UseVisualStyleBackColor = True
         '
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage3)
-        Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TabControl1.Location = New System.Drawing.Point(0, 24)
+        resources.ApplyResources(Me.TabControl1, "TabControl1")
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(896, 593)
-        Me.TabControl1.TabIndex = 1
         '
         'CD_Main
         '
@@ -711,132 +557,103 @@ Partial Class frm_Main
         'MenuStrip1
         '
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.HelpToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(896, 24)
-        Me.MenuStrip1.TabIndex = 2
-        Me.MenuStrip1.Text = "MenuStrip1"
         '
         'FileToolStripMenuItem
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UpdatePreviewToolStripMenuItem, Me.ToolStripMenuItem1, Me.SaveAsImageToolStripMenuItem, Me.SaveLayersSeparatelyToolStripMenuItem, Me.ToolStripMenuItem2, Me.SpeichernToolStripMenuItem, Me.ToolStripMenuItem3, Me.QuitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(46, 20)
-        Me.FileToolStripMenuItem.Text = "&Karte"
+        resources.ApplyResources(Me.FileToolStripMenuItem, "FileToolStripMenuItem")
         '
         'UpdatePreviewToolStripMenuItem
         '
         Me.UpdatePreviewToolStripMenuItem.Name = "UpdatePreviewToolStripMenuItem"
-        Me.UpdatePreviewToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5
-        Me.UpdatePreviewToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
-        Me.UpdatePreviewToolStripMenuItem.Text = "Vorscha&u aktualisieren"
+        resources.ApplyResources(Me.UpdatePreviewToolStripMenuItem, "UpdatePreviewToolStripMenuItem")
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(213, 6)
+        resources.ApplyResources(Me.ToolStripMenuItem1, "ToolStripMenuItem1")
         '
         'SaveAsImageToolStripMenuItem
         '
         Me.SaveAsImageToolStripMenuItem.Name = "SaveAsImageToolStripMenuItem"
-        Me.SaveAsImageToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.SaveAsImageToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
-        Me.SaveAsImageToolStripMenuItem.Text = "Als &Bild speichern..."
+        resources.ApplyResources(Me.SaveAsImageToolStripMenuItem, "SaveAsImageToolStripMenuItem")
         '
         'SaveLayersSeparatelyToolStripMenuItem
         '
         Me.SaveLayersSeparatelyToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RoutenSeparatToolStripMenuItem, Me.RoutenZusammenfassenToolStripMenuItem})
         Me.SaveLayersSeparatelyToolStripMenuItem.Name = "SaveLayersSeparatelyToolStripMenuItem"
-        Me.SaveLayersSeparatelyToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
-        Me.SaveLayersSeparatelyToolStripMenuItem.Text = "&Ebenen einzeln speichern"
+        resources.ApplyResources(Me.SaveLayersSeparatelyToolStripMenuItem, "SaveLayersSeparatelyToolStripMenuItem")
         '
         'RoutenSeparatToolStripMenuItem
         '
         Me.RoutenSeparatToolStripMenuItem.Name = "RoutenSeparatToolStripMenuItem"
-        Me.RoutenSeparatToolStripMenuItem.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
-            Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.RoutenSeparatToolStripMenuItem.Size = New System.Drawing.Size(234, 22)
-        Me.RoutenSeparatToolStripMenuItem.Text = "Routen separat..."
+        resources.ApplyResources(Me.RoutenSeparatToolStripMenuItem, "RoutenSeparatToolStripMenuItem")
         '
         'RoutenZusammenfassenToolStripMenuItem
         '
         Me.RoutenZusammenfassenToolStripMenuItem.Name = "RoutenZusammenfassenToolStripMenuItem"
-        Me.RoutenZusammenfassenToolStripMenuItem.Size = New System.Drawing.Size(234, 22)
-        Me.RoutenZusammenfassenToolStripMenuItem.Text = "Routen zusammenfassen..."
+        resources.ApplyResources(Me.RoutenZusammenfassenToolStripMenuItem, "RoutenZusammenfassenToolStripMenuItem")
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(213, 6)
+        resources.ApplyResources(Me.ToolStripMenuItem2, "ToolStripMenuItem2")
         '
         'SpeichernToolStripMenuItem
         '
         Me.SpeichernToolStripMenuItem.Name = "SpeichernToolStripMenuItem"
-        Me.SpeichernToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
-        Me.SpeichernToolStripMenuItem.Text = "Daten &speichern"
+        resources.ApplyResources(Me.SpeichernToolStripMenuItem, "SpeichernToolStripMenuItem")
         '
         'ToolStripMenuItem3
         '
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(213, 6)
+        resources.ApplyResources(Me.ToolStripMenuItem3, "ToolStripMenuItem3")
         '
         'QuitToolStripMenuItem
         '
         Me.QuitToolStripMenuItem.Name = "QuitToolStripMenuItem"
-        Me.QuitToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F4), System.Windows.Forms.Keys)
-        Me.QuitToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
-        Me.QuitToolStripMenuItem.Text = "B&eenden"
+        resources.ApplyResources(Me.QuitToolStripMenuItem, "QuitToolStripMenuItem")
         '
         'HelpToolStripMenuItem
         '
         Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HilfeAnzeigenToolStripMenuItem, Me.ÜberToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
-        Me.HelpToolStripMenuItem.Text = "&Hilfe"
+        resources.ApplyResources(Me.HelpToolStripMenuItem, "HelpToolStripMenuItem")
         '
         'HilfeAnzeigenToolStripMenuItem
         '
         Me.HilfeAnzeigenToolStripMenuItem.Name = "HilfeAnzeigenToolStripMenuItem"
-        Me.HilfeAnzeigenToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1
-        Me.HilfeAnzeigenToolStripMenuItem.Size = New System.Drawing.Size(212, 22)
-        Me.HilfeAnzeigenToolStripMenuItem.Text = "&Hilfe anzeigen (online)"
+        resources.ApplyResources(Me.HilfeAnzeigenToolStripMenuItem, "HilfeAnzeigenToolStripMenuItem")
         '
         'ÜberToolStripMenuItem
         '
         Me.ÜberToolStripMenuItem.Name = "ÜberToolStripMenuItem"
-        Me.ÜberToolStripMenuItem.Size = New System.Drawing.Size(212, 22)
-        Me.ÜberToolStripMenuItem.Text = "Über..."
+        resources.ApplyResources(Me.ÜberToolStripMenuItem, "ÜberToolStripMenuItem")
         '
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSSL_EscToAbort, Me.TSSL_Progress, Me.TSPB_Progress})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 617)
+        resources.ApplyResources(Me.StatusStrip1, "StatusStrip1")
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(896, 22)
-        Me.StatusStrip1.TabIndex = 3
-        Me.StatusStrip1.Text = "StatusStrip1"
         '
         'TSSL_EscToAbort
         '
         Me.TSSL_EscToAbort.Name = "TSSL_EscToAbort"
-        Me.TSSL_EscToAbort.Size = New System.Drawing.Size(718, 17)
+        resources.ApplyResources(Me.TSSL_EscToAbort, "TSSL_EscToAbort")
         Me.TSSL_EscToAbort.Spring = True
-        Me.TSSL_EscToAbort.Text = "Kartenerstellung läuft. Esc zum Abbrechen."
-        Me.TSSL_EscToAbort.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.TSSL_EscToAbort.Visible = False
         '
         'TSSL_Progress
         '
         Me.TSSL_Progress.Name = "TSSL_Progress"
-        Me.TSSL_Progress.Size = New System.Drawing.Size(61, 17)
-        Me.TSSL_Progress.Text = "Fortschritt"
-        Me.TSSL_Progress.Visible = False
+        resources.ApplyResources(Me.TSSL_Progress, "TSSL_Progress")
         '
         'TSPB_Progress
         '
         Me.TSPB_Progress.Name = "TSPB_Progress"
-        Me.TSPB_Progress.Size = New System.Drawing.Size(100, 16)
-        Me.TSPB_Progress.Visible = False
+        resources.ApplyResources(Me.TSPB_Progress, "TSPB_Progress")
         '
         'ZoomBindingSource
         '
@@ -845,21 +662,15 @@ Partial Class frm_Main
         '
         'frm_Main
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
+        resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
-        Me.ClientSize = New System.Drawing.Size(896, 639)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.StatusStrip1)
-        Me.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "frm_Main"
-        Me.Text = "Route Visualizer 0.1 beta"
-        Me.TabPage3.ResumeLayout(False)
         Me.SplitContainer3.Panel1.ResumeLayout(False)
         Me.SplitContainer3.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -872,7 +683,6 @@ Partial Class frm_Main
         CType(Me.ZoomDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayerBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ZoomBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage1.ResumeLayout(False)
         Me.SplitContainer2.Panel1.ResumeLayout(False)
         Me.SplitContainer2.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -898,6 +708,8 @@ Partial Class frm_Main
         Me.TableLayoutPanel4.PerformLayout()
         Me.GB_Preview.ResumeLayout(False)
         CType(Me.PB_Preview, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
@@ -964,8 +776,6 @@ Partial Class frm_Main
     Friend WithEvents ToolStripMenuItem1 As ToolStripSeparator
     Friend WithEvents ToolStripMenuItem2 As ToolStripSeparator
     Friend WithEvents QuitToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents Sortindex As DataGridViewTextBoxColumn
     Friend WithEvents TSSL_EscToAbort As ToolStripStatusLabel
     Friend WithEvents TSSL_Progress As ToolStripStatusLabel
     Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
@@ -979,11 +789,6 @@ Partial Class frm_Main
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents SplitContainer3 As SplitContainer
-    Friend WithEvents DataGridViewTextBoxColumnVisibility As DataGridViewCheckBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumnPath As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumnRouteLineWidth As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumnRouteColor As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumnRouteAlpha As DataGridViewTextBoxColumn
     Friend WithEvents CMS_DGV_Route As ContextMenuStrip
     Friend WithEvents AlleAuswählenToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AlleAbwählenToolStripMenuItem As ToolStripMenuItem
@@ -992,12 +797,19 @@ Partial Class frm_Main
     Friend WithEvents RoutenZusammenfassenToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem4 As ToolStripSeparator
     Friend WithEvents SpeicherortÖffnenToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents HilfeAnzeigenToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ÜberToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ZoomBindingSource1 As BindingSource
+    Friend WithEvents DataGridViewTextBoxColumnVisibility As DataGridViewCheckBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumnPath As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumnRouteLineWidth As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumnRouteColor As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumnRouteAlpha As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents Sortindex As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewComboBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
-    Friend WithEvents HilfeAnzeigenToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ÜberToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ZoomBindingSource1 As BindingSource
 End Class
