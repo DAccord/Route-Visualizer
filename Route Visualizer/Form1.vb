@@ -8,7 +8,6 @@ Public Class frm_Main
     Dim Coordinates As New List(Of Coordinate)
     Public Property NUD_RowFrom As Object
     Dim LayerDataView As DataView
-    Dim Log As New StringBuilder
     Dim TH As New Threading.Thread(AddressOf UpdatePreviewNew)
     Dim SaveOption As New SaveOptions
     Dim UpdateBackground As Boolean = True
@@ -64,7 +63,7 @@ Public Class frm_Main
         TSSL_EscToAbort.Visible = Not EnabledState
     End Sub
 
-    Public Function CreateLayerImage(ByVal ZR As ZoomRow, MinMaxTiles() As Point) As Image
+    Public Function CreateLayerImage(ByVal ZR As ZoomRow, MinMaxTiles() As Point, LogSB As StringBuilder) As Image
         Dim Result As Image = New Bitmap((MinMaxTiles(1).X - MinMaxTiles(0).X + 1) * ZR.Tilewidth, (MinMaxTiles(1).Y - MinMaxTiles(0).Y + 1) * ZR.Tileheight)
 
         Using g As Graphics = Graphics.FromImage(Result)
@@ -75,7 +74,7 @@ Public Class frm_Main
                     CurrentPath = CurrentPath.Replace("{R}", i.ToString)
                     CurrentPath = CurrentPath.Replace("{Z}", ZR.Zoomvalue.ToString)
                     If Not File.Exists(CurrentPath) Then
-                        Log.AppendLine(String.Format(My.Resources.Main_CouldntFindTile_Path, CurrentPath))
+                        LogSB.AppendLine(String.Format(My.Resources.Main_CouldntFindTile_Path, CurrentPath))
                         Continue For
                     End If
                     Using layer As New Bitmap(CurrentPath)
@@ -93,7 +92,7 @@ Public Class frm_Main
         Dim TilePen As New Pen(New SolidBrush(Color.Blue), 5)
         Dim CurrentZoomRow As ZoomRow
         Dim Cancel As Boolean = False
-        Log.Clear()
+        Dim Log As New StringBuilder
 
         Me.Invoke(Sub()
                       GUIEnabling(False)
@@ -171,7 +170,16 @@ Public Class frm_Main
         Dim cnt As Integer = -1
         For Each RR As RoutefileRow In RRs
             cnt += 1
-            Dim Res As List(Of Coordinate) = ImportCoordinatesFromFile(RR)
+            Dim Res As New List(Of Coordinate)
+            Try
+                Res = ImportCoordinatesFromFile(RR)
+            Catch ArgNullEx As ArgumentNullException
+                Log.AppendLine(String.Format(My.Resources.Main_PathNull, RR.ID))
+            Catch FNFEx As FileNotFoundException
+                Log.AppendLine(String.Format(My.Resources.Main_FileNotFound, RR.Path))
+            Catch ex As Exception
+                Log.AppendLine(String.Format(My.Resources.Main_ErrorWhileImporting, RR.Path) & Environment.NewLine & ex.Message & Environment.NewLine & ex.InnerException.ToString & Environment.NewLine & ex.InnerException.StackTrace)
+            End Try
             ReadCoordinates(cnt) = Res
             If Res.Count = 0 Then
                 Log.AppendLine(String.Format(My.Resources.Main_CouldntImportCoordinatesFromFile, RR.Path))
@@ -182,7 +190,7 @@ Public Class frm_Main
 
         If MyCoordinates.Count = 0 Then
             Log.AppendLine(My.Resources.Main_NoCoordinates)
-            WriteLog(Starttime)
+            WriteLog(Starttime, Log)
             Me.Invoke(Sub()
                           GUIEnabling(True)
                       End Sub)
@@ -220,7 +228,7 @@ Public Class frm_Main
             End If
 
             Using g As Graphics = Graphics.FromImage(Result)
-                Using Img As Image = CreateLayerImage(CurrentZoomRow, Tiles)
+                Using Img As Image = CreateLayerImage(CurrentZoomRow, Tiles, Log)
                     g.DrawImage(Img, 0, 0, Img.Width, Img.Height)
                 End Using
             End Using
@@ -311,7 +319,7 @@ Public Class frm_Main
                       GUIEnabling(True)
                   End Sub)
 
-        WriteLog(Starttime)
+        WriteLog(Starttime, Log)
 
         If Not SaveOption.Preview AndAlso Not SaveOption.SaveLayersSeparately AndAlso Not SaveOption.SaveRoutesSeparately Then
             If MessageBox.Show(My.Resources.Main_OpenResultFile, My.Resources.Main_OpenResultFile_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
@@ -324,11 +332,11 @@ Public Class frm_Main
         End If
     End Sub
 
-    Private Sub WriteLog(Starttime As DateTime)
-        If Log.ToString.Length <> 0 Then
-            Log.Insert(0, String.Format(My.Resources.Main_LogHeader & Environment.NewLine & Environment.NewLine, Starttime.ToShortDateString, Starttime.ToLongTimeString))
+    Private Sub WriteLog(Starttime As DateTime, LogSB As StringBuilder)
+        If LogSB.ToString.Length <> 0 Then
+            LogSB.Insert(0, String.Format(My.Resources.Main_LogHeader & Environment.NewLine & Environment.NewLine, Starttime.ToShortDateString, Starttime.ToLongTimeString))
             Using sw As StreamWriter = File.CreateText(Path.Combine(Application.StartupPath, "Log.txt"))
-                sw.Write(Log.ToString)
+                sw.Write(LogSB.ToString)
             End Using
             If MessageBox.Show(String.Format(My.Resources.Main_OpenLog, Path.Combine(Application.StartupPath, "Log.txt"), Environment.NewLine), My.Resources.Main_OpenLog_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
                 Process.Start(Path.Combine(Application.StartupPath, "Log.txt"))
@@ -341,12 +349,7 @@ Public Class frm_Main
         Dim Result As New List(Of Coordinate)
         Using FS As New FileStream(RR.Path, FileMode.Open)
             Dim info As New gpx.gpxType
-            Try
-                info = CType(ser.Deserialize(FS), gpx.gpxType)
-            Catch ex As Exception
-                Log.AppendLine(String.Format(My.Resources.Main_GPXDeserError, ex.GetType.ToString, RR.Path, ex.Message, Environment.NewLine, ex.InnerException, Environment.NewLine, ex.InnerException.StackTrace))
-                Return Result
-            End Try
+            info = CType(ser.Deserialize(FS), gpx.gpxType)
             Dim tracks() As gpx.trkType = info.trk
             For Each track As gpx.trkType In tracks
                 For Each seg As gpx.trksegType In track.trkseg
@@ -360,22 +363,29 @@ Public Class frm_Main
     End Function
 
     Public Function ImportCoordinatesFromFile(RR As RoutefileRow) As List(Of Coordinate)
+        If RR.IsPathNull Then
+            Throw New ArgumentNullException("RoutefileRow.Path", "The path is nothing in Route with ID " & RR.ID)
+        End If
+        If Not File.Exists(RR.Path) Then
+            Throw New FileNotFoundException("File not found during import of coordinates: ", RR.Path)
+        End If
         Dim Result As New List(Of Coordinate)
-        Select Case Path.GetExtension(RR.Path).ToLower
-            Case ".kml"
-                Result = ReadCoordinatesFromKML(RR)
-            Case ".gpx"
-                Result = ReadCoordinatesFromGPX(RR)
-        End Select
+        Try
+            Select Case Path.GetExtension(RR.Path).ToLower
+                Case ".kml"
+                    Result = ReadCoordinatesFromKML(RR)
+                Case ".gpx"
+                    Result = ReadCoordinatesFromGPX(RR)
+            End Select
+        Catch ex As Exception
+            Throw ex
+        End Try
         Return Result
     End Function
 
     Public Function ReadCoordinatesFromKML(RR As RoutefileRow) As List(Of Coordinate)
         Dim Result As New List(Of Coordinate)
         Dim enUS As Globalization.CultureInfo = New Globalization.CultureInfo("en-US")
-        If RR.IsPathNull OrElse Not File.Exists(RR.Path) Then
-            Return Result
-        End If
         Using r As StreamReader = File.OpenText(RR.Path)
             Dim Z As String
             Dim CRaw() As String

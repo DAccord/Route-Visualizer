@@ -219,4 +219,13 @@
   <data name="About_GithubLinkToReadme" xml:space="preserve">
     <value>https://github.com/DAccord/Route-Visualizer/blob/master/README.md</value>
   </data>
+  <data name="Main_ErrorWhileImporting" xml:space="preserve">
+    <value>Beim Versuch Koordinaten aus der Datei {0} zu laden trat folgender Fehler auf:</value>
+  </data>
+  <data name="Main_FileNotFound" xml:space="preserve">
+    <value>Die folgende Datei konnte nicht gefunden werden: {0}.</value>
+  </data>
+  <data name="Main_PathNull" xml:space="preserve">
+    <value>Der Pfad der Route mit ID {0} ist Nothing.</value>
+  </data>
 </root>
