@@ -16,7 +16,7 @@ Die deutsche Version dieses Dokuments gibt es [hier](https://github.com/DAccord/
 *Route Visualizer* was tested on Windows 10. However, the application should run from Windows Vista onwards (if the .NET Framework 4 is installed).
 
 Screenshot of the application:  
-![Screenshot](https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Screenshot.png)
+![Screenshot]https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Screenshot_EN.png
 
 Example output as <tt>jpg</tt> file (zoom level 8 with layers Relief, Water and Admin from [maps-for-free.com](http://maps-for-free.com/)):
 ![Beispielbild](https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Testbild.jpg)
