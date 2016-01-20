@@ -1,5 +1,9 @@
 # Route Visualizer
 
+Die deutsche Version dieses Dokuments gibt es [hier](https://github.com/DAccord/Route-Visualizer/blob/master/README.md).
+
+***
+
 *Route Visualizer* will be available in english soon.
 
 *Route Visualizer* is a program to plot coordinates from <tt>kml</tt> or <tt>gpx</tt> files (implemented in v0.2.0-beta) onto a map. This results in a highly resolved image file.  
