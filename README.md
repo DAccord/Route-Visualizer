@@ -1,6 +1,6 @@
 # Route Visualizer
 
-An english version of this document can be found [here](https://github.com/DAccord/Route-Visualizer/blob/master/Readme%20EN.md).
+An english version of this document can be found [here](https://github.com/DAccord/Route-Visualizer/blob/master/README_EN.md).
 
 ***
 
