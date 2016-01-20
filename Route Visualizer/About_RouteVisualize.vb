@@ -8,7 +8,7 @@
         Else
             ApplicationTitle = System.IO.Path.GetFileNameWithoutExtension(My.Application.Info.AssemblyName)
         End If
-        Me.Text = String.Format("Über {0}", ApplicationTitle)
+        Me.Text = String.Format(Me.Text & ApplicationTitle)
         ' Initialize all of the text displayed on the About Box.
         ' TODO: Customize the application's assembly information in the "Application" pane of the project 
         '    properties dialog (under the "Project" menu).
@@ -19,7 +19,7 @@
             Me.LabelVersion.Text = "Route Visualizer v" & String.Format("{0}.{1}.{2}", My.Application.Info.Version.Major.ToString, My.Application.Info.Version.Minor, My.Application.Info.Version.Build)
         End If
         Me.LabelCopyright.Text = My.Application.Info.Copyright
-        Me.L_Description.Text = My.Application.Info.Description
+        Me.L_Description.Text = My.Resources.Assembly_Description
     End Sub
 
     Private Sub OKButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OKButton.Click
@@ -27,6 +27,6 @@
     End Sub
 
     Private Sub LL_Github_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LL_Github.LinkClicked
-        Process.Start("https://github.com/DAccord/Route-Visualizer")
+        Process.Start(My.Resources.About_GithubLinkToReadme)
     End Sub
 End Class

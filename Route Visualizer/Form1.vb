@@ -14,6 +14,14 @@ Public Class frm_Main
     Dim UpdateBackground As Boolean = True
     Dim DistZooms As List(Of Integer)
 
+    Public Sub New()
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
+
     Private Sub frm_Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If File.Exists(Path.Combine(Application.StartupPath, "Data.xml")) Then
             Data.ReadXml(Path.Combine(Application.StartupPath, "Data.xml"))
@@ -67,7 +75,7 @@ Public Class frm_Main
                     CurrentPath = CurrentPath.Replace("{R}", i.ToString)
                     CurrentPath = CurrentPath.Replace("{Z}", ZR.Zoomvalue.ToString)
                     If Not File.Exists(CurrentPath) Then
-                        Log.AppendLine("Konnte die Kachel " & CurrentPath & " nicht finden.")
+                        Log.AppendLine(String.Format(My.Resources.Main_CouldntFindTile_Path, CurrentPath))
                         Continue For
                     End If
                     Using layer As New Bitmap(CurrentPath)
@@ -94,7 +102,7 @@ Public Class frm_Main
         Dim Zoom As Integer
         Me.Invoke(Sub()
                       If CMB_Zoom.SelectedItem Is Nothing AndAlso Not Cancel Then
-                          MessageBox.Show("Wähle eine Zoomstufe bevor du mit der Kartenerstellung beginnst!", "Zoomstufe wählen", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                          MessageBox.Show(My.Resources.Main_SelectZoom, My.Resources.Main_SelectZoom_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
                           Cancel = True
                       End If
                       If Not Cancel Then
@@ -104,14 +112,14 @@ Public Class frm_Main
 
         Me.Invoke(Sub()
                       If CLB_Layers.CheckedItems.Count = 0 AndAlso Not Cancel Then
-                          MessageBox.Show("Wähle mindestens eine Ebene aus bevor du mit der Kartenerstellung beginnst!", "Ebene wählen", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                          MessageBox.Show(My.Resources.Main_SelectLayer, My.Resources.Main_SelectZoom_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
                           Cancel = True
                       End If
                   End Sub)
 
         Me.Invoke(Sub()
                       If Data.Routefile.Rows.Count = 0 AndAlso Not Cancel Then
-                          MessageBox.Show("Importiere mindestens eine kml-Datei bevor du mit der Kartenerstellung beginnst!", "kml-Datei importieren", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                          MessageBox.Show(My.Resources.Main_ImportFile, My.Resources.Main_ImportFile_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
                           Cancel = True
                       End If
                   End Sub)
@@ -153,8 +161,7 @@ Public Class frm_Main
         Dim MyCoordinates As New List(Of Coordinate)
         Dim RRs() As RoutefileRow = CType(Data.Routefile.Select("Visibility = " & True & " AND RouteLineWidth > 0"), RoutefileRow())
         If RRs.Length = 0 Then
-            MessageBox.Show("Es gibt keine Routendateien, die gezeichnet werden können. Das kann folgende Gründe haben: " & Environment.NewLine & "- Die Sichtbarkeit aller Routen ist deaktiviert." &
-                            Environment.NewLine & "- Keine Route hat eine Linienbreite größer als 0.", "Keine Routendateien", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show(String.Format(My.Resources.Main_NoRoutesToPlot, Environment.NewLine), My.Resources.Main_NoRoutesToPlot_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Me.Invoke(Sub()
                           GUIEnabling(True)
                       End Sub)
@@ -167,14 +174,14 @@ Public Class frm_Main
             Dim Res As List(Of Coordinate) = ImportCoordinatesFromFile(RR)
             ReadCoordinates(cnt) = Res
             If Res.Count = 0 Then
-                Log.AppendLine(String.Format("Aus der Datei {0} konnten keine Koordinaten importiert werden.", RR.Path))
+                Log.AppendLine(String.Format(My.Resources.Main_CouldntImportCoordinatesFromFile, RR.Path))
                 Continue For
             End If
             MyCoordinates.AddRange(Res)
         Next
 
         If MyCoordinates.Count = 0 Then
-            Log.AppendLine(String.Format("Aus keiner der gewählten Dateien konnten Koordinaten importiert werden. Kartenerstellung abgebrochen."))
+            Log.AppendLine(My.Resources.Main_NoCoordinates)
             WriteLog(Starttime)
             Me.Invoke(Sub()
                           GUIEnabling(True)
@@ -196,7 +203,7 @@ Public Class frm_Main
             Dim CurrentLayer As LayerRow = CType(DRV.Row, LayerRow)
             Dim ZRs() As ZoomRow = CType(Data.Zoom.Select("LayerID = " & CurrentLayer.ID & " And Zoomvalue = " & Zoom), ZoomRow())
             If ZRs.Length = 0 Then
-                Log.AppendLine(String.Format("Es konnten keine Kacheln für die Ebene {0} bei Zoom-Stufe {1} gefunden werden.", CurrentLayer.Name, Zoom))
+                Log.AppendLine(String.Format(My.Resources.Main_NoTilesLayerZoom, CurrentLayer.Name, Zoom))
                 Continue For
             End If
             CurrentZoomRow = ZRs(0)
@@ -283,7 +290,7 @@ Public Class frm_Main
         If SaveOption.Preview Then
             Me.Invoke(Sub()
                           PB_Preview.Image = Result
-                          GB_Preview.Text = "Vorschau (Doppelkick für Originalgröße (" & Result.Width & " x " & Result.Height & "))"
+                          'GB_Preview.Text = "Vorschau (Doppelkick für Originalgröße (" & Result.Width & " x " & Result.Height & "))"
                           GUIEnabling(True)
                       End Sub)
         ElseIf Not SaveOption.Preview AndAlso Not SaveOption.SaveLayersSeparately Then
@@ -307,11 +314,11 @@ Public Class frm_Main
         WriteLog(Starttime)
 
         If Not SaveOption.Preview AndAlso Not SaveOption.SaveLayersSeparately AndAlso Not SaveOption.SaveRoutesSeparately Then
-            If MessageBox.Show("Bilderstellung abgeschlossen. Möchtest du die Datei öffnen?", "Datei öffnen?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            If MessageBox.Show(My.Resources.Main_OpenResultFile, My.Resources.Main_OpenResultFile_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                 Process.Start(SFD_SaveImage.FileName)
             End If
         ElseIf Not SaveOption.Preview Then
-            If MessageBox.Show("Bilderstellung abgeschlossen. Möchtest du den Zielordner öffnen?", "Ordner öffnen?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            If MessageBox.Show(My.Resources.Main_OpenResultDirectory, My.Resources.Main_OpenResultDirectory_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                 Process.Start(FBD_SaveLayersSeperately.SelectedPath)
             End If
         End If
@@ -319,12 +326,11 @@ Public Class frm_Main
 
     Private Sub WriteLog(Starttime As DateTime)
         If Log.ToString.Length <> 0 Then
-            Log.Insert(0, String.Format("Aufgetretene Fehler während der Bilderzeugung am {0} um {1}:" & Environment.NewLine & Environment.NewLine, Starttime.ToShortDateString, Starttime.ToLongTimeString))
+            Log.Insert(0, String.Format(My.Resources.Main_LogHeader & Environment.NewLine & Environment.NewLine, Starttime.ToShortDateString, Starttime.ToLongTimeString))
             Using sw As StreamWriter = File.CreateText(Path.Combine(Application.StartupPath, "Log.txt"))
                 sw.Write(Log.ToString)
             End Using
-            If MessageBox.Show("Während der Bilderzeugung sind Fehler aufgetreten. Diese sind in der Log-Datei verzeichnet (" & Path.Combine(Application.StartupPath, "Log.txt") & ")." & Environment.NewLine &
-                            "Möchtest du diese Datei jetzt öffnen?", "Fehler während der Bilderzeugung", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+            If MessageBox.Show(String.Format(My.Resources.Main_OpenLog, Path.Combine(Application.StartupPath, "Log.txt"), Environment.NewLine), My.Resources.Main_OpenLog_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
                 Process.Start(Path.Combine(Application.StartupPath, "Log.txt"))
             End If
         End If
@@ -338,7 +344,7 @@ Public Class frm_Main
             Try
                 info = CType(ser.Deserialize(FS), gpx.gpxType)
             Catch ex As Exception
-                Log.AppendLine(ex.GetType.ToString & " beim Einlesen der Datei " & RR.Path & ": " & ex.Message & Environment.NewLine() & ex.InnerException.ToString & Environment.NewLine & ex.InnerException.StackTrace)
+                Log.AppendLine(String.Format(My.Resources.Main_GPXDeserError, ex.GetType.ToString, RR.Path, ex.Message, Environment.NewLine, ex.InnerException, Environment.NewLine, ex.InnerException.StackTrace))
                 Return Result
             End Try
             Dim tracks() As gpx.trkType = info.trk
@@ -436,7 +442,7 @@ Public Class frm_Main
 
     Private Sub frm_Main_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If TH.IsAlive() Then
-            If MessageBox.Show("Die Erstellung einer Karte ist noch nicht abgeschlossen. Wirklich beenden?", "Beenden?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
+            If MessageBox.Show(My.Resources.Main_CancelMapCreation, My.Resources.Main_CancelMapCreation_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
                 e.Cancel = True
                 Exit Sub
             Else
@@ -448,7 +454,7 @@ Public Class frm_Main
             Try
                 File.Delete(Path.Combine(Application.StartupPath, "TempBackground.png"))
             Catch ex As Exception
-                MessageBox.Show("Konnte die Datei " & Path.Combine(Application.StartupPath, "TempBackground.png") & " nicht löschen. Du kannst sie manuell löschen, wenn du möchtest.")
+                MessageBox.Show(String.Format(My.Resources.Main_CouldntDeleteTemp, Path.Combine(Application.StartupPath, "TempBackground.png")))
             End Try
         End If
     End Sub
@@ -467,11 +473,11 @@ Public Class frm_Main
 
     Private Sub ZoomDataGridView_DataError(sender As Object, e As DataGridViewDataErrorEventArgs) Handles ZoomDataGridView.DataError
         If TypeOf (e.Exception) Is NoNullAllowedException Then
-            If MessageBox.Show("Alle Spalten müssen ausgefüllt werden.", "Fehlender Wert", MessageBoxButtons.OKCancel, MessageBoxIcon.Error) = DialogResult.OK Then
+            If MessageBox.Show(My.Resources.Main_AllColumnsHaveToBeFilled, My.Resources.Main_AllColumnsHaveToBeFilled_Title, MessageBoxButtons.OKCancel, MessageBoxIcon.Error) = DialogResult.OK Then
                 e.Cancel = True
             End If
         ElseIf TypeOf (e.Exception) Is FormatException Then
-            If MessageBox.Show("Falsches Eingabeformat. Bitte In den Spalten Zoom, Tile - Breite und Tile-Höhe nur numerische Werte eingeben.", "Falsches Format", MessageBoxButtons.OKCancel, MessageBoxIcon.Error) = DialogResult.OK Then
+            If MessageBox.Show(My.Resources.Main_WrongInputFormat, My.Resources.Main_WrongInputFormat_Title, MessageBoxButtons.OKCancel, MessageBoxIcon.Error) = DialogResult.OK Then
                 e.Cancel = True
             End If
         End If
@@ -555,9 +561,6 @@ Public Class frm_Main
     End Sub
 
     Private Sub frm_Main_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
-        'If e.KeyData = Keys.F5 Then
-        '    UpdatePreviewToolStripMenuItem.PerformClick()
-        'Else
         If e.KeyCode = Keys.Escape AndAlso TH.ThreadState = Threading.ThreadState.Running Then
             TH.Abort()
             GUIEnabling(True)
@@ -572,7 +575,7 @@ Public Class frm_Main
         If DGV_Route.Columns(e.ColumnIndex).Name = "DataGridViewTextBoxColumnRouteAlpha" OrElse DGV_Route.Columns(e.ColumnIndex).Name = "DataGridViewTextBoxColumnSymbolAlpha" Then
             Dim Nr As Integer
             If e.FormattedValue Is Nothing OrElse e.FormattedValue.ToString = "" Then
-                MessageBox.Show("Der Wert muss zwischen 0 (minimale Deckkraft) und 255 (maximale Deckkraft) liegen.")
+                MessageBox.Show(String.Format(My.Resources.Main_ValueBetween, 0, 255))
                 e.Cancel = True
                 Exit Sub
             End If
@@ -581,7 +584,7 @@ Public Class frm_Main
                 e.Cancel = True
             Else
                 If CInt(e.FormattedValue.ToString) > 255 OrElse CInt(e.FormattedValue.ToString) < 0 Then
-                    MessageBox.Show("Der Wert muss zwischen 0 (minimale Deckkraft) und 255 (maximale Deckkraft) liegen.")
+                    MessageBox.Show(String.Format(My.Resources.Main_ValueBetween, 0, 255))
                     e.Cancel = True
                 End If
             End If
@@ -591,7 +594,7 @@ Public Class frm_Main
             End If
             Dim StrSpl() As String = e.FormattedValue.ToString.Replace(" ", "").Split(CType(",", Char()))
             If StrSpl.Length <> 3 Then
-                MessageBox.Show("Der eingegebene Farbwert muss folgendermaßen aufgebaut sein: R, G, B.")
+                MessageBox.Show(My.Resources.Main_EnteredColorValue)
                 e.Cancel = True
                 Exit Sub
             End If
@@ -599,12 +602,12 @@ Public Class frm_Main
             Dim G As Integer
             Dim B As Integer
             If Not Integer.TryParse(StrSpl(0), R) OrElse Not Integer.TryParse(StrSpl(1), G) OrElse Not Integer.TryParse(StrSpl(2), B) Then
-                MessageBox.Show("Bitte Zahlen eingeben.")
+                MessageBox.Show(My.Resources.Main_EnterNumbers)
                 e.Cancel = True
                 Exit Sub
             End If
             If R < 0 OrElse R > 255 OrElse G < 0 OrElse G > 255 OrElse B < 0 OrElse B > 255 Then
-                MessageBox.Show("Die Zahlen müssen zwischen 0 und 255 liegen.")
+                MessageBox.Show(String.Format(My.Resources.Main_NumbersBetween, 0, 255))
                 e.Cancel = True
                 Exit Sub
             End If
@@ -752,11 +755,11 @@ Public Class frm_Main
 
     Private Sub LayerDataGridView_DataError(sender As Object, e As DataGridViewDataErrorEventArgs) Handles LayerDataGridView.DataError
         If TypeOf (e.Exception) Is NoNullAllowedException Then
-            If MessageBox.Show("Alle Spalten müssen ausgefüllt werden.", "Fehlender Wert", MessageBoxButtons.OKCancel, MessageBoxIcon.Error) = DialogResult.OK Then
+            If MessageBox.Show(My.Resources.Main_AllColumnsHaveToBeFilled, My.Resources.Main_AllColumnsHaveToBeFilled_Title, MessageBoxButtons.OKCancel, MessageBoxIcon.Error) = DialogResult.OK Then
                 e.Cancel = True
             End If
         ElseIf TypeOf (e.Exception) Is FormatException Then
-            If MessageBox.Show("Falsches Eingabeformat. Bitte in der Spalte Sortierindex nur numerische Werte eingeben.", "Falsches Format", MessageBoxButtons.OKCancel, MessageBoxIcon.Error) = DialogResult.OK Then
+            If MessageBox.Show(My.Resources.Main_WrongInputFormat_2, My.Resources.Main_WrongInputFormat_Title, MessageBoxButtons.OKCancel, MessageBoxIcon.Error) = DialogResult.OK Then
                 e.Cancel = True
             End If
         End If

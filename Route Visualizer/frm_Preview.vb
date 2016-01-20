@@ -14,7 +14,7 @@
         PB_Preview.Height = img.Height
         OrigSize = New Size(img.Width, img.Height)
         PB_Preview.Image = img
-        L_ImgSize.Text = "Bildgröße (B x H): " & OrigSize.Width & " px x " & OrigSize.Height & " px"
+        L_ImgSize.Text = String.Format(L_ImgSize.Text, OrigSize.Width, OrigSize.Height)
     End Sub
 
     Private Sub PB_Preview_MouseDown(sender As Object, e As MouseEventArgs) Handles PB_Preview.MouseDown

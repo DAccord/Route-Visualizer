@@ -118,105 +118,105 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Assembly_Description" xml:space="preserve">
-    <value>Route Visualizer is a program to plot coordinates from kml or gpx files onto a map. This results in a highly resolved image file.</value>
+    <value>Route Visualizer ist ein Programm um Koordinaten aus kml- und gpx-Dateien auf eine Karte zu zeichnen. Das Resultat ist eine hochaufgelöste Bilddatei.</value>
   </data>
   <data name="Main_AllColumnsHaveToBeFilled" xml:space="preserve">
-    <value>All columns have to be filled out.</value>
+    <value>Alle Spalten müssen ausgefüllt werden.</value>
   </data>
   <data name="Main_AllColumnsHaveToBeFilled_Title" xml:space="preserve">
-    <value>Missing value</value>
+    <value>Fehlender Wert</value>
   </data>
   <data name="Main_CancelMapCreation" xml:space="preserve">
-    <value>Creation of a map is still in progress. Do you really want to exit?</value>
+    <value>Die Erstellung einer Karte ist noch nicht abgeschlossen. Wirklich beenden?</value>
   </data>
   <data name="Main_CancelMapCreation_Title" xml:space="preserve">
-    <value>Exit application?</value>
+    <value>Anwendung beenden?</value>
   </data>
   <data name="Main_CouldntDeleteTemp" xml:space="preserve">
-    <value>Could not delete the temporary file {0}. If you want you can delete it manually.</value>
+    <value>Konnte die temporäre Datei {0} nicht löschen. Du kannst sie manuell löschen, wenn du möchtest.</value>
   </data>
   <data name="Main_CouldntFindTile_Path" xml:space="preserve">
-    <value>Couldn't find tile {0}.</value>
+    <value>Konnte die Kachel {0} nicht finden.</value>
   </data>
   <data name="Main_CouldntImportCoordinatesFromFile" xml:space="preserve">
-    <value>Could not import coordinates from file {0}.</value>
+    <value>Aus der Datei {0} konnten keine Koordinaten importiert werden.</value>
   </data>
   <data name="Main_EnteredColorValue" xml:space="preserve">
-    <value>The entered colour value must have the following format: R, G, B</value>
+    <value>Der eingegebene Farbwert muss folgendermaßen aufgebaut sein: R, G, B</value>
   </data>
   <data name="Main_EnterNumbers" xml:space="preserve">
-    <value>Please enter numbers.</value>
+    <value>Bitte Zahlen eingeben.</value>
   </data>
   <data name="Main_GPXDeserError" xml:space="preserve">
-    <value>{0} during import of file {1}: {2}{3}{4}{5}{6}</value>
+    <value>{0} beim Einlesen der Datei {1}: {2}{3}{4}{5}{6}</value>
   </data>
   <data name="Main_ImportFile" xml:space="preserve">
-    <value>Import at least one route file before producing a map.</value>
+    <value>Wähle mindestens eine Ebene aus bevor du mit der Kartenerstellung beginnst!</value>
   </data>
-  <data name="Main_ImportFile_Title" xml:space="preserve">
-    <value>Import route file</value>
+  <data name="Main_ImportRoute_Title" xml:space="preserve">
+    <value>Routen-Datei importieren</value>
   </data>
   <data name="Main_LogHeader" xml:space="preserve">
-    <value>Errors during image creation on {0} at {1}:</value>
+    <value>Aufgetretene Fehler während der Bilderzeugung am {0} um {1}:</value>
   </data>
   <data name="Main_NoCoordinates" xml:space="preserve">
-    <value>No coordinates could be imported from any of the selected files. Cancelled producing the map.</value>
+    <value>Aus keiner der gewählten Dateien konnten Koordinaten importiert werden. Kartenerstellung abgebrochen.</value>
   </data>
   <data name="Main_NoRoutesToPlot" xml:space="preserve">
-    <value>There are no route files to plot. Possible reasons for that:{0}- The visibility of all route files is off.{0}- No route has a line width larger than zero.</value>
+    <value>Es gibt keine Routendateien, die gezeichnet werden können. Das kann folgende Gründe haben:{0}- Die Sichtbarkeit aller Routen ist deaktiviert.{0}- Keine Route hat eine Linienbreite größer als 0.</value>
   </data>
   <data name="Main_NoRoutesToPlot_Title" xml:space="preserve">
-    <value>No route files to plot</value>
+    <value>Keine Routendateien</value>
   </data>
   <data name="Main_NoTilesLayerZoom" xml:space="preserve">
-    <value>No tiles were found for layer {0} at zoom level {2}.</value>
+    <value>Es konnten keine Kacheln für die Ebene {0} bei Zoom-Stufe {1} gefunden werden.</value>
   </data>
   <data name="Main_NumbersBetween" xml:space="preserve">
-    <value>The numbers have to be within {0} and {1}.</value>
+    <value>Die Zahlen müssen zwischen {0} und {1} liegen.</value>
   </data>
   <data name="Main_OpenLog" xml:space="preserve">
-    <value>Errors occured during image creation which were written to the log file {0}.{1}Do you want to open this file now?</value>
+    <value>Während der Bilderzeugung sind Fehler aufgetreten. Diese sind in der Log-Datei ({0}) verzeichnet.{1}Möchtest du diese Datei jetzt öffnen?</value>
   </data>
   <data name="Main_OpenLog_Title" xml:space="preserve">
-    <value>Errors during image creation</value>
+    <value>Fehler während der Bilderzeugung</value>
   </data>
   <data name="Main_OpenResultDirectory" xml:space="preserve">
-    <value>Finished image creation. Do you want to open the result directory?</value>
+    <value>Bilderstellung abgeschlossen. Möchtest du den Zielordner öffnen?</value>
   </data>
   <data name="Main_OpenResultDirectory_Title" xml:space="preserve">
-    <value>Open directory?</value>
+    <value>Ordner öffnen?</value>
   </data>
   <data name="Main_OpenResultFile" xml:space="preserve">
-    <value>Finished image creation. Do you want to open the resulting file?</value>
+    <value>Bilderstellung abgeschlossen. Möchtest du die Datei öffnen?</value>
   </data>
   <data name="Main_OpenResultFile_Title" xml:space="preserve">
-    <value>Open file?</value>
+    <value>Datei öffnen?</value>
   </data>
   <data name="Main_SelectLayer" xml:space="preserve">
-    <value>Select at least one layer before producing a map.</value>
+    <value>Importiere mindestens eine Routen-Datei bevor du mit der Kartenerstellung beginnst!</value>
   </data>
   <data name="Main_SelectLayer_Title" xml:space="preserve">
-    <value>Select layer</value>
+    <value>Ebene wählen</value>
   </data>
   <data name="Main_SelectZoom" xml:space="preserve">
-    <value>Select a zoom value before producing a map.</value>
+    <value>Wähle eine Zoomstufe bevor du mit der Kartenerstellung beginnst!</value>
   </data>
   <data name="Main_SelectZoom_Title" xml:space="preserve">
-    <value>Select zoom value</value>
+    <value>Zoomstufe wählen</value>
   </data>
   <data name="Main_ValueBetween" xml:space="preserve">
-    <value>The value has to be within {0} and {1}.</value>
+    <value>Der Wert muss zwischen {0} und {1} liegen.</value>
   </data>
   <data name="Main_WrongInputFormat" xml:space="preserve">
-    <value>Values in the columns zoom, tile width and tile height have to be numeric.</value>
+    <value>Bitte in den Spalten Zoom, Tile - Breite und Tile-Höhe nur numerische Werte eingeben.</value>
   </data>
   <data name="Main_WrongInputFormat_2" xml:space="preserve">
-    <value>The value in the sort index column has to be numeric.</value>
+    <value>Bitte in der Spalte Sortierindex nur numerische Werte eingeben.</value>
   </data>
   <data name="Main_WrongInputFormat_Title" xml:space="preserve">
-    <value>Wrong input format</value>
+    <value>Falsches Eingabeformat</value>
   </data>
   <data name="About_GithubLinkToReadme" xml:space="preserve">
-    <value>https://github.com/DAccord/Route-Visualizer/blob/master/README_EN.md</value>
+    <value>https://github.com/DAccord/Route-Visualizer/blob/master/README.md</value>
   </data>
 </root>

@@ -1,4 +1,5 @@
-﻿Imports System
+﻿Imports System.Resources
+Imports System
 Imports System.Reflection
 Imports System.Runtime.InteropServices
 
@@ -12,7 +13,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("Route Visualizer ist ein Programm um Koordinaten aus kml- und gpx-Dateien auf eine Karte zu zeichnen. Das Resultat ist eine hochaufgelöste Bilddatei.")>
 <Assembly: AssemblyCompany("")>
 <Assembly: AssemblyProduct("Route Visualizer")>
-<Assembly: AssemblyCopyright("Copyright © DAccord 2015")>
+<Assembly: AssemblyCopyright("Copyright © DAccord 2015/2016")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
@@ -33,3 +34,4 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyVersion("0.2.0.0")>
 <Assembly: AssemblyFileVersion("0.2.0.0")>
+<Assembly: NeutralResourcesLanguage("en-GB")>
