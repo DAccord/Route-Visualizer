@@ -142,8 +142,9 @@ Imports Route_Visualizer.Data
         ZR.Zoomvalue = 9
 
         Dim MinMax() As Point = {New Point(1, 128), New Point(3, 129)}
+        Dim LogSB As New StringBuilder
 
-        Dim bmp = RV.CreateLayerImage(ZR, MinMax)
+        Dim bmp = RV.CreateLayerImage(ZR, MinMax, LogSB)
         bmp.Save("Result.jpg", Imaging.ImageFormat.Jpeg)
         Dim MD As New MD5CryptoServiceProvider
         Using FS As New FileStream("Result.jpg", FileMode.Open)

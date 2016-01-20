@@ -160,6 +160,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to The following error occured while trying to import coordinates from {0}:.
+        '''</summary>
+        Friend ReadOnly Property Main_ErrorWhileImporting() As String
+            Get
+                Return ResourceManager.GetString("Main_ErrorWhileImporting", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to The following file could not be found: {0}..
+        '''</summary>
+        Friend ReadOnly Property Main_FileNotFound() As String
+            Get
+                Return ResourceManager.GetString("Main_FileNotFound", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to {0} during import of file {1}: {2}{3}{4}{5}{6}.
         '''</summary>
         Friend ReadOnly Property Main_GPXDeserError() As String
@@ -291,6 +309,15 @@ Namespace My.Resources
         Friend ReadOnly Property Main_OpenResultFile_Title() As String
             Get
                 Return ResourceManager.GetString("Main_OpenResultFile_Title", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to The path of the route with ID {0} is Nothing..
+        '''</summary>
+        Friend ReadOnly Property Main_PathNull() As String
+            Get
+                Return ResourceManager.GetString("Main_PathNull", resourceCulture)
             End Get
         End Property
         
