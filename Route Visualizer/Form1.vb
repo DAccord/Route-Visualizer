@@ -315,6 +315,7 @@ Public Class frm_Main
                     Result.Save(SFD_SaveImage.FileName, Imaging.ImageFormat.Tiff)
             End Select
         End If
+
         Me.Invoke(Sub()
                       GUIEnabling(True)
                   End Sub)
@@ -426,7 +427,7 @@ Public Class frm_Main
         Return Result
     End Function
 
-    Private Sub NUD_AdditionalTilesNorth_ValueChanged(sender As Object, e As EventArgs) Handles NUD_AdditionalTilesNorth.ValueChanged, NUD_AdditionalTilesWest.ValueChanged, NUD_AdditionalTilesEast.ValueChanged, NUD_AdditionalTilesSouth.ValueChanged, CMB_Zoom.SelectedIndexChanged
+    Private Sub NUD_AdditionalTilesNorth_ValueChanged(sender As Object, e As EventArgs) Handles NUD_AdditionalTilesNorth.ValueChanged, NUD_AdditionalTilesWest.ValueChanged, NUD_AdditionalTilesEast.ValueChanged, NUD_AdditionalTilesSouth.ValueChanged
         UpdateBackground = True
     End Sub
 
@@ -858,6 +859,10 @@ Public Class frm_Main
                 CMB_Zoom.SelectedItem = OldSelectedValue
             End If
         End If
+    End Sub
+
+    Private Sub CMB_Zoom_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_Zoom.SelectedIndexChanged
+        UpdateBackground = True
     End Sub
 End Class
 

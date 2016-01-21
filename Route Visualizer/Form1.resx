@@ -150,7 +150,7 @@
     <value>3, 23</value>
   </data>
   <data name="LayerDataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>876, 250</value>
+    <value>876, 244</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="LayerDataGridView.TabIndex" type="System.Int32, mscorlib">
@@ -175,7 +175,7 @@
     <value>0, 0</value>
   </data>
   <data name="GroupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>882, 276</value>
+    <value>882, 270</value>
   </data>
   <data name="GroupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -247,7 +247,7 @@
     <value>3, 23</value>
   </data>
   <data name="ZoomDataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>876, 248</value>
+    <value>876, 245</value>
   </data>
   <data name="ZoomDataGridView.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -271,7 +271,7 @@
     <value>0, 0</value>
   </data>
   <data name="GroupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>882, 274</value>
+    <value>882, 271</value>
   </data>
   <data name="GroupBox2.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -304,10 +304,10 @@
     <value>1</value>
   </data>
   <data name="SplitContainer3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>882, 554</value>
+    <value>882, 545</value>
   </data>
   <data name="SplitContainer3.SplitterDistance" type="System.Int32, mscorlib">
-    <value>276</value>
+    <value>270</value>
   </data>
   <data name="SplitContainer3.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -494,6 +494,9 @@
   </data>
   <data name="TableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="TLP_Tiles.ColumnCount" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="TableLayoutPanel3.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
@@ -742,7 +745,7 @@
     <value>7</value>
   </data>
   <data name="TableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 242</value>
+    <value>185, 233</value>
   </data>
   <data name="TableLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -760,19 +763,19 @@
     <value>0</value>
   </data>
   <data name="TableLayoutPanel3.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="NUD_AdditionalTilesSouth" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="NUD_AdditionalTilesWest" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="NUD_AdditionalTilesEast" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="NUD_AdditionalTilesNorth" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Label2" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Label3" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="Label4" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Label5" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Btn_ResetAdditionalTiles" Row="6" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33,33332,Percent,33,33334,Percent,33,33334" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="NUD_AdditionalTilesSouth" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="NUD_AdditionalTilesWest" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="NUD_AdditionalTilesEast" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="NUD_AdditionalTilesNorth" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Label2" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Label3" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="Label4" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Label5" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Btn_ResetAdditionalTiles" Row="6" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33,33332,Percent,33,33334,Percent,33,33334" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="GB_AdditionalTiles.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="GB_AdditionalTiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>195, 0</value>
+    <value>2, 0</value>
   </data>
   <data name="GB_AdditionalTiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 0, 0, 0</value>
   </data>
   <data name="GB_AdditionalTiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 268</value>
+    <value>191, 259</value>
   </data>
   <data name="GB_AdditionalTiles.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -787,10 +790,43 @@
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;GB_AdditionalTiles.Parent" xml:space="preserve">
-    <value>TableLayoutPanel1</value>
+    <value>TLP_Tiles</value>
   </data>
   <data name="&gt;&gt;GB_AdditionalTiles.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="TLP_Tiles.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="TLP_Tiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>193, 0</value>
+  </data>
+  <data name="TLP_Tiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="TLP_Tiles.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="TLP_Tiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>193, 259</value>
+  </data>
+  <data name="TLP_Tiles.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;TLP_Tiles.Name" xml:space="preserve">
+    <value>TLP_Tiles</value>
+  </data>
+  <data name="&gt;&gt;TLP_Tiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TLP_Tiles.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;TLP_Tiles.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TLP_Tiles.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="GB_AdditionalTiles" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="TableLayoutPanel4.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
@@ -799,7 +835,7 @@
     <value>Fill</value>
   </data>
   <data name="CMB_Zoom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>61, 218</value>
+    <value>61, 202</value>
   </data>
   <data name="CMB_Zoom.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 28</value>
@@ -826,7 +862,7 @@
     <value>True</value>
   </data>
   <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 218</value>
+    <value>3, 206</value>
   </data>
   <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 20</value>
@@ -856,7 +892,7 @@
     <value>3, 3</value>
   </data>
   <data name="CLB_Layers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 209</value>
+    <value>179, 193</value>
   </data>
   <data name="CLB_Layers.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -886,7 +922,7 @@
     <value>2</value>
   </data>
   <data name="TableLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 242</value>
+    <value>185, 233</value>
   </data>
   <data name="TableLayoutPanel4.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -916,7 +952,7 @@
     <value>0, 0, 2, 0</value>
   </data>
   <data name="GB_Layers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 268</value>
+    <value>191, 259</value>
   </data>
   <data name="GB_Layers.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -949,7 +985,7 @@
     <value>1</value>
   </data>
   <data name="TableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>386, 268</value>
+    <value>386, 259</value>
   </data>
   <data name="TableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -967,7 +1003,7 @@
     <value>0</value>
   </data>
   <data name="TableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="GB_AdditionalTiles" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="GB_Layers" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Percent,50" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="TLP_Tiles" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="GB_Layers" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Percent,50" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="&gt;&gt;SplitContainer1.Panel1.Name" xml:space="preserve">
     <value>SplitContainer1.Panel1</value>
@@ -988,7 +1024,7 @@
     <value>3, 23</value>
   </data>
   <data name="PB_Preview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>486, 242</value>
+    <value>486, 233</value>
   </data>
   <data name="PB_Preview.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -1015,7 +1051,7 @@
     <value>0, 0</value>
   </data>
   <data name="GB_Preview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 268</value>
+    <value>492, 259</value>
   </data>
   <data name="GB_Preview.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -1048,7 +1084,7 @@
     <value>1</value>
   </data>
   <data name="SplitContainer1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>882, 268</value>
+    <value>882, 259</value>
   </data>
   <data name="SplitContainer1.SplitterDistance" type="System.Int32, mscorlib">
     <value>386</value>
@@ -1081,7 +1117,7 @@
     <value>1</value>
   </data>
   <data name="SplitContainer2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>882, 554</value>
+    <value>882, 545</value>
   </data>
   <data name="SplitContainer2.SplitterDistance" type="System.Int32, mscorlib">
     <value>282</value>
@@ -1138,7 +1174,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPage3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>888, 560</value>
+    <value>888, 551</value>
   </data>
   <data name="TabPage3.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1165,7 +1201,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="TabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>888, 560</value>
+    <value>888, 551</value>
   </data>
   <data name="TabPage1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1192,7 +1228,7 @@
     <value>0, 24</value>
   </data>
   <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>896, 593</value>
+    <value>896, 584</value>
   </data>
   <data name="TabControl1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1363,7 +1399,7 @@
     <value>False</value>
   </data>
   <data name="StatusStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 617</value>
+    <value>0, 608</value>
   </data>
   <data name="StatusStrip1.Size" type="System.Drawing.Size, System.Drawing">
     <value>896, 22</value>
@@ -1396,7 +1432,7 @@
     <value>8, 20</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>896, 639</value>
+    <value>896, 630</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 11.25pt</value>

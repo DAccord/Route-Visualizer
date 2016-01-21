@@ -57,6 +57,7 @@ Partial Class frm_Main
         Me.RoutefileBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.TLP_Tiles = New System.Windows.Forms.TableLayoutPanel()
         Me.GB_AdditionalTiles = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.NUD_AdditionalTilesSouth = New System.Windows.Forms.NumericUpDown()
@@ -129,6 +130,7 @@ Partial Class frm_Main
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
+        Me.TLP_Tiles.SuspendLayout()
         Me.GB_AdditionalTiles.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         CType(Me.NUD_AdditionalTilesSouth, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -390,9 +392,15 @@ Partial Class frm_Main
         'TableLayoutPanel1
         '
         resources.ApplyResources(Me.TableLayoutPanel1, "TableLayoutPanel1")
-        Me.TableLayoutPanel1.Controls.Add(Me.GB_AdditionalTiles, 1, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.TLP_Tiles, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.GB_Layers, 0, 0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        '
+        'TLP_Tiles
+        '
+        resources.ApplyResources(Me.TLP_Tiles, "TLP_Tiles")
+        Me.TLP_Tiles.Controls.Add(Me.GB_AdditionalTiles, 0, 0)
+        Me.TLP_Tiles.Name = "TLP_Tiles"
         '
         'GB_AdditionalTiles
         '
@@ -696,6 +704,7 @@ Partial Class frm_Main
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
+        Me.TLP_Tiles.ResumeLayout(False)
         Me.GB_AdditionalTiles.ResumeLayout(False)
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel3.PerformLayout()
@@ -812,4 +821,5 @@ Partial Class frm_Main
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
+    Friend WithEvents TLP_Tiles As TableLayoutPanel
 End Class
