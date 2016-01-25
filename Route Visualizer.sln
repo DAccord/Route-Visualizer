@@ -7,8 +7,6 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Route Visualizer", "Route V
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Route Visualizer.Test", "Route Visualizer.Test\Route Visualizer.Test.vbproj", "{53B6080B-57C6-49C3-BD10-28A3BD036440}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Install_RouteVisualizer", "Install_RouteVisualizer\Install_RouteVisualizer.vdproj", "{56CAC4BF-BE50-4366-BF14-7EA160214310}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,8 +21,6 @@ Global
 		{53B6080B-57C6-49C3-BD10-28A3BD036440}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53B6080B-57C6-49C3-BD10-28A3BD036440}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53B6080B-57C6-49C3-BD10-28A3BD036440}.Release|Any CPU.Build.0 = Release|Any CPU
-		{56CAC4BF-BE50-4366-BF14-7EA160214310}.Debug|Any CPU.ActiveCfg = Debug
-		{56CAC4BF-BE50-4366-BF14-7EA160214310}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

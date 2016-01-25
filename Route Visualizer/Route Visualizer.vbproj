@@ -186,6 +186,7 @@
     <Content Include="Help\Images\Fehler.png" />
     <Content Include="Help\Images\Icon.png" />
     <Content Include="Icon_tr.ico" />
+    <Content Include="License.txt" />
     <None Include="Data.xsc">
       <DependentUpon>Data.xsd</DependentUpon>
     </None>
