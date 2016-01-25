@@ -45,6 +45,15 @@ Public Class frm_Main
         Else
             Me.Text = "Route Visualizer v" & String.Format("{0}.{1}.{2}", My.Application.Info.Version.Major.ToString, My.Application.Info.Version.Minor, My.Application.Info.Version.Build)
         End If
+
+        OFD_ImportRoute.Filter = My.Resources.OFD_ImportRouteFilter
+        OFD_ImportRoute.Title = My.Resources.OFD_ImportRouteTitle
+        SFD_SaveImage.Filter = My.Resources.SFD_SaveImageFilter
+        SFD_SaveImage.Title = My.Resources.SFD_SaveImageTitle
+        FBD_SaveLayersSeperately.Description = My.Resources.FBD_SaveLayersSeperatelyDescription
+        OFD_LayerWizard.Filter = My.Resources.OFD_LayerWizardFilter
+
+        'CMS_DGV_Route translations
     End Sub
 
     Sub GUIEnabling(EnabledState As Boolean)
@@ -525,11 +534,7 @@ Public Class frm_Main
                             Data.Routefile.AddRoutefileRow(RR)
                         Next
                     End If
-                    For Each RR As RoutefileRow In Data.Routefile
-                        If RR.IsPathNull Then
-                            RR.Delete()
-                        End If
-                    Next
+                    DGV_Route.Rows.RemoveAt(e.RowIndex + OFD_ImportRoute.FileNames.Length)
                 End If
             Else 'row gets edited
                 OFD_ImportRoute.Multiselect = False
@@ -803,30 +808,6 @@ Public Class frm_Main
         End If
     End Sub
 
-    Private Sub AlleAuswählenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AlleAuswählenToolStripMenuItem.Click
-        For i As Integer = 0 To RoutefileBindingSource.Count - 1
-            Dim DV As DataRowView = CType(RoutefileBindingSource.Item(i), DataRowView)
-            Dim DR As RoutefileRow = CType(DV.Row, RoutefileRow)
-            DR.Visibility = True
-        Next
-    End Sub
-
-    Private Sub AlleAbwählenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AlleAbwählenToolStripMenuItem.Click
-        For i As Integer = 0 To RoutefileBindingSource.Count - 1
-            Dim DV As DataRowView = CType(RoutefileBindingSource.Item(i), DataRowView)
-            Dim DR As RoutefileRow = CType(DV.Row, RoutefileRow)
-            DR.Visibility = False
-        Next
-    End Sub
-
-    Private Sub AuswahlUmkehrenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AuswahlUmkehrenToolStripMenuItem.Click
-        For i As Integer = 0 To RoutefileBindingSource.Count - 1
-            Dim DV As DataRowView = CType(RoutefileBindingSource.Item(i), DataRowView)
-            Dim DR As RoutefileRow = CType(DV.Row, RoutefileRow)
-            DR.Visibility = Not DR.Visibility
-        Next
-    End Sub
-
     Private Sub RoutenZusammenfassenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RoutenZusammenfassenToolStripMenuItem.Click
         SaveOption = New SaveOptions(False, True, False)
         If TH.IsAlive() Then
@@ -847,12 +828,6 @@ Public Class frm_Main
             TH = New Threading.Thread(AddressOf UpdatePreviewNew)
         End If
         TH.Start()
-    End Sub
-
-    Private Sub SpeicherortÖffnenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SpeicherortÖffnenToolStripMenuItem.Click
-        Dim drv As DataRowView = CType(RoutefileBindingSource.Current, DataRowView)
-        Dim DR As RoutefileRow = CType(drv.Row, RoutefileRow)
-        Process.Start("explorer.exe", "/select,""" & DR.Path & """")
     End Sub
 
     Private Sub DGV_Route_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Route.CellValueChanged
@@ -894,10 +869,6 @@ Public Class frm_Main
         NUD_AdditionalTilesEast.Maximum = CDec(2 ^ (CInt(CMB_Zoom.SelectedItem)))
         NUD_AdditionalTilesWest.Maximum = CDec(2 ^ (CInt(CMB_Zoom.SelectedItem)))
         NUD_AdditionalTilesSouth.Maximum = CDec(2 ^ (CInt(CMB_Zoom.SelectedItem)))
-    End Sub
-
-    Private Sub DGV_Route_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Route.CellContentClick
-
     End Sub
 
     Private Sub DGV_Route_DragEnter(sender As Object, e As DragEventArgs) Handles DGV_Route.DragEnter
@@ -974,6 +945,36 @@ Public Class frm_Main
             GB_AdditionalTiles.Text = My.Resources.Main_GB_AdditionalTiles
             Btn_Switch.Tag = "AdditionalTiles"
         End If
+    End Sub
+
+    Private Sub SelectAllToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SelectAllToolStripMenuItem.Click
+        For i As Integer = 0 To RoutefileBindingSource.Count - 1
+            Dim DV As DataRowView = CType(RoutefileBindingSource.Item(i), DataRowView)
+            Dim DR As RoutefileRow = CType(DV.Row, RoutefileRow)
+            DR.Visibility = True
+        Next
+    End Sub
+
+    Private Sub DeselectAllToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeselectAllToolStripMenuItem.Click
+        For i As Integer = 0 To RoutefileBindingSource.Count - 1
+            Dim DV As DataRowView = CType(RoutefileBindingSource.Item(i), DataRowView)
+            Dim DR As RoutefileRow = CType(DV.Row, RoutefileRow)
+            DR.Visibility = False
+        Next
+    End Sub
+
+    Private Sub InvertSelectionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InvertSelectionToolStripMenuItem.Click
+        For i As Integer = 0 To RoutefileBindingSource.Count - 1
+            Dim DV As DataRowView = CType(RoutefileBindingSource.Item(i), DataRowView)
+            Dim DR As RoutefileRow = CType(DV.Row, RoutefileRow)
+            DR.Visibility = Not DR.Visibility
+        Next
+    End Sub
+
+    Private Sub OpenPathToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OpenPathToolStripMenuItem.Click
+        Dim drv As DataRowView = CType(RoutefileBindingSource.Current, DataRowView)
+        Dim DR As RoutefileRow = CType(drv.Row, RoutefileRow)
+        Process.Start("explorer.exe", "/select,""" & DR.Path & """")
     End Sub
 End Class
 

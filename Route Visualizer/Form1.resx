@@ -138,10 +138,10 @@
     <value>Sort Index</value>
   </data>
   <metadata name="LayerBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1086, 17</value>
+    <value>839, 17</value>
   </metadata>
   <metadata name="Data.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>639, 17</value>
+    <value>499, 17</value>
   </metadata>
   <data name="LayerDataGridView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -208,7 +208,7 @@
     <value>0</value>
   </data>
   <metadata name="LayerBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>308, 56</value>
+    <value>477, 56</value>
   </metadata>
   <data name="DataGridViewTextBoxColumn4.HeaderText" xml:space="preserve">
     <value>Layer</value>
@@ -238,7 +238,7 @@
     <value>Path</value>
   </data>
   <metadata name="ZoomBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1245, 17</value>
+    <value>17, 56</value>
   </metadata>
   <data name="ZoomDataGridView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -382,37 +382,37 @@
     <value>53</value>
   </data>
   <metadata name="CMS_DGV_Route.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>164, 56</value>
+    <value>333, 56</value>
   </metadata>
-  <data name="AlleAuswählenToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 22</value>
+  <data name="SelectAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 22</value>
   </data>
-  <data name="AlleAuswählenToolStripMenuItem.Text" xml:space="preserve">
-    <value>Alle auswählen</value>
+  <data name="SelectAllToolStripMenuItem.Text" xml:space="preserve">
+    <value>Select All</value>
   </data>
-  <data name="AlleAbwählenToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 22</value>
+  <data name="DeselectAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 22</value>
   </data>
-  <data name="AlleAbwählenToolStripMenuItem.Text" xml:space="preserve">
-    <value>Alle abwählen</value>
+  <data name="DeselectAllToolStripMenuItem.Text" xml:space="preserve">
+    <value>Deselect All</value>
   </data>
-  <data name="AuswahlUmkehrenToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 22</value>
+  <data name="InvertSelectionToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 22</value>
   </data>
-  <data name="AuswahlUmkehrenToolStripMenuItem.Text" xml:space="preserve">
-    <value>Auswahl umkehren</value>
+  <data name="InvertSelectionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Invert Selection</value>
   </data>
   <data name="ToolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 6</value>
+    <value>154, 6</value>
   </data>
-  <data name="SpeicherortÖffnenToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 22</value>
+  <data name="OpenPathToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 22</value>
   </data>
-  <data name="SpeicherortÖffnenToolStripMenuItem.Text" xml:space="preserve">
-    <value>Speicherort öffnen</value>
+  <data name="OpenPathToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open Save Path</value>
   </data>
   <data name="CMS_DGV_Route.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 98</value>
+    <value>158, 98</value>
   </data>
   <data name="&gt;&gt;CMS_DGV_Route.Name" xml:space="preserve">
     <value>CMS_DGV_Route</value>
@@ -421,7 +421,7 @@
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="RoutefileBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>474, 56</value>
+    <value>643, 56</value>
   </metadata>
   <data name="DGV_Route.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1200,12 +1200,6 @@
   <data name="FBD_SaveLayersSeperately.Description" xml:space="preserve">
     <value>Wähle den Ordner in welchem die einzelnen Dateien gespeichert werden sollen</value>
   </data>
-  <metadata name="OFD_OwnImage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>499, 17</value>
-  </metadata>
-  <data name="OFD_OwnImage.Filter" xml:space="preserve">
-    <value>Supported Graphics Types|*.bmp;*.gif;*.jpg;*.jpeg;*.png;*.tif;*.tiff"</value>
-  </data>
   <data name="TP_Layers.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 29</value>
   </data>
@@ -1284,14 +1278,11 @@
   <data name="&gt;&gt;TC_Main.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <metadata name="FBD_Layer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>816, 17</value>
-  </metadata>
   <metadata name="CD_Main.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>716, 17</value>
+    <value>576, 17</value>
   </metadata>
   <metadata name="MenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>653, 56</value>
+    <value>822, 56</value>
   </metadata>
   <data name="UpdatePreviewToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F5</value>
@@ -1423,7 +1414,7 @@
     <value>2</value>
   </data>
   <metadata name="StatusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>768, 56</value>
+    <value>937, 56</value>
   </metadata>
   <data name="TSSL_EscToAbort.Size" type="System.Drawing.Size, System.Drawing">
     <value>727, 17</value>
@@ -1477,10 +1468,10 @@
     <value>3</value>
   </data>
   <metadata name="ZoomBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>923, 17</value>
+    <value>676, 17</value>
   </metadata>
   <metadata name="OFD_LayerWizard.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
+    <value>186, 56</value>
   </metadata>
   <data name="OFD_LayerWizard.Filter" xml:space="preserve">
     <value>jpg-Datei|*.jpg|png-Datei|*.png|bmp-Datei|*.bmp|gif-Datei|*.gif|tif-Datei|*.tif</value>
@@ -7771,22 +7762,22 @@
   <data name="&gt;&gt;DataGridViewTextBoxColumnRouteAlpha.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;AlleAuswählenToolStripMenuItem.Name" xml:space="preserve">
-    <value>AlleAuswählenToolStripMenuItem</value>
+  <data name="&gt;&gt;SelectAllToolStripMenuItem.Name" xml:space="preserve">
+    <value>SelectAllToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;AlleAuswählenToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;SelectAllToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;AlleAbwählenToolStripMenuItem.Name" xml:space="preserve">
-    <value>AlleAbwählenToolStripMenuItem</value>
+  <data name="&gt;&gt;DeselectAllToolStripMenuItem.Name" xml:space="preserve">
+    <value>DeselectAllToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;AlleAbwählenToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;DeselectAllToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;AuswahlUmkehrenToolStripMenuItem.Name" xml:space="preserve">
-    <value>AuswahlUmkehrenToolStripMenuItem</value>
+  <data name="&gt;&gt;InvertSelectionToolStripMenuItem.Name" xml:space="preserve">
+    <value>InvertSelectionToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;AuswahlUmkehrenToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;InvertSelectionToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ToolStripMenuItem4.Name" xml:space="preserve">
@@ -7795,10 +7786,10 @@
   <data name="&gt;&gt;ToolStripMenuItem4.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;SpeicherortÖffnenToolStripMenuItem.Name" xml:space="preserve">
-    <value>SpeicherortÖffnenToolStripMenuItem</value>
+  <data name="&gt;&gt;OpenPathToolStripMenuItem.Name" xml:space="preserve">
+    <value>OpenPathToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;SpeicherortÖffnenToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;OpenPathToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;RoutefileBindingSource.Name" xml:space="preserve">
@@ -7823,18 +7814,6 @@
     <value>FBD_SaveLayersSeperately</value>
   </data>
   <data name="&gt;&gt;FBD_SaveLayersSeperately.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;OFD_OwnImage.Name" xml:space="preserve">
-    <value>OFD_OwnImage</value>
-  </data>
-  <data name="&gt;&gt;OFD_OwnImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;FBD_Layer.Name" xml:space="preserve">
-    <value>FBD_Layer</value>
-  </data>
-  <data name="&gt;&gt;FBD_Layer.Type" xml:space="preserve">
     <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;CD_Main.Name" xml:space="preserve">

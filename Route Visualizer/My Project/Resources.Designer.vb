@@ -79,6 +79,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Select the directory where the single files should be saved.
+        '''</summary>
+        Friend ReadOnly Property FBD_SaveLayersSeperatelyDescription() As String
+            Get
+                Return ResourceManager.GetString("FBD_SaveLayersSeperatelyDescription", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to All columns have to be filled out..
         '''</summary>
         Friend ReadOnly Property Main_AllColumnsHaveToBeFilled() As String
@@ -516,6 +525,51 @@ Namespace My.Resources
         Friend ReadOnly Property Main_ZoomInteger() As String
             Get
                 Return ResourceManager.GetString("Main_ZoomInteger", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Supported file types|*.gpx;*.kml|gpx files|*.gpx|kml files|*.kml.
+        '''</summary>
+        Friend ReadOnly Property OFD_ImportRouteFilter() As String
+            Get
+                Return ResourceManager.GetString("OFD_ImportRouteFilter", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Please select the files you want to import.
+        '''</summary>
+        Friend ReadOnly Property OFD_ImportRouteTitle() As String
+            Get
+                Return ResourceManager.GetString("OFD_ImportRouteTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Supported file types|*.bmp;*.gif;*.jpeg;*.jpg;*.png;*.tif|bmp file|*.bmp|gif file|*.gif|jpg file|*.jpeg;*.jpg|png file|*.png|tif file|*.tif;*.tiff.
+        '''</summary>
+        Friend ReadOnly Property OFD_LayerWizardFilter() As String
+            Get
+                Return ResourceManager.GetString("OFD_LayerWizardFilter", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to jpg file|*.jpg|png file|*.png|bmp file|*.bmp|gif file|*.gif|tif file|*.tif.
+        '''</summary>
+        Friend ReadOnly Property SFD_SaveImageFilter() As String
+            Get
+                Return ResourceManager.GetString("SFD_SaveImageFilter", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Save Map.
+        '''</summary>
+        Friend ReadOnly Property SFD_SaveImageTitle() As String
+            Get
+                Return ResourceManager.GetString("SFD_SaveImageTitle", resourceCulture)
             End Get
         End Property
     End Module

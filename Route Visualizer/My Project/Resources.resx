@@ -270,4 +270,22 @@
   <data name="Main_ZoomInteger" xml:space="preserve">
     <value>Please enter an integer for the zoom value!</value>
   </data>
+  <data name="FBD_SaveLayersSeperatelyDescription" xml:space="preserve">
+    <value>Select the directory where the single files should be saved</value>
+  </data>
+  <data name="OFD_ImportRouteFilter" xml:space="preserve">
+    <value>Supported file types|*.gpx;*.kml|gpx files|*.gpx|kml files|*.kml</value>
+  </data>
+  <data name="OFD_ImportRouteTitle" xml:space="preserve">
+    <value>Please select the files you want to import</value>
+  </data>
+  <data name="OFD_LayerWizardFilter" xml:space="preserve">
+    <value>Supported file types|*.bmp;*.gif;*.jpeg;*.jpg;*.png;*.tif|bmp file|*.bmp|gif file|*.gif|jpg file|*.jpeg;*.jpg|png file|*.png|tif file|*.tif;*.tiff</value>
+  </data>
+  <data name="SFD_SaveImageFilter" xml:space="preserve">
+    <value>jpg file|*.jpg|png file|*.png|bmp file|*.bmp|gif file|*.gif|tif file|*.tif</value>
+  </data>
+  <data name="SFD_SaveImageTitle" xml:space="preserve">
+    <value>Save Map</value>
+  </data>
 </root>

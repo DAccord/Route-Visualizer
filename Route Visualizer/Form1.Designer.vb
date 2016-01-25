@@ -49,11 +49,11 @@ Partial Class frm_Main
         Me.DataGridViewTextBoxColumnRouteColor = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumnRouteAlpha = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CMS_DGV_Route = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.AlleAuswählenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AlleAbwählenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AuswahlUmkehrenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SelectAllToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DeselectAllToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InvertSelectionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripSeparator()
-        Me.SpeicherortÖffnenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpenPathToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RoutefileBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
@@ -80,11 +80,9 @@ Partial Class frm_Main
         Me.OFD_ImportRoute = New System.Windows.Forms.OpenFileDialog()
         Me.SFD_SaveImage = New System.Windows.Forms.SaveFileDialog()
         Me.FBD_SaveLayersSeperately = New System.Windows.Forms.FolderBrowserDialog()
-        Me.OFD_OwnImage = New System.Windows.Forms.OpenFileDialog()
         Me.TP_Layers = New System.Windows.Forms.TabPage()
         Me.TP_RouteVisualizer = New System.Windows.Forms.TabPage()
         Me.TC_Main = New System.Windows.Forms.TabControl()
-        Me.FBD_Layer = New System.Windows.Forms.FolderBrowserDialog()
         Me.CD_Main = New System.Windows.Forms.ColorDialog()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -344,34 +342,34 @@ Partial Class frm_Main
         '
         'CMS_DGV_Route
         '
-        Me.CMS_DGV_Route.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AlleAuswählenToolStripMenuItem, Me.AlleAbwählenToolStripMenuItem, Me.AuswahlUmkehrenToolStripMenuItem, Me.ToolStripMenuItem4, Me.SpeicherortÖffnenToolStripMenuItem})
+        Me.CMS_DGV_Route.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SelectAllToolStripMenuItem, Me.DeselectAllToolStripMenuItem, Me.InvertSelectionToolStripMenuItem, Me.ToolStripMenuItem4, Me.OpenPathToolStripMenuItem})
         Me.CMS_DGV_Route.Name = "CMS_DGV_Route"
         resources.ApplyResources(Me.CMS_DGV_Route, "CMS_DGV_Route")
         '
-        'AlleAuswählenToolStripMenuItem
+        'SelectAllToolStripMenuItem
         '
-        Me.AlleAuswählenToolStripMenuItem.Name = "AlleAuswählenToolStripMenuItem"
-        resources.ApplyResources(Me.AlleAuswählenToolStripMenuItem, "AlleAuswählenToolStripMenuItem")
+        Me.SelectAllToolStripMenuItem.Name = "SelectAllToolStripMenuItem"
+        resources.ApplyResources(Me.SelectAllToolStripMenuItem, "SelectAllToolStripMenuItem")
         '
-        'AlleAbwählenToolStripMenuItem
+        'DeselectAllToolStripMenuItem
         '
-        Me.AlleAbwählenToolStripMenuItem.Name = "AlleAbwählenToolStripMenuItem"
-        resources.ApplyResources(Me.AlleAbwählenToolStripMenuItem, "AlleAbwählenToolStripMenuItem")
+        Me.DeselectAllToolStripMenuItem.Name = "DeselectAllToolStripMenuItem"
+        resources.ApplyResources(Me.DeselectAllToolStripMenuItem, "DeselectAllToolStripMenuItem")
         '
-        'AuswahlUmkehrenToolStripMenuItem
+        'InvertSelectionToolStripMenuItem
         '
-        Me.AuswahlUmkehrenToolStripMenuItem.Name = "AuswahlUmkehrenToolStripMenuItem"
-        resources.ApplyResources(Me.AuswahlUmkehrenToolStripMenuItem, "AuswahlUmkehrenToolStripMenuItem")
+        Me.InvertSelectionToolStripMenuItem.Name = "InvertSelectionToolStripMenuItem"
+        resources.ApplyResources(Me.InvertSelectionToolStripMenuItem, "InvertSelectionToolStripMenuItem")
         '
         'ToolStripMenuItem4
         '
         Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
         resources.ApplyResources(Me.ToolStripMenuItem4, "ToolStripMenuItem4")
         '
-        'SpeicherortÖffnenToolStripMenuItem
+        'OpenPathToolStripMenuItem
         '
-        Me.SpeicherortÖffnenToolStripMenuItem.Name = "SpeicherortÖffnenToolStripMenuItem"
-        resources.ApplyResources(Me.SpeicherortÖffnenToolStripMenuItem, "SpeicherortÖffnenToolStripMenuItem")
+        Me.OpenPathToolStripMenuItem.Name = "OpenPathToolStripMenuItem"
+        resources.ApplyResources(Me.OpenPathToolStripMenuItem, "OpenPathToolStripMenuItem")
         '
         'RoutefileBindingSource
         '
@@ -551,10 +549,6 @@ Partial Class frm_Main
         'FBD_SaveLayersSeperately
         '
         resources.ApplyResources(Me.FBD_SaveLayersSeperately, "FBD_SaveLayersSeperately")
-        '
-        'OFD_OwnImage
-        '
-        resources.ApplyResources(Me.OFD_OwnImage, "OFD_OwnImage")
         '
         'TP_Layers
         '
@@ -768,7 +762,6 @@ Partial Class frm_Main
     Friend WithEvents OFD_ImportRoute As OpenFileDialog
     Friend WithEvents SFD_SaveImage As SaveFileDialog
     Friend WithEvents FBD_SaveLayersSeperately As FolderBrowserDialog
-    Friend WithEvents OFD_OwnImage As OpenFileDialog
     Friend WithEvents ZoomDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TilewidthDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TileheightDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -796,7 +789,6 @@ Partial Class frm_Main
     Friend WithEvents GB_Preview As GroupBox
     Friend WithEvents PB_Preview As PictureBox
     Friend WithEvents TC_Main As TabControl
-    Friend WithEvents FBD_Layer As FolderBrowserDialog
     Friend WithEvents LayerBindingSource As BindingSource
     Friend WithEvents ZoomBindingSource As BindingSource
     Friend WithEvents ZoomDataGridView As DataGridView
@@ -835,13 +827,13 @@ Partial Class frm_Main
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents SplitContainer3 As SplitContainer
     Friend WithEvents CMS_DGV_Route As ContextMenuStrip
-    Friend WithEvents AlleAuswählenToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AlleAbwählenToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AuswahlUmkehrenToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SelectAllToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DeselectAllToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents InvertSelectionToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RoutenSeparatToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RoutenZusammenfassenToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem4 As ToolStripSeparator
-    Friend WithEvents SpeicherortÖffnenToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents OpenPathToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HilfeAnzeigenToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ÜberToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ZoomBindingSource1 As BindingSource
