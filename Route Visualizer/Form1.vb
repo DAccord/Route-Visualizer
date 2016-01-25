@@ -123,6 +123,19 @@ Public Class frm_Main
                       End If
                   End Sub)
 
+        Me.Invoke(Sub()
+                      If Btn_Switch.Tag.ToString = "AbsoluteNumbers" Then
+                          If NUD_AdditionalTilesNorth.Value > NUD_AdditionalTilesSouth.Value AndAlso Not Cancel Then
+                              MessageBox.Show(String.Format(My.Resources.Main_SmallerOrEqual, My.Resources.Main_L_MinRow, My.Resources.Main_L_MaxRow))
+                              Cancel = True
+                          End If
+                          If NUD_AdditionalTilesWest.Value > NUD_AdditionalTilesEast.Value AndAlso Not Cancel Then
+                              MessageBox.Show(String.Format(My.Resources.Main_SmallerOrEqual, My.Resources.Main_L_MinCol, My.Resources.Main_L_MaxCol))
+                              Cancel = True
+                          End If
+                      End If
+                  End Sub)
+
         If Not SaveOption.Preview AndAlso Not SaveOption.SaveLayersSeparately AndAlso Not Cancel Then 'Save image
             Me.Invoke(Sub()
                           If Not SFD_SaveImage.ShowDialog() = DialogResult.OK Then
@@ -216,7 +229,12 @@ Public Class frm_Main
             End If
             CurrentZoomRow = ZRs(0)
 
-            Tiles = CalcMinMaxTiles(MyCoordinates, CurrentZoomRow)
+            If Btn_Switch.Tag.ToString = "AdditionalTiles" Then
+                Tiles = CalcMinMaxTiles(MyCoordinates, CurrentZoomRow)
+            Else
+                Tiles = {New Point(CInt(NUD_AdditionalTilesWest.Value), CInt(NUD_AdditionalTilesNorth.Value)), New Point(CInt(NUD_AdditionalTilesEast.Value), CInt(NUD_AdditionalTilesSouth.Value))}
+            End If
+
 
             If Not UpdateBackground AndAlso File.Exists(Path.Combine(Application.StartupPath, "TempBackground.png")) Then
                 Result = Image.FromFile(Path.Combine(Application.StartupPath, "TempBackground.png"))
@@ -503,22 +521,31 @@ Public Class frm_Main
                     If OFD_ImportRoute.Multiselect Then
                         For Each F As String In OFD_ImportRoute.FileNames
                             Dim RR As RoutefileRow = Data.Routefile.NewRoutefileRow()
-                            RR.Path = F
+                            RR.Path = F.Replace(Application.StartupPath() & Path.DirectorySeparatorChar, "")
                             Data.Routefile.AddRoutefileRow(RR)
                         Next
                     End If
-                    DGV_Route.Rows.RemoveAt(e.RowIndex + OFD_ImportRoute.FileNames.Length)
+                    For Each RR As RoutefileRow In Data.Routefile
+                        If RR.IsPathNull Then
+                            RR.Delete()
+                        End If
+                    Next
                 End If
             Else 'row gets edited
                 OFD_ImportRoute.Multiselect = False
                 Dim DRV As DataRowView = CType(RoutefileBindingSource.Current, DataRowView)
                 Dim RR As RoutefileRow = CType(DRV.Row, RoutefileRow)
+                If File.Exists(DGV_Route.Rows(e.RowIndex).Cells(e.ColumnIndex).Value.ToString) Then
+                    OFD_ImportRoute.FileName = Path.GetDirectoryName(DGV_Route.Rows(e.RowIndex).Cells(e.ColumnIndex).Value.ToString)
+                Else
+                    OFD_ImportRoute.InitialDirectory = Path.GetDirectoryName(Path.Combine(Application.StartupPath, DGV_Route.Rows(e.RowIndex).Cells(e.ColumnIndex).Value.ToString))
+                End If
 
                 If OFD_ImportRoute.ShowDialog() = DialogResult.OK Then
                     RR.Path = OFD_ImportRoute.FileName
                 End If
             End If
-            UpdateBackground = True
+                UpdateBackground = True
         ElseIf DGV_Route.Columns(e.ColumnIndex).Name = "DataGridViewTextBoxColumnRouteColor" OrElse DGV_Route.Columns(e.ColumnIndex).Name = "DataGridViewTextBoxColumnSymbolColor" Then
             If ValidateColorObject(DGV_Route.Rows(e.RowIndex).Cells(e.ColumnIndex).Value) Then
                 Dim ColStr() As String = DGV_Route.Rows(e.RowIndex).Cells(e.ColumnIndex).Value.ToString.Replace(" ", "").Split(CType(", ", Char()))
@@ -835,7 +862,7 @@ Public Class frm_Main
     End Sub
 
     Private Sub ÜberToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ÜberToolStripMenuItem.Click
-        Dim About_Box As New About_RouteVisualize
+        Dim About_Box As New About_RouteVisualizer
         About_Box.ShowDialog()
     End Sub
 
@@ -863,6 +890,90 @@ Public Class frm_Main
 
     Private Sub CMB_Zoom_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_Zoom.SelectedIndexChanged
         UpdateBackground = True
+        NUD_AdditionalTilesNorth.Maximum = CDec(2 ^ (CInt(CMB_Zoom.SelectedItem)))
+        NUD_AdditionalTilesEast.Maximum = CDec(2 ^ (CInt(CMB_Zoom.SelectedItem)))
+        NUD_AdditionalTilesWest.Maximum = CDec(2 ^ (CInt(CMB_Zoom.SelectedItem)))
+        NUD_AdditionalTilesSouth.Maximum = CDec(2 ^ (CInt(CMB_Zoom.SelectedItem)))
+    End Sub
+
+    Private Sub DGV_Route_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Route.CellContentClick
+
+    End Sub
+
+    Private Sub DGV_Route_DragEnter(sender As Object, e As DragEventArgs) Handles DGV_Route.DragEnter
+        If e.Data.GetDataPresent(DataFormats.FileDrop) Then
+            e.Effect = DragDropEffects.All
+        End If
+    End Sub
+
+    Private Sub DGV_Route_DragDrop(sender As Object, e As DragEventArgs) Handles DGV_Route.DragDrop
+        If e.Data.GetDataPresent(DataFormats.FileDrop) Then
+            Dim MyFiles() As String = CType(e.Data.GetData(DataFormats.FileDrop), String())
+            For Each F As String In MyFiles
+                If Path.GetExtension(F) = ".kml" OrElse Path.GetExtension(F) = ".gpx" Then
+                    Dim RR As RoutefileRow = Data.Routefile.NewRoutefileRow()
+                    RR.Path = F.Replace(Application.StartupPath() & Path.DirectorySeparatorChar, "")
+                    Data.Routefile.AddRoutefileRow(RR)
+                End If
+            Next
+            DGV_Route.EndEdit()
+            For i As Integer = Data.Routefile.Count - 1 To 0 Step -1
+                If Data.Routefile.Item(i).IsPathNull OrElse Data.Routefile.Item(i).Path = "" Then
+                    Data.Routefile.Item(i).Delete()
+                End If
+            Next
+        End If
+        UpdateBackground = True
+    End Sub
+
+    Private Sub TC_Main_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TC_Main.SelectedIndexChanged
+        If TC_Main.SelectedTab.Name = "TP_RouteVisualizer" Then
+            TilesWizardToolStripMenuItem.Enabled = False
+        ElseIf TC_Main.SelectedTab.Name = "TP_Layers" AndAlso Not LayerBindingSource.Current Is Nothing Then
+            TilesWizardToolStripMenuItem.Enabled = True
+        End If
+    End Sub
+
+    Private Sub TilesWizardToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TilesWizardToolStripMenuItem.Click
+        If OFD_LayerWizard.ShowDialog() = DialogResult.OK Then
+            Dim ZR As ZoomRow = Data.Zoom.NewZoomRow()
+            ZR.Path = OFD_LayerWizard.FileName.Replace(Application.StartupPath() & Path.DirectorySeparatorChar, "")
+            Using bmp As New Bitmap(OFD_LayerWizard.FileName)
+                ZR.Tileheight = bmp.Height
+                ZR.Tilewidth = bmp.Width
+            End Using
+            Dim Zoom As Integer
+            While Not Integer.TryParse(Microsoft.VisualBasic.InputBox(My.Resources.Main_EnterZoomValue), Zoom) OrElse Not Zoom >= 0
+                MessageBox.Show(My.Resources.Main_ZoomInteger)
+            End While
+            ZR.Zoomvalue = Zoom
+            Dim CurLayerDRV As DataRowView = CType(LayerBindingSource.Current, DataRowView)
+            Dim CurLayer As LayerRow = CType(CurLayerDRV.Row, LayerRow)
+            ZR.LayerID = CurLayer.ID
+            Data.Zoom.AddZoomRow(ZR)
+
+            MessageBox.Show(My.Resources.Main_RowAddedReplace)
+        End If
+    End Sub
+
+    Private Sub Btn_Switch_Click(sender As Object, e As EventArgs) Handles Btn_Switch.Click
+        If Btn_Switch.Tag.ToString = "AdditionalTiles" Then 'Change to relative column and row index
+            L_North.Text = My.Resources.Main_L_MinRow
+            L_West.Text = My.Resources.Main_L_MinCol
+            L_East.Text = My.Resources.Main_L_MaxCol
+            L_South.Text = My.Resources.Main_L_MaxRow
+            Btn_ResetAdditionalTiles.Visible = False
+            GB_AdditionalTiles.Text = My.Resources.Main_GB_RelativeIndices
+            Btn_Switch.Tag = "AbsoluteNumbers"
+        Else 'change to additional tiles
+            L_North.Text = My.Resources.Main_L_North
+            L_West.Text = My.Resources.Main_L_West
+            L_South.Text = My.Resources.Main_L_South
+            L_East.Text = My.Resources.Main_L_East
+            Btn_ResetAdditionalTiles.Visible = True
+            GB_AdditionalTiles.Text = My.Resources.Main_GB_AdditionalTiles
+            Btn_Switch.Tag = "AdditionalTiles"
+        End If
     End Sub
 End Class
 

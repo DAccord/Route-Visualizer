@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class About_RouteVisualize
+Partial Class About_RouteVisualizer
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -29,7 +29,8 @@ Partial Class About_RouteVisualize
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(About_RouteVisualize))
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(About_RouteVisualizer))
         Me.TableLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
         Me.LabelProductName = New System.Windows.Forms.Label()
@@ -38,6 +39,7 @@ Partial Class About_RouteVisualize
         Me.OKButton = New System.Windows.Forms.Button()
         Me.L_Description = New System.Windows.Forms.Label()
         Me.LL_Github = New System.Windows.Forms.LinkLabel()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.TableLayoutPanel.SuspendLayout()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -93,7 +95,7 @@ Partial Class About_RouteVisualize
         Me.LL_Github.Name = "LL_Github"
         Me.LL_Github.TabStop = True
         '
-        'About_RouteVisualize
+        'About_RouteVisualizer
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -103,7 +105,7 @@ Partial Class About_RouteVisualize
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "About_RouteVisualize"
+        Me.Name = "About_RouteVisualizer"
         Me.ShowInTaskbar = False
         Me.TableLayoutPanel.ResumeLayout(False)
         Me.TableLayoutPanel.PerformLayout()
@@ -114,4 +116,5 @@ Partial Class About_RouteVisualize
 
     Friend WithEvents L_Description As Label
     Friend WithEvents LL_Github As LinkLabel
+    Friend WithEvents ToolTip1 As ToolTip
 End Class

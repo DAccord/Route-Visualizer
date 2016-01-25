@@ -138,10 +138,10 @@
     <value>Sort Index</value>
   </data>
   <metadata name="LayerBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1184, 17</value>
+    <value>1086, 17</value>
   </metadata>
   <metadata name="Data.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>737, 17</value>
+    <value>639, 17</value>
   </metadata>
   <data name="LayerDataGridView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -208,7 +208,7 @@
     <value>0</value>
   </data>
   <metadata name="LayerBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>161, 56</value>
+    <value>308, 56</value>
   </metadata>
   <data name="DataGridViewTextBoxColumn4.HeaderText" xml:space="preserve">
     <value>Layer</value>
@@ -238,7 +238,7 @@
     <value>Path</value>
   </data>
   <metadata name="ZoomBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1343, 17</value>
+    <value>1245, 17</value>
   </metadata>
   <data name="ZoomDataGridView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -319,7 +319,7 @@
     <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;SplitContainer3.Parent" xml:space="preserve">
-    <value>TabPage3</value>
+    <value>TP_Layers</value>
   </data>
   <data name="&gt;&gt;SplitContainer3.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -382,7 +382,7 @@
     <value>53</value>
   </data>
   <metadata name="CMS_DGV_Route.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
+    <value>164, 56</value>
   </metadata>
   <data name="AlleAuswählenToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>176, 22</value>
@@ -421,7 +421,7 @@
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="RoutefileBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>327, 56</value>
+    <value>474, 56</value>
   </metadata>
   <data name="DGV_Route.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -499,16 +499,16 @@
     <value>1</value>
   </data>
   <data name="TableLayoutPanel3.ColumnCount" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="NUD_AdditionalTilesSouth.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="NUD_AdditionalTilesSouth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 129</value>
+    <value>55, 129</value>
   </data>
   <data name="NUD_AdditionalTilesSouth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 27</value>
+    <value>72, 27</value>
   </data>
   <data name="NUD_AdditionalTilesSouth.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -532,7 +532,7 @@
     <value>3, 76</value>
   </data>
   <data name="NUD_AdditionalTilesWest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 27</value>
+    <value>72, 27</value>
   </data>
   <data name="NUD_AdditionalTilesWest.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -553,10 +553,10 @@
     <value>Fill</value>
   </data>
   <data name="NUD_AdditionalTilesEast.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 76</value>
+    <value>107, 76</value>
   </data>
   <data name="NUD_AdditionalTilesEast.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 27</value>
+    <value>75, 27</value>
   </data>
   <data name="NUD_AdditionalTilesEast.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -577,10 +577,10 @@
     <value>Fill</value>
   </data>
   <data name="NUD_AdditionalTilesNorth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 23</value>
+    <value>55, 23</value>
   </data>
   <data name="NUD_AdditionalTilesNorth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 27</value>
+    <value>72, 27</value>
   </data>
   <data name="NUD_AdditionalTilesNorth.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -597,112 +597,124 @@
   <data name="&gt;&gt;NUD_AdditionalTilesNorth.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
+  <data name="L_North.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="L_North.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="Label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 0</value>
+  <data name="L_North.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 0</value>
   </data>
-  <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="L_North.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 20</value>
   </data>
-  <data name="Label2.TabIndex" type="System.Int32, mscorlib">
+  <data name="L_North.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="Label2.Text" xml:space="preserve">
+  <data name="L_North.Text" xml:space="preserve">
     <value>North</value>
   </data>
-  <data name="&gt;&gt;Label2.Name" xml:space="preserve">
-    <value>Label2</value>
+  <data name="&gt;&gt;L_North.Name" xml:space="preserve">
+    <value>L_North</value>
   </data>
-  <data name="&gt;&gt;Label2.Type" xml:space="preserve">
+  <data name="&gt;&gt;L_North.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Label2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;L_North.Parent" xml:space="preserve">
     <value>TableLayoutPanel3</value>
   </data>
-  <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;L_North.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="Label3.AutoSize" type="System.Boolean, mscorlib">
+  <data name="L_East.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="L_East.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="Label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 53</value>
+  <data name="L_East.Location" type="System.Drawing.Point, System.Drawing">
+    <value>126, 53</value>
   </data>
-  <data name="Label3.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="L_East.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 20</value>
   </data>
-  <data name="Label3.TabIndex" type="System.Int32, mscorlib">
+  <data name="L_East.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="Label3.Text" xml:space="preserve">
+  <data name="L_East.Text" xml:space="preserve">
     <value>East</value>
   </data>
-  <data name="&gt;&gt;Label3.Name" xml:space="preserve">
-    <value>Label3</value>
+  <data name="&gt;&gt;L_East.Name" xml:space="preserve">
+    <value>L_East</value>
   </data>
-  <data name="&gt;&gt;Label3.Type" xml:space="preserve">
+  <data name="&gt;&gt;L_East.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Label3.Parent" xml:space="preserve">
+  <data name="&gt;&gt;L_East.Parent" xml:space="preserve">
     <value>TableLayoutPanel3</value>
   </data>
-  <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;L_East.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="Label4.AutoSize" type="System.Boolean, mscorlib">
+  <data name="L_West.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="L_West.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="Label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 53</value>
+  <data name="L_West.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 53</value>
   </data>
-  <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="L_West.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 20</value>
   </data>
-  <data name="Label4.TabIndex" type="System.Int32, mscorlib">
+  <data name="L_West.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="Label4.Text" xml:space="preserve">
+  <data name="L_West.Text" xml:space="preserve">
     <value>West</value>
   </data>
-  <data name="&gt;&gt;Label4.Name" xml:space="preserve">
-    <value>Label4</value>
+  <data name="&gt;&gt;L_West.Name" xml:space="preserve">
+    <value>L_West</value>
   </data>
-  <data name="&gt;&gt;Label4.Type" xml:space="preserve">
+  <data name="&gt;&gt;L_West.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Label4.Parent" xml:space="preserve">
+  <data name="&gt;&gt;L_West.Parent" xml:space="preserve">
     <value>TableLayoutPanel3</value>
   </data>
-  <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;L_West.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="Label5.AutoSize" type="System.Boolean, mscorlib">
+  <data name="L_South.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="L_South.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="Label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>64, 106</value>
+  <data name="L_South.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 106</value>
   </data>
-  <data name="Label5.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="L_South.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 20</value>
   </data>
-  <data name="Label5.TabIndex" type="System.Int32, mscorlib">
+  <data name="L_South.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="Label5.Text" xml:space="preserve">
+  <data name="L_South.Text" xml:space="preserve">
     <value>South</value>
   </data>
-  <data name="&gt;&gt;Label5.Name" xml:space="preserve">
-    <value>Label5</value>
+  <data name="&gt;&gt;L_South.Name" xml:space="preserve">
+    <value>L_South</value>
   </data>
-  <data name="&gt;&gt;Label5.Type" xml:space="preserve">
+  <data name="&gt;&gt;L_South.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Label5.Parent" xml:space="preserve">
+  <data name="&gt;&gt;L_South.Parent" xml:space="preserve">
     <value>TableLayoutPanel3</value>
   </data>
-  <data name="&gt;&gt;Label5.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;L_South.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
   <data name="Btn_ResetAdditionalTiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -735,6 +747,33 @@
   <data name="&gt;&gt;Btn_ResetAdditionalTiles.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <data name="Btn_Switch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="Btn_Switch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 200</value>
+  </data>
+  <data name="Btn_Switch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 30</value>
+  </data>
+  <data name="Btn_Switch.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="Btn_Switch.Text" xml:space="preserve">
+    <value>Switch</value>
+  </data>
+  <data name="&gt;&gt;Btn_Switch.Name" xml:space="preserve">
+    <value>Btn_Switch</value>
+  </data>
+  <data name="&gt;&gt;Btn_Switch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Btn_Switch.Parent" xml:space="preserve">
+    <value>TableLayoutPanel3</value>
+  </data>
+  <data name="&gt;&gt;Btn_Switch.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
   <data name="TableLayoutPanel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -742,7 +781,7 @@
     <value>3, 23</value>
   </data>
   <data name="TableLayoutPanel3.RowCount" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="TableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
     <value>185, 233</value>
@@ -763,7 +802,7 @@
     <value>0</value>
   </data>
   <data name="TableLayoutPanel3.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="NUD_AdditionalTilesSouth" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="NUD_AdditionalTilesWest" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="NUD_AdditionalTilesEast" Row="3" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="NUD_AdditionalTilesNorth" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Label2" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Label3" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="Label4" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Label5" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Btn_ResetAdditionalTiles" Row="6" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33,33332,Percent,33,33334,Percent,33,33334" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="NUD_AdditionalTilesSouth" Row="5" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="NUD_AdditionalTilesWest" Row="3" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="NUD_AdditionalTilesEast" Row="3" RowSpan="1" Column="3" ColumnSpan="2" /&gt;&lt;Control Name="NUD_AdditionalTilesNorth" Row="1" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="L_North" Row="0" RowSpan="1" Column="0" ColumnSpan="5" /&gt;&lt;Control Name="L_East" Row="2" RowSpan="1" Column="3" ColumnSpan="2" /&gt;&lt;Control Name="L_West" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="L_South" Row="4" RowSpan="1" Column="0" ColumnSpan="5" /&gt;&lt;Control Name="Btn_ResetAdditionalTiles" Row="6" RowSpan="1" Column="0" ColumnSpan="5" /&gt;&lt;Control Name="Btn_Switch" Row="7" RowSpan="1" Column="0" ColumnSpan="5" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,28,57143,Percent,14,28571,Percent,14,28571,Percent,14,28571,Percent,28,57143" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,Percent,100,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="GB_AdditionalTiles.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -835,7 +874,7 @@
     <value>Fill</value>
   </data>
   <data name="CMB_Zoom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>61, 209</value>
+    <value>61, 202</value>
   </data>
   <data name="CMB_Zoom.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 28</value>
@@ -862,7 +901,7 @@
     <value>True</value>
   </data>
   <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 209</value>
+    <value>3, 206</value>
   </data>
   <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 20</value>
@@ -892,7 +931,7 @@
     <value>3, 3</value>
   </data>
   <data name="CLB_Layers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 200</value>
+    <value>179, 193</value>
   </data>
   <data name="CLB_Layers.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1132,7 +1171,7 @@
     <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;SplitContainer2.Parent" xml:space="preserve">
-    <value>TabPage1</value>
+    <value>TP_RouteVisualizer</value>
   </data>
   <data name="&gt;&gt;SplitContainer2.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -1162,97 +1201,97 @@
     <value>Wähle den Ordner in welchem die einzelnen Dateien gespeichert werden sollen</value>
   </data>
   <metadata name="OFD_OwnImage.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>597, 17</value>
+    <value>499, 17</value>
   </metadata>
   <data name="OFD_OwnImage.Filter" xml:space="preserve">
     <value>Supported Graphics Types|*.bmp;*.gif;*.jpg;*.jpeg;*.png;*.tif;*.tiff"</value>
   </data>
-  <data name="TabPage3.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="TP_Layers.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 29</value>
   </data>
-  <data name="TabPage3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="TP_Layers.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="TabPage3.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="TP_Layers.Size" type="System.Drawing.Size, System.Drawing">
     <value>888, 551</value>
   </data>
-  <data name="TabPage3.TabIndex" type="System.Int32, mscorlib">
+  <data name="TP_Layers.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="TabPage3.Text" xml:space="preserve">
+  <data name="TP_Layers.Text" xml:space="preserve">
     <value>Layers</value>
   </data>
-  <data name="&gt;&gt;TabPage3.Name" xml:space="preserve">
-    <value>TabPage3</value>
+  <data name="&gt;&gt;TP_Layers.Name" xml:space="preserve">
+    <value>TP_Layers</value>
   </data>
-  <data name="&gt;&gt;TabPage3.Type" xml:space="preserve">
+  <data name="&gt;&gt;TP_Layers.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;TabPage3.Parent" xml:space="preserve">
-    <value>TabControl1</value>
+  <data name="&gt;&gt;TP_Layers.Parent" xml:space="preserve">
+    <value>TC_Main</value>
   </data>
-  <data name="&gt;&gt;TabPage3.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;TP_Layers.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="TabPage1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="TP_RouteVisualizer.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 29</value>
   </data>
-  <data name="TabPage1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="TP_RouteVisualizer.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 3, 3, 3</value>
   </data>
-  <data name="TabPage1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="TP_RouteVisualizer.Size" type="System.Drawing.Size, System.Drawing">
     <value>888, 551</value>
   </data>
-  <data name="TabPage1.TabIndex" type="System.Int32, mscorlib">
+  <data name="TP_RouteVisualizer.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="TabPage1.Text" xml:space="preserve">
+  <data name="TP_RouteVisualizer.Text" xml:space="preserve">
     <value>Route Visualizer</value>
   </data>
-  <data name="&gt;&gt;TabPage1.Name" xml:space="preserve">
-    <value>TabPage1</value>
+  <data name="&gt;&gt;TP_RouteVisualizer.Name" xml:space="preserve">
+    <value>TP_RouteVisualizer</value>
   </data>
-  <data name="&gt;&gt;TabPage1.Type" xml:space="preserve">
+  <data name="&gt;&gt;TP_RouteVisualizer.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;TabPage1.Parent" xml:space="preserve">
-    <value>TabControl1</value>
+  <data name="&gt;&gt;TP_RouteVisualizer.Parent" xml:space="preserve">
+    <value>TC_Main</value>
   </data>
-  <data name="&gt;&gt;TabPage1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;TP_RouteVisualizer.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="TabControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="TC_Main.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="TabControl1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="TC_Main.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 24</value>
   </data>
-  <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="TC_Main.Size" type="System.Drawing.Size, System.Drawing">
     <value>896, 584</value>
   </data>
-  <data name="TabControl1.TabIndex" type="System.Int32, mscorlib">
+  <data name="TC_Main.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;TabControl1.Name" xml:space="preserve">
-    <value>TabControl1</value>
+  <data name="&gt;&gt;TC_Main.Name" xml:space="preserve">
+    <value>TC_Main</value>
   </data>
-  <data name="&gt;&gt;TabControl1.Type" xml:space="preserve">
+  <data name="&gt;&gt;TC_Main.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;TabControl1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;TC_Main.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;TabControl1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;TC_Main.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <metadata name="FBD_Layer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>914, 17</value>
+    <value>816, 17</value>
   </metadata>
   <metadata name="CD_Main.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>814, 17</value>
+    <value>716, 17</value>
   </metadata>
   <metadata name="MenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>506, 56</value>
+    <value>653, 56</value>
   </metadata>
   <data name="UpdatePreviewToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F5</value>
@@ -1323,6 +1362,21 @@
   <data name="FileToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Map</value>
   </data>
+  <data name="TilesWizardToolStripMenuItem.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="TilesWizardToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>145, 22</value>
+  </data>
+  <data name="TilesWizardToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Zoom Wizard</value>
+  </data>
+  <data name="LayerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 20</value>
+  </data>
+  <data name="LayerToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Layer</value>
+  </data>
   <data name="HilfeAnzeigenToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F1</value>
   </data>
@@ -1369,7 +1423,7 @@
     <value>2</value>
   </data>
   <metadata name="StatusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>621, 56</value>
+    <value>768, 56</value>
   </metadata>
   <data name="TSSL_EscToAbort.Size" type="System.Drawing.Size, System.Drawing">
     <value>727, 17</value>
@@ -1423,8 +1477,14 @@
     <value>3</value>
   </data>
   <metadata name="ZoomBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1021, 17</value>
+    <value>923, 17</value>
   </metadata>
+  <metadata name="OFD_LayerWizard.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
+  <data name="OFD_LayerWizard.Filter" xml:space="preserve">
+    <value>jpg-Datei|*.jpg|png-Datei|*.png|bmp-Datei|*.bmp|gif-Datei|*.gif|tif-Datei|*.tif</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -7849,6 +7909,18 @@
   <data name="&gt;&gt;QuitToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;LayerToolStripMenuItem.Name" xml:space="preserve">
+    <value>LayerToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;LayerToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TilesWizardToolStripMenuItem.Name" xml:space="preserve">
+    <value>TilesWizardToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;TilesWizardToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;HelpToolStripMenuItem.Name" xml:space="preserve">
     <value>HelpToolStripMenuItem</value>
   </data>
@@ -7890,6 +7962,12 @@
   </data>
   <data name="&gt;&gt;ZoomBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OFD_LayerWizard.Name" xml:space="preserve">
+    <value>OFD_LayerWizard</value>
+  </data>
+  <data name="&gt;&gt;OFD_LayerWizard.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frm_Main</value>

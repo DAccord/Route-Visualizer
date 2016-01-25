@@ -117,18 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Sortindex.HeaderText" xml:space="preserve">
-    <value>Sortierindex</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="LayerDataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>876, 244</value>
-  </data>
-  <data name="GroupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>882, 270</value>
-  </data>
   <data name="GroupBox1.Text" xml:space="preserve">
     <value>Ebenen</value>
+  </data>
+  <data name="GroupBox2.Text" xml:space="preserve">
+    <value>Kacheln/Zoomwerte</value>
+  </data>
+  <data name="Sortindex.HeaderText" xml:space="preserve">
+    <value>Sortierindex</value>
   </data>
   <data name="DataGridViewTextBoxColumn4.HeaderText" xml:space="preserve">
     <value>Ebene</value>
@@ -142,21 +138,8 @@
   <data name="DataGridViewTextBoxColumn10.HeaderText" xml:space="preserve">
     <value>Pfad</value>
   </data>
-  <data name="ZoomDataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>876, 245</value>
-  </data>
-  <data name="GroupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>882, 271</value>
-  </data>
-  <data name="GroupBox2.Text" xml:space="preserve">
-    <value>Kacheln/Zoomwerte</value>
-  </data>
-  <data name="SplitContainer3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>882, 545</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="SplitContainer3.SplitterDistance" type="System.Int32, mscorlib">
-    <value>270</value>
+  <data name="GB_Preview.Text" xml:space="preserve">
+    <value>Vorschau (Doppelklick für Originalgröße)</value>
   </data>
   <data name="DataGridViewTextBoxColumnVisibility.HeaderText" xml:space="preserve">
     <value>SB</value>
@@ -164,6 +147,7 @@
   <data name="DataGridViewTextBoxColumnVisibility.ToolTipText" xml:space="preserve">
     <value>Sichtbarkeit</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="DataGridViewTextBoxColumnVisibility.Width" type="System.Int32, mscorlib">
     <value>32</value>
   </data>
@@ -191,59 +175,42 @@
   <data name="DataGridViewTextBoxColumnRouteAlpha.ToolTipText" xml:space="preserve">
     <value>Transparenz</value>
   </data>
-  <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="GB_AdditionalTiles.Text" xml:space="preserve">
+    <value>Zusätzliche Kacheln</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="L_North.Location" type="System.Drawing.Point, System.Drawing">
+    <value>71, 0</value>
+  </data>
+  <data name="L_North.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 20</value>
   </data>
-  <data name="Label2.Text" xml:space="preserve">
+  <data name="L_North.Text" xml:space="preserve">
     <value>Nord</value>
   </data>
-  <data name="Label3.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="L_East.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 53</value>
+  </data>
+  <data name="L_East.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 20</value>
   </data>
-  <data name="Label3.Text" xml:space="preserve">
+  <data name="L_East.Text" xml:space="preserve">
     <value>Ost</value>
   </data>
-  <data name="Label5.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="L_South.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 106</value>
+  </data>
+  <data name="L_South.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 20</value>
   </data>
-  <data name="Label5.Text" xml:space="preserve">
+  <data name="L_South.Text" xml:space="preserve">
     <value>Süd</value>
   </data>
   <data name="Btn_ResetAdditionalTiles.Text" xml:space="preserve">
     <value>Zurücksetzen</value>
   </data>
-  <data name="GB_AdditionalTiles.Text" xml:space="preserve">
-    <value>Zusätzliche Kacheln</value>
-  </data>
-  <data name="Label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 20</value>
-  </data>
-  <data name="Label6.Text" xml:space="preserve">
-    <value>Min. Zeile</value>
-  </data>
-  <data name="Label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 20</value>
-  </data>
-  <data name="Label7.Text" xml:space="preserve">
-    <value>Max. Zeile</value>
-  </data>
-  <data name="Label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 20</value>
-  </data>
-  <data name="Label8.Text" xml:space="preserve">
-    <value>Min. Spalte</value>
-  </data>
-  <data name="Label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 20</value>
-  </data>
-  <data name="Label9.Text" xml:space="preserve">
-    <value>Max. Spalte</value>
-  </data>
-  <data name="GB_MinMaxTiles.Text" xml:space="preserve">
-    <value>Min/Max Kacheln</value>
-  </data>
   <data name="Btn_Switch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>109, 226</value>
+    <value>52, 200</value>
   </data>
   <data name="Btn_Switch.Size" type="System.Drawing.Size, System.Drawing">
     <value>81, 30</value>
@@ -251,26 +218,17 @@
   <data name="Btn_Switch.Text" xml:space="preserve">
     <value>Wechseln</value>
   </data>
-  <data name="CMB_Zoom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>61, 209</value>
-  </data>
-  <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 209</value>
-  </data>
-  <data name="CLB_Layers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 200</value>
-  </data>
   <data name="GB_Layers.Text" xml:space="preserve">
     <value>Ebenen</value>
   </data>
-  <data name="GB_Preview.Text" xml:space="preserve">
-    <value>Vorschau (Doppelklick für Originalgröße)</value>
-  </data>
-  <data name="TabPage3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>888, 551</value>
-  </data>
-  <data name="TabPage3.Text" xml:space="preserve">
+  <data name="TP_Layers.Text" xml:space="preserve">
     <value>Ebenen</value>
+  </data>
+  <data name="FileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 20</value>
+  </data>
+  <data name="FileToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Karte</value>
   </data>
   <data name="UpdatePreviewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>216, 22</value>
@@ -311,11 +269,20 @@
   <data name="QuitToolStripMenuItem.Text" xml:space="preserve">
     <value>B&amp;eenden</value>
   </data>
-  <data name="FileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 20</value>
+  <data name="LayerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 20</value>
   </data>
-  <data name="FileToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Karte</value>
+  <data name="LayerToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Ebene</value>
+  </data>
+  <data name="TilesWizardToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>158, 22</value>
+  </data>
+  <data name="TilesWizardToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Zoom-Assistent</value>
+  </data>
+  <data name="HelpToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Hilfe</value>
   </data>
   <data name="HilfeAnzeigenToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
@@ -328,9 +295,6 @@
   </data>
   <data name="ÜberToolStripMenuItem.Text" xml:space="preserve">
     <value>Ü&amp;ber...</value>
-  </data>
-  <data name="HelpToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Hilfe</value>
   </data>
   <data name="TSSL_EscToAbort.Size" type="System.Drawing.Size, System.Drawing">
     <value>718, 17</value>

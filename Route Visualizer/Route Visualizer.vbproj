@@ -98,10 +98,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="About_RouteVisualize.Designer.vb">
-      <DependentUpon>About_RouteVisualize.vb</DependentUpon>
+    <Compile Include="About_RouteVisualizer.Designer.vb">
+      <DependentUpon>About_RouteVisualizer.vb</DependentUpon>
     </Compile>
-    <Compile Include="About_RouteVisualize.vb">
+    <Compile Include="About_RouteVisualizer.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
@@ -144,14 +144,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="About_RouteVisualize.de-DE.resx">
-      <DependentUpon>About_RouteVisualize.vb</DependentUpon>
+    <EmbeddedResource Include="About_RouteVisualizer.de-DE.resx">
+      <DependentUpon>About_RouteVisualizer.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="About_RouteVisualize.en-GB.resx">
-      <DependentUpon>About_RouteVisualize.vb</DependentUpon>
+    <EmbeddedResource Include="About_RouteVisualizer.en-GB.resx">
+      <DependentUpon>About_RouteVisualizer.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="About_RouteVisualize.resx">
-      <DependentUpon>About_RouteVisualize.vb</DependentUpon>
+    <EmbeddedResource Include="About_RouteVisualizer.resx">
+      <DependentUpon>About_RouteVisualizer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.de-DE.resx">
       <DependentUpon>Form1.vb</DependentUpon>
