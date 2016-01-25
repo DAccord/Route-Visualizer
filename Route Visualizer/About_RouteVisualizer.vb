@@ -1,4 +1,4 @@
-﻿Public NotInheritable Class About_RouteVisualize
+﻿Public NotInheritable Class About_RouteVisualizer
 
     Private Sub About_RouteVisualize_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ' Set the title of the form.
@@ -14,12 +14,13 @@
         '    properties dialog (under the "Project" menu).
         Me.LabelProductName.Text = My.Application.Info.ProductName
         If My.Application.Info.Version.Major = 0 Then
-            Me.LabelVersion.Text = "Route Visualizer v" & String.Format("{0}.{1}.{2}", My.Application.Info.Version.Major.ToString, My.Application.Info.Version.Minor, My.Application.Info.Version.Build) & " beta"
+            Me.LabelVersion.Text = My.Application.Info.Title & " v" & String.Format("{0}.{1}.{2}", My.Application.Info.Version.Major.ToString, My.Application.Info.Version.Minor, My.Application.Info.Version.Build) & " beta"
         Else
-            Me.LabelVersion.Text = "Route Visualizer v" & String.Format("{0}.{1}.{2}", My.Application.Info.Version.Major.ToString, My.Application.Info.Version.Minor, My.Application.Info.Version.Build)
+            Me.LabelVersion.Text = My.Application.Info.Title & " v" & String.Format("{0}.{1}.{2}", My.Application.Info.Version.Major.ToString, My.Application.Info.Version.Minor, My.Application.Info.Version.Build)
         End If
         Me.LabelCopyright.Text = My.Application.Info.Copyright
         Me.L_Description.Text = My.Resources.Assembly_Description
+        ToolTip1.SetToolTip(LL_Github, My.Resources.About_GithubLinkToReadme)
     End Sub
 
     Private Sub OKButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OKButton.Click
