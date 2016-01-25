@@ -228,4 +228,46 @@
   <data name="Main_PathNull" xml:space="preserve">
     <value>The path of the route with ID {0} is Nothing.</value>
   </data>
+  <data name="Main_EnterZoomValue" xml:space="preserve">
+    <value>Please enter the zoom value of the selected tile:</value>
+  </data>
+  <data name="Main_GB_AdditionalTiles" xml:space="preserve">
+    <value>Additional Tiles</value>
+  </data>
+  <data name="Main_GB_RelativeIndices" xml:space="preserve">
+    <value>Absolute Indices</value>
+  </data>
+  <data name="Main_L_East" xml:space="preserve">
+    <value>East</value>
+  </data>
+  <data name="Main_L_MaxCol" xml:space="preserve">
+    <value>Max. Col.</value>
+  </data>
+  <data name="Main_L_MaxRow" xml:space="preserve">
+    <value>Max. Row</value>
+  </data>
+  <data name="Main_L_MinCol" xml:space="preserve">
+    <value>Min. Col.</value>
+  </data>
+  <data name="Main_L_MinRow" xml:space="preserve">
+    <value>Min. Row</value>
+  </data>
+  <data name="Main_L_North" xml:space="preserve">
+    <value>North</value>
+  </data>
+  <data name="Main_L_South" xml:space="preserve">
+    <value>South</value>
+  </data>
+  <data name="Main_L_West" xml:space="preserve">
+    <value>West</value>
+  </data>
+  <data name="Main_RowAddedReplace" xml:space="preserve">
+    <value>Row was added. Now you have to replace the column index in the path with {C}, the row index with {R} and the zoom value with {Z}.</value>
+  </data>
+  <data name="Main_SmallerOrEqual" xml:space="preserve">
+    <value>The value in "{0}" has to be smaller than or equal the value in "{1}".</value>
+  </data>
+  <data name="Main_ZoomInteger" xml:space="preserve">
+    <value>Please enter an integer for the zoom value!</value>
+  </data>
 </root>

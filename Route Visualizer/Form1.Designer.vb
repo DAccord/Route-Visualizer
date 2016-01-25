@@ -64,11 +64,12 @@ Partial Class frm_Main
         Me.NUD_AdditionalTilesWest = New System.Windows.Forms.NumericUpDown()
         Me.NUD_AdditionalTilesEast = New System.Windows.Forms.NumericUpDown()
         Me.NUD_AdditionalTilesNorth = New System.Windows.Forms.NumericUpDown()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.L_North = New System.Windows.Forms.Label()
+        Me.L_East = New System.Windows.Forms.Label()
+        Me.L_West = New System.Windows.Forms.Label()
+        Me.L_South = New System.Windows.Forms.Label()
         Me.Btn_ResetAdditionalTiles = New System.Windows.Forms.Button()
+        Me.Btn_Switch = New System.Windows.Forms.Button()
         Me.GB_Layers = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.CMB_Zoom = New System.Windows.Forms.ComboBox()
@@ -80,9 +81,9 @@ Partial Class frm_Main
         Me.SFD_SaveImage = New System.Windows.Forms.SaveFileDialog()
         Me.FBD_SaveLayersSeperately = New System.Windows.Forms.FolderBrowserDialog()
         Me.OFD_OwnImage = New System.Windows.Forms.OpenFileDialog()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TP_Layers = New System.Windows.Forms.TabPage()
+        Me.TP_RouteVisualizer = New System.Windows.Forms.TabPage()
+        Me.TC_Main = New System.Windows.Forms.TabControl()
         Me.FBD_Layer = New System.Windows.Forms.FolderBrowserDialog()
         Me.CD_Main = New System.Windows.Forms.ColorDialog()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
@@ -97,6 +98,8 @@ Partial Class frm_Main
         Me.SpeichernToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripSeparator()
         Me.QuitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LayerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TilesWizardToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HilfeAnzeigenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ÜberToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -105,6 +108,7 @@ Partial Class frm_Main
         Me.TSSL_Progress = New System.Windows.Forms.ToolStripStatusLabel()
         Me.TSPB_Progress = New System.Windows.Forms.ToolStripProgressBar()
         Me.ZoomBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.OFD_LayerWizard = New System.Windows.Forms.OpenFileDialog()
         CType(Me.SplitContainer3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer3.Panel1.SuspendLayout()
         Me.SplitContainer3.Panel2.SuspendLayout()
@@ -141,9 +145,9 @@ Partial Class frm_Main
         Me.TableLayoutPanel4.SuspendLayout()
         Me.GB_Preview.SuspendLayout()
         CType(Me.PB_Preview, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage3.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
-        Me.TabControl1.SuspendLayout()
+        Me.TP_Layers.SuspendLayout()
+        Me.TP_RouteVisualizer.SuspendLayout()
+        Me.TC_Main.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         CType(Me.ZoomBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -177,7 +181,6 @@ Partial Class frm_Main
         Me.LayerDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.Sortindex})
         Me.LayerDataGridView.DataSource = Me.LayerBindingSource
         resources.ApplyResources(Me.LayerDataGridView, "LayerDataGridView")
-        Me.LayerDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
         Me.LayerDataGridView.Name = "LayerDataGridView"
         '
         'DataGridViewTextBoxColumn2
@@ -219,7 +222,6 @@ Partial Class frm_Main
         Me.ZoomDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn10})
         Me.ZoomDataGridView.DataSource = Me.ZoomBindingSource1
         resources.ApplyResources(Me.ZoomDataGridView, "ZoomDataGridView")
-        Me.ZoomDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
         Me.ZoomDataGridView.Name = "ZoomDataGridView"
         '
         'DataGridViewTextBoxColumn4
@@ -294,6 +296,7 @@ Partial Class frm_Main
         '
         'DGV_Route
         '
+        Me.DGV_Route.AllowDrop = True
         Me.DGV_Route.AutoGenerateColumns = False
         Me.DGV_Route.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
         Me.DGV_Route.BorderStyle = System.Windows.Forms.BorderStyle.None
@@ -414,61 +417,78 @@ Partial Class frm_Main
         resources.ApplyResources(Me.TableLayoutPanel3, "TableLayoutPanel3")
         Me.TableLayoutPanel3.Controls.Add(Me.NUD_AdditionalTilesSouth, 1, 5)
         Me.TableLayoutPanel3.Controls.Add(Me.NUD_AdditionalTilesWest, 0, 3)
-        Me.TableLayoutPanel3.Controls.Add(Me.NUD_AdditionalTilesEast, 2, 3)
+        Me.TableLayoutPanel3.Controls.Add(Me.NUD_AdditionalTilesEast, 3, 3)
         Me.TableLayoutPanel3.Controls.Add(Me.NUD_AdditionalTilesNorth, 1, 1)
-        Me.TableLayoutPanel3.Controls.Add(Me.Label2, 1, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.Label3, 2, 2)
-        Me.TableLayoutPanel3.Controls.Add(Me.Label4, 0, 2)
-        Me.TableLayoutPanel3.Controls.Add(Me.Label5, 1, 4)
+        Me.TableLayoutPanel3.Controls.Add(Me.L_North, 0, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.L_East, 3, 2)
+        Me.TableLayoutPanel3.Controls.Add(Me.L_West, 0, 2)
+        Me.TableLayoutPanel3.Controls.Add(Me.L_South, 0, 4)
         Me.TableLayoutPanel3.Controls.Add(Me.Btn_ResetAdditionalTiles, 0, 6)
+        Me.TableLayoutPanel3.Controls.Add(Me.Btn_Switch, 0, 7)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         '
         'NUD_AdditionalTilesSouth
         '
+        Me.TableLayoutPanel3.SetColumnSpan(Me.NUD_AdditionalTilesSouth, 3)
         resources.ApplyResources(Me.NUD_AdditionalTilesSouth, "NUD_AdditionalTilesSouth")
         Me.NUD_AdditionalTilesSouth.Name = "NUD_AdditionalTilesSouth"
         '
         'NUD_AdditionalTilesWest
         '
+        Me.TableLayoutPanel3.SetColumnSpan(Me.NUD_AdditionalTilesWest, 2)
         resources.ApplyResources(Me.NUD_AdditionalTilesWest, "NUD_AdditionalTilesWest")
         Me.NUD_AdditionalTilesWest.Name = "NUD_AdditionalTilesWest"
         '
         'NUD_AdditionalTilesEast
         '
+        Me.TableLayoutPanel3.SetColumnSpan(Me.NUD_AdditionalTilesEast, 2)
         resources.ApplyResources(Me.NUD_AdditionalTilesEast, "NUD_AdditionalTilesEast")
         Me.NUD_AdditionalTilesEast.Name = "NUD_AdditionalTilesEast"
         '
         'NUD_AdditionalTilesNorth
         '
+        Me.TableLayoutPanel3.SetColumnSpan(Me.NUD_AdditionalTilesNorth, 3)
         resources.ApplyResources(Me.NUD_AdditionalTilesNorth, "NUD_AdditionalTilesNorth")
         Me.NUD_AdditionalTilesNorth.Name = "NUD_AdditionalTilesNorth"
         '
-        'Label2
+        'L_North
         '
-        resources.ApplyResources(Me.Label2, "Label2")
-        Me.Label2.Name = "Label2"
+        resources.ApplyResources(Me.L_North, "L_North")
+        Me.TableLayoutPanel3.SetColumnSpan(Me.L_North, 5)
+        Me.L_North.Name = "L_North"
         '
-        'Label3
+        'L_East
         '
-        resources.ApplyResources(Me.Label3, "Label3")
-        Me.Label3.Name = "Label3"
+        resources.ApplyResources(Me.L_East, "L_East")
+        Me.TableLayoutPanel3.SetColumnSpan(Me.L_East, 2)
+        Me.L_East.Name = "L_East"
         '
-        'Label4
+        'L_West
         '
-        resources.ApplyResources(Me.Label4, "Label4")
-        Me.Label4.Name = "Label4"
+        resources.ApplyResources(Me.L_West, "L_West")
+        Me.TableLayoutPanel3.SetColumnSpan(Me.L_West, 2)
+        Me.L_West.Name = "L_West"
         '
-        'Label5
+        'L_South
         '
-        resources.ApplyResources(Me.Label5, "Label5")
-        Me.Label5.Name = "Label5"
+        resources.ApplyResources(Me.L_South, "L_South")
+        Me.TableLayoutPanel3.SetColumnSpan(Me.L_South, 5)
+        Me.L_South.Name = "L_South"
         '
         'Btn_ResetAdditionalTiles
         '
         resources.ApplyResources(Me.Btn_ResetAdditionalTiles, "Btn_ResetAdditionalTiles")
-        Me.TableLayoutPanel3.SetColumnSpan(Me.Btn_ResetAdditionalTiles, 3)
+        Me.TableLayoutPanel3.SetColumnSpan(Me.Btn_ResetAdditionalTiles, 5)
         Me.Btn_ResetAdditionalTiles.Name = "Btn_ResetAdditionalTiles"
         Me.Btn_ResetAdditionalTiles.UseVisualStyleBackColor = True
+        '
+        'Btn_Switch
+        '
+        resources.ApplyResources(Me.Btn_Switch, "Btn_Switch")
+        Me.TableLayoutPanel3.SetColumnSpan(Me.Btn_Switch, 5)
+        Me.Btn_Switch.Name = "Btn_Switch"
+        Me.Btn_Switch.Tag = "AdditionalTiles"
+        Me.Btn_Switch.UseVisualStyleBackColor = True
         '
         'GB_Layers
         '
@@ -536,27 +556,27 @@ Partial Class frm_Main
         '
         resources.ApplyResources(Me.OFD_OwnImage, "OFD_OwnImage")
         '
-        'TabPage3
+        'TP_Layers
         '
-        Me.TabPage3.Controls.Add(Me.SplitContainer3)
-        resources.ApplyResources(Me.TabPage3, "TabPage3")
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.UseVisualStyleBackColor = True
+        Me.TP_Layers.Controls.Add(Me.SplitContainer3)
+        resources.ApplyResources(Me.TP_Layers, "TP_Layers")
+        Me.TP_Layers.Name = "TP_Layers"
+        Me.TP_Layers.UseVisualStyleBackColor = True
         '
-        'TabPage1
+        'TP_RouteVisualizer
         '
-        Me.TabPage1.Controls.Add(Me.SplitContainer2)
-        resources.ApplyResources(Me.TabPage1, "TabPage1")
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.UseVisualStyleBackColor = True
+        Me.TP_RouteVisualizer.Controls.Add(Me.SplitContainer2)
+        resources.ApplyResources(Me.TP_RouteVisualizer, "TP_RouteVisualizer")
+        Me.TP_RouteVisualizer.Name = "TP_RouteVisualizer"
+        Me.TP_RouteVisualizer.UseVisualStyleBackColor = True
         '
-        'TabControl1
+        'TC_Main
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage3)
-        resources.ApplyResources(Me.TabControl1, "TabControl1")
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
+        Me.TC_Main.Controls.Add(Me.TP_RouteVisualizer)
+        Me.TC_Main.Controls.Add(Me.TP_Layers)
+        resources.ApplyResources(Me.TC_Main, "TC_Main")
+        Me.TC_Main.Name = "TC_Main"
+        Me.TC_Main.SelectedIndex = 0
         '
         'CD_Main
         '
@@ -564,7 +584,7 @@ Partial Class frm_Main
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.LayerToolStripMenuItem, Me.HelpToolStripMenuItem})
         resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
         '
@@ -625,6 +645,17 @@ Partial Class frm_Main
         Me.QuitToolStripMenuItem.Name = "QuitToolStripMenuItem"
         resources.ApplyResources(Me.QuitToolStripMenuItem, "QuitToolStripMenuItem")
         '
+        'LayerToolStripMenuItem
+        '
+        Me.LayerToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TilesWizardToolStripMenuItem})
+        Me.LayerToolStripMenuItem.Name = "LayerToolStripMenuItem"
+        resources.ApplyResources(Me.LayerToolStripMenuItem, "LayerToolStripMenuItem")
+        '
+        'TilesWizardToolStripMenuItem
+        '
+        resources.ApplyResources(Me.TilesWizardToolStripMenuItem, "TilesWizardToolStripMenuItem")
+        Me.TilesWizardToolStripMenuItem.Name = "TilesWizardToolStripMenuItem"
+        '
         'HelpToolStripMenuItem
         '
         Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HilfeAnzeigenToolStripMenuItem, Me.ÜberToolStripMenuItem})
@@ -668,12 +699,17 @@ Partial Class frm_Main
         Me.ZoomBindingSource.DataMember = "Zoom"
         Me.ZoomBindingSource.DataSource = Me.Data
         '
+        'OFD_LayerWizard
+        '
+        Me.OFD_LayerWizard.FileName = "OpenFileDialog1"
+        resources.ApplyResources(Me.OFD_LayerWizard, "OFD_LayerWizard")
+        '
         'frm_Main
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
-        Me.Controls.Add(Me.TabControl1)
+        Me.Controls.Add(Me.TC_Main)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.KeyPreview = True
@@ -717,9 +753,9 @@ Partial Class frm_Main
         Me.TableLayoutPanel4.PerformLayout()
         Me.GB_Preview.ResumeLayout(False)
         CType(Me.PB_Preview, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage3.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(False)
-        Me.TabControl1.ResumeLayout(False)
+        Me.TP_Layers.ResumeLayout(False)
+        Me.TP_RouteVisualizer.ResumeLayout(False)
+        Me.TC_Main.ResumeLayout(False)
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
@@ -739,8 +775,8 @@ Partial Class frm_Main
     Friend WithEvents RowcountDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ColumncountDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents Data As Data
-    Friend WithEvents TabPage3 As TabPage
-    Friend WithEvents TabPage1 As TabPage
+    Friend WithEvents TP_Layers As TabPage
+    Friend WithEvents TP_RouteVisualizer As TabPage
     Friend WithEvents GB_Layers As GroupBox
     Friend WithEvents CLB_Layers As CheckedListBox
     Friend WithEvents GB_Route As GroupBox
@@ -752,14 +788,14 @@ Partial Class frm_Main
     Friend WithEvents NUD_AdditionalTilesWest As NumericUpDown
     Friend WithEvents NUD_AdditionalTilesEast As NumericUpDown
     Friend WithEvents NUD_AdditionalTilesNorth As NumericUpDown
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
+    Friend WithEvents L_North As Label
+    Friend WithEvents L_East As Label
+    Friend WithEvents L_West As Label
+    Friend WithEvents L_South As Label
     Friend WithEvents Btn_ResetAdditionalTiles As Button
     Friend WithEvents GB_Preview As GroupBox
     Friend WithEvents PB_Preview As PictureBox
-    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TC_Main As TabControl
     Friend WithEvents FBD_Layer As FolderBrowserDialog
     Friend WithEvents LayerBindingSource As BindingSource
     Friend WithEvents ZoomBindingSource As BindingSource
@@ -809,11 +845,6 @@ Partial Class frm_Main
     Friend WithEvents HilfeAnzeigenToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ÜberToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ZoomBindingSource1 As BindingSource
-    Friend WithEvents DataGridViewTextBoxColumnVisibility As DataGridViewCheckBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumnPath As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumnRouteLineWidth As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumnRouteColor As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumnRouteAlpha As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents Sortindex As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewComboBoxColumn
@@ -822,4 +853,13 @@ Partial Class frm_Main
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
     Friend WithEvents TLP_Tiles As TableLayoutPanel
+    Friend WithEvents DataGridViewTextBoxColumnVisibility As DataGridViewCheckBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumnPath As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumnRouteLineWidth As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumnRouteColor As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumnRouteAlpha As DataGridViewTextBoxColumn
+    Friend WithEvents OFD_LayerWizard As OpenFileDialog
+    Friend WithEvents LayerToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TilesWizardToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Btn_Switch As Button
 End Class

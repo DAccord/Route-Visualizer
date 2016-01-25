@@ -160,6 +160,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Please enter the zoom value of the selected tile:.
+        '''</summary>
+        Friend ReadOnly Property Main_EnterZoomValue() As String
+            Get
+                Return ResourceManager.GetString("Main_EnterZoomValue", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to The following error occured while trying to import coordinates from {0}:.
         '''</summary>
         Friend ReadOnly Property Main_ErrorWhileImporting() As String
@@ -174,6 +183,24 @@ Namespace My.Resources
         Friend ReadOnly Property Main_FileNotFound() As String
             Get
                 Return ResourceManager.GetString("Main_FileNotFound", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Additional Tiles.
+        '''</summary>
+        Friend ReadOnly Property Main_GB_AdditionalTiles() As String
+            Get
+                Return ResourceManager.GetString("Main_GB_AdditionalTiles", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Absolute Indices.
+        '''</summary>
+        Friend ReadOnly Property Main_GB_RelativeIndices() As String
+            Get
+                Return ResourceManager.GetString("Main_GB_RelativeIndices", resourceCulture)
             End Get
         End Property
         
@@ -201,6 +228,78 @@ Namespace My.Resources
         Friend ReadOnly Property Main_ImportFile_Title() As String
             Get
                 Return ResourceManager.GetString("Main_ImportFile_Title", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to East.
+        '''</summary>
+        Friend ReadOnly Property Main_L_East() As String
+            Get
+                Return ResourceManager.GetString("Main_L_East", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Max. Col..
+        '''</summary>
+        Friend ReadOnly Property Main_L_MaxCol() As String
+            Get
+                Return ResourceManager.GetString("Main_L_MaxCol", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Max. Row.
+        '''</summary>
+        Friend ReadOnly Property Main_L_MaxRow() As String
+            Get
+                Return ResourceManager.GetString("Main_L_MaxRow", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Min. Col..
+        '''</summary>
+        Friend ReadOnly Property Main_L_MinCol() As String
+            Get
+                Return ResourceManager.GetString("Main_L_MinCol", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Min. Row.
+        '''</summary>
+        Friend ReadOnly Property Main_L_MinRow() As String
+            Get
+                Return ResourceManager.GetString("Main_L_MinRow", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to North.
+        '''</summary>
+        Friend ReadOnly Property Main_L_North() As String
+            Get
+                Return ResourceManager.GetString("Main_L_North", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to South.
+        '''</summary>
+        Friend ReadOnly Property Main_L_South() As String
+            Get
+                Return ResourceManager.GetString("Main_L_South", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to West.
+        '''</summary>
+        Friend ReadOnly Property Main_L_West() As String
+            Get
+                Return ResourceManager.GetString("Main_L_West", resourceCulture)
             End Get
         End Property
         
@@ -322,6 +421,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Row was added. Now you have to replace the column index in the path with {C}, the row index with {R} and the zoom value with {Z}..
+        '''</summary>
+        Friend ReadOnly Property Main_RowAddedReplace() As String
+            Get
+                Return ResourceManager.GetString("Main_RowAddedReplace", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Select at least one layer before producing a map..
         '''</summary>
         Friend ReadOnly Property Main_SelectLayer() As String
@@ -358,6 +466,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to The value in &quot;{0}&quot; has to be smaller than or equal the value in &quot;{1}&quot;..
+        '''</summary>
+        Friend ReadOnly Property Main_SmallerOrEqual() As String
+            Get
+                Return ResourceManager.GetString("Main_SmallerOrEqual", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to The value has to be within {0} and {1}..
         '''</summary>
         Friend ReadOnly Property Main_ValueBetween() As String
@@ -390,6 +507,15 @@ Namespace My.Resources
         Friend ReadOnly Property Main_WrongInputFormat_Title() As String
             Get
                 Return ResourceManager.GetString("Main_WrongInputFormat_Title", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Please enter an integer for the zoom value!.
+        '''</summary>
+        Friend ReadOnly Property Main_ZoomInteger() As String
+            Get
+                Return ResourceManager.GetString("Main_ZoomInteger", resourceCulture)
             End Get
         End Property
     End Module

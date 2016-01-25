@@ -228,4 +228,46 @@
   <data name="Main_PathNull" xml:space="preserve">
     <value>Der Pfad der Route mit ID {0} ist Nothing.</value>
   </data>
+  <data name="Main_EnterZoomValue" xml:space="preserve">
+    <value>Bitte den Zoom-Wert für die gewählte Kachel auswählen:</value>
+  </data>
+  <data name="Main_GB_AdditionalTiles" xml:space="preserve">
+    <value>Zusätzliche Kacheln</value>
+  </data>
+  <data name="Main_GB_RelativeIndices" xml:space="preserve">
+    <value>Absolute Indizes</value>
+  </data>
+  <data name="Main_L_East" xml:space="preserve">
+    <value>Ost</value>
+  </data>
+  <data name="Main_L_MaxCol" xml:space="preserve">
+    <value>Max. Spalte</value>
+  </data>
+  <data name="Main_L_MaxRow" xml:space="preserve">
+    <value>Max. Zeile</value>
+  </data>
+  <data name="Main_L_MinCol" xml:space="preserve">
+    <value>Min. Spalte</value>
+  </data>
+  <data name="Main_L_MinRow" xml:space="preserve">
+    <value>Min. Zeile</value>
+  </data>
+  <data name="Main_L_North" xml:space="preserve">
+    <value>Nord</value>
+  </data>
+  <data name="Main_L_South" xml:space="preserve">
+    <value>Süd</value>
+  </data>
+  <data name="Main_L_West" xml:space="preserve">
+    <value>West</value>
+  </data>
+  <data name="Main_RowAddedReplace" xml:space="preserve">
+    <value>Die Zeile wurde hinzugefügt. Ersetze nun den Spaltenindex im Pfad durch {C}, den Zeilenindex durch {R} und den Zoomwert durch {Z}.</value>
+  </data>
+  <data name="Main_SmallerOrEqual" xml:space="preserve">
+    <value>Der Wert "{0}" muss kleiner oder gleich dem Wert "{1}" sein.</value>
+  </data>
+  <data name="Main_ZoomInteger" xml:space="preserve">
+    <value>Bitte eine ganze Zahl (0, 1, 2, ...) für den Zoom-Wert eingeben!</value>
+  </data>
 </root>
