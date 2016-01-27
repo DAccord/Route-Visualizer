@@ -35,19 +35,16 @@
     Private Sub Btn_ZoomIn_Click(sender As Object, e As EventArgs) Handles Btn_ZoomIn.Click
         PB_Preview.Width = CInt(PB_Preview.Width * ZoomStep)
         PB_Preview.Height = CInt(PB_Preview.Height * ZoomStep)
-        PictureBox_Position()
     End Sub
 
     Private Sub Btn_ZoomOut_Click(sender As Object, e As EventArgs) Handles Btn_ZoomOut.Click
         PB_Preview.Width = CInt(PB_Preview.Width / ZoomStep)
         PB_Preview.Height = CInt(PB_Preview.Height / ZoomStep)
-        PictureBox_Position()
     End Sub
 
     Private Sub Btn_ResetZoom_Click(sender As Object, e As EventArgs) Handles Btn_ResetZoom.Click
         PB_Preview.Width = OrigSize.Width
         PB_Preview.Height = OrigSize.Height
-        PictureBox_Position()
     End Sub
 
     Private Sub Btn_Fit_Click(sender As Object, e As EventArgs) Handles Btn_Fit.Click
@@ -61,22 +58,9 @@
             PB_Preview.Width = Panel1.Width
             PB_Preview.Height = CInt(Panel1.Width * ratio_img)
         End If
-        PictureBox_Position()
     End Sub
 
     Private Sub PB_Preview_MouseUp(sender As Object, e As MouseEventArgs) Handles PB_Preview.MouseUp
         Me.Cursor = Cursors.Default
-    End Sub
-
-    Sub PictureBox_Position()
-        If CInt(Math.Floor((Panel1.Width - PB_Preview.Width) / 2)) > 0 Then
-            PB_Preview.Location = New Point(CInt(Math.Floor((Panel1.Width - PB_Preview.Width) / 2)), 0)
-        Else
-            PB_Preview.Location = New Point(0, 0)
-        End If
-    End Sub
-
-    Private Sub PB_Preview_SizeChanged(sender As Object, e As EventArgs) Handles PB_Preview.SizeChanged
-        PictureBox_Position()
     End Sub
 End Class

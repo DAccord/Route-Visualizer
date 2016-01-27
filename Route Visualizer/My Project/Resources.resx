@@ -288,4 +288,7 @@
   <data name="SFD_SaveImageTitle" xml:space="preserve">
     <value>Save Map</value>
   </data>
+  <data name="Main_ZoomWizardIntro" xml:space="preserve">
+    <value>Please select a tile from the selected layer and with the desired zoom value and remember the zoom value and the row and column index.</value>
+  </data>
 </root>

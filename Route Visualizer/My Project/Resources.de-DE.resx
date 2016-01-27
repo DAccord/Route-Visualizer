@@ -229,7 +229,7 @@
     <value>Der Pfad der Route mit ID {0} ist Nothing.</value>
   </data>
   <data name="Main_EnterZoomValue" xml:space="preserve">
-    <value>Bitte den Zoom-Wert für die gewählte Kachel auswählen:</value>
+    <value>Bitte den Zoom-Wert für die gewählte Kachel eingeben:</value>
   </data>
   <data name="Main_GB_AdditionalTiles" xml:space="preserve">
     <value>Zusätzliche Kacheln</value>
@@ -285,7 +285,10 @@
   <data name="SFD_SaveImageFilter" xml:space="preserve">
     <value>jpg-Datei|*.jpg|png-Datei|*.png|bmp-Datei|*.bmp|gif-Datei|*.gif|tif-Datei|*.tif</value>
   </data>
-  <data name="SFD_SaveImageTilte" xml:space="preserve">
+  <data name="SFD_SaveImageTitle" xml:space="preserve">
     <value>Karte speichern</value>
+  </data>
+  <data name="Main_ZoomWizardIntro" xml:space="preserve">
+    <value>Bitte wähle eine Kachel der gewählten Ebene und der gewünschten Zoomstufe aus und merke dir die Zoom-Stufe sowie den Zeilen- und den Spaltenindex.</value>
   </data>
 </root>

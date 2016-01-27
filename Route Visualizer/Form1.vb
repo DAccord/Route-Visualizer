@@ -200,7 +200,13 @@ Public Class frm_Main
             Catch FNFEx As FileNotFoundException
                 Log.AppendLine(String.Format(My.Resources.Main_FileNotFound, RR.Path))
             Catch ex As Exception
-                Log.AppendLine(String.Format(My.Resources.Main_ErrorWhileImporting, RR.Path) & Environment.NewLine & ex.Message & Environment.NewLine & ex.InnerException.ToString & Environment.NewLine & ex.InnerException.StackTrace)
+                If Not ex.Message Is Nothing AndAlso Not ex.InnerException Is Nothing AndAlso Not ex.InnerException.StackTrace Is Nothing Then
+                    Log.AppendLine(String.Format(My.Resources.Main_ErrorWhileImporting, RR.Path) & Environment.NewLine & ex.Message & Environment.NewLine & ex.InnerException.ToString & Environment.NewLine & ex.InnerException.StackTrace)
+                ElseIf Not ex.Message Is Nothing Then
+                    Log.AppendLine(String.Format(My.Resources.Main_ErrorWhileImporting, RR.Path) & Environment.NewLine & ex.Message)
+                Else
+                    Log.AppendLine(String.Format(My.Resources.Main_ErrorWhileImporting, RR.Path))
+                End If
             End Try
             ReadCoordinates(cnt) = Res
             If Res.Count = 0 Then
@@ -268,8 +274,12 @@ Public Class frm_Main
         Next
 
         If UpdateBackground Then
-            Result.Save(Path.Combine(Application.StartupPath, "TempBackground.png"))
-            UpdateBackground = False
+            Try
+                Result.Save(Path.Combine(Application.StartupPath, "TempBackground.png"))
+                UpdateBackground = False
+            Catch ex As Exception
+                UpdateBackground = True
+            End Try
         End If
 
         If Result Is Nothing OrElse SaveOption.SaveLayersSeparately Then
@@ -865,10 +875,6 @@ Public Class frm_Main
 
     Private Sub CMB_Zoom_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_Zoom.SelectedIndexChanged
         UpdateBackground = True
-        NUD_AdditionalTilesNorth.Maximum = CDec(2 ^ (CInt(CMB_Zoom.SelectedItem)))
-        NUD_AdditionalTilesEast.Maximum = CDec(2 ^ (CInt(CMB_Zoom.SelectedItem)))
-        NUD_AdditionalTilesWest.Maximum = CDec(2 ^ (CInt(CMB_Zoom.SelectedItem)))
-        NUD_AdditionalTilesSouth.Maximum = CDec(2 ^ (CInt(CMB_Zoom.SelectedItem)))
     End Sub
 
     Private Sub DGV_Route_DragEnter(sender As Object, e As DragEventArgs) Handles DGV_Route.DragEnter
@@ -898,32 +904,41 @@ Public Class frm_Main
     End Sub
 
     Private Sub TC_Main_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TC_Main.SelectedIndexChanged
-        If TC_Main.SelectedTab.Name = "TP_RouteVisualizer" Then
-            TilesWizardToolStripMenuItem.Enabled = False
-        ElseIf TC_Main.SelectedTab.Name = "TP_Layers" AndAlso Not LayerBindingSource.Current Is Nothing Then
+        ZoomWizardEnabling()
+    End Sub
+
+    Private Sub ZoomWizardEnabling()
+        If TC_Main.SelectedTab Is Nothing Then
+            Exit Sub
+        End If
+        If TC_Main.SelectedTab.Name = "TP_Layers" AndAlso Not LayerBindingSource.Current Is Nothing AndAlso Not CType(LayerBindingSource.Current, DataRowView).IsNew Then
             TilesWizardToolStripMenuItem.Enabled = True
+        Else
+            TilesWizardToolStripMenuItem.Enabled = False
         End If
     End Sub
 
     Private Sub TilesWizardToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TilesWizardToolStripMenuItem.Click
-        If OFD_LayerWizard.ShowDialog() = DialogResult.OK Then
-            Dim ZR As ZoomRow = Data.Zoom.NewZoomRow()
-            ZR.Path = OFD_LayerWizard.FileName.Replace(Application.StartupPath() & Path.DirectorySeparatorChar, "")
-            Using bmp As New Bitmap(OFD_LayerWizard.FileName)
-                ZR.Tileheight = bmp.Height
-                ZR.Tilewidth = bmp.Width
-            End Using
-            Dim Zoom As Integer
-            While Not Integer.TryParse(Microsoft.VisualBasic.InputBox(My.Resources.Main_EnterZoomValue), Zoom) OrElse Not Zoom >= 0
-                MessageBox.Show(My.Resources.Main_ZoomInteger)
-            End While
-            ZR.Zoomvalue = Zoom
-            Dim CurLayerDRV As DataRowView = CType(LayerBindingSource.Current, DataRowView)
-            Dim CurLayer As LayerRow = CType(CurLayerDRV.Row, LayerRow)
-            ZR.LayerID = CurLayer.ID
-            Data.Zoom.AddZoomRow(ZR)
+        If MessageBox.Show(My.Resources.Main_ZoomWizardIntro) = DialogResult.OK Then
+            If OFD_LayerWizard.ShowDialog() = DialogResult.OK Then
+                Dim ZR As ZoomRow = Data.Zoom.NewZoomRow()
+                ZR.Path = OFD_LayerWizard.FileName.Replace(Application.StartupPath() & Path.DirectorySeparatorChar, "")
+                Using bmp As New Bitmap(OFD_LayerWizard.FileName)
+                    ZR.Tileheight = bmp.Height
+                    ZR.Tilewidth = bmp.Width
+                End Using
+                Dim Zoom As Integer
+                While Not Integer.TryParse(Microsoft.VisualBasic.InputBox(My.Resources.Main_EnterZoomValue), Zoom) OrElse Not Zoom >= 0
+                    MessageBox.Show(My.Resources.Main_ZoomInteger)
+                End While
+                ZR.Zoomvalue = Zoom
+                Dim CurLayerDRV As DataRowView = CType(LayerBindingSource.Current, DataRowView)
+                Dim CurLayer As LayerRow = CType(CurLayerDRV.Row, LayerRow)
+                ZR.LayerID = CurLayer.ID
+                Data.Zoom.AddZoomRow(ZR)
 
-            MessageBox.Show(My.Resources.Main_RowAddedReplace)
+                MessageBox.Show(My.Resources.Main_RowAddedReplace)
+            End If
         End If
     End Sub
 
@@ -975,6 +990,31 @@ Public Class frm_Main
         Dim drv As DataRowView = CType(RoutefileBindingSource.Current, DataRowView)
         Dim DR As RoutefileRow = CType(drv.Row, RoutefileRow)
         Process.Start("explorer.exe", "/select,""" & DR.Path & """")
+    End Sub
+
+    Private Sub LayerDataGridView_RowsAdded(sender As Object, e As DataGridViewRowsAddedEventArgs) Handles LayerDataGridView.RowsAdded
+        ZoomWizardEnabling()
+    End Sub
+
+    Private Sub LayerDataGridView_RowsRemoved(sender As Object, e As DataGridViewRowsRemovedEventArgs) Handles LayerDataGridView.RowsRemoved
+        ZoomWizardEnabling()
+    End Sub
+
+    Private Sub LayerDataGridView_SelectionChanged(sender As Object, e As EventArgs) Handles LayerDataGridView.SelectionChanged
+        ZoomWizardEnabling()
+    End Sub
+
+    Private Sub DuplicateRowToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DuplicateRowToolStripMenuItem.Click
+        Dim DRV As DataRowView = CType(ZoomBindingSource1.Current, DataRowView)
+        Dim ZR As ZoomRow = CType(DRV.Row, ZoomRow)
+        Dim ZR_New As ZoomRow = Data.Zoom.NewZoomRow()
+        ZR_New.Path = ZR.Path
+        ZR_New.Tileheight = ZR.Tileheight
+        ZR_New.Tilewidth = ZR.Tilewidth
+        ZR_New.LayerID = ZR.LayerID
+        ZR_New.Zoomvalue = ZR.Zoomvalue
+        Data.Zoom.AddZoomRow(ZR_New)
+        ZoomBindingSource1.EndEdit()
     End Sub
 End Class
 

@@ -39,6 +39,8 @@ Partial Class frm_Main
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CMS_ZoomDataGridView = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.DuplicateRowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ZoomBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
         Me.GB_Route = New System.Windows.Forms.GroupBox()
@@ -105,8 +107,8 @@ Partial Class frm_Main
         Me.TSSL_EscToAbort = New System.Windows.Forms.ToolStripStatusLabel()
         Me.TSSL_Progress = New System.Windows.Forms.ToolStripStatusLabel()
         Me.TSPB_Progress = New System.Windows.Forms.ToolStripProgressBar()
-        Me.ZoomBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.OFD_LayerWizard = New System.Windows.Forms.OpenFileDialog()
+        Me.ZoomBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.SplitContainer3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer3.Panel1.SuspendLayout()
         Me.SplitContainer3.Panel2.SuspendLayout()
@@ -118,6 +120,7 @@ Partial Class frm_Main
         Me.GroupBox2.SuspendLayout()
         CType(Me.ZoomDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LayerBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.CMS_ZoomDataGridView.SuspendLayout()
         CType(Me.ZoomBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer2.Panel1.SuspendLayout()
@@ -158,27 +161,29 @@ Partial Class frm_Main
         '
         'SplitContainer3.Panel1
         '
+        resources.ApplyResources(Me.SplitContainer3.Panel1, "SplitContainer3.Panel1")
         Me.SplitContainer3.Panel1.Controls.Add(Me.GroupBox1)
         '
         'SplitContainer3.Panel2
         '
+        resources.ApplyResources(Me.SplitContainer3.Panel2, "SplitContainer3.Panel2")
         Me.SplitContainer3.Panel2.Controls.Add(Me.GroupBox2)
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.LayerDataGridView)
         resources.ApplyResources(Me.GroupBox1, "GroupBox1")
+        Me.GroupBox1.Controls.Add(Me.LayerDataGridView)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.TabStop = False
         '
         'LayerDataGridView
         '
+        resources.ApplyResources(Me.LayerDataGridView, "LayerDataGridView")
         Me.LayerDataGridView.AutoGenerateColumns = False
         Me.LayerDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.LayerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.LayerDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn2, Me.Sortindex})
         Me.LayerDataGridView.DataSource = Me.LayerBindingSource
-        resources.ApplyResources(Me.LayerDataGridView, "LayerDataGridView")
         Me.LayerDataGridView.Name = "LayerDataGridView"
         '
         'DataGridViewTextBoxColumn2
@@ -206,20 +211,21 @@ Partial Class frm_Main
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.ZoomDataGridView)
         resources.ApplyResources(Me.GroupBox2, "GroupBox2")
+        Me.GroupBox2.Controls.Add(Me.ZoomDataGridView)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.TabStop = False
         '
         'ZoomDataGridView
         '
+        resources.ApplyResources(Me.ZoomDataGridView, "ZoomDataGridView")
         Me.ZoomDataGridView.AutoGenerateColumns = False
         Me.ZoomDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.ZoomDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.ZoomDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ZoomDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn10})
+        Me.ZoomDataGridView.ContextMenuStrip = Me.CMS_ZoomDataGridView
         Me.ZoomDataGridView.DataSource = Me.ZoomBindingSource1
-        resources.ApplyResources(Me.ZoomDataGridView, "ZoomDataGridView")
         Me.ZoomDataGridView.Name = "ZoomDataGridView"
         '
         'DataGridViewTextBoxColumn4
@@ -266,6 +272,17 @@ Partial Class frm_Main
         resources.ApplyResources(Me.DataGridViewTextBoxColumn10, "DataGridViewTextBoxColumn10")
         Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
         '
+        'CMS_ZoomDataGridView
+        '
+        resources.ApplyResources(Me.CMS_ZoomDataGridView, "CMS_ZoomDataGridView")
+        Me.CMS_ZoomDataGridView.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DuplicateRowToolStripMenuItem})
+        Me.CMS_ZoomDataGridView.Name = "CMS_ZoomDataGridView"
+        '
+        'DuplicateRowToolStripMenuItem
+        '
+        resources.ApplyResources(Me.DuplicateRowToolStripMenuItem, "DuplicateRowToolStripMenuItem")
+        Me.DuplicateRowToolStripMenuItem.Name = "DuplicateRowToolStripMenuItem"
+        '
         'ZoomBindingSource1
         '
         Me.ZoomBindingSource1.DataMember = "Layer_Zoom"
@@ -279,21 +296,24 @@ Partial Class frm_Main
         '
         'SplitContainer2.Panel1
         '
+        resources.ApplyResources(Me.SplitContainer2.Panel1, "SplitContainer2.Panel1")
         Me.SplitContainer2.Panel1.Controls.Add(Me.GB_Route)
         '
         'SplitContainer2.Panel2
         '
+        resources.ApplyResources(Me.SplitContainer2.Panel2, "SplitContainer2.Panel2")
         Me.SplitContainer2.Panel2.Controls.Add(Me.SplitContainer1)
         '
         'GB_Route
         '
-        Me.GB_Route.Controls.Add(Me.DGV_Route)
         resources.ApplyResources(Me.GB_Route, "GB_Route")
+        Me.GB_Route.Controls.Add(Me.DGV_Route)
         Me.GB_Route.Name = "GB_Route"
         Me.GB_Route.TabStop = False
         '
         'DGV_Route
         '
+        resources.ApplyResources(Me.DGV_Route, "DGV_Route")
         Me.DGV_Route.AllowDrop = True
         Me.DGV_Route.AutoGenerateColumns = False
         Me.DGV_Route.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
@@ -302,7 +322,6 @@ Partial Class frm_Main
         Me.DGV_Route.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumnVisibility, Me.DataGridViewTextBoxColumnPath, Me.DataGridViewTextBoxColumnRouteLineWidth, Me.DataGridViewTextBoxColumnRouteColor, Me.DataGridViewTextBoxColumnRouteAlpha})
         Me.DGV_Route.ContextMenuStrip = Me.CMS_DGV_Route
         Me.DGV_Route.DataSource = Me.RoutefileBindingSource
-        resources.ApplyResources(Me.DGV_Route, "DGV_Route")
         Me.DGV_Route.Name = "DGV_Route"
         '
         'DataGridViewTextBoxColumnVisibility
@@ -342,34 +361,34 @@ Partial Class frm_Main
         '
         'CMS_DGV_Route
         '
+        resources.ApplyResources(Me.CMS_DGV_Route, "CMS_DGV_Route")
         Me.CMS_DGV_Route.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SelectAllToolStripMenuItem, Me.DeselectAllToolStripMenuItem, Me.InvertSelectionToolStripMenuItem, Me.ToolStripMenuItem4, Me.OpenPathToolStripMenuItem})
         Me.CMS_DGV_Route.Name = "CMS_DGV_Route"
-        resources.ApplyResources(Me.CMS_DGV_Route, "CMS_DGV_Route")
         '
         'SelectAllToolStripMenuItem
         '
-        Me.SelectAllToolStripMenuItem.Name = "SelectAllToolStripMenuItem"
         resources.ApplyResources(Me.SelectAllToolStripMenuItem, "SelectAllToolStripMenuItem")
+        Me.SelectAllToolStripMenuItem.Name = "SelectAllToolStripMenuItem"
         '
         'DeselectAllToolStripMenuItem
         '
-        Me.DeselectAllToolStripMenuItem.Name = "DeselectAllToolStripMenuItem"
         resources.ApplyResources(Me.DeselectAllToolStripMenuItem, "DeselectAllToolStripMenuItem")
+        Me.DeselectAllToolStripMenuItem.Name = "DeselectAllToolStripMenuItem"
         '
         'InvertSelectionToolStripMenuItem
         '
-        Me.InvertSelectionToolStripMenuItem.Name = "InvertSelectionToolStripMenuItem"
         resources.ApplyResources(Me.InvertSelectionToolStripMenuItem, "InvertSelectionToolStripMenuItem")
+        Me.InvertSelectionToolStripMenuItem.Name = "InvertSelectionToolStripMenuItem"
         '
         'ToolStripMenuItem4
         '
-        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
         resources.ApplyResources(Me.ToolStripMenuItem4, "ToolStripMenuItem4")
+        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
         '
         'OpenPathToolStripMenuItem
         '
-        Me.OpenPathToolStripMenuItem.Name = "OpenPathToolStripMenuItem"
         resources.ApplyResources(Me.OpenPathToolStripMenuItem, "OpenPathToolStripMenuItem")
+        Me.OpenPathToolStripMenuItem.Name = "OpenPathToolStripMenuItem"
         '
         'RoutefileBindingSource
         '
@@ -384,10 +403,12 @@ Partial Class frm_Main
         '
         'SplitContainer1.Panel1
         '
+        resources.ApplyResources(Me.SplitContainer1.Panel1, "SplitContainer1.Panel1")
         Me.SplitContainer1.Panel1.Controls.Add(Me.TableLayoutPanel1)
         '
         'SplitContainer1.Panel2
         '
+        resources.ApplyResources(Me.SplitContainer1.Panel2, "SplitContainer1.Panel2")
         Me.SplitContainer1.Panel2.Controls.Add(Me.GB_Preview)
         '
         'TableLayoutPanel1
@@ -405,8 +426,8 @@ Partial Class frm_Main
         '
         'GB_AdditionalTiles
         '
-        Me.GB_AdditionalTiles.Controls.Add(Me.TableLayoutPanel3)
         resources.ApplyResources(Me.GB_AdditionalTiles, "GB_AdditionalTiles")
+        Me.GB_AdditionalTiles.Controls.Add(Me.TableLayoutPanel3)
         Me.GB_AdditionalTiles.Name = "GB_AdditionalTiles"
         Me.GB_AdditionalTiles.TabStop = False
         '
@@ -427,26 +448,30 @@ Partial Class frm_Main
         '
         'NUD_AdditionalTilesSouth
         '
-        Me.TableLayoutPanel3.SetColumnSpan(Me.NUD_AdditionalTilesSouth, 3)
         resources.ApplyResources(Me.NUD_AdditionalTilesSouth, "NUD_AdditionalTilesSouth")
+        Me.TableLayoutPanel3.SetColumnSpan(Me.NUD_AdditionalTilesSouth, 3)
+        Me.NUD_AdditionalTilesSouth.Maximum = New Decimal(New Integer() {1024, 0, 0, 0})
         Me.NUD_AdditionalTilesSouth.Name = "NUD_AdditionalTilesSouth"
         '
         'NUD_AdditionalTilesWest
         '
-        Me.TableLayoutPanel3.SetColumnSpan(Me.NUD_AdditionalTilesWest, 2)
         resources.ApplyResources(Me.NUD_AdditionalTilesWest, "NUD_AdditionalTilesWest")
+        Me.TableLayoutPanel3.SetColumnSpan(Me.NUD_AdditionalTilesWest, 2)
+        Me.NUD_AdditionalTilesWest.Maximum = New Decimal(New Integer() {1024, 0, 0, 0})
         Me.NUD_AdditionalTilesWest.Name = "NUD_AdditionalTilesWest"
         '
         'NUD_AdditionalTilesEast
         '
-        Me.TableLayoutPanel3.SetColumnSpan(Me.NUD_AdditionalTilesEast, 2)
         resources.ApplyResources(Me.NUD_AdditionalTilesEast, "NUD_AdditionalTilesEast")
+        Me.TableLayoutPanel3.SetColumnSpan(Me.NUD_AdditionalTilesEast, 2)
+        Me.NUD_AdditionalTilesEast.Maximum = New Decimal(New Integer() {1024, 0, 0, 0})
         Me.NUD_AdditionalTilesEast.Name = "NUD_AdditionalTilesEast"
         '
         'NUD_AdditionalTilesNorth
         '
-        Me.TableLayoutPanel3.SetColumnSpan(Me.NUD_AdditionalTilesNorth, 3)
         resources.ApplyResources(Me.NUD_AdditionalTilesNorth, "NUD_AdditionalTilesNorth")
+        Me.TableLayoutPanel3.SetColumnSpan(Me.NUD_AdditionalTilesNorth, 3)
+        Me.NUD_AdditionalTilesNorth.Maximum = New Decimal(New Integer() {1024, 0, 0, 0})
         Me.NUD_AdditionalTilesNorth.Name = "NUD_AdditionalTilesNorth"
         '
         'L_North
@@ -490,8 +515,8 @@ Partial Class frm_Main
         '
         'GB_Layers
         '
-        Me.GB_Layers.Controls.Add(Me.TableLayoutPanel4)
         resources.ApplyResources(Me.GB_Layers, "GB_Layers")
+        Me.GB_Layers.Controls.Add(Me.TableLayoutPanel4)
         Me.GB_Layers.Name = "GB_Layers"
         Me.GB_Layers.TabStop = False
         '
@@ -517,17 +542,17 @@ Partial Class frm_Main
         '
         'CLB_Layers
         '
+        resources.ApplyResources(Me.CLB_Layers, "CLB_Layers")
         Me.CLB_Layers.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.CLB_Layers.CheckOnClick = True
         Me.TableLayoutPanel4.SetColumnSpan(Me.CLB_Layers, 2)
-        resources.ApplyResources(Me.CLB_Layers, "CLB_Layers")
         Me.CLB_Layers.FormattingEnabled = True
         Me.CLB_Layers.Name = "CLB_Layers"
         '
         'GB_Preview
         '
-        Me.GB_Preview.Controls.Add(Me.PB_Preview)
         resources.ApplyResources(Me.GB_Preview, "GB_Preview")
+        Me.GB_Preview.Controls.Add(Me.PB_Preview)
         Me.GB_Preview.Name = "GB_Preview"
         Me.GB_Preview.TabStop = False
         '
@@ -552,23 +577,23 @@ Partial Class frm_Main
         '
         'TP_Layers
         '
-        Me.TP_Layers.Controls.Add(Me.SplitContainer3)
         resources.ApplyResources(Me.TP_Layers, "TP_Layers")
+        Me.TP_Layers.Controls.Add(Me.SplitContainer3)
         Me.TP_Layers.Name = "TP_Layers"
         Me.TP_Layers.UseVisualStyleBackColor = True
         '
         'TP_RouteVisualizer
         '
-        Me.TP_RouteVisualizer.Controls.Add(Me.SplitContainer2)
         resources.ApplyResources(Me.TP_RouteVisualizer, "TP_RouteVisualizer")
+        Me.TP_RouteVisualizer.Controls.Add(Me.SplitContainer2)
         Me.TP_RouteVisualizer.Name = "TP_RouteVisualizer"
         Me.TP_RouteVisualizer.UseVisualStyleBackColor = True
         '
         'TC_Main
         '
+        resources.ApplyResources(Me.TC_Main, "TC_Main")
         Me.TC_Main.Controls.Add(Me.TP_RouteVisualizer)
         Me.TC_Main.Controls.Add(Me.TP_Layers)
-        resources.ApplyResources(Me.TC_Main, "TC_Main")
         Me.TC_Main.Name = "TC_Main"
         Me.TC_Main.SelectedIndex = 0
         '
@@ -578,72 +603,72 @@ Partial Class frm_Main
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.LayerToolStripMenuItem, Me.HelpToolStripMenuItem})
         resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.LayerToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Name = "MenuStrip1"
         '
         'FileToolStripMenuItem
         '
+        resources.ApplyResources(Me.FileToolStripMenuItem, "FileToolStripMenuItem")
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UpdatePreviewToolStripMenuItem, Me.ToolStripMenuItem1, Me.SaveAsImageToolStripMenuItem, Me.SaveLayersSeparatelyToolStripMenuItem, Me.ToolStripMenuItem2, Me.SpeichernToolStripMenuItem, Me.ToolStripMenuItem3, Me.QuitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        resources.ApplyResources(Me.FileToolStripMenuItem, "FileToolStripMenuItem")
         '
         'UpdatePreviewToolStripMenuItem
         '
-        Me.UpdatePreviewToolStripMenuItem.Name = "UpdatePreviewToolStripMenuItem"
         resources.ApplyResources(Me.UpdatePreviewToolStripMenuItem, "UpdatePreviewToolStripMenuItem")
+        Me.UpdatePreviewToolStripMenuItem.Name = "UpdatePreviewToolStripMenuItem"
         '
         'ToolStripMenuItem1
         '
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         resources.ApplyResources(Me.ToolStripMenuItem1, "ToolStripMenuItem1")
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         '
         'SaveAsImageToolStripMenuItem
         '
-        Me.SaveAsImageToolStripMenuItem.Name = "SaveAsImageToolStripMenuItem"
         resources.ApplyResources(Me.SaveAsImageToolStripMenuItem, "SaveAsImageToolStripMenuItem")
+        Me.SaveAsImageToolStripMenuItem.Name = "SaveAsImageToolStripMenuItem"
         '
         'SaveLayersSeparatelyToolStripMenuItem
         '
+        resources.ApplyResources(Me.SaveLayersSeparatelyToolStripMenuItem, "SaveLayersSeparatelyToolStripMenuItem")
         Me.SaveLayersSeparatelyToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RoutenSeparatToolStripMenuItem, Me.RoutenZusammenfassenToolStripMenuItem})
         Me.SaveLayersSeparatelyToolStripMenuItem.Name = "SaveLayersSeparatelyToolStripMenuItem"
-        resources.ApplyResources(Me.SaveLayersSeparatelyToolStripMenuItem, "SaveLayersSeparatelyToolStripMenuItem")
         '
         'RoutenSeparatToolStripMenuItem
         '
-        Me.RoutenSeparatToolStripMenuItem.Name = "RoutenSeparatToolStripMenuItem"
         resources.ApplyResources(Me.RoutenSeparatToolStripMenuItem, "RoutenSeparatToolStripMenuItem")
+        Me.RoutenSeparatToolStripMenuItem.Name = "RoutenSeparatToolStripMenuItem"
         '
         'RoutenZusammenfassenToolStripMenuItem
         '
-        Me.RoutenZusammenfassenToolStripMenuItem.Name = "RoutenZusammenfassenToolStripMenuItem"
         resources.ApplyResources(Me.RoutenZusammenfassenToolStripMenuItem, "RoutenZusammenfassenToolStripMenuItem")
+        Me.RoutenZusammenfassenToolStripMenuItem.Name = "RoutenZusammenfassenToolStripMenuItem"
         '
         'ToolStripMenuItem2
         '
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
         resources.ApplyResources(Me.ToolStripMenuItem2, "ToolStripMenuItem2")
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
         '
         'SpeichernToolStripMenuItem
         '
-        Me.SpeichernToolStripMenuItem.Name = "SpeichernToolStripMenuItem"
         resources.ApplyResources(Me.SpeichernToolStripMenuItem, "SpeichernToolStripMenuItem")
+        Me.SpeichernToolStripMenuItem.Name = "SpeichernToolStripMenuItem"
         '
         'ToolStripMenuItem3
         '
-        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
         resources.ApplyResources(Me.ToolStripMenuItem3, "ToolStripMenuItem3")
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
         '
         'QuitToolStripMenuItem
         '
-        Me.QuitToolStripMenuItem.Name = "QuitToolStripMenuItem"
         resources.ApplyResources(Me.QuitToolStripMenuItem, "QuitToolStripMenuItem")
+        Me.QuitToolStripMenuItem.Name = "QuitToolStripMenuItem"
         '
         'LayerToolStripMenuItem
         '
+        resources.ApplyResources(Me.LayerToolStripMenuItem, "LayerToolStripMenuItem")
         Me.LayerToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TilesWizardToolStripMenuItem})
         Me.LayerToolStripMenuItem.Name = "LayerToolStripMenuItem"
-        resources.ApplyResources(Me.LayerToolStripMenuItem, "LayerToolStripMenuItem")
         '
         'TilesWizardToolStripMenuItem
         '
@@ -652,51 +677,51 @@ Partial Class frm_Main
         '
         'HelpToolStripMenuItem
         '
+        resources.ApplyResources(Me.HelpToolStripMenuItem, "HelpToolStripMenuItem")
         Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HilfeAnzeigenToolStripMenuItem, Me.ÜberToolStripMenuItem})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        resources.ApplyResources(Me.HelpToolStripMenuItem, "HelpToolStripMenuItem")
         '
         'HilfeAnzeigenToolStripMenuItem
         '
-        Me.HilfeAnzeigenToolStripMenuItem.Name = "HilfeAnzeigenToolStripMenuItem"
         resources.ApplyResources(Me.HilfeAnzeigenToolStripMenuItem, "HilfeAnzeigenToolStripMenuItem")
+        Me.HilfeAnzeigenToolStripMenuItem.Name = "HilfeAnzeigenToolStripMenuItem"
         '
         'ÜberToolStripMenuItem
         '
-        Me.ÜberToolStripMenuItem.Name = "ÜberToolStripMenuItem"
         resources.ApplyResources(Me.ÜberToolStripMenuItem, "ÜberToolStripMenuItem")
+        Me.ÜberToolStripMenuItem.Name = "ÜberToolStripMenuItem"
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSSL_EscToAbort, Me.TSSL_Progress, Me.TSPB_Progress})
         resources.ApplyResources(Me.StatusStrip1, "StatusStrip1")
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSSL_EscToAbort, Me.TSSL_Progress, Me.TSPB_Progress})
         Me.StatusStrip1.Name = "StatusStrip1"
         '
         'TSSL_EscToAbort
         '
-        Me.TSSL_EscToAbort.Name = "TSSL_EscToAbort"
         resources.ApplyResources(Me.TSSL_EscToAbort, "TSSL_EscToAbort")
+        Me.TSSL_EscToAbort.Name = "TSSL_EscToAbort"
         Me.TSSL_EscToAbort.Spring = True
         '
         'TSSL_Progress
         '
-        Me.TSSL_Progress.Name = "TSSL_Progress"
         resources.ApplyResources(Me.TSSL_Progress, "TSSL_Progress")
+        Me.TSSL_Progress.Name = "TSSL_Progress"
         '
         'TSPB_Progress
         '
-        Me.TSPB_Progress.Name = "TSPB_Progress"
         resources.ApplyResources(Me.TSPB_Progress, "TSPB_Progress")
-        '
-        'ZoomBindingSource
-        '
-        Me.ZoomBindingSource.DataMember = "Zoom"
-        Me.ZoomBindingSource.DataSource = Me.Data
+        Me.TSPB_Progress.Name = "TSPB_Progress"
         '
         'OFD_LayerWizard
         '
         Me.OFD_LayerWizard.FileName = "OpenFileDialog1"
         resources.ApplyResources(Me.OFD_LayerWizard, "OFD_LayerWizard")
+        '
+        'ZoomBindingSource
+        '
+        Me.ZoomBindingSource.DataMember = "Zoom"
+        Me.ZoomBindingSource.DataSource = Me.Data
         '
         'frm_Main
         '
@@ -720,6 +745,7 @@ Partial Class frm_Main
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.ZoomDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LayerBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.CMS_ZoomDataGridView.ResumeLayout(False)
         CType(Me.ZoomBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer2.Panel1.ResumeLayout(False)
         Me.SplitContainer2.Panel2.ResumeLayout(False)
@@ -854,4 +880,6 @@ Partial Class frm_Main
     Friend WithEvents LayerToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TilesWizardToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Btn_Switch As Button
+    Friend WithEvents CMS_ZoomDataGridView As ContextMenuStrip
+    Friend WithEvents DuplicateRowToolStripMenuItem As ToolStripMenuItem
 End Class

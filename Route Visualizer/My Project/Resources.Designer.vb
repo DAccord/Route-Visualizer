@@ -529,6 +529,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Please select a tile from the selected layer and with the desired zoom value and remember the zoom value and the row and column index..
+        '''</summary>
+        Friend ReadOnly Property Main_ZoomWizardIntro() As String
+            Get
+                Return ResourceManager.GetString("Main_ZoomWizardIntro", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Supported file types|*.gpx;*.kml|gpx files|*.gpx|kml files|*.kml.
         '''</summary>
         Friend ReadOnly Property OFD_ImportRouteFilter() As String
