@@ -4,8 +4,6 @@ Die deutsche Version dieses Dokuments gibt es [hier](https://github.com/DAccord/
 
 ***
 
-*Route Visualizer* will be available in english soon.
-
 *Route Visualizer* is a program to plot coordinates from <tt>kml</tt> or <tt>gpx</tt> files (implemented in v0.2.0-beta) onto a map. This results in a highly resolved image file.  
 
 * The current version can be downloaded [here](https://github.com/DAccord/Route-Visualizer/releases/latest). To run, at least Microsoft .NET Framework 4 is required. Unless installed, it can be downloaded [here](https://www.microsoft.com/en-us/download/details.aspx?id=17851) (Web installer) or [here](https://www.microsoft.com/en-us/download/details.aspx?id=17718) (standalone installer).
