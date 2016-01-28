@@ -1,4 +1,4 @@
-# Route Visualizer
+# Route Visualizer (English)
 
 Die deutsche Version dieses Dokuments gibt es [hier](https://github.com/DAccord/Route-Visualizer/blob/master/README.md).
 
