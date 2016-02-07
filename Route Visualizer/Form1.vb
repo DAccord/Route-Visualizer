@@ -273,7 +273,7 @@ Public Class frm_Main
                       End Sub)
         Next
 
-        If UpdateBackground Then
+        If UpdateBackground AndAlso Not SaveOption.SaveLayersSeparately Then
             Try
                 Result.Save(Path.Combine(Application.StartupPath, "TempBackground.png"))
                 UpdateBackground = False
@@ -819,6 +819,7 @@ Public Class frm_Main
     End Sub
 
     Private Sub RoutenZusammenfassenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RoutenZusammenfassenToolStripMenuItem.Click
+        UpdateBackground = True
         SaveOption = New SaveOptions(False, True, False)
         If TH.IsAlive() Then
             Exit Sub
@@ -830,6 +831,7 @@ Public Class frm_Main
     End Sub
 
     Private Sub RoutenSeparatToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RoutenSeparatToolStripMenuItem.Click
+        UpdateBackground = True
         SaveOption = New SaveOptions(False, True, True)
         If TH.IsAlive() Then
             Exit Sub
