@@ -8,8 +8,10 @@ Public Class frm_Main
     Dim Coordinates As New List(Of Coordinate)
     Public Property NUD_RowFrom As Object
     Dim LayerDataView As DataView
-    Dim TH As New Threading.Thread(AddressOf UpdatePreviewNew)
+    Dim TH_UpdatePreview As New Threading.Thread(AddressOf UpdatePreviewNew)
+    Dim TH_AnimationSingleFiles As New Threading.Thread(AddressOf Animation)
     Dim SaveOption As New SaveOptions
+    Dim AnimationSaveOption As New AnimationSaving
     Dim UpdateBackground As Boolean = True
     Dim DistZooms As List(Of Integer)
 
@@ -52,8 +54,6 @@ Public Class frm_Main
         SFD_SaveImage.Title = My.Resources.SFD_SaveImageTitle
         FBD_SaveLayersSeperately.Description = My.Resources.FBD_SaveLayersSeperatelyDescription
         OFD_LayerWizard.Filter = My.Resources.OFD_LayerWizardFilter
-
-        'CMS_DGV_Route translations
     End Sub
 
     Sub GUIEnabling(EnabledState As Boolean)
@@ -489,12 +489,20 @@ Public Class frm_Main
     End Sub
 
     Private Sub frm_Main_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        If TH.IsAlive() Then
+        If TH_UpdatePreview.IsAlive() Then
             If MessageBox.Show(My.Resources.Main_CancelMapCreation, My.Resources.Main_CancelMapCreation_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
                 e.Cancel = True
                 Exit Sub
             Else
-                TH.Abort()
+                TH_UpdatePreview.Abort()
+            End If
+        End If
+        If TH_AnimationSingleFiles.IsAlive() Then
+            If MessageBox.Show(My.Resources.Main_CancelMapCreation, My.Resources.Main_CancelMapCreation_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
+                e.Cancel = True
+                Exit Sub
+            Else
+                TH_AnimationSingleFiles.Abort()
             End If
         End If
         Data.WriteXml(Path.Combine(Application.StartupPath, "Data.xml"))
@@ -560,7 +568,7 @@ Public Class frm_Main
                     RR.Path = OFD_ImportRoute.FileName
                 End If
             End If
-                UpdateBackground = True
+            UpdateBackground = True
         ElseIf DGV_Route.Columns(e.ColumnIndex).Name = "DataGridViewTextBoxColumnRouteColor" OrElse DGV_Route.Columns(e.ColumnIndex).Name = "DataGridViewTextBoxColumnSymbolColor" Then
             If ValidateColorObject(DGV_Route.Rows(e.RowIndex).Cells(e.ColumnIndex).Value) Then
                 Dim ColStr() As String = DGV_Route.Rows(e.RowIndex).Cells(e.ColumnIndex).Value.ToString.Replace(" ", "").Split(CType(", ", Char()))
@@ -580,13 +588,13 @@ Public Class frm_Main
 
     Private Sub SaveAsImageToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveAsImageToolStripMenuItem.Click
         SaveOption = New SaveOptions(False, False, False)
-        If TH.IsAlive() Then
+        If TH_UpdatePreview.IsAlive() Then
             Exit Sub
         End If
-        If TH.ThreadState = Threading.ThreadState.Stopped OrElse TH.ThreadState = Threading.ThreadState.Aborted Then
-            TH = New Threading.Thread(AddressOf UpdatePreviewNew)
+        If TH_UpdatePreview.ThreadState = Threading.ThreadState.Stopped OrElse TH_UpdatePreview.ThreadState = Threading.ThreadState.Aborted Then
+            TH_UpdatePreview = New Threading.Thread(AddressOf UpdatePreviewNew)
         End If
-        TH.Start()
+        TH_UpdatePreview.Start()
     End Sub
 
     Private Sub QuitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuitToolStripMenuItem.Click
@@ -594,14 +602,14 @@ Public Class frm_Main
     End Sub
 
     Private Sub UpdatePreviewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UpdatePreviewToolStripMenuItem.Click
-        If TH.IsAlive() Then
+        If TH_UpdatePreview.IsAlive() Then
             Exit Sub
         End If
-        If TH.ThreadState = Threading.ThreadState.Stopped OrElse TH.ThreadState = Threading.ThreadState.Aborted Then
-            TH = New Threading.Thread(AddressOf UpdatePreviewNew)
+        If TH_UpdatePreview.ThreadState = Threading.ThreadState.Stopped OrElse TH_UpdatePreview.ThreadState = Threading.ThreadState.Aborted Then
+            TH_UpdatePreview = New Threading.Thread(AddressOf UpdatePreviewNew)
         End If
         SaveOption = New SaveOptions(True, False, False)
-        TH.Start()
+        TH_UpdatePreview.Start()
     End Sub
 
     Private Sub PB_Preview_DoubleClick(sender As Object, e As EventArgs) Handles PB_Preview.DoubleClick
@@ -614,8 +622,11 @@ Public Class frm_Main
     End Sub
 
     Private Sub frm_Main_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
-        If e.KeyCode = Keys.Escape AndAlso TH.ThreadState = Threading.ThreadState.Running Then
-            TH.Abort()
+        If e.KeyCode = Keys.Escape AndAlso TH_UpdatePreview.ThreadState = Threading.ThreadState.Running Then
+            TH_UpdatePreview.Abort()
+            GUIEnabling(True)
+        ElseIf e.KeyCode = Keys.Escape AndAlso TH_AnimationSingleFiles.ThreadState = Threading.ThreadState.Running Then
+            TH_AnimationSingleFiles.Abort()
             GUIEnabling(True)
         End If
     End Sub
@@ -821,25 +832,25 @@ Public Class frm_Main
     Private Sub RoutenZusammenfassenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RoutenZusammenfassenToolStripMenuItem.Click
         UpdateBackground = True
         SaveOption = New SaveOptions(False, True, False)
-        If TH.IsAlive() Then
+        If TH_UpdatePreview.IsAlive() Then
             Exit Sub
         End If
-        If TH.ThreadState = Threading.ThreadState.Stopped OrElse TH.ThreadState = Threading.ThreadState.Aborted Then
-            TH = New Threading.Thread(AddressOf UpdatePreviewNew)
+        If TH_UpdatePreview.ThreadState = Threading.ThreadState.Stopped OrElse TH_UpdatePreview.ThreadState = Threading.ThreadState.Aborted Then
+            TH_UpdatePreview = New Threading.Thread(AddressOf UpdatePreviewNew)
         End If
-        TH.Start()
+        TH_UpdatePreview.Start()
     End Sub
 
     Private Sub RoutenSeparatToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RoutenSeparatToolStripMenuItem.Click
         UpdateBackground = True
         SaveOption = New SaveOptions(False, True, True)
-        If TH.IsAlive() Then
+        If TH_UpdatePreview.IsAlive() Then
             Exit Sub
         End If
-        If TH.ThreadState = Threading.ThreadState.Stopped OrElse TH.ThreadState = Threading.ThreadState.Aborted Then
-            TH = New Threading.Thread(AddressOf UpdatePreviewNew)
+        If TH_UpdatePreview.ThreadState = Threading.ThreadState.Stopped OrElse TH_UpdatePreview.ThreadState = Threading.ThreadState.Aborted Then
+            TH_UpdatePreview = New Threading.Thread(AddressOf UpdatePreviewNew)
         End If
-        TH.Start()
+        TH_UpdatePreview.Start()
     End Sub
 
     Private Sub DGV_Route_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Route.CellValueChanged
@@ -912,6 +923,9 @@ Public Class frm_Main
     Private Sub ZoomWizardEnabling()
         If TC_Main.SelectedTab Is Nothing Then
             Exit Sub
+        End If
+        If Not LayerBindingSource.Current Is Nothing Then
+            Dim DRV As DataRowView = CType(LayerBindingSource.Current, DataRowView)
         End If
         If TC_Main.SelectedTab.Name = "TP_Layers" AndAlso Not LayerBindingSource.Current Is Nothing AndAlso Not CType(LayerBindingSource.Current, DataRowView).IsNew Then
             TilesWizardToolStripMenuItem.Enabled = True
@@ -1017,6 +1031,336 @@ Public Class frm_Main
         ZR_New.Zoomvalue = ZR.Zoomvalue
         Data.Zoom.AddZoomRow(ZR_New)
         ZoomBindingSource1.EndEdit()
+    End Sub
+
+    Private Sub AnimationSingleFilesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AnimationSingleFilesToolStripMenuItem.Click
+        Dim frm_Save As New frm_AnimationSaveDialog(AnimationSaveOption)
+        If frm_Save.ShowDialog() <> DialogResult.OK Then
+            Exit Sub
+        End If
+
+        If TH_AnimationSingleFiles.IsAlive() Then
+            Exit Sub
+        End If
+        If TH_AnimationSingleFiles.ThreadState = Threading.ThreadState.Stopped OrElse TH_AnimationSingleFiles.ThreadState = Threading.ThreadState.Aborted Then
+            TH_AnimationSingleFiles = New Threading.Thread(AddressOf Animation)
+        End If
+        TH_AnimationSingleFiles.Start()
+    End Sub
+
+    Sub Animation()
+        Dim Starttime As DateTime = DateTime.Now
+        Dim TilePen As New Pen(New SolidBrush(Color.Blue), 5)
+        Dim CurrentZoomRow As ZoomRow
+        Dim Cancel As Boolean = False
+        Dim Log As New StringBuilder
+
+        Me.Invoke(Sub()
+                      GUIEnabling(False)
+                  End Sub)
+
+        Dim Zoom As Integer
+        Me.Invoke(Sub()
+                      If CMB_Zoom.SelectedItem Is Nothing AndAlso Not Cancel Then
+                          MessageBox.Show(My.Resources.Main_SelectZoom, My.Resources.Main_SelectZoom_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                          Cancel = True
+                      End If
+                      If Not Cancel Then
+                          Zoom = CInt(CMB_Zoom.SelectedItem.ToString)
+                      End If
+                  End Sub)
+
+        Me.Invoke(Sub()
+                      If CLB_Layers.CheckedItems.Count = 0 AndAlso Not Cancel Then
+                          MessageBox.Show(My.Resources.Main_SelectLayer, My.Resources.Main_SelectZoom_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                          Cancel = True
+                      End If
+                  End Sub)
+
+        Me.Invoke(Sub()
+                      If Data.Routefile.Rows.Count = 0 AndAlso Not Cancel Then
+                          MessageBox.Show(My.Resources.Main_ImportFile, My.Resources.Main_ImportFile_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                          Cancel = True
+                      End If
+                  End Sub)
+
+        Me.Invoke(Sub()
+                      If Btn_Switch.Tag.ToString = "AbsoluteNumbers" Then
+                          If NUD_AdditionalTilesNorth.Value > NUD_AdditionalTilesSouth.Value AndAlso Not Cancel Then
+                              MessageBox.Show(String.Format(My.Resources.Main_SmallerOrEqual, My.Resources.Main_L_MinRow, My.Resources.Main_L_MaxRow))
+                              Cancel = True
+                          End If
+                          If NUD_AdditionalTilesWest.Value > NUD_AdditionalTilesEast.Value AndAlso Not Cancel Then
+                              MessageBox.Show(String.Format(My.Resources.Main_SmallerOrEqual, My.Resources.Main_L_MinCol, My.Resources.Main_L_MaxCol))
+                              Cancel = True
+                          End If
+                      End If
+                  End Sub)
+
+
+        If Cancel Then
+            Me.Invoke(Sub()
+                          GUIEnabling(True)
+                      End Sub)
+            Exit Sub
+        End If
+
+        Dim Result As Image
+        Dim MyCoordinates As New List(Of Coordinate)
+        Dim RRs() As RoutefileRow = CType(Data.Routefile.Select("Visibility = " & True & " AND RouteLineWidth > 0"), RoutefileRow())
+        If RRs.Length = 0 Then
+            MessageBox.Show(String.Format(My.Resources.Main_NoRoutesToPlot, Environment.NewLine), My.Resources.Main_NoRoutesToPlot_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Me.Invoke(Sub()
+                          GUIEnabling(True)
+                      End Sub)
+            Exit Sub
+        End If
+        Dim ReadCoordinates(RRs.Length - 1) As List(Of Coordinate)
+        Dim cnt As Integer = -1
+        For Each RR As RoutefileRow In RRs
+            cnt += 1
+            Dim Res As New List(Of Coordinate)
+            Try
+                Res = ImportCoordinatesFromFile(RR)
+            Catch ArgNullEx As ArgumentNullException
+                Log.AppendLine(String.Format(My.Resources.Main_PathNull, RR.ID))
+            Catch FNFEx As FileNotFoundException
+                Log.AppendLine(String.Format(My.Resources.Main_FileNotFound, RR.Path))
+            Catch ex As Exception
+                If Not ex.Message Is Nothing AndAlso Not ex.InnerException Is Nothing AndAlso Not ex.InnerException.StackTrace Is Nothing Then
+                    Log.AppendLine(String.Format(My.Resources.Main_ErrorWhileImporting, RR.Path) & Environment.NewLine & ex.Message & Environment.NewLine & ex.InnerException.ToString & Environment.NewLine & ex.InnerException.StackTrace)
+                ElseIf Not ex.Message Is Nothing Then
+                    Log.AppendLine(String.Format(My.Resources.Main_ErrorWhileImporting, RR.Path) & Environment.NewLine & ex.Message)
+                Else
+                    Log.AppendLine(String.Format(My.Resources.Main_ErrorWhileImporting, RR.Path))
+                End If
+            End Try
+            ReadCoordinates(cnt) = Res
+            If Res.Count = 0 Then
+                Log.AppendLine(String.Format(My.Resources.Main_CouldntImportCoordinatesFromFile, RR.Path))
+                Continue For
+            End If
+            MyCoordinates.AddRange(Res)
+        Next
+
+        If MyCoordinates.Count = 0 Then
+            Log.AppendLine(My.Resources.Main_NoCoordinates)
+            WriteLog(Starttime, Log)
+            Me.Invoke(Sub()
+                          GUIEnabling(True)
+                      End Sub)
+            Exit Sub
+        End If
+
+        Me.Invoke(Sub()
+                      TSPB_Progress.Value = 0
+                      TSPB_Progress.Maximum = CLB_Layers.CheckedIndices.Count + Data.Routefile.Select("Visibility = " & True & " AND RouteLineWidth > 0").Length + 1 + MyCoordinates.Count
+                      TSPB_Progress.Visible = True
+                      TSSL_Progress.Visible = True
+                      TSSL_EscToAbort.Visible = True
+                  End Sub)
+
+        Me.Invoke(Sub()
+                      TSPB_Progress.Value += 1
+                  End Sub)
+
+        Dim Tiles() As Point 'array for minimum and maximum tiles
+        For k As Integer = 0 To CLB_Layers.Items.Count - 1
+            If Not CLB_Layers.GetItemChecked(k) Then
+                Continue For
+            End If
+
+            Dim DRV As DataRowView = CType(CLB_Layers.Items(k), DataRowView)
+            Dim CurrentLayer As LayerRow = CType(DRV.Row, LayerRow)
+            Dim ZRs() As ZoomRow = CType(Data.Zoom.Select("LayerID = " & CurrentLayer.ID & " And Zoomvalue = " & Zoom), ZoomRow())
+            If ZRs.Length = 0 Then
+                Log.AppendLine(String.Format(My.Resources.Main_NoTilesLayerZoom, CurrentLayer.Name, Zoom))
+                Continue For
+            End If
+            CurrentZoomRow = ZRs(0)
+
+            If Btn_Switch.Tag.ToString = "AdditionalTiles" Then
+                Tiles = CalcMinMaxTiles(MyCoordinates, CurrentZoomRow)
+            Else
+                Tiles = {New Point(CInt(NUD_AdditionalTilesWest.Value), CInt(NUD_AdditionalTilesNorth.Value)), New Point(CInt(NUD_AdditionalTilesEast.Value), CInt(NUD_AdditionalTilesSouth.Value))}
+            End If
+
+
+            If Not UpdateBackground AndAlso File.Exists(Path.Combine(Application.StartupPath, "TempBackground.png")) Then
+                Result = Image.FromFile(Path.Combine(Application.StartupPath, "TempBackground.png"))
+                Exit For
+            End If
+
+            If Result Is Nothing OrElse SaveOption.SaveLayersSeparately Then
+                Result = New Bitmap((Tiles(1).X - Tiles(0).X + 1) * CurrentZoomRow.Tilewidth, (Tiles(1).Y - Tiles(0).Y + 1) * CurrentZoomRow.Tileheight)
+            End If
+
+            Using g As Graphics = Graphics.FromImage(Result)
+                Using Img As Image = CreateLayerImage(CurrentZoomRow, Tiles, Log)
+                    g.DrawImage(Img, 0, 0, Img.Width, Img.Height)
+                End Using
+            End Using
+            If SaveOption.SaveLayersSeparately Then
+                Result.Save(Path.Combine(FBD_SaveLayersSeperately.SelectedPath, "Layer" & k & ".png"), Imaging.ImageFormat.Png)
+            End If
+            Me.Invoke(Sub()
+                          TSPB_Progress.Value += 1
+                      End Sub)
+        Next
+
+        If UpdateBackground Then
+            Try
+                Result.Save(Path.Combine(Application.StartupPath, "TempBackground.png"))
+                UpdateBackground = False
+            Catch ex As Exception
+                UpdateBackground = True
+            End Try
+        End If
+
+        If Result Is Nothing OrElse SaveOption.SaveLayersSeparately Then
+            Result = New Bitmap((Tiles(1).X - Tiles(0).X + 1) * CurrentZoomRow.Tilewidth, (Tiles(1).Y - Tiles(0).Y + 1) * CurrentZoomRow.Tileheight)
+        End If
+        cnt = 0
+
+
+        '--------------------------------------------------
+
+        Dim FinalPoints As New List(Of Point)
+        For i As Integer = 1 To MyCoordinates.Count - 1
+            Dim LP As New List(Of Point)
+            Dim P1 As Point = New Point(MyCoordinates(i - 1).PixelCoordinate(CurrentZoomRow).X - Tiles(0).X * CurrentZoomRow.Tilewidth, MyCoordinates(i - 1).PixelCoordinate(CurrentZoomRow).Y - Tiles(0).Y * CurrentZoomRow.Tileheight)
+            Dim P2 As Point = New Point(MyCoordinates(i).PixelCoordinate(CurrentZoomRow).X - Tiles(0).X * CurrentZoomRow.Tilewidth, MyCoordinates(i).PixelCoordinate(CurrentZoomRow).Y - Tiles(0).Y * CurrentZoomRow.Tileheight)
+            LP.Add(P1)
+
+            Dim Length As Double = (P1.X - P2.X) ^ 2 + (P1.Y - P2.Y) ^ 2
+            Dim Steps As Integer = CInt(Math.Ceiling(Length) / 20)
+            Dim DeltaX As Double = (P2.X - P1.X) / Steps
+            Dim DeltaY As Double = (P2.Y - P1.Y) / Steps
+
+            For j As Integer = 1 To Steps
+                Dim NewPoint As Point = New Point(CInt(LP.Item(0).X + j * DeltaX), CInt(LP.Item(0).Y + j * DeltaY))
+                If LP(LP.Count - 1) <> NewPoint Then
+                    LP.Add(NewPoint)
+                End If
+            Next
+
+            FinalPoints.AddRange(LP)
+        Next
+
+        For i As Integer = FinalPoints.Count - 2 To 0 Step -1
+            If FinalPoints(i) = FinalPoints(i + 1) Then
+                FinalPoints.RemoveAt(i + 1)
+            End If
+        Next
+
+        If FinalPoints.Count = 0 Then
+            Log.AppendLine(My.Resources.Main_NoCoordinates)
+            WriteLog(Starttime, Log)
+            Me.Invoke(Sub()
+                          GUIEnabling(True)
+                      End Sub)
+            Exit Sub
+        End If
+
+        Me.Invoke(Sub()
+                      TSPB_Progress.Maximum = CLB_Layers.CheckedIndices.Count + Data.Routefile.Select("Visibility = " & True & " AND RouteLineWidth > 0").Length + 1 + FinalPoints.Count
+                  End Sub)
+
+        '------------------------------------------------------
+
+        Dim OrigWidth As Integer = Result.Width
+        Dim OrigHeight As Integer = Result.Height
+        Dim DestWidth As Integer = AnimationSaveOption.Width
+        Dim DestHeight As Integer = AnimationSaveOption.Height
+        If DestWidth > DestHeight Then
+            DestHeight = CInt(OrigHeight / OrigWidth * DestWidth)
+        Else
+            DestWidth = CInt(OrigWidth / OrigHeight * DestHeight)
+        End If
+
+        Dim newBMP As Bitmap
+        Dim StepSize As Integer = AnimationSaveOption.StepSize
+        Dim PointsToDraw As New List(Of Point)
+        Dim RoutePen1 As New Pen(New SolidBrush(AnimationSaveOption.RouteColor), AnimationSaveOption.RouteLineWidth)
+        RoutePen1.EndCap = Drawing2D.LineCap.Round
+        RoutePen1.StartCap = Drawing2D.LineCap.Round
+        RoutePen1.LineJoin = Drawing2D.LineJoin.Round
+        Dim Brush2 As New SolidBrush(AnimationSaveOption.SymbolColor)
+        Dim ImgFormat As Imaging.ImageFormat
+        Select Case AnimationSaveOption.OutputFormat.ToString.ToLower()
+            Case ".bmp"
+                ImgFormat = Imaging.ImageFormat.Bmp
+            Case ".jpg"
+                ImgFormat = Imaging.ImageFormat.Jpeg
+            Case ".png"
+                ImgFormat = Imaging.ImageFormat.Png
+            Case ".gif"
+                ImgFormat = Imaging.ImageFormat.Gif
+            Case ".tif"
+                ImgFormat = Imaging.ImageFormat.Tiff
+            Case Else
+                ImgFormat = Imaging.ImageFormat.Png
+        End Select
+
+        If Not AnimationSaveOption.BackgroundAlways Then
+            Using newBMP_Res As Bitmap = New Bitmap(DestWidth, DestHeight)
+                Using g_Res As Graphics = Graphics.FromImage(newBMP_Res)
+                    g_Res.DrawImage(Result, 0, 0, newBMP_Res.Width + 1, newBMP_Res.Height + 1)
+                End Using
+                newBMP_Res.Save(Path.Combine(AnimationSaveOption.Path, "_Background" & AnimationSaveOption.OutputFormat), ImgFormat)
+            End Using
+        End If
+
+        For i As Integer = 0 To FinalPoints.Count - 1
+            If PointsToDraw.Count = 0 Then
+                PointsToDraw.Add(FinalPoints(i))
+            ElseIf FinalPoints(i) = PointsToDraw(PointsToDraw.Count - 1) Then
+                Continue For
+            Else
+                PointsToDraw.Add(FinalPoints(i))
+            End If
+            If i Mod StepSize <> 0 Then
+                Continue For
+            End If
+            newBMP = New Bitmap(OrigWidth, OrigHeight)
+            Using g As Graphics = System.Drawing.Graphics.FromImage(newBMP)
+                If AnimationSaveOption.BackgroundAlways Then
+                    g.DrawImage(Result, 0, 0, newBMP.Width, newBMP.Height)
+                Else
+                    g.Clear(Color.Transparent)
+                End If
+                If PointsToDraw.Count > 1 Then
+                    g.DrawLines(RoutePen1, PointsToDraw.ToArray())
+                End If
+
+                If AnimationSaveOption.SymbolWidth > 0 Then
+                    g.FillEllipse(Brush2, CInt(PointsToDraw.Item(PointsToDraw.Count - 1).X - AnimationSaveOption.SymbolWidth / 2), CInt(PointsToDraw.Item(PointsToDraw.Count - 1).Y - AnimationSaveOption.SymbolWidth / 2), AnimationSaveOption.SymbolWidth, AnimationSaveOption.SymbolWidth)
+                End If
+            End Using
+
+            Using newBMP_Res As Bitmap = New Bitmap(DestWidth, DestHeight)
+                Using g_Res As Graphics = Graphics.FromImage(newBMP_Res)
+                    g_Res.DrawImage(newBMP, 0, 0, newBMP_Res.Width + 1, newBMP_Res.Height + 1)
+                End Using
+                newBMP_Res.Save(Path.Combine(AnimationSaveOption.Path, i.ToString("D6") & AnimationSaveOption.OutputFormat), ImgFormat)
+            End Using
+            newBMP.Dispose()
+            Me.Invoke(Sub()
+                          If TSPB_Progress.Value + StepSize < TSPB_Progress.Maximum Then
+                              TSPB_Progress.Value += StepSize
+                          Else
+                              TSPB_Progress.Value = TSPB_Progress.Maximum
+                          End If
+                      End Sub)
+        Next
+
+        Me.Invoke(Sub()
+                      GUIEnabling(True)
+                  End Sub)
+
+        If MessageBox.Show(My.Resources.Main_OpenResultDirectory, My.Resources.Main_OpenResultDirectory_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            Process.Start(AnimationSaveOption.Path)
+        End If
     End Sub
 End Class
 

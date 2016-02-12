@@ -118,6 +118,12 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_AnimationSaveDialog.Designer.vb">
+      <DependentUpon>frm_AnimationSaveDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_AnimationSaveDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_Preview.Designer.vb">
       <DependentUpon>frm_Preview.vb</DependentUpon>
     </Compile>
@@ -161,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_AnimationSaveDialog.resx">
+      <DependentUpon>frm_AnimationSaveDialog.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Preview.de-DE.resx">
       <DependentUpon>frm_Preview.vb</DependentUpon>
