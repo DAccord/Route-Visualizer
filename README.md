@@ -9,6 +9,7 @@ An english version of this document can be found [here](https://github.com/DAcco
 * Die aktuelle Version kannst du [hier](https://github.com/DAccord/Route-Visualizer/releases/latest) herunter laden. Zum Ausführen wird mindestens das Microsoft .NET Framework 4 benötigt. Wenn nicht installiert, kannst du es [hier](https://www.microsoft.com/de-de/download/details.aspx?id=17851) (Webinstaller) oder [hier](https://www.microsoft.com/de-de/download/details.aspx?id=17718) (eigenständiger Installer) herunter laden.
 * Schnelle Hilfe findest du im [Wiki](https://github.com/DAccord/Route-Visualizer/wiki).
 * Dort findest du auch das komplette [Changelog](https://github.com/DAccord/Route-Visualizer/wiki/Changelog).
+* Beispiele, die mit *Route Visualizer* erstellt wurden, findest du [hier](https://github.com/DAccord/Route-Visualizer/wiki/Beispiele).
 * Wenn du einen Fehler gefunden hast oder einen Vorschlag für eine neue Funktion hast, erstelle ein [Issue](https://github.com/DAccord/Route-Visualizer/issues).
 
 *Route Visualizer* wurde auf Windows 10 getestet. Wenn die [Systemvoraussetzungen](https://github.com/DAccord/Route-Visualizer/wiki/Systemvoraussetzungen) erfüllt sind, sollte es aber ab Windows Vista laufen.
