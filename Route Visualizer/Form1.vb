@@ -79,10 +79,8 @@ Public Class frm_Main
         Using g As Graphics = Graphics.FromImage(Result)
             For i As Integer = MinMaxTiles(0).Y To MinMaxTiles(1).Y
                 For j As Integer = MinMaxTiles(0).X To MinMaxTiles(1).X
-                    Dim CurrentPath As String = ZR.Path
-                    CurrentPath = CurrentPath.Replace("{C}", j.ToString)
-                    CurrentPath = CurrentPath.Replace("{R}", i.ToString)
-                    CurrentPath = CurrentPath.Replace("{Z}", ZR.Zoomvalue.ToString)
+                    Dim CurrentPath As String = RowColumnZoomReplace(ZR.Path, i, j, ZR.Zoomvalue)
+
                     If Not File.Exists(CurrentPath) Then
                         LogSB.AppendLine(String.Format(My.Resources.Main_CouldntFindTile_Path, CurrentPath))
                         Continue For
@@ -95,6 +93,24 @@ Public Class frm_Main
         End Using
 
         Return Result
+    End Function
+
+    Public Function RowColumnZoomReplace(ByVal Str As String, ByVal RowIndex As Integer, ByVal ColumnIndex As Integer, ByVal Zoom As Integer) As String
+        Dim RowStrings() As String = {"{R}", "{Y}", "{r}", "{y}"}
+        Dim ColumnStrings() As String = {"{C}", "{X}", "{c}", "{x}"}
+        Dim ZoomStrings() As String = {"{Z}", "{z}"}
+
+        For Each SearchStr As String In RowStrings
+            Str = Str.Replace(SearchStr, RowIndex.ToString)
+        Next
+        For Each SearchStr As String In ColumnStrings
+            Str = Str.Replace(SearchStr, ColumnIndex.ToString)
+        Next
+        For Each SearchStr As String In ZoomStrings
+            Str = Str.Replace(SearchStr, Zoom.ToString)
+        Next
+
+        Return Str
     End Function
 
     Public Sub UpdatePreviewNew()
