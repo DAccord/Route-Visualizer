@@ -291,4 +291,16 @@
   <data name="Main_ZoomWizardIntro" xml:space="preserve">
     <value>Please select a tile from the selected layer and with the desired zoom value and remember the zoom value and the row and column index.</value>
   </data>
+  <data name="AnimationSaveDialog_SFDFilter" xml:space="preserve">
+    <value>gif file|*.gif</value>
+  </data>
+  <data name="AnimationSaveDialog_WindowTitle1" xml:space="preserve">
+    <value>Save Animation</value>
+  </data>
+  <data name="AnimationSaveDialog_WindowTitleGIF" xml:space="preserve">
+    <value>GIF</value>
+  </data>
+  <data name="AnimationSaveDialog_WindowTitleSingleFiles" xml:space="preserve">
+    <value>Single Files</value>
+  </data>
 </root>

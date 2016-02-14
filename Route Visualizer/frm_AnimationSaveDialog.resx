@@ -447,14 +447,47 @@
   <data name="TableLayoutPanel4.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
+  <data name="L_LoopCount.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="L_LoopCount.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="L_LoopCount.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="L_LoopCount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 72</value>
+  </data>
+  <data name="L_LoopCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 20</value>
+  </data>
+  <data name="L_LoopCount.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="L_LoopCount.Text" xml:space="preserve">
+    <value>Loops (0 = infinite)</value>
+  </data>
+  <data name="&gt;&gt;L_LoopCount.Name" xml:space="preserve">
+    <value>L_LoopCount</value>
+  </data>
+  <data name="&gt;&gt;L_LoopCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;L_LoopCount.Parent" xml:space="preserve">
+    <value>TableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;L_LoopCount.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="NUD_StepSize.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="NUD_StepSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>79, 3</value>
+    <value>144, 3</value>
   </data>
   <data name="NUD_StepSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 27</value>
+    <value>226, 27</value>
   </data>
   <data name="NUD_StepSize.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -469,7 +502,7 @@
     <value>TableLayoutPanel4</value>
   </data>
   <data name="&gt;&gt;NUD_StepSize.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="Label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
@@ -502,7 +535,85 @@
     <value>TableLayoutPanel4</value>
   </data>
   <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
+  </data>
+  <data name="L_DelayTime.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="L_DelayTime.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="L_DelayTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 39</value>
+  </data>
+  <data name="L_DelayTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 20</value>
+  </data>
+  <data name="L_DelayTime.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="L_DelayTime.Text" xml:space="preserve">
+    <value>Delay Time (ms)</value>
+  </data>
+  <data name="&gt;&gt;L_DelayTime.Name" xml:space="preserve">
+    <value>L_DelayTime</value>
+  </data>
+  <data name="&gt;&gt;L_DelayTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;L_DelayTime.Parent" xml:space="preserve">
+    <value>TableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;L_DelayTime.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="NUD_DelayTime.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="NUD_DelayTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 36</value>
+  </data>
+  <data name="NUD_DelayTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 27</value>
+  </data>
+  <data name="NUD_DelayTime.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;NUD_DelayTime.Name" xml:space="preserve">
+    <value>NUD_DelayTime</value>
+  </data>
+  <data name="&gt;&gt;NUD_DelayTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NUD_DelayTime.Parent" xml:space="preserve">
+    <value>TableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;NUD_DelayTime.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="NUD_LoopCount.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="NUD_LoopCount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 69</value>
+  </data>
+  <data name="NUD_LoopCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 27</value>
+  </data>
+  <data name="NUD_LoopCount.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;NUD_LoopCount.Name" xml:space="preserve">
+    <value>NUD_LoopCount</value>
+  </data>
+  <data name="&gt;&gt;NUD_LoopCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NUD_LoopCount.Parent" xml:space="preserve">
+    <value>TableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;NUD_LoopCount.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="TableLayoutPanel4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -511,13 +622,13 @@
     <value>3, 432</value>
   </data>
   <data name="TableLayoutPanel4.RowCount" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="TableLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>373, 33</value>
+    <value>373, 99</value>
   </data>
   <data name="TableLayoutPanel4.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>15</value>
   </data>
   <data name="&gt;&gt;TableLayoutPanel4.Name" xml:space="preserve">
     <value>TableLayoutPanel4</value>
@@ -532,7 +643,7 @@
     <value>2</value>
   </data>
   <data name="TableLayoutPanel4.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="NUD_StepSize" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Label2" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="L_LoopCount" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="NUD_StepSize" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Label2" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="L_DelayTime" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="NUD_DelayTime" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="NUD_LoopCount" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="TableLayoutPanel5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -547,13 +658,13 @@
     <value>True</value>
   </data>
   <data name="Btn_Cancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>295, 21</value>
+    <value>295, 3</value>
   </data>
   <data name="Btn_Cancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 30</value>
+    <value>75, 6</value>
   </data>
   <data name="Btn_Cancel.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+    <value>20</value>
   </data>
   <data name="Btn_Cancel.Text" xml:space="preserve">
     <value>Cancel</value>
@@ -577,13 +688,13 @@
     <value>True</value>
   </data>
   <data name="Btn_OK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 21</value>
+    <value>214, 3</value>
   </data>
   <data name="Btn_OK.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 30</value>
+    <value>75, 6</value>
   </data>
   <data name="Btn_OK.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>19</value>
   </data>
   <data name="Btn_OK.Text" xml:space="preserve">
     <value>OK</value>
@@ -604,16 +715,16 @@
     <value>Fill</value>
   </data>
   <data name="TableLayoutPanel5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 471</value>
+    <value>3, 537</value>
   </data>
   <data name="TableLayoutPanel5.RowCount" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="TableLayoutPanel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>373, 54</value>
+    <value>373, 12</value>
   </data>
   <data name="TableLayoutPanel5.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>18</value>
   </data>
   <data name="&gt;&gt;TableLayoutPanel5.Name" xml:space="preserve">
     <value>TableLayoutPanel5</value>
@@ -843,34 +954,34 @@
   <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="Label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="L_Output.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
   </data>
-  <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="L_Output.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="L_Output.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 37</value>
   </data>
-  <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="L_Output.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 20</value>
   </data>
-  <data name="Label1.TabIndex" type="System.Int32, mscorlib">
+  <data name="L_Output.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="Label1.Text" xml:space="preserve">
+  <data name="L_Output.Text" xml:space="preserve">
     <value>Output Format</value>
   </data>
-  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
-    <value>Label1</value>
+  <data name="&gt;&gt;L_Output.Name" xml:space="preserve">
+    <value>L_Output</value>
   </data>
-  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
+  <data name="&gt;&gt;L_Output.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;L_Output.Parent" xml:space="preserve">
     <value>TableLayoutPanel7</value>
   </data>
-  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;L_Output.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="Btn_SelectPath.AutoSize" type="System.Boolean, mscorlib">
@@ -1090,7 +1201,7 @@
     <value>0</value>
   </data>
   <data name="TableLayoutPanel7.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="Label3" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Label1" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Btn_SelectPath" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="L_Path" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="CMB_Format" Row="1" RowSpan="1" Column="1" ColumnSpan="2" /&gt;&lt;Control Name="TableLayoutPanel8" Row="0" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="Label3" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="L_Output" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Btn_SelectPath" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="L_Path" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="CMB_Format" Row="1" RowSpan="1" Column="1" ColumnSpan="2" /&gt;&lt;Control Name="TableLayoutPanel8" Row="0" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="GroupBox2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1129,7 +1240,7 @@
     <value>6</value>
   </data>
   <data name="TableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>379, 528</value>
+    <value>379, 552</value>
   </data>
   <data name="TableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1155,6 +1266,12 @@
   <metadata name="FBD_SavePath.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>126, 17</value>
   </metadata>
+  <metadata name="SFD_SaveFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>254, 17</value>
+  </metadata>
+  <data name="SFD_SaveFile.Filter" xml:space="preserve">
+    <value>gif file|*.gif</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1162,7 +1279,7 @@
     <value>8, 20</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>379, 528</value>
+    <value>379, 552</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 11.25pt</value>
@@ -7359,6 +7476,12 @@
   </data>
   <data name="&gt;&gt;FBD_SavePath.Type" xml:space="preserve">
     <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SFD_SaveFile.Name" xml:space="preserve">
+    <value>SFD_SaveFile</value>
+  </data>
+  <data name="&gt;&gt;SFD_SaveFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frm_AnimationSaveDialog</value>

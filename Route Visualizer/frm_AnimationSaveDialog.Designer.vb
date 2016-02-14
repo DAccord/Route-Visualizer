@@ -36,8 +36,12 @@ Partial Class frm_AnimationSaveDialog
         Me.RB_Height = New System.Windows.Forms.RadioButton()
         Me.Nud_Size = New System.Windows.Forms.NumericUpDown()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
+        Me.L_LoopCount = New System.Windows.Forms.Label()
         Me.NUD_StepSize = New System.Windows.Forms.NumericUpDown()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.L_DelayTime = New System.Windows.Forms.Label()
+        Me.NUD_DelayTime = New System.Windows.Forms.NumericUpDown()
+        Me.NUD_LoopCount = New System.Windows.Forms.NumericUpDown()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.Btn_Cancel = New System.Windows.Forms.Button()
         Me.Btn_OK = New System.Windows.Forms.Button()
@@ -50,7 +54,7 @@ Partial Class frm_AnimationSaveDialog
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.L_Output = New System.Windows.Forms.Label()
         Me.Btn_SelectPath = New System.Windows.Forms.Button()
         Me.L_Path = New System.Windows.Forms.Label()
         Me.CMB_Format = New System.Windows.Forms.ComboBox()
@@ -59,6 +63,7 @@ Partial Class frm_AnimationSaveDialog
         Me.RB_AlwaysBackground = New System.Windows.Forms.RadioButton()
         Me.CD_Colour = New System.Windows.Forms.ColorDialog()
         Me.FBD_SavePath = New System.Windows.Forms.FolderBrowserDialog()
+        Me.SFD_SaveFile = New System.Windows.Forms.SaveFileDialog()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.GB_Route.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
@@ -68,6 +73,8 @@ Partial Class frm_AnimationSaveDialog
         CType(Me.Nud_Size, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel4.SuspendLayout()
         CType(Me.NUD_StepSize, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NUD_DelayTime, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NUD_LoopCount, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel5.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.TableLayoutPanel6.SuspendLayout()
@@ -168,9 +175,18 @@ Partial Class frm_AnimationSaveDialog
         'TableLayoutPanel4
         '
         resources.ApplyResources(Me.TableLayoutPanel4, "TableLayoutPanel4")
+        Me.TableLayoutPanel4.Controls.Add(Me.L_LoopCount, 0, 2)
         Me.TableLayoutPanel4.Controls.Add(Me.NUD_StepSize, 1, 0)
         Me.TableLayoutPanel4.Controls.Add(Me.Label2, 0, 0)
+        Me.TableLayoutPanel4.Controls.Add(Me.L_DelayTime, 0, 1)
+        Me.TableLayoutPanel4.Controls.Add(Me.NUD_DelayTime, 1, 1)
+        Me.TableLayoutPanel4.Controls.Add(Me.NUD_LoopCount, 1, 2)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
+        '
+        'L_LoopCount
+        '
+        resources.ApplyResources(Me.L_LoopCount, "L_LoopCount")
+        Me.L_LoopCount.Name = "L_LoopCount"
         '
         'NUD_StepSize
         '
@@ -184,6 +200,25 @@ Partial Class frm_AnimationSaveDialog
         '
         resources.ApplyResources(Me.Label2, "Label2")
         Me.Label2.Name = "Label2"
+        '
+        'L_DelayTime
+        '
+        resources.ApplyResources(Me.L_DelayTime, "L_DelayTime")
+        Me.L_DelayTime.Name = "L_DelayTime"
+        '
+        'NUD_DelayTime
+        '
+        resources.ApplyResources(Me.NUD_DelayTime, "NUD_DelayTime")
+        Me.NUD_DelayTime.Increment = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.NUD_DelayTime.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
+        Me.NUD_DelayTime.Minimum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.NUD_DelayTime.Name = "NUD_DelayTime"
+        Me.NUD_DelayTime.Value = New Decimal(New Integer() {60, 0, 0, 0})
+        '
+        'NUD_LoopCount
+        '
+        resources.ApplyResources(Me.NUD_LoopCount, "NUD_LoopCount")
+        Me.NUD_LoopCount.Name = "NUD_LoopCount"
         '
         'TableLayoutPanel5
         '
@@ -256,7 +291,7 @@ Partial Class frm_AnimationSaveDialog
         '
         resources.ApplyResources(Me.TableLayoutPanel7, "TableLayoutPanel7")
         Me.TableLayoutPanel7.Controls.Add(Me.Label3, 0, 2)
-        Me.TableLayoutPanel7.Controls.Add(Me.Label1, 0, 1)
+        Me.TableLayoutPanel7.Controls.Add(Me.L_Output, 0, 1)
         Me.TableLayoutPanel7.Controls.Add(Me.Btn_SelectPath, 2, 2)
         Me.TableLayoutPanel7.Controls.Add(Me.L_Path, 1, 2)
         Me.TableLayoutPanel7.Controls.Add(Me.CMB_Format, 1, 1)
@@ -268,10 +303,10 @@ Partial Class frm_AnimationSaveDialog
         resources.ApplyResources(Me.Label3, "Label3")
         Me.Label3.Name = "Label3"
         '
-        'Label1
+        'L_Output
         '
-        resources.ApplyResources(Me.Label1, "Label1")
-        Me.Label1.Name = "Label1"
+        resources.ApplyResources(Me.L_Output, "L_Output")
+        Me.L_Output.Name = "L_Output"
         '
         'Btn_SelectPath
         '
@@ -315,6 +350,10 @@ Partial Class frm_AnimationSaveDialog
         Me.RB_AlwaysBackground.TabStop = True
         Me.RB_AlwaysBackground.UseVisualStyleBackColor = True
         '
+        'SFD_SaveFile
+        '
+        resources.ApplyResources(Me.SFD_SaveFile, "SFD_SaveFile")
+        '
         'frm_AnimationSaveDialog
         '
         Me.AcceptButton = Me.Btn_OK
@@ -340,6 +379,8 @@ Partial Class frm_AnimationSaveDialog
         Me.TableLayoutPanel4.ResumeLayout(False)
         Me.TableLayoutPanel4.PerformLayout()
         CType(Me.NUD_StepSize, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NUD_DelayTime, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NUD_LoopCount, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel5.ResumeLayout(False)
         Me.TableLayoutPanel5.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -370,7 +411,7 @@ Partial Class frm_AnimationSaveDialog
     Friend WithEvents RB_Height As RadioButton
     Friend WithEvents Nud_Size As NumericUpDown
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
-    Friend WithEvents Label1 As Label
+    Friend WithEvents L_Output As Label
     Friend WithEvents CMB_Format As ComboBox
     Friend WithEvents Label3 As Label
     Friend WithEvents L_Path As Label
@@ -393,4 +434,9 @@ Partial Class frm_AnimationSaveDialog
     Friend WithEvents TableLayoutPanel8 As TableLayoutPanel
     Friend WithEvents RB_SingleBackground As RadioButton
     Friend WithEvents RB_AlwaysBackground As RadioButton
+    Friend WithEvents L_DelayTime As Label
+    Friend WithEvents NUD_DelayTime As NumericUpDown
+    Friend WithEvents L_LoopCount As Label
+    Friend WithEvents NUD_LoopCount As NumericUpDown
+    Friend WithEvents SFD_SaveFile As SaveFileDialog
 End Class
