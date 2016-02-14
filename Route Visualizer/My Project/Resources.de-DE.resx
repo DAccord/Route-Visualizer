@@ -151,9 +151,9 @@
     <value>{0} beim Einlesen der Datei {1}: {2}{3}{4}{5}{6}</value>
   </data>
   <data name="Main_ImportFile" xml:space="preserve">
-    <value>Wähle mindestens eine Ebene aus bevor du mit der Kartenerstellung beginnst!</value>
+    <value>Importiere mindestens eine Routen-Datei bevor du mit der Kartenerstellung beginnst!</value>
   </data>
-  <data name="Main_ImportRoute_Title" xml:space="preserve">
+  <data name="Main_ImportFile_Title" xml:space="preserve">
     <value>Routen-Datei importieren</value>
   </data>
   <data name="Main_LogHeader" xml:space="preserve">
@@ -193,7 +193,7 @@
     <value>Datei öffnen?</value>
   </data>
   <data name="Main_SelectLayer" xml:space="preserve">
-    <value>Importiere mindestens eine Routen-Datei bevor du mit der Kartenerstellung beginnst!</value>
+    <value>Wähle mindestens eine Ebene bevor du mit der Kartenerstellung beginnst!</value>
   </data>
   <data name="Main_SelectLayer_Title" xml:space="preserve">
     <value>Ebene wählen</value>
@@ -290,5 +290,17 @@
   </data>
   <data name="Main_ZoomWizardIntro" xml:space="preserve">
     <value>Bitte wähle eine Kachel der gewählten Ebene und der gewünschten Zoomstufe aus und merke dir die Zoom-Stufe sowie den Zeilen- und den Spaltenindex.</value>
+  </data>
+  <data name="AnimationSaveDialog_SFDFilter" xml:space="preserve">
+    <value>gif-Datei|*.gif</value>
+  </data>
+  <data name="AnimationSaveDialog_WindowTitle1" xml:space="preserve">
+    <value>Animation speichern</value>
+  </data>
+  <data name="AnimationSaveDialog_WindowTitleGIF" xml:space="preserve">
+    <value>GIF</value>
+  </data>
+  <data name="AnimationSaveDialog_WindowTitleSingleFiles" xml:space="preserve">
+    <value>Einzelne Dateien</value>
   </data>
 </root>

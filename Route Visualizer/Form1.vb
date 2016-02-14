@@ -1,6 +1,7 @@
 ﻿Imports System.IO
 Imports System.Text
 Imports System.Xml.Serialization
+Imports ImageMagick
 Imports Route_Visualizer
 Imports Route_Visualizer.Data
 
@@ -110,7 +111,7 @@ Public Class frm_Main
         Dim Zoom As Integer
         Me.Invoke(Sub()
                       If CMB_Zoom.SelectedItem Is Nothing AndAlso Not Cancel Then
-                          MessageBox.Show(My.Resources.Main_SelectZoom, My.Resources.Main_SelectZoom_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                          MessageBox.Show(Me, My.Resources.Main_SelectZoom, My.Resources.Main_SelectZoom_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
                           Cancel = True
                       End If
                       If Not Cancel Then
@@ -120,14 +121,14 @@ Public Class frm_Main
 
         Me.Invoke(Sub()
                       If CLB_Layers.CheckedItems.Count = 0 AndAlso Not Cancel Then
-                          MessageBox.Show(My.Resources.Main_SelectLayer, My.Resources.Main_SelectZoom_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                          MessageBox.Show(Me, My.Resources.Main_SelectLayer, My.Resources.Main_SelectZoom_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
                           Cancel = True
                       End If
                   End Sub)
 
         Me.Invoke(Sub()
                       If Data.Routefile.Rows.Count = 0 AndAlso Not Cancel Then
-                          MessageBox.Show(My.Resources.Main_ImportFile, My.Resources.Main_ImportFile_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                          MessageBox.Show(Me, My.Resources.Main_ImportFile, My.Resources.Main_ImportFile_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
                           Cancel = True
                       End If
                   End Sub)
@@ -135,11 +136,11 @@ Public Class frm_Main
         Me.Invoke(Sub()
                       If Btn_Switch.Tag.ToString = "AbsoluteNumbers" Then
                           If NUD_AdditionalTilesNorth.Value > NUD_AdditionalTilesSouth.Value AndAlso Not Cancel Then
-                              MessageBox.Show(String.Format(My.Resources.Main_SmallerOrEqual, My.Resources.Main_L_MinRow, My.Resources.Main_L_MaxRow))
+                              MessageBox.Show(Me, String.Format(My.Resources.Main_SmallerOrEqual, My.Resources.Main_L_MinRow, My.Resources.Main_L_MaxRow))
                               Cancel = True
                           End If
                           If NUD_AdditionalTilesWest.Value > NUD_AdditionalTilesEast.Value AndAlso Not Cancel Then
-                              MessageBox.Show(String.Format(My.Resources.Main_SmallerOrEqual, My.Resources.Main_L_MinCol, My.Resources.Main_L_MaxCol))
+                              MessageBox.Show(Me, String.Format(My.Resources.Main_SmallerOrEqual, My.Resources.Main_L_MinCol, My.Resources.Main_L_MaxCol))
                               Cancel = True
                           End If
                       End If
@@ -182,8 +183,8 @@ Public Class frm_Main
         Dim MyCoordinates As New List(Of Coordinate)
         Dim RRs() As RoutefileRow = CType(Data.Routefile.Select("Visibility = " & True & " AND RouteLineWidth > 0"), RoutefileRow())
         If RRs.Length = 0 Then
-            MessageBox.Show(String.Format(My.Resources.Main_NoRoutesToPlot, Environment.NewLine), My.Resources.Main_NoRoutesToPlot_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Me.Invoke(Sub()
+                          MessageBox.Show(Me, String.Format(My.Resources.Main_NoRoutesToPlot, Environment.NewLine), My.Resources.Main_NoRoutesToPlot_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
                           GUIEnabling(True)
                       End Sub)
             Exit Sub
@@ -335,7 +336,6 @@ Public Class frm_Main
         If SaveOption.Preview Then
             Me.Invoke(Sub()
                           PB_Preview.Image = Result
-                          'GB_Preview.Text = "Vorschau (Doppelkick für Originalgröße (" & Result.Width & " x " & Result.Height & "))"
                           GUIEnabling(True)
                       End Sub)
         ElseIf Not SaveOption.Preview AndAlso Not SaveOption.SaveLayersSeparately Then
@@ -360,13 +360,17 @@ Public Class frm_Main
         WriteLog(Starttime, Log)
 
         If Not SaveOption.Preview AndAlso Not SaveOption.SaveLayersSeparately AndAlso Not SaveOption.SaveRoutesSeparately Then
-            If MessageBox.Show(My.Resources.Main_OpenResultFile, My.Resources.Main_OpenResultFile_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-                Process.Start(SFD_SaveImage.FileName)
-            End If
+            Me.Invoke(Sub()
+                          If MessageBox.Show(Me, My.Resources.Main_OpenResultFile, My.Resources.Main_OpenResultFile_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                              Process.Start(SFD_SaveImage.FileName)
+                          End If
+                      End Sub)
         ElseIf Not SaveOption.Preview Then
-            If MessageBox.Show(My.Resources.Main_OpenResultDirectory, My.Resources.Main_OpenResultDirectory_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-                Process.Start(FBD_SaveLayersSeperately.SelectedPath)
-            End If
+            Me.Invoke(Sub()
+                          If MessageBox.Show(Me, My.Resources.Main_OpenResultDirectory, My.Resources.Main_OpenResultDirectory_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                              Process.Start(FBD_SaveLayersSeperately.SelectedPath)
+                          End If
+                      End Sub)
         End If
     End Sub
 
@@ -376,9 +380,11 @@ Public Class frm_Main
             Using sw As StreamWriter = File.CreateText(Path.Combine(Application.StartupPath, "Log.txt"))
                 sw.Write(LogSB.ToString)
             End Using
-            If MessageBox.Show(String.Format(My.Resources.Main_OpenLog, Path.Combine(Application.StartupPath, "Log.txt"), Environment.NewLine), My.Resources.Main_OpenLog_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
-                Process.Start(Path.Combine(Application.StartupPath, "Log.txt"))
-            End If
+            Me.Invoke(Sub()
+                          If MessageBox.Show(Me, String.Format(My.Resources.Main_OpenLog, Path.Combine(Application.StartupPath, "Log.txt"), Environment.NewLine), My.Resources.Main_OpenLog_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+                              Process.Start(Path.Combine(Application.StartupPath, "Log.txt"))
+                          End If
+                      End Sub)
         End If
     End Sub
 
@@ -1033,21 +1039,6 @@ Public Class frm_Main
         ZoomBindingSource1.EndEdit()
     End Sub
 
-    Private Sub AnimationSingleFilesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AnimationSingleFilesToolStripMenuItem.Click
-        Dim frm_Save As New frm_AnimationSaveDialog(AnimationSaveOption)
-        If frm_Save.ShowDialog() <> DialogResult.OK Then
-            Exit Sub
-        End If
-
-        If TH_AnimationSingleFiles.IsAlive() Then
-            Exit Sub
-        End If
-        If TH_AnimationSingleFiles.ThreadState = Threading.ThreadState.Stopped OrElse TH_AnimationSingleFiles.ThreadState = Threading.ThreadState.Aborted Then
-            TH_AnimationSingleFiles = New Threading.Thread(AddressOf Animation)
-        End If
-        TH_AnimationSingleFiles.Start()
-    End Sub
-
     Sub Animation()
         Dim Starttime As DateTime = DateTime.Now
         Dim TilePen As New Pen(New SolidBrush(Color.Blue), 5)
@@ -1160,10 +1151,6 @@ Public Class frm_Main
                       TSSL_EscToAbort.Visible = True
                   End Sub)
 
-        Me.Invoke(Sub()
-                      TSPB_Progress.Value += 1
-                  End Sub)
-
         Dim Tiles() As Point 'array for minimum and maximum tiles
         For k As Integer = 0 To CLB_Layers.Items.Count - 1
             If Not CLB_Layers.GetItemChecked(k) Then
@@ -1263,7 +1250,10 @@ Public Class frm_Main
         End If
 
         Me.Invoke(Sub()
-                      TSPB_Progress.Maximum = CLB_Layers.CheckedIndices.Count + Data.Routefile.Select("Visibility = " & True & " AND RouteLineWidth > 0").Length + 1 + FinalPoints.Count
+                      TSPB_Progress.Maximum = CLB_Layers.CheckedIndices.Count + Data.Routefile.Select("Visibility = " & True & " AND RouteLineWidth > 0").Length + 1 + CInt(Math.Ceiling(FinalPoints.Count / AnimationSaveOption.StepSize))
+                      If AnimationSaveOption.SaveType = SaveType.GIF Then
+                          TSPB_Progress.Maximum += CInt(Math.Ceiling(FinalPoints.Count / AnimationSaveOption.StepSize)) + 6
+                      End If
                   End Sub)
 
         '------------------------------------------------------
@@ -1307,10 +1297,11 @@ Public Class frm_Main
                 Using g_Res As Graphics = Graphics.FromImage(newBMP_Res)
                     g_Res.DrawImage(Result, 0, 0, newBMP_Res.Width + 1, newBMP_Res.Height + 1)
                 End Using
-                newBMP_Res.Save(Path.Combine(AnimationSaveOption.Path, "_Background" & AnimationSaveOption.OutputFormat), ImgFormat)
+                newBMP_Res.Save(Path.Combine(AnimationSaveOption.DirectoryPath, "_Background" & AnimationSaveOption.OutputFormat), ImgFormat)
             End Using
         End If
 
+        Dim SavedImagesFileNames As New List(Of String)
         For i As Integer = 0 To FinalPoints.Count - 1
             If PointsToDraw.Count = 0 Then
                 PointsToDraw.Add(FinalPoints(i))
@@ -1342,25 +1333,113 @@ Public Class frm_Main
                 Using g_Res As Graphics = Graphics.FromImage(newBMP_Res)
                     g_Res.DrawImage(newBMP, 0, 0, newBMP_Res.Width + 1, newBMP_Res.Height + 1)
                 End Using
-                newBMP_Res.Save(Path.Combine(AnimationSaveOption.Path, i.ToString("D6") & AnimationSaveOption.OutputFormat), ImgFormat)
+                newBMP_Res.Save(Path.Combine(AnimationSaveOption.DirectoryPath, i.ToString("D6") & AnimationSaveOption.OutputFormat), ImgFormat)
+                SavedImagesFileNames.Add(Path.Combine(AnimationSaveOption.DirectoryPath, i.ToString("D6") & AnimationSaveOption.OutputFormat))
             End Using
             newBMP.Dispose()
             Me.Invoke(Sub()
-                          If TSPB_Progress.Value + StepSize < TSPB_Progress.Maximum Then
-                              TSPB_Progress.Value += StepSize
-                          Else
-                              TSPB_Progress.Value = TSPB_Progress.Maximum
-                          End If
+                          TSPB_Progress.Value += 1
                       End Sub)
         Next
+
+        'GIF
+        If AnimationSaveOption.SaveType = SaveType.GIF Then
+            If File.Exists(AnimationSaveOption.FilePath) Then
+                File.Delete(AnimationSaveOption.FilePath)
+            End If
+
+            Using background As New MagickImage(Path.Combine(AnimationSaveOption.DirectoryPath, "_Background.png"))
+                Using collection As New MagickImageCollection
+                    For Each F As String In SavedImagesFileNames
+                        If F.Contains("_") Then
+                            Continue For
+                        End If
+                        collection.Add(F)
+                        collection(collection.Count - 1).AnimationDelay = CInt(AnimationSaveOption.DelayTime / 10)
+                        collection(collection.Count - 1).AnimationIterations = AnimationSaveOption.LoopCount
+                        collection(collection.Count - 1).GifDisposeMethod = GifDisposeMethod.Previous
+                        collection(collection.Count - 1).Composite(background, Gravity.Center, CompositeOperator.DstOver)
+
+                        Me.Invoke(Sub()
+                                      TSPB_Progress.Value += 1
+                                  End Sub)
+                    Next
+                    collection.OptimizeTransparency()
+                    collection.Optimize()
+
+                    If File.Exists(AnimationSaveOption.FilePath) Then
+                        File.Delete(AnimationSaveOption.FilePath)
+                    End If
+                    collection.Write(AnimationSaveOption.FilePath)
+                End Using
+            End Using
+
+            Me.Invoke(Sub()
+                          TSPB_Progress.Value += 1
+                      End Sub)
+
+            File.Delete(Path.Combine(AnimationSaveOption.DirectoryPath, "_Background.png"))
+            Me.Invoke(Sub()
+                          TSPB_Progress.Value += 1
+                      End Sub)
+
+            For Each F As String In SavedImagesFileNames
+                File.Delete(F)
+            Next
+            Me.Invoke(Sub()
+                          TSPB_Progress.Value += 1
+                      End Sub)
+        End If
 
         Me.Invoke(Sub()
                       GUIEnabling(True)
                   End Sub)
 
-        If MessageBox.Show(My.Resources.Main_OpenResultDirectory, My.Resources.Main_OpenResultDirectory_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-            Process.Start(AnimationSaveOption.Path)
+        If AnimationSaveOption.SaveType = SaveType.SingleFiles Then
+            Me.Invoke(Sub()
+                          If MessageBox.Show(Me, My.Resources.Main_OpenResultDirectory, My.Resources.Main_OpenResultDirectory_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                              Process.Start(AnimationSaveOption.DirectoryPath)
+                          End If
+                      End Sub)
+        ElseIf AnimationSaveOption.SaveType = SaveType.GIF Then
+            Me.Invoke(Sub()
+                          If MessageBox.Show(Me, My.Resources.Main_OpenResultFile, My.Resources.Main_OpenResultFile_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                              Process.Start(AnimationSaveOption.FilePath)
+                          End If
+                      End Sub)
         End If
+    End Sub
+
+    Private Sub SingleFilesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SingleFilesToolStripMenuItem.Click
+        AnimationSaveOption.SaveType = SaveType.SingleFiles
+        Dim frm_Save As New frm_AnimationSaveDialog(AnimationSaveOption)
+        If frm_Save.ShowDialog() <> DialogResult.OK Then
+            Exit Sub
+        End If
+
+        If TH_AnimationSingleFiles.IsAlive() Then
+            Exit Sub
+        End If
+        If TH_AnimationSingleFiles.ThreadState = Threading.ThreadState.Stopped OrElse TH_AnimationSingleFiles.ThreadState = Threading.ThreadState.Aborted Then
+            TH_AnimationSingleFiles = New Threading.Thread(AddressOf Animation)
+        End If
+        TH_AnimationSingleFiles.Start()
+    End Sub
+
+    Private Sub GIFToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles GIFToolStripMenuItem1.Click
+        AnimationSaveOption.SaveType = SaveType.GIF
+        Dim frm_Save As New frm_AnimationSaveDialog(AnimationSaveOption)
+        If frm_Save.ShowDialog() <> DialogResult.OK Then
+            Exit Sub
+        End If
+
+        If TH_AnimationSingleFiles.IsAlive() Then
+            Exit Sub
+        End If
+        If TH_AnimationSingleFiles.ThreadState = Threading.ThreadState.Stopped OrElse TH_AnimationSingleFiles.ThreadState = Threading.ThreadState.Aborted Then
+            TH_AnimationSingleFiles = New Threading.Thread(AddressOf Animation)
+        End If
+        TH_AnimationSingleFiles.Start()
     End Sub
 End Class
 

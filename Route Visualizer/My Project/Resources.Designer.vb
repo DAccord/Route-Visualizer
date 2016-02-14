@@ -70,6 +70,42 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to gif file|*.gif.
+        '''</summary>
+        Friend ReadOnly Property AnimationSaveDialog_SFDFilter() As String
+            Get
+                Return ResourceManager.GetString("AnimationSaveDialog_SFDFilter", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Save Animation.
+        '''</summary>
+        Friend ReadOnly Property AnimationSaveDialog_WindowTitle1() As String
+            Get
+                Return ResourceManager.GetString("AnimationSaveDialog_WindowTitle1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to GIF.
+        '''</summary>
+        Friend ReadOnly Property AnimationSaveDialog_WindowTitleGIF() As String
+            Get
+                Return ResourceManager.GetString("AnimationSaveDialog_WindowTitleGIF", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Single Files.
+        '''</summary>
+        Friend ReadOnly Property AnimationSaveDialog_WindowTitleSingleFiles() As String
+            Get
+                Return ResourceManager.GetString("AnimationSaveDialog_WindowTitleSingleFiles", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Route Visualizer is a program to plot coordinates from kml or gpx files onto a map. This results in a highly resolved image file..
         '''</summary>
         Friend ReadOnly Property Assembly_Description() As String

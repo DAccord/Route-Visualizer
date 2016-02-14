@@ -95,6 +95,8 @@ Partial Class frm_Main
         Me.RoutenSeparatToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RoutenZusammenfassenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AnimationSingleFilesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SingleFilesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GIFToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator()
         Me.SpeichernToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripSeparator()
@@ -641,8 +643,19 @@ Partial Class frm_Main
         '
         'AnimationSingleFilesToolStripMenuItem
         '
+        Me.AnimationSingleFilesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SingleFilesToolStripMenuItem, Me.GIFToolStripMenuItem1})
         Me.AnimationSingleFilesToolStripMenuItem.Name = "AnimationSingleFilesToolStripMenuItem"
         resources.ApplyResources(Me.AnimationSingleFilesToolStripMenuItem, "AnimationSingleFilesToolStripMenuItem")
+        '
+        'SingleFilesToolStripMenuItem
+        '
+        Me.SingleFilesToolStripMenuItem.Name = "SingleFilesToolStripMenuItem"
+        resources.ApplyResources(Me.SingleFilesToolStripMenuItem, "SingleFilesToolStripMenuItem")
+        '
+        'GIFToolStripMenuItem1
+        '
+        Me.GIFToolStripMenuItem1.Name = "GIFToolStripMenuItem1"
+        resources.ApplyResources(Me.GIFToolStripMenuItem1, "GIFToolStripMenuItem1")
         '
         'ToolStripMenuItem2
         '
@@ -883,4 +896,6 @@ Partial Class frm_Main
     Friend WithEvents CMS_ZoomDataGridView As ContextMenuStrip
     Friend WithEvents DuplicateRowToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AnimationSingleFilesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SingleFilesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GIFToolStripMenuItem1 As ToolStripMenuItem
 End Class
