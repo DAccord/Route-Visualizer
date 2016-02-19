@@ -1,4 +1,6 @@
-﻿Public Class frm_AnimationSaveDialog
+﻿Imports System.IO
+
+Public Class frm_AnimationSaveDialog
     Dim RouteCol As Color = Color.Blue
     Dim SymbolCol As Color = Color.Red
     Dim Desired_AS As AnimationSaving
@@ -30,15 +32,53 @@
         End If
         'Output
         RB_AlwaysBackground.Checked = Desired_AS.BackgroundAlways
+        RB_SingleBackground.Checked = Not Desired_AS.BackgroundAlways
         CMB_Format.SelectedItem = Desired_AS.OutputFormat
-        L_Path.Text = Desired_AS.Path
         'Step size
         NUD_StepSize.Value = Desired_AS.StepSize
+        'Delay Time
+        NUD_DelayTime.Value = Desired_AS.DelayTime
+
+        SFD_SaveFile.Filter = My.Resources.AnimationSaveDialog_SFDFilter
+        SFD_SaveFile.Title = My.Resources.SFD_SaveImageTitle
+        FBD_SavePath.Description = My.Resources.FBD_SaveLayersSeperatelyDescription
+
+        If Desired_AS.SaveType = SaveType.SingleFiles Then
+            RB_AlwaysBackground.Visible = True
+            RB_SingleBackground.Visible = True
+            L_Output.Visible = True
+            CMB_Format.Visible = True
+            L_DelayTime.Visible = False
+            NUD_DelayTime.Visible = False
+            L_LoopCount.Visible = False
+            NUD_LoopCount.Visible = False
+            L_Path.Text = Desired_AS.DirectoryPath
+
+            Me.Text = String.Format(My.Resources.AnimationSaveDialog_WindowTitle1 & " ({0})", My.Resources.AnimationSaveDialog_WindowTitleSingleFiles)
+        ElseIf Desired_AS.SaveType = SaveType.GIF Then
+            RB_AlwaysBackground.Visible = False
+            RB_SingleBackground.Visible = False
+            L_Output.Visible = False
+            CMB_Format.Visible = False
+            L_DelayTime.Visible = True
+            NUD_DelayTime.Visible = True
+            L_LoopCount.Visible = True
+            NUD_LoopCount.Visible = True
+            L_Path.Text = Desired_AS.FilePath
+
+            Me.Text = String.Format(My.Resources.AnimationSaveDialog_WindowTitle1 & " ({0})", My.Resources.AnimationSaveDialog_WindowTitleGIF)
+        End If
     End Sub
 
     Private Sub Btn_SelectPath_Click(sender As Object, e As EventArgs) Handles Btn_SelectPath.Click
-        If FBD_SavePath.ShowDialog() = DialogResult.OK Then
-            L_Path.Text = FBD_SavePath.SelectedPath
+        If Desired_AS.SaveType = SaveType.SingleFiles Then
+            If FBD_SavePath.ShowDialog() = DialogResult.OK Then
+                L_Path.Text = FBD_SavePath.SelectedPath
+            End If
+        ElseIf Desired_AS.SaveType = SaveType.GIF Then
+            If SFD_SaveFile.ShowDialog() = DialogResult.OK Then
+                L_Path.Text = SFD_SaveFile.FileName
+            End If
         End If
     End Sub
 
@@ -52,9 +92,18 @@
         Desired_AS.RouteColor = RouteCol
         Desired_AS.SymbolColor = SymbolCol
         Desired_AS.SymbolWidth = CInt(NUD_SymbolWidth.Value)
-        Desired_AS.OutputFormat = CMB_Format.SelectedItem.ToString
-        Desired_AS.Path = L_Path.Text
-        Desired_AS.BackgroundAlways = RB_AlwaysBackground.Checked
+        Desired_AS.DirectoryPath = L_Path.Text
+
+        If Desired_AS.SaveType = SaveType.SingleFiles Then
+            Desired_AS.OutputFormat = CMB_Format.SelectedItem.ToString
+            Desired_AS.BackgroundAlways = RB_AlwaysBackground.Checked
+        ElseIf Desired_AS.SaveType = SaveType.GIF Then
+            Desired_AS.OutputFormat = ".png"
+            Desired_AS.BackgroundAlways = False
+            Desired_AS.FilePath = L_Path.Text
+            Desired_AS.DirectoryPath = Path.GetDirectoryName(Desired_AS.FilePath)
+            Desired_AS.LoopCount = CInt(NUD_LoopCount.Value)
+        End If
 
         Me.Close()
     End Sub
@@ -71,7 +120,7 @@
         End If
     End Sub
 
-    Private Sub NUD_RouteLineWidth_Enter(sender As Object, e As EventArgs) Handles NUD_RouteLineWidth.Enter, NUD_SymbolWidth.Enter, Nud_Size.Enter, NUD_StepSize.Enter
+    Private Sub NUD_RouteLineWidth_Enter(sender As Object, e As EventArgs) Handles NUD_RouteLineWidth.Enter, NUD_SymbolWidth.Enter, Nud_Size.Enter, NUD_StepSize.Enter, NUD_DelayTime.Enter, NUD_LoopCount.Enter
         Dim NUD As NumericUpDown = CType(sender, NumericUpDown)
         NUD.Select(0, NUD.ToString.Length)
     End Sub
@@ -93,6 +142,10 @@
     End Sub
 End Class
 
+Public Enum SaveType
+    GIF
+    SingleFiles
+End Enum
 Public Class AnimationSaving
     Private _Width As Integer = 500
     Private _Height As Integer = 0
@@ -100,14 +153,54 @@ Public Class AnimationSaving
     Private _RouteColor As Color = Color.Blue
     Private _SymbolColor As Color = Color.Red
     Private _OutputFormat As String = ".jpg"
-    Private _Path As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+    Private _DirectoryPath As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+    Private _FilePath As String = Path.Combine(DirectoryPath, "Output.gif")
     Private _RouteLineWidth As Integer = 15
     Private _SymbolWidth As Integer = 20
     Private _BackGroundAlways As Boolean = True
+    Private _DelayTime As Integer = 60 'in 1/100 of a second
+    Private _SaveType As SaveType
+    Private _LoopCount As Integer = 0
 
     Public Sub New()
 
     End Sub
+
+    Public Property FilePath As String
+        Get
+            Return _FilePath
+        End Get
+        Set(value As String)
+            _FilePath = value
+        End Set
+    End Property
+
+    Public Property LoopCount As Integer
+        Get
+            Return _LoopCount
+        End Get
+        Set(value As Integer)
+            _LoopCount = value
+        End Set
+    End Property
+
+    Public Property DelayTime As Integer
+        Get
+            Return _DelayTime
+        End Get
+        Set(value As Integer)
+            _DelayTime = value
+        End Set
+    End Property
+
+    Public Property SaveType As SaveType
+        Get
+            Return _SaveType
+        End Get
+        Set(value As SaveType)
+            _SaveType = value
+        End Set
+    End Property
 
     Public Property BackgroundAlways As Boolean
         Get
@@ -136,12 +229,12 @@ Public Class AnimationSaving
         End Set
     End Property
 
-    Public Property Path As String
+    Public Property DirectoryPath As String
         Get
-            Return _Path
+            Return _DirectoryPath
         End Get
         Set(value As String)
-            _Path = value
+            _DirectoryPath = value
         End Set
     End Property
 

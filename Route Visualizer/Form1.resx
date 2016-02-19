@@ -1030,6 +1030,291 @@
     <value>NoControl</value>
   </data>
   <data name="Btn_ResetAdditionalTiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 162</value>
+  </data>
+  <data name="Btn_ResetAdditionalTiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 30</value>
+  </data>
+  <data name="Btn_ResetAdditionalTiles.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="Btn_ResetAdditionalTiles.Text" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="&gt;&gt;Btn_ResetAdditionalTiles.Name" xml:space="preserve">
+    <value>Btn_ResetAdditionalTiles</value>
+  </data>
+  <data name="&gt;&gt;Btn_ResetAdditionalTiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Btn_ResetAdditionalTiles.Parent" xml:space="preserve">
+    <value>TableLayoutPanel3</value>
+  </data>
+  <data name="&gt;&gt;Btn_ResetAdditionalTiles.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="Btn_Switch.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="Btn_Switch.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Btn_Switch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 200</value>
+  </data>
+  <data name="Btn_Switch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 30</value>
+  </data>
+  <data name="Btn_Switch.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="Btn_Switch.Text" xml:space="preserve">
+    <value>Switch</value>
+  </data>
+  <data name="&gt;&gt;Btn_Switch.Name" xml:space="preserve">
+    <value>Btn_Switch</value>
+  </data>
+  <data name="&gt;&gt;Btn_Switch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Btn_Switch.Parent" xml:space="preserve">
+    <value>TableLayoutPanel3</value>
+  </data>
+  <data name="&gt;&gt;Btn_Switch.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="TableLayoutPanel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="TableLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 23</value>
+  </data>
+  <data name="TableLayoutPanel3.RowCount" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="TableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 233</value>
+  </data>
+  <data name="TableLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel3.Name" xml:space="preserve">
+    <value>TableLayoutPanel3</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel3.Parent" xml:space="preserve">
+    <value>GB_AdditionalTiles</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TableLayoutPanel3.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="NUD_AdditionalTilesSouth" Row="5" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="NUD_AdditionalTilesWest" Row="3" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="NUD_AdditionalTilesEast" Row="3" RowSpan="1" Column="3" ColumnSpan="2" /&gt;&lt;Control Name="NUD_AdditionalTilesNorth" Row="1" RowSpan="1" Column="1" ColumnSpan="3" /&gt;&lt;Control Name="L_North" Row="0" RowSpan="1" Column="0" ColumnSpan="5" /&gt;&lt;Control Name="L_East" Row="2" RowSpan="1" Column="3" ColumnSpan="2" /&gt;&lt;Control Name="L_West" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="L_South" Row="4" RowSpan="1" Column="0" ColumnSpan="5" /&gt;&lt;Control Name="Btn_ResetAdditionalTiles" Row="6" RowSpan="1" Column="0" ColumnSpan="5" /&gt;&lt;Control Name="Btn_Switch" Row="7" RowSpan="1" Column="0" ColumnSpan="5" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,28,57143,Percent,14,28571,Percent,14,28571,Percent,14,28571,Percent,28,57143" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,Percent,100,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="GB_AdditionalTiles.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="GB_AdditionalTiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 0</value>
+  </data>
+  <data name="GB_AdditionalTiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 0, 0</value>
+  </data>
+  <data name="GB_AdditionalTiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>191, 259</value>
+  </data>
+  <data name="GB_AdditionalTiles.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="GB_AdditionalTiles.Text" xml:space="preserve">
+    <value>Additional Tiles</value>
+  </data>
+  <data name="&gt;&gt;GB_AdditionalTiles.Name" xml:space="preserve">
+    <value>GB_AdditionalTiles</value>
+  </data>
+  <data name="&gt;&gt;GB_AdditionalTiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GB_AdditionalTiles.Parent" xml:space="preserve">
+    <value>TLP_Tiles</value>
+  </data>
+  <data name="&gt;&gt;GB_AdditionalTiles.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TLP_Tiles.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="TLP_Tiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>193, 0</value>
+  </data>
+  <data name="TLP_Tiles.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="TLP_Tiles.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="TLP_Tiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>193, 259</value>
+  </data>
+  <data name="TLP_Tiles.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;TLP_Tiles.Name" xml:space="preserve">
+    <value>TLP_Tiles</value>
+  </data>
+  <data name="&gt;&gt;TLP_Tiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TLP_Tiles.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;TLP_Tiles.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TLP_Tiles.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="GB_AdditionalTiles" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="TableLayoutPanel4.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="CMB_Zoom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="CMB_Zoom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>61, 202</value>
+  </data>
+  <data name="CMB_Zoom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 28</value>
+  </data>
+  <data name="CMB_Zoom.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;CMB_Zoom.Name" xml:space="preserve">
+    <value>CMB_Zoom</value>
+  </data>
+  <data name="&gt;&gt;CMB_Zoom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CMB_Zoom.Parent" xml:space="preserve">
+    <value>TableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;CMB_Zoom.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 206</value>
+  </data>
+  <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 20</value>
+  </data>
+  <data name="Label1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="Label1.Text" xml:space="preserve">
+    <value>Zoom:</value>
+  </data>
+  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
+    <value>Label1</value>
+  </data>
+  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
+    <value>TableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="CLB_Layers.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="CLB_Layers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="CLB_Layers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 193</value>
+  </data>
+  <data name="CLB_Layers.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;CLB_Layers.Name" xml:space="preserve">
+    <value>CLB_Layers</value>
+  </data>
+  <data name="&gt;&gt;CLB_Layers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckedListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CLB_Layers.Parent" xml:space="preserve">
+    <value>TableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;CLB_Layers.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="TableLayoutPanel4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="TableLayoutPanel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 23</value>
+  </data>
+  <data name="TableLayoutPanel4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="TableLayoutPanel4.RowCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="TableLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>185, 233</value>
+  </data>
+  <data name="TableLayoutPanel4.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel4.Name" xml:space="preserve">
+    <value>TableLayoutPanel4</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel4.Parent" xml:space="preserve">
+    <value>GB_Layers</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TableLayoutPanel4.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="CMB_Zoom" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Label1" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="CLB_Layers" Row="0" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="Percent,100,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="GB_Layers.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="GB_Layers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="GB_Layers.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 2, 0</value>
+  </data>
+  <data name="&gt;&gt;L_South.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="Btn_ResetAdditionalTiles.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="Btn_ResetAdditionalTiles.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Btn_ResetAdditionalTiles.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Btn_ResetAdditionalTiles.Location" type="System.Drawing.Point, System.Drawing">
     <value>71, 162</value>
   </data>
   <data name="Btn_ResetAdditionalTiles.Size" type="System.Drawing.Size, System.Drawing">
@@ -1588,19 +1873,19 @@
     <value>F5</value>
   </data>
   <data name="UpdatePreviewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>197, 22</value>
   </data>
   <data name="UpdatePreviewToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Update Preview</value>
   </data>
   <data name="ToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 6</value>
+    <value>194, 6</value>
   </data>
   <data name="SaveAsImageToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+S</value>
   </data>
   <data name="SaveAsImageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>197, 22</value>
   </data>
   <data name="SaveAsImageToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Save as Image...</value>
@@ -1621,34 +1906,46 @@
     <value>Routen zusammenfassen...</value>
   </data>
   <data name="SaveLayersSeparatelyToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>197, 22</value>
   </data>
   <data name="SaveLayersSeparatelyToolStripMenuItem.Text" xml:space="preserve">
     <value>Save &amp;Layers Separately</value>
   </data>
+  <data name="SingleFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 22</value>
+  </data>
+  <data name="SingleFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Single Files</value>
+  </data>
+  <data name="GIFToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 22</value>
+  </data>
+  <data name="GIFToolStripMenuItem1.Text" xml:space="preserve">
+    <value>GIF</value>
+  </data>
   <data name="AnimationSingleFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>197, 22</value>
   </data>
   <data name="AnimationSingleFilesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Animation (Single Files)</value>
+    <value>Animation</value>
   </data>
   <data name="ToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 6</value>
+    <value>194, 6</value>
   </data>
   <data name="SpeichernToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>197, 22</value>
   </data>
   <data name="SpeichernToolStripMenuItem.Text" xml:space="preserve">
     <value>Save &amp;Data</value>
   </data>
   <data name="ToolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 6</value>
+    <value>194, 6</value>
   </data>
   <data name="QuitToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Alt+F4</value>
   </data>
   <data name="QuitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>199, 22</value>
+    <value>197, 22</value>
   </data>
   <data name="QuitToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Exit</value>
@@ -8210,6 +8507,18 @@
     <value>AnimationSingleFilesToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;AnimationSingleFilesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SingleFilesToolStripMenuItem.Name" xml:space="preserve">
+    <value>SingleFilesToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;SingleFilesToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GIFToolStripMenuItem1.Name" xml:space="preserve">
+    <value>GIFToolStripMenuItem1</value>
+  </data>
+  <data name="&gt;&gt;GIFToolStripMenuItem1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ToolStripMenuItem2.Name" xml:space="preserve">
