@@ -156,7 +156,7 @@ Public Class frm_Main
                   End Sub)
 
         Me.Invoke(Sub()
-                      If CLB_Layers.CheckedItems.Count = 0 AndAlso Not Cancel Then
+                      If CLB_Layers.CheckedItems.Count = 0 AndAlso CLB_OnlineLayers.CheckedItems.Count = 0 AndAlso Not Cancel Then
                           MessageBox.Show(Me, My.Resources.Main_SelectLayer, My.Resources.Main_SelectZoom_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
                           Cancel = True
                       End If
@@ -1639,24 +1639,6 @@ Public Class frm_Main
             MessageBox.Show(ex.GetType.ToString)
             Return ex.Message & " (" & Link.ToString & ")"
         End Try
-    End Function
-
-    Public Function RowColumnZoomReplace(ByVal Str As String, ByVal RowIndex As Integer, ByVal ColumnIndex As Integer, ByVal Zoom As Integer) As String
-        Dim RowStrings() As String = {"{R}", "{Y}", "{r}", "{y}"}
-        Dim ColumnStrings() As String = {"{C}", "{X}", "{c}", "{x}"}
-        Dim ZoomStrings() As String = {"{Z}", "{z}"}
-
-        For Each SearchStr As String In RowStrings
-            Str = Str.Replace(SearchStr, RowIndex.ToString)
-        Next
-        For Each SearchStr As String In ColumnStrings
-            Str = Str.Replace(SearchStr, ColumnIndex.ToString)
-        Next
-        For Each SearchStr As String In ZoomStrings
-            Str = Str.Replace(SearchStr, Zoom.ToString)
-        Next
-
-        Return Str
     End Function
 
     Function MaxZoom(ByVal Coords As List(Of Coordinate), ByVal ZR As ZoomRow) As Integer
