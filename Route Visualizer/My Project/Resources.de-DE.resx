@@ -291,6 +291,18 @@
   <data name="Main_ZoomWizardIntro" xml:space="preserve">
     <value>Bitte wähle eine Kachel der gewählten Ebene und der gewünschten Zoomstufe aus und merke dir die Zoom-Stufe sowie den Zeilen- und den Spaltenindex.</value>
   </data>
+  <data name="Main_ZoomTooLarge" xml:space="preserve">
+    <value>Du hast eine Online-Ebene ausgewählt weshalb die Kartenerstellung mit Kacheln direkt aus dem Internet probiert wurde. Allerdings ist dein gewählter Zoomwert größer als der erlaubte Maximalwert. Reduziere den Zoomwert auf {0} oder weniger, reduziere die Werte bei "Zusätzliche Kacheln" bzw. "Absolute Indizes" oder importiere deine eigenen Ebenen und wähle diese aus. Oder fahre unter Verwendung der zwischengespeicherten Kacheln fort. Fortfahren?</value>
+  </data>
+  <data name="Main_ZoomTooLarge_Title" xml:space="preserve">
+    <value>Gewählter Zoom zu groß</value>
+  </data>
+  <data name="Preview_ImageSize" xml:space="preserve">
+    <value>Bildgröße (B x H): {0} px x {1} px</value>
+  </data>
+  <data name="Preview_Zoom" xml:space="preserve">
+    <value>Zoom: {0:p0}</value>
+  </data>
   <data name="AnimationSaveDialog_SFDFilter" xml:space="preserve">
     <value>gif-Datei|*.gif</value>
   </data>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="WebTiles" targetNamespace="http://tempuri.org/WebTiles.xsd" xmlns:mstns="http://tempuri.org/WebTiles.xsd" xmlns="http://tempuri.org/WebTiles.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="WebTiles" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="WebTiles" msprop:Generator_UserDSName="WebTiles">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Tile" msprop:Generator_TableClassName="TileDataTable" msprop:Generator_TableVarName="tableTile" msprop:Generator_RowChangedName="TileRowChanged" msprop:Generator_TablePropName="Tile" msprop:Generator_RowDeletingName="TileRowDeleting" msprop:Generator_RowChangingName="TileRowChanging" msprop:Generator_RowEvHandlerName="TileRowChangeEventHandler" msprop:Generator_RowDeletedName="TileRowDeleted" msprop:Generator_RowClassName="TileRow" msprop:Generator_UserTableName="Tile" msprop:Generator_RowEvArgName="TileRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="x" msprop:Generator_ColumnVarNameInTable="columnx" msprop:Generator_ColumnPropNameInRow="x" msprop:Generator_ColumnPropNameInTable="xColumn" msprop:Generator_UserColumnName="x" type="xs:int" minOccurs="0" />
+              <xs:element name="y" msprop:Generator_ColumnVarNameInTable="columny" msprop:Generator_ColumnPropNameInRow="y" msprop:Generator_ColumnPropNameInTable="yColumn" msprop:Generator_UserColumnName="y" type="xs:int" minOccurs="0" />
+              <xs:element name="z" msprop:Generator_ColumnVarNameInTable="columnz" msprop:Generator_ColumnPropNameInRow="z" msprop:Generator_ColumnPropNameInTable="zColumn" msprop:Generator_UserColumnName="z" type="xs:int" minOccurs="0" />
+              <xs:element name="Expires" msprop:Generator_ColumnVarNameInTable="columnExpires" msprop:Generator_ColumnPropNameInRow="Expires" msprop:Generator_ColumnPropNameInTable="ExpiresColumn" msprop:Generator_UserColumnName="Expires" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ProviderID" msprop:Generator_ColumnVarNameInTable="columnProviderID" msprop:Generator_ColumnPropNameInRow="ProviderID" msprop:Generator_ColumnPropNameInTable="ProviderIDColumn" msprop:Generator_UserColumnName="ProviderID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="WebTileProvider" msprop:Generator_TableClassName="WebTileProviderDataTable" msprop:Generator_TableVarName="tableWebTileProvider" msprop:Generator_TablePropName="WebTileProvider" msprop:Generator_RowDeletingName="WebTileProviderRowDeleting" msprop:Generator_RowChangingName="WebTileProviderRowChanging" msprop:Generator_RowEvHandlerName="WebTileProviderRowChangeEventHandler" msprop:Generator_RowDeletedName="WebTileProviderRowDeleted" msprop:Generator_UserTableName="WebTileProvider" msprop:Generator_RowChangedName="WebTileProviderRowChanged" msprop:Generator_RowEvArgName="WebTileProviderRowChangeEvent" msprop:Generator_RowClassName="WebTileProviderRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Link" msprop:Generator_ColumnVarNameInTable="columnLink" msprop:Generator_ColumnPropNameInRow="Link" msprop:Generator_ColumnPropNameInTable="LinkColumn" msprop:Generator_UserColumnName="Link" type="xs:string" minOccurs="0" />
+              <xs:element name="Path" msprop:Generator_ColumnVarNameInTable="columnPath" msprop:Generator_ColumnPropNameInRow="Path" msprop:Generator_ColumnPropNameInTable="PathColumn" msprop:Generator_UserColumnName="Path" type="xs:string" minOccurs="0" />
+              <xs:element name="LocalRestriction" msprop:Generator_ColumnVarNameInTable="columnLocalRestriction" msprop:Generator_ColumnPropNameInRow="LocalRestriction" msprop:Generator_ColumnPropNameInTable="LocalRestrictionColumn" msprop:Generator_UserColumnName="LocalRestriction" type="xs:string" minOccurs="0" />
+              <xs:element name="Website" msprop:Generator_ColumnVarNameInTable="columnWebsite" msprop:Generator_ColumnPropNameInRow="Website" msprop:Generator_ColumnPropNameInTable="WebsiteColumn" msprop:Generator_UserColumnName="Website" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="License" msprop:Generator_TableClassName="LicenseDataTable" msprop:Generator_TableVarName="tableLicense" msprop:Generator_TablePropName="License" msprop:Generator_RowDeletingName="LicenseRowDeleting" msprop:Generator_RowChangingName="LicenseRowChanging" msprop:Generator_RowEvHandlerName="LicenseRowChangeEventHandler" msprop:Generator_RowDeletedName="LicenseRowDeleted" msprop:Generator_UserTableName="License" msprop:Generator_RowChangedName="LicenseRowChanged" msprop:Generator_RowEvArgName="LicenseRowChangeEvent" msprop:Generator_RowClassName="LicenseRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="ProviderID" msprop:Generator_ColumnVarNameInTable="columnProviderID" msprop:Generator_ColumnPropNameInRow="ProviderID" msprop:Generator_ColumnPropNameInTable="ProviderIDColumn" msprop:Generator_UserColumnName="ProviderID" type="xs:int" minOccurs="0" />
+              <xs:element name="Text" msprop:Generator_ColumnVarNameInTable="columnText" msprop:Generator_ColumnPropNameInRow="Text" msprop:Generator_ColumnPropNameInTable="TextColumn" msprop:Generator_UserColumnName="Text" type="xs:string" minOccurs="0" />
+              <xs:element name="Link" msprop:Generator_ColumnVarNameInTable="columnLink" msprop:Generator_ColumnPropNameInRow="Link" msprop:Generator_ColumnPropNameInTable="LinkColumn" msprop:Generator_UserColumnName="Link" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Tile" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="WebTileProvider_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:WebTileProvider" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="License_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:License" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="WebTileProvider_License" msdata:parent="WebTileProvider" msdata:child="License" msdata:parentkey="ID" msdata:childkey="ProviderID" msprop:Generator_UserChildTable="License" msprop:Generator_ChildPropName="GetLicenseRows" msprop:Generator_UserRelationName="WebTileProvider_License" msprop:Generator_ParentPropName="WebTileProviderRow" msprop:Generator_RelationVarName="relationWebTileProvider_License" msprop:Generator_UserParentTable="WebTileProvider" />
+      <msdata:Relationship name="WebTileProvider_Tile" msdata:parent="WebTileProvider" msdata:child="Tile" msdata:parentkey="ID" msdata:childkey="ProviderID" msprop:Generator_UserChildTable="Tile" msprop:Generator_ChildPropName="GetTileRows" msprop:Generator_UserRelationName="WebTileProvider_Tile" msprop:Generator_RelationVarName="relationWebTileProvider_Tile" msprop:Generator_UserParentTable="WebTileProvider" msprop:Generator_ParentPropName="WebTileProviderRow" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

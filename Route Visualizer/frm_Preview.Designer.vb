@@ -23,93 +23,120 @@ Partial Class frm_Preview
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Preview))
-        Me.PB_Preview = New System.Windows.Forms.PictureBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Btn_ZoomOut = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Btn_ResetZoom = New System.Windows.Forms.Button()
-        Me.Btn_Fit = New System.Windows.Forms.Button()
-        Me.L_ImgSize = New System.Windows.Forms.Label()
-        Me.Btn_ZoomIn = New System.Windows.Forms.Button()
-        CType(Me.PB_Preview, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
-        Me.TableLayoutPanel1.SuspendLayout()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.TSSL_ImageSize = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.TSSL_Zoom = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
+        Me.TSB_ZoomIn = New System.Windows.Forms.ToolStripButton()
+        Me.TSB_ZoomOut = New System.Windows.Forms.ToolStripButton()
+        Me.TSB_OriginalSize = New System.Windows.Forms.ToolStripButton()
+        Me.TSB_FitSize = New System.Windows.Forms.ToolStripButton()
+        Me.TSB_Help = New System.Windows.Forms.ToolStripButton()
+        Me.TLP_ImagePreview = New Route_Visualizer.DoubleBufferedTableLayoutPanel()
+        Me.StatusStrip1.SuspendLayout()
+        Me.ToolStrip2.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'PB_Preview
-        '
-        resources.ApplyResources(Me.PB_Preview, "PB_Preview")
-        Me.PB_Preview.Name = "PB_Preview"
-        Me.PB_Preview.TabStop = False
-        '
-        'Panel1
-        '
-        resources.ApplyResources(Me.Panel1, "Panel1")
-        Me.Panel1.Controls.Add(Me.PB_Preview)
-        Me.Panel1.Name = "Panel1"
-        '
-        'Btn_ZoomOut
-        '
-        resources.ApplyResources(Me.Btn_ZoomOut, "Btn_ZoomOut")
-        Me.Btn_ZoomOut.Name = "Btn_ZoomOut"
-        Me.Btn_ZoomOut.UseVisualStyleBackColor = True
         '
         'TableLayoutPanel1
         '
         resources.ApplyResources(Me.TableLayoutPanel1, "TableLayoutPanel1")
-        Me.TableLayoutPanel1.Controls.Add(Me.Btn_ResetZoom, 2, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Btn_ZoomOut, 1, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Btn_Fit, 3, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.L_ImgSize, 4, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Btn_ZoomIn, 0, 0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         '
-        'Btn_ResetZoom
+        'StatusStrip1
         '
-        resources.ApplyResources(Me.Btn_ResetZoom, "Btn_ResetZoom")
-        Me.Btn_ResetZoom.Name = "Btn_ResetZoom"
-        Me.Btn_ResetZoom.UseVisualStyleBackColor = True
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSSL_ImageSize, Me.TSSL_Zoom})
+        resources.ApplyResources(Me.StatusStrip1, "StatusStrip1")
+        Me.StatusStrip1.Name = "StatusStrip1"
         '
-        'Btn_Fit
+        'TSSL_ImageSize
         '
-        resources.ApplyResources(Me.Btn_Fit, "Btn_Fit")
-        Me.Btn_Fit.Name = "Btn_Fit"
-        Me.Btn_Fit.UseVisualStyleBackColor = True
+        Me.TSSL_ImageSize.BackColor = System.Drawing.SystemColors.Control
+        Me.TSSL_ImageSize.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.TSSL_ImageSize.Name = "TSSL_ImageSize"
+        resources.ApplyResources(Me.TSSL_ImageSize, "TSSL_ImageSize")
         '
-        'L_ImgSize
+        'TSSL_Zoom
         '
-        resources.ApplyResources(Me.L_ImgSize, "L_ImgSize")
-        Me.L_ImgSize.Name = "L_ImgSize"
+        Me.TSSL_Zoom.BackColor = System.Drawing.SystemColors.Control
+        Me.TSSL_Zoom.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.TSSL_Zoom.Name = "TSSL_Zoom"
+        resources.ApplyResources(Me.TSSL_Zoom, "TSSL_Zoom")
+        Me.TSSL_Zoom.Spring = True
         '
-        'Btn_ZoomIn
+        'ToolStrip2
         '
-        resources.ApplyResources(Me.Btn_ZoomIn, "Btn_ZoomIn")
-        Me.Btn_ZoomIn.Name = "Btn_ZoomIn"
-        Me.Btn_ZoomIn.UseVisualStyleBackColor = True
+        Me.ToolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
+        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSB_ZoomIn, Me.TSB_ZoomOut, Me.TSB_OriginalSize, Me.TSB_FitSize, Me.TSB_Help})
+        resources.ApplyResources(Me.ToolStrip2, "ToolStrip2")
+        Me.ToolStrip2.Name = "ToolStrip2"
+        Me.ToolStrip2.ShowItemToolTips = False
+        Me.ToolStrip2.Stretch = True
+        '
+        'TSB_ZoomIn
+        '
+        Me.TSB_ZoomIn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        resources.ApplyResources(Me.TSB_ZoomIn, "TSB_ZoomIn")
+        Me.TSB_ZoomIn.Name = "TSB_ZoomIn"
+        '
+        'TSB_ZoomOut
+        '
+        Me.TSB_ZoomOut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        resources.ApplyResources(Me.TSB_ZoomOut, "TSB_ZoomOut")
+        Me.TSB_ZoomOut.Name = "TSB_ZoomOut"
+        '
+        'TSB_OriginalSize
+        '
+        Me.TSB_OriginalSize.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        resources.ApplyResources(Me.TSB_OriginalSize, "TSB_OriginalSize")
+        Me.TSB_OriginalSize.Name = "TSB_OriginalSize"
+        '
+        'TSB_FitSize
+        '
+        Me.TSB_FitSize.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        resources.ApplyResources(Me.TSB_FitSize, "TSB_FitSize")
+        Me.TSB_FitSize.Name = "TSB_FitSize"
+        '
+        'TSB_Help
+        '
+        Me.TSB_Help.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        resources.ApplyResources(Me.TSB_Help, "TSB_Help")
+        Me.TSB_Help.Name = "TSB_Help"
+        '
+        'TLP_ImagePreview
+        '
+        resources.ApplyResources(Me.TLP_ImagePreview, "TLP_ImagePreview")
+        Me.TLP_ImagePreview.Name = "TLP_ImagePreview"
         '
         'frm_Preview
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
+        Me.Controls.Add(Me.TLP_ImagePreview)
         Me.Controls.Add(Me.TableLayoutPanel1)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.StatusStrip1)
+        Me.Controls.Add(Me.ToolStrip2)
+        Me.DoubleBuffered = True
+        Me.KeyPreview = True
         Me.Name = "frm_Preview"
-        CType(Me.PB_Preview, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TableLayoutPanel1.PerformLayout()
+        Me.StatusStrip1.ResumeLayout(False)
+        Me.StatusStrip1.PerformLayout()
+        Me.ToolStrip2.ResumeLayout(False)
+        Me.ToolStrip2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents PB_Preview As PictureBox
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Btn_ZoomOut As Button
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents Btn_ZoomIn As Button
-    Friend WithEvents Btn_ResetZoom As Button
-    Friend WithEvents Btn_Fit As Button
-    Friend WithEvents L_ImgSize As Label
+    Friend WithEvents TLP_ImagePreview As DoubleBufferedTableLayoutPanel
+    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents TSSL_ImageSize As ToolStripStatusLabel
+    Friend WithEvents ToolStrip2 As ToolStrip
+    Friend WithEvents TSB_ZoomIn As ToolStripButton
+    Friend WithEvents TSB_ZoomOut As ToolStripButton
+    Friend WithEvents TSB_OriginalSize As ToolStripButton
+    Friend WithEvents TSB_FitSize As ToolStripButton
+    Friend WithEvents TSB_Help As ToolStripButton
+    Friend WithEvents TSSL_Zoom As ToolStripStatusLabel
 End Class

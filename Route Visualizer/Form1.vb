@@ -1,9 +1,11 @@
 ﻿Imports System.IO
+Imports System.Net
 Imports System.Text
 Imports System.Xml.Serialization
 Imports ImageMagick
 Imports Route_Visualizer
 Imports Route_Visualizer.Data
+Imports Route_Visualizer.WebTiles
 
 Public Class frm_Main
     Dim Coordinates As New List(Of Coordinate)
@@ -28,20 +30,25 @@ Public Class frm_Main
         If File.Exists(Path.Combine(Application.StartupPath, "Data.xml")) Then
             Data.ReadXml(Path.Combine(Application.StartupPath, "Data.xml"))
         End If
+        If File.Exists(Path.Combine(Application.StartupPath, "WebTiles.xml")) Then
+            WebTiles.ReadXml(Path.Combine(Application.StartupPath, "WebTiles.xml"))
+        End If
 
         LayerDataView = New DataView(Data.Layer)
         LayerDataView.Sort = "Sortindex ASC"
-        LayerBindingSource.Sort = "Sortindex ASC"
-        LayerBindingSource1.Sort = "Sortindex ASC"
         ZoomBindingSource.Sort = "Zoomvalue ASC"
         ZoomBindingSource1.Sort = "Zoomvalue ASC"
         CLB_Layers.DataSource = LayerDataView
         CLB_Layers.DisplayMember = "Name"
+        CLB_OnlineLayers.DataSource = WebTileProviderBindingSource1
+        CLB_OnlineLayers.DisplayMember = "Name"
 
-        DistZooms = From row In Data.Zoom
-                    Select row.Field(Of Int32)("Zoomvalue")
-                    Distinct.ToList
-        CMB_Zoom.DataSource = DistZooms
+        'DistZooms = From row In Data.Zoom
+        '            Select row.Field(Of Int32)("Zoomvalue")
+        '            Distinct.ToList
+        'CMB_Zoom.DataSource = DistZooms
+
+        CMB_Zoom.DataSource = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18}.ToList()
 
         If My.Application.Info.Version.Major = 0 Then
             Me.Text = "Route Visualizer v" & String.Format("{0}.{1}.{2}", My.Application.Info.Version.Major.ToString, My.Application.Info.Version.Minor, My.Application.Info.Version.Build) & " beta"
@@ -55,6 +62,20 @@ Public Class frm_Main
         SFD_SaveImage.Title = My.Resources.SFD_SaveImageTitle
         FBD_SaveLayersSeperately.Description = My.Resources.FBD_SaveLayersSeperatelyDescription
         OFD_LayerWizard.Filter = My.Resources.OFD_LayerWizardFilter
+
+        L_WebTileProvider_Restrictions.DataBindings.Add(New Binding("Text", WebTileProviderBindingSource, "LocalRestriction"))
+        LL_WebTileProvider_Website.DataBindings.Add(New Binding("Text", WebTileProviderBindingSource, "Website"))
+
+        'Dim WTP As WebTileProviderRow = WebTiles.WebTileProvider.NewWebTileProviderRow
+        'WTP.Name = "Maps for Free Relief"
+        'WTP.Link = "http://maps-for-free.com/layer/relief/z{z}/row{r}/{z}_{c}-{r}.jpg"
+        'WTP.Path = "MapsForFree_Relief"
+        'WTP.LocalRestriction = ""
+        'WTP.Website = "http://maps-for-free.com/"
+        'WebTiles.WebTileProvider.AddWebTileProviderRow(WTP)
+
+        'WebTiles.License.AddLicenseRow(WTP, "Tiles by Maps for Free, CC0", "http://www.maps-for-free.com")
+        'WebTiles.License.AddLicenseRow(WTP, "Tiles courtesy of Mapquest.", "http://www.mapquest.com/")
     End Sub
 
     Sub GUIEnabling(EnabledState As Boolean)
@@ -65,7 +86,6 @@ Public Class frm_Main
         GB_Route.Enabled = EnabledState
         GB_AdditionalTiles.Enabled = EnabledState
         GB_Layers.Enabled = EnabledState
-        GB_Preview.Enabled = EnabledState
 
         TSPB_Progress.Value = 0
         TSPB_Progress.Visible = Not EnabledState
@@ -80,7 +100,6 @@ Public Class frm_Main
             For i As Integer = MinMaxTiles(0).Y To MinMaxTiles(1).Y
                 For j As Integer = MinMaxTiles(0).X To MinMaxTiles(1).X
                     Dim CurrentPath As String = RowColumnZoomReplace(ZR.Path, i, j, ZR.Zoomvalue)
-
                     If Not File.Exists(CurrentPath) Then
                         LogSB.AppendLine(String.Format(My.Resources.Main_CouldntFindTile_Path, CurrentPath))
                         Continue For
@@ -119,6 +138,7 @@ Public Class frm_Main
         Dim CurrentZoomRow As ZoomRow
         Dim Cancel As Boolean = False
         Dim Log As New StringBuilder
+        Dim TryCached As Boolean = False
 
         Me.Invoke(Sub()
                       GUIEnabling(False)
@@ -189,15 +209,15 @@ Public Class frm_Main
 
         Me.Invoke(Sub()
                       TSPB_Progress.Value = 0
-                      TSPB_Progress.Maximum = CLB_Layers.CheckedIndices.Count + Data.Routefile.Select("Visibility = " & True & " AND RouteLineWidth > 0").Length + 1
+                      TSPB_Progress.Maximum = CLB_Layers.CheckedIndices.Count + Data.Routefile.Select("Visibility = " & True & " And RouteLineWidth > 0").Length + 1
                       TSPB_Progress.Visible = True
                       TSSL_Progress.Visible = True
                       TSSL_EscToAbort.Visible = True
                   End Sub)
 
-        Dim Result As Image
+        Dim Result As Image = Nothing
         Dim MyCoordinates As New List(Of Coordinate)
-        Dim RRs() As RoutefileRow = CType(Data.Routefile.Select("Visibility = " & True & " AND RouteLineWidth > 0"), RoutefileRow())
+        Dim RRs() As RoutefileRow = CType(Data.Routefile.Select("Visibility = " & True & " And RouteLineWidth > 0"), RoutefileRow())
         If RRs.Length = 0 Then
             Me.Invoke(Sub()
                           MessageBox.Show(Me, String.Format(My.Resources.Main_NoRoutesToPlot, Environment.NewLine), My.Resources.Main_NoRoutesToPlot_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -242,11 +262,63 @@ Public Class frm_Main
             Exit Sub
         End If
 
+        Dim OnlineLayersCheckedCount As Integer
+        Me.Invoke(Sub()
+                      OnlineLayersCheckedCount = CLB_OnlineLayers.CheckedItems.Count
+                  End Sub)
+        Dim OnlineZoomRow As ZoomRow = Data.Zoom.NewZoomRow
+        If OnlineLayersCheckedCount > 0 Then
+            OnlineZoomRow = Data.Zoom.NewZoomRow
+            OnlineZoomRow.Tileheight = 256
+            OnlineZoomRow.Tilewidth = 256
+            OnlineZoomRow.Zoomvalue = Zoom
+            Dim MaxAllowedZoom As Integer = MaxZoom(MyCoordinates, OnlineZoomRow)
+            If Zoom > MaxAllowedZoom Then
+                Me.Invoke(Sub()
+                              If MessageBox.Show(Me, String.Format(My.Resources.Main_ZoomTooLarge, MaxAllowedZoom), My.Resources.Main_ZoomTooLarge_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Error) = DialogResult.Yes Then
+                                  TryCached = True
+                              Else
+                                  GUIEnabling(True)
+                                  Cancel = True
+                              End If
+                          End Sub)
+            End If
+        End If
+
+        If Cancel Then
+            Me.Invoke(Sub()
+                          GUIEnabling(True)
+                      End Sub)
+            Exit Sub
+        End If
+
         Me.Invoke(Sub()
                       TSPB_Progress.Value += 1
                   End Sub)
 
         Dim Tiles() As Point 'array for minimum and maximum tiles
+        For k As Integer = 0 To CLB_OnlineLayers.Items.Count - 1
+            If Not CLB_OnlineLayers.GetItemChecked(k) Then
+                Continue For
+            End If
+
+            If Btn_Switch.Tag.ToString = "AdditionalTiles" Then
+                Tiles = CalcMinMaxTiles(MyCoordinates, OnlineZoomRow)
+            Else
+                Tiles = {New Point(CInt(NUD_AdditionalTilesWest.Value), CInt(NUD_AdditionalTilesNorth.Value)), New Point(CInt(NUD_AdditionalTilesEast.Value), CInt(NUD_AdditionalTilesSouth.Value))}
+            End If
+
+            If Result Is Nothing OrElse SaveOption.SaveLayersSeparately Then
+                Result = New Bitmap((Tiles(1).X - Tiles(0).X + 1) * OnlineZoomRow.Tilewidth, (Tiles(1).Y - Tiles(0).Y + 1) * OnlineZoomRow.Tileheight)
+            End If
+            Using g As Graphics = Graphics.FromImage(Result)
+                Using Img As Image = CreateWebTileLayer(CType(CType(CLB_OnlineLayers.Items(k), DataRowView).Row, WebTileProviderRow), OnlineZoomRow, Tiles, Log, TryCached)
+                    g.DrawImage(Img, 0, 0, Img.Width, Img.Height)
+                End Using
+            End Using
+        Next
+        CurrentZoomRow = OnlineZoomRow
+
         For k As Integer = 0 To CLB_Layers.Items.Count - 1
             If Not CLB_Layers.GetItemChecked(k) Then
                 Continue For
@@ -327,7 +399,7 @@ Public Class frm_Main
             Next
 
             If SaveOption.Preview Then 'Draw tile lines
-                Dim Str As String = String.Format("{0}: {1}. {2}: {3}.", "R", 2 ^ CurrentZoomRow.Zoomvalue, "C", 2 ^ CurrentZoomRow.Zoomvalue)
+                Dim Str As String = String.Format("{0}:   {1}. {2}: {3}.", "R", 2 ^ CurrentZoomRow.Zoomvalue, "C", 2 ^ CurrentZoomRow.Zoomvalue)
                 Dim FS As Integer = 50
                 Dim StrFont As New Font("Arial", FS)
                 Dim StrSize As SizeF = g.MeasureString(Str, StrFont)
@@ -336,7 +408,7 @@ Public Class frm_Main
                     StrSize = g.MeasureString(Str, StrFont)
                 End While
 
-                For i As Integer = 0 To Math.Abs(Tiles(0).Y - Tiles(1).Y)
+                For i As Integer = 0 To Math.Abs(Tiles(0).Y - Tiles(1).Y) + 1
                     For j As Integer = 0 To Math.Abs(Tiles(0).X - Tiles(1).X) + 1
                         g.DrawString(String.Format("{0}: {1}. {2}: {3}.", "R", Tiles(0).Y + i, "C", Tiles(0).X + j), StrFont, New SolidBrush(TilePen.Color), j * CurrentZoomRow.Tilewidth, i * CurrentZoomRow.Tileheight)
                         g.DrawLine(TilePen, j * CurrentZoomRow.Tilewidth, 0, j * CurrentZoomRow.Tilewidth, Result.Height)
@@ -351,7 +423,7 @@ Public Class frm_Main
 
         If SaveOption.Preview Then
             Me.Invoke(Sub()
-                          PB_Preview.Image = Result
+						  UpdatePreviewPB(Result)
                           GUIEnabling(True)
                       End Sub)
         ElseIf Not SaveOption.Preview AndAlso Not SaveOption.SaveLayersSeparately Then
@@ -493,21 +565,28 @@ Public Class frm_Main
     Private Sub CLB_Layers_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CLB_Layers.SelectedIndexChanged
         Dim OldSelectedValue As Integer = CInt(CMB_Zoom.SelectedItem)
         Dim PossibleZoomValues As New List(Of Integer)
-        For i As Integer = 0 To CLB_Layers.Items.Count - 1
-            If CLB_Layers.GetItemChecked(i) Then
-                Dim DRV As DataRowView = CType(CLB_Layers.Items(i), DataRowView)
-                Dim LR As LayerRow = CType(DRV.Row, LayerRow)
-                For Each ZR As ZoomRow In LR.GetChildRows("Layer_Zoom")
-                    PossibleZoomValues.Add(ZR.Zoomvalue)
-                Next
-            End If
-        Next
-        PossibleZoomValues = PossibleZoomValues.Distinct.ToList()
-        PossibleZoomValues.Sort()
+
+        If CLB_Layers.SelectedItems.Count > 0 Then
+            For i As Integer = 0 To CLB_Layers.Items.Count - 1
+                If CLB_Layers.GetItemChecked(i) Then
+                    Dim DRV As DataRowView = CType(CLB_Layers.Items(i), DataRowView)
+                    Dim LR As LayerRow = CType(DRV.Row, LayerRow)
+                    For Each ZR As ZoomRow In LR.GetChildRows("Layer_Zoom")
+                        PossibleZoomValues.Add(ZR.Zoomvalue)
+                    Next
+                End If
+            Next
+            PossibleZoomValues.Sort()
+            PossibleZoomValues = PossibleZoomValues.Distinct.ToList()
+        Else
+            PossibleZoomValues = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18}.ToList()
+        End If
         CMB_Zoom.DataSource = PossibleZoomValues
         If PossibleZoomValues.Contains(OldSelectedValue) Then
             CMB_Zoom.SelectedItem = OldSelectedValue
         End If
+
+        UpdateBackground = True
     End Sub
 
     Private Sub frm_Main_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
@@ -528,6 +607,7 @@ Public Class frm_Main
             End If
         End If
         Data.WriteXml(Path.Combine(Application.StartupPath, "Data.xml"))
+        WebTiles.WriteXml(Path.Combine(Application.StartupPath, "WebTiles.xml"))
         If File.Exists(Path.Combine(Application.StartupPath, "TempBackground.png")) Then
             Try
                 File.Delete(Path.Combine(Application.StartupPath, "TempBackground.png"))
@@ -634,14 +714,22 @@ Public Class frm_Main
         TH_UpdatePreview.Start()
     End Sub
 
-    Private Sub PB_Preview_DoubleClick(sender As Object, e As EventArgs) Handles PB_Preview.DoubleClick
-        Dim PB As PictureBox = CType(sender, PictureBox)
-        If PB.Image Is Nothing Then
-            Exit Sub
-        End If
-        Dim PreviewForm As New frm_Preview(PB.Image)
-        PreviewForm.ShowDialog()
+    Private Sub PreviewFormClosing()
+        ImagePreviewToolStripMenuItem.Checked = False
     End Sub
+
+    Private Sub UpdatePreviewPB(Img As Image)
+        If PreviewForm Is Nothing OrElse PreviewForm.IsDisposed() Then
+            PreviewForm = New frm_Preview()
+            PreviewForm.SetImage(Img)
+            PreviewForm.Show()
+        Else
+            PreviewForm.SetImage(Img)
+            PreviewForm.BringToFront()
+        End If
+    End Sub
+
+    Dim PreviewForm As frm_Preview
 
     Private Sub frm_Main_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.Escape AndAlso TH_UpdatePreview.ThreadState = Threading.ThreadState.Running Then
@@ -1456,6 +1544,197 @@ Public Class frm_Main
             TH_AnimationSingleFiles = New Threading.Thread(AddressOf Animation)
         End If
         TH_AnimationSingleFiles.Start()
+    End Sub
+
+    Function CreateWebTileLayer(ByVal WTP As WebTileProviderRow, ByVal ZR As ZoomRow, MinMaxTiles() As Point, LogSB As StringBuilder, OnlyCached As Boolean) As Image
+        Dim Result As Image = New Bitmap((MinMaxTiles(1).X - MinMaxTiles(0).X + 1) * ZR.Tilewidth, (MinMaxTiles(1).Y - MinMaxTiles(0).Y + 1) * ZR.Tileheight)
+
+        Using g As Graphics = Graphics.FromImage(Result)
+            For i As Integer = MinMaxTiles(0).Y To MinMaxTiles(1).Y
+                For j As Integer = MinMaxTiles(0).X To MinMaxTiles(1).X
+                    If Not OnlyCached Then
+                        Dim WTRows() As TileRow = CType(WebTiles.Tile.Select("ProviderID = " & WTP.ID & " AND x = " & j & " AND y = " & i & " AND z = " & ZR.Zoomvalue), TileRow())
+                        Dim Downloaded As String = "Downloaded"
+                        If WTRows.Length = 0 Then 'Tile not available
+                            'Download tile
+                            Downloaded = DownloadWebTileAndSave(j, i, ZR.Zoomvalue, WTP)
+                            If Downloaded = "Downloaded" Then
+                                'add tile to dataset
+                                WebTiles.Tile.AddTileRow(j, i, ZR.Zoomvalue, Date.Now.AddMonths(1), WTP)
+                            End If
+                        ElseIf WTRows(0).Expires < Date.Now Then 'Tile expired
+                            'Download tile
+                            Downloaded = DownloadWebTileAndSave(j, i, ZR.Zoomvalue, WTP)
+
+                            If Downloaded = "Downloaded" Then
+                                'update table
+                                WTRows(0).Expires = Date.Now.AddMonths(1)
+                            Else
+                                WTRows(0).Expires = Date.Now
+                            End If
+                        ElseIf Not File.Exists(CreateLocalPathForWebTile(WTP, j, i, ZR.Zoomvalue)) Then 'tile not saved anymore
+                            'Download tile
+                            Downloaded = DownloadWebTileAndSave(j, i, ZR.Zoomvalue, WTP)
+
+                            If Downloaded = "Downloaded" Then
+                                'update table
+                                WTRows(0).Expires = Date.Now.AddMonths(1)
+                            Else
+                                WTRows(0).Expires = Date.Now
+                            End If
+                        End If
+
+                        If Downloaded <> "Downloaded" Then
+                            LogSB.AppendLine("Error while downloading tile from layer " & WTP.Name & " with row index " & i & " and column index " & j & " at zoom level " & ZR.Zoomvalue & ": " & Downloaded)
+                            Continue For
+                        End If
+                    End If
+
+                    Dim CurrentPath As String = CreateLocalPathForWebTile(WTP, j, i, ZR.Zoomvalue)
+                    If OnlyCached AndAlso Not File.Exists(CurrentPath) Then
+                        LogSB.AppendLine("Tile from layer " & WTP.Name & " with row index " & i & " and column index " & j & " at zoom level " & ZR.Zoomvalue & " is not cached.")
+                        Continue For
+                    End If
+                    Using img As Image = New Bitmap(CurrentPath)
+                        g.DrawImage(img, (j - MinMaxTiles(0).X) * ZR.Tilewidth, (i - MinMaxTiles(0).Y) * ZR.Tileheight, ZR.Tilewidth, ZR.Tileheight)
+                    End Using
+                Next
+            Next
+            Dim LRs() As LicenseRow = CType(WTP.GetChildRows("WebTileProvider_License"), LicenseRow())
+            Dim License_SB As New StringBuilder
+            For Each LR As LicenseRow In LRs
+                License_SB.Append(LR.Text & " ")
+            Next
+            Dim AttributionString As String = License_SB.ToString
+            Dim font As New Font("Arial", 14)
+            Dim StringSize As SizeF = g.MeasureString(AttributionString, font)
+            While StringSize.Width > Result.Width
+                font = New Font("Arial", font.Size - 1)
+                StringSize = g.MeasureString(AttributionString, font)
+            End While
+            g.FillRectangle(New SolidBrush(Color.FromArgb(160, Color.White)), Result.Width - StringSize.Width, Result.Height - StringSize.Height, StringSize.Width, StringSize.Height)
+            g.DrawString(AttributionString, font, New SolidBrush(Color.Black), Result.Width - StringSize.Width, Result.Height - StringSize.Height)
+        End Using
+        Return Result
+    End Function
+
+    Public Function CreateLocalPathForWebTile(WTP_CL As WebTileProviderRow, x As Integer, y As Integer, z As Integer) As String
+        Return Path.Combine(Application.StartupPath, "Tiles", WTP_CL.Path, z.ToString, x.ToString, y.ToString & Path.GetExtension(WTP_CL.Link))
+    End Function
+
+    Function DownloadWebTileAndSave(x As Integer, y As Integer, z As Integer, WTP_DL As WebTileProviderRow) As String
+        Dim Link As New Uri(RowColumnZoomReplace(WTP_DL.Link, y, x, z))
+        Dim LocalPath As String = CreateLocalPathForWebTile(WTP_DL, x, y, z)
+
+        If Not Directory.Exists(Path.GetDirectoryName(LocalPath)) Then
+            Directory.CreateDirectory(Path.GetDirectoryName(LocalPath))
+        End If
+
+        Try
+            Using Client As New WebClient
+                Client.DownloadFile(Link, LocalPath)
+            End Using
+            Return "Downloaded"
+        Catch ex As Exception
+            MessageBox.Show(ex.GetType.ToString)
+            Return ex.Message & " (" & Link.ToString & ")"
+        End Try
+    End Function
+
+    Public Function RowColumnZoomReplace(ByVal Str As String, ByVal RowIndex As Integer, ByVal ColumnIndex As Integer, ByVal Zoom As Integer) As String
+        Dim RowStrings() As String = {"{R}", "{Y}", "{r}", "{y}"}
+        Dim ColumnStrings() As String = {"{C}", "{X}", "{c}", "{x}"}
+        Dim ZoomStrings() As String = {"{Z}", "{z}"}
+
+        For Each SearchStr As String In RowStrings
+            Str = Str.Replace(SearchStr, RowIndex.ToString)
+        Next
+        For Each SearchStr As String In ColumnStrings
+            Str = Str.Replace(SearchStr, ColumnIndex.ToString)
+        Next
+        For Each SearchStr As String In ZoomStrings
+            Str = Str.Replace(SearchStr, Zoom.ToString)
+        Next
+
+        Return Str
+    End Function
+
+    Function MaxZoom(ByVal Coords As List(Of Coordinate), ByVal ZR As ZoomRow) As Integer
+        Dim Z As Integer
+        Dim Temp_ZR As ZoomRow = Data.Zoom.NewZoomRow()
+        Temp_ZR.Tileheight = ZR.Tileheight
+        Temp_ZR.Tilewidth = ZR.Tilewidth
+        Temp_ZR.Zoomvalue = ZR.Zoomvalue
+
+        For Z = 0 To 19
+            Temp_ZR.Zoomvalue = Z
+            Dim Tiles() As Point
+            If Btn_Switch.Tag.ToString = "AdditionalTiles" Then
+                Tiles = CalcMinMaxTiles(Coords, Temp_ZR)
+            Else
+                Tiles = {New Point(CInt(NUD_AdditionalTilesWest.Value), CInt(NUD_AdditionalTilesNorth.Value)), New Point(CInt(NUD_AdditionalTilesEast.Value), CInt(NUD_AdditionalTilesSouth.Value))}
+            End If
+            If (Math.Abs(Tiles(0).X - Tiles(1).X) + 1) * (Math.Abs(Tiles(0).Y - Tiles(1).Y) + 1) > 9 Then
+                Exit For
+            End If
+        Next
+
+        Return Z - 1
+    End Function
+
+    Private Sub WebTileProvider_LinkLabel_Click(ByVal sender As Object, ByVal e As LinkLabelLinkClickedEventArgs)
+        Dim LL As LinkLabel = CType(sender, LinkLabel)
+        Process.Start(LL.Text)
+    End Sub
+
+    Private Sub CMB_WebTileProvider_Name_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_WebTileProvider_Name.SelectedIndexChanged
+        If WebTileProviderBindingSource.Current Is Nothing Then
+            Exit Sub
+        End If
+        Dim WTPR As WebTileProviderRow = CType((CType(WebTileProviderBindingSource.Current, DataRowView).Row), WebTileProviderRow)
+        Dim LRs() As LicenseRow = CType(WTPR.GetChildRows("WebTileProvider_License"), LicenseRow())
+
+        TLP_WebTileProvider_License.Controls.Clear()
+
+        Dim cnt As Integer = 0
+        For Each LR As LicenseRow In LRs
+            If TLP_WebTileProvider_License.RowStyles.Count < cnt Then
+                TLP_WebTileProvider_License.RowStyles.Add(New RowStyle(SizeType.AutoSize))
+            End If
+            Dim LL As New LinkLabel
+            LL.AutoSize = True
+            LL.Text = LR.Link
+            AddHandler LL.LinkClicked, AddressOf WebTileProvider_LinkLabel_Click
+            TLP_WebTileProvider_License.Controls.Add(LL, 1, cnt)
+
+            Dim L As New Label
+            L.Text = LR.Text
+            L.AutoSize = True
+            TLP_WebTileProvider_License.Controls.Add(L, 0, cnt)
+
+            cnt += 1
+        Next
+    End Sub
+
+    Private Sub CLB_OnlineLayers_ItemCheck(sender As Object, e As ItemCheckEventArgs) Handles CLB_OnlineLayers.ItemCheck
+        If e.NewValue = CheckState.Checked Then
+            For i As Integer = 0 To CLB_OnlineLayers.Items.Count - 1
+                If i <> e.Index Then
+                    CLB_OnlineLayers.SetItemChecked(i, False)
+                End If
+            Next i
+        End If
+        UpdateBackground = True
+    End Sub
+
+    Private Sub ImagePreviewToolStripMenuItem_CheckedChanged(sender As Object, e As EventArgs) Handles ImagePreviewToolStripMenuItem.CheckedChanged
+        If Not ImagePreviewToolStripMenuItem.Checked Then 'Close preview window
+            If Not PreviewForm Is Nothing AndAlso Not PreviewForm.IsDisposed Then
+                PreviewForm.Close()
+            End If
+        Else 'open preview window
+            UpdatePreviewPB(Nothing)
+        End If
     End Sub
 End Class
 

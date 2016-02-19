@@ -58,8 +58,15 @@ Partial Class frm_Main
         Me.OpenPathToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RoutefileBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.TLP_Tiles = New System.Windows.Forms.TableLayoutPanel()
+        Me.GB_Layers = New System.Windows.Forms.GroupBox()
+        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
+        Me.CLB_Layers = New System.Windows.Forms.CheckedListBox()
+        Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
+        Me.CMB_Zoom = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.CLB_OnlineLayers = New System.Windows.Forms.CheckedListBox()
         Me.GB_AdditionalTiles = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.NUD_AdditionalTilesSouth = New System.Windows.Forms.NumericUpDown()
@@ -72,19 +79,24 @@ Partial Class frm_Main
         Me.L_South = New System.Windows.Forms.Label()
         Me.Btn_ResetAdditionalTiles = New System.Windows.Forms.Button()
         Me.Btn_Switch = New System.Windows.Forms.Button()
-        Me.GB_Layers = New System.Windows.Forms.GroupBox()
-        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.CMB_Zoom = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.CLB_Layers = New System.Windows.Forms.CheckedListBox()
-        Me.GB_Preview = New System.Windows.Forms.GroupBox()
-        Me.PB_Preview = New System.Windows.Forms.PictureBox()
+        Me.WebTileProviderBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.WebTiles = New Route_Visualizer.WebTiles()
         Me.OFD_ImportRoute = New System.Windows.Forms.OpenFileDialog()
         Me.SFD_SaveImage = New System.Windows.Forms.SaveFileDialog()
         Me.FBD_SaveLayersSeperately = New System.Windows.Forms.FolderBrowserDialog()
-        Me.TP_Layers = New System.Windows.Forms.TabPage()
+        Me.TP_LocalLayers = New System.Windows.Forms.TabPage()
         Me.TP_RouteVisualizer = New System.Windows.Forms.TabPage()
         Me.TC_Main = New System.Windows.Forms.TabControl()
+        Me.TP_OnlineLayers = New System.Windows.Forms.TabPage()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.CMB_WebTileProvider_Name = New System.Windows.Forms.ComboBox()
+        Me.WebTileProviderBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.LL_WebTileProvider_Website = New System.Windows.Forms.LinkLabel()
+        Me.L_WebTileProvider_Restrictions = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TLP_WebTileProvider_License = New System.Windows.Forms.TableLayoutPanel()
         Me.CD_Main = New System.Windows.Forms.ColorDialog()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -106,6 +118,8 @@ Partial Class frm_Main
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HilfeAnzeigenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ÜberToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.WindowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ImagePreviewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.TSSL_EscToAbort = New System.Windows.Forms.ToolStripStatusLabel()
         Me.TSSL_Progress = New System.Windows.Forms.ToolStripStatusLabel()
@@ -137,21 +151,23 @@ Partial Class frm_Main
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
         Me.SplitContainer1.SuspendLayout()
-        Me.TableLayoutPanel1.SuspendLayout()
-        Me.TLP_Tiles.SuspendLayout()
+        Me.GB_Layers.SuspendLayout()
+        Me.TableLayoutPanel4.SuspendLayout()
+        Me.TableLayoutPanel5.SuspendLayout()
         Me.GB_AdditionalTiles.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         CType(Me.NUD_AdditionalTilesSouth, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NUD_AdditionalTilesWest, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NUD_AdditionalTilesEast, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NUD_AdditionalTilesNorth, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GB_Layers.SuspendLayout()
-        Me.TableLayoutPanel4.SuspendLayout()
-        Me.GB_Preview.SuspendLayout()
-        CType(Me.PB_Preview, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TP_Layers.SuspendLayout()
+        CType(Me.WebTileProviderBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.WebTiles, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TP_LocalLayers.SuspendLayout()
         Me.TP_RouteVisualizer.SuspendLayout()
         Me.TC_Main.SuspendLayout()
+        Me.TP_OnlineLayers.SuspendLayout()
+        Me.TableLayoutPanel2.SuspendLayout()
+        CType(Me.WebTileProviderBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         CType(Me.ZoomBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -204,6 +220,7 @@ Partial Class frm_Main
         '
         Me.LayerBindingSource.DataMember = "Layer"
         Me.LayerBindingSource.DataSource = Me.Data
+        Me.LayerBindingSource.Sort = "Sortindex ASC"
         '
         'Data
         '
@@ -244,6 +261,7 @@ Partial Class frm_Main
         '
         Me.LayerBindingSource1.DataMember = "Layer"
         Me.LayerBindingSource1.DataSource = Me.Data
+        Me.LayerBindingSource1.Sort = "Sortindex ASC"
         '
         'DataGridViewTextBoxColumn5
         '
@@ -288,6 +306,7 @@ Partial Class frm_Main
         '
         Me.ZoomBindingSource1.DataMember = "Layer_Zoom"
         Me.ZoomBindingSource1.DataSource = Me.LayerBindingSource
+        Me.ZoomBindingSource1.Sort = "Zoomvalue ASC"
         '
         'SplitContainer2
         '
@@ -397,29 +416,79 @@ Partial Class frm_Main
         'SplitContainer1
         '
         resources.ApplyResources(Me.SplitContainer1, "SplitContainer1")
-        Me.SplitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1
+        Me.SplitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel2
         Me.SplitContainer1.Name = "SplitContainer1"
         '
         'SplitContainer1.Panel1
         '
-        Me.SplitContainer1.Panel1.Controls.Add(Me.TableLayoutPanel1)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.GB_Layers)
         '
         'SplitContainer1.Panel2
         '
-        Me.SplitContainer1.Panel2.Controls.Add(Me.GB_Preview)
+        Me.SplitContainer1.Panel2.Controls.Add(Me.GB_AdditionalTiles)
         '
-        'TableLayoutPanel1
+        'GB_Layers
         '
-        resources.ApplyResources(Me.TableLayoutPanel1, "TableLayoutPanel1")
-        Me.TableLayoutPanel1.Controls.Add(Me.TLP_Tiles, 1, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.GB_Layers, 0, 0)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
+        Me.GB_Layers.Controls.Add(Me.TableLayoutPanel4)
+        resources.ApplyResources(Me.GB_Layers, "GB_Layers")
+        Me.GB_Layers.Name = "GB_Layers"
+        Me.GB_Layers.TabStop = False
         '
-        'TLP_Tiles
+        'TableLayoutPanel4
         '
-        resources.ApplyResources(Me.TLP_Tiles, "TLP_Tiles")
-        Me.TLP_Tiles.Controls.Add(Me.GB_AdditionalTiles, 0, 0)
-        Me.TLP_Tiles.Name = "TLP_Tiles"
+        resources.ApplyResources(Me.TableLayoutPanel4, "TableLayoutPanel4")
+        Me.TableLayoutPanel4.Controls.Add(Me.CLB_Layers, 0, 1)
+        Me.TableLayoutPanel4.Controls.Add(Me.TableLayoutPanel5, 0, 2)
+        Me.TableLayoutPanel4.Controls.Add(Me.Label5, 0, 0)
+        Me.TableLayoutPanel4.Controls.Add(Me.Label6, 1, 0)
+        Me.TableLayoutPanel4.Controls.Add(Me.CLB_OnlineLayers, 1, 1)
+        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
+        '
+        'CLB_Layers
+        '
+        Me.CLB_Layers.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.CLB_Layers.CheckOnClick = True
+        resources.ApplyResources(Me.CLB_Layers, "CLB_Layers")
+        Me.CLB_Layers.FormattingEnabled = True
+        Me.CLB_Layers.Name = "CLB_Layers"
+        '
+        'TableLayoutPanel5
+        '
+        resources.ApplyResources(Me.TableLayoutPanel5, "TableLayoutPanel5")
+        Me.TableLayoutPanel4.SetColumnSpan(Me.TableLayoutPanel5, 2)
+        Me.TableLayoutPanel5.Controls.Add(Me.CMB_Zoom, 1, 0)
+        Me.TableLayoutPanel5.Controls.Add(Me.Label1, 0, 0)
+        Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
+        '
+        'CMB_Zoom
+        '
+        resources.ApplyResources(Me.CMB_Zoom, "CMB_Zoom")
+        Me.CMB_Zoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CMB_Zoom.FormattingEnabled = True
+        Me.CMB_Zoom.Name = "CMB_Zoom"
+        '
+        'Label1
+        '
+        resources.ApplyResources(Me.Label1, "Label1")
+        Me.Label1.Name = "Label1"
+        '
+        'Label5
+        '
+        resources.ApplyResources(Me.Label5, "Label5")
+        Me.Label5.Name = "Label5"
+        '
+        'Label6
+        '
+        resources.ApplyResources(Me.Label6, "Label6")
+        Me.Label6.Name = "Label6"
+        '
+        'CLB_OnlineLayers
+        '
+        Me.CLB_OnlineLayers.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.CLB_OnlineLayers.CheckOnClick = True
+        resources.ApplyResources(Me.CLB_OnlineLayers, "CLB_OnlineLayers")
+        Me.CLB_OnlineLayers.FormattingEnabled = True
+        Me.CLB_OnlineLayers.Name = "CLB_OnlineLayers"
         '
         'GB_AdditionalTiles
         '
@@ -510,54 +579,16 @@ Partial Class frm_Main
         Me.Btn_Switch.Tag = "AdditionalTiles"
         Me.Btn_Switch.UseVisualStyleBackColor = True
         '
-        'GB_Layers
+        'WebTileProviderBindingSource1
         '
-        Me.GB_Layers.Controls.Add(Me.TableLayoutPanel4)
-        resources.ApplyResources(Me.GB_Layers, "GB_Layers")
-        Me.GB_Layers.Name = "GB_Layers"
-        Me.GB_Layers.TabStop = False
+        Me.WebTileProviderBindingSource1.DataMember = "WebTileProvider"
+        Me.WebTileProviderBindingSource1.DataSource = Me.WebTiles
+        Me.WebTileProviderBindingSource1.Sort = "Name ASC"
         '
-        'TableLayoutPanel4
+        'WebTiles
         '
-        resources.ApplyResources(Me.TableLayoutPanel4, "TableLayoutPanel4")
-        Me.TableLayoutPanel4.Controls.Add(Me.CMB_Zoom, 1, 1)
-        Me.TableLayoutPanel4.Controls.Add(Me.Label1, 0, 1)
-        Me.TableLayoutPanel4.Controls.Add(Me.CLB_Layers, 0, 0)
-        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
-        '
-        'CMB_Zoom
-        '
-        resources.ApplyResources(Me.CMB_Zoom, "CMB_Zoom")
-        Me.CMB_Zoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CMB_Zoom.FormattingEnabled = True
-        Me.CMB_Zoom.Name = "CMB_Zoom"
-        '
-        'Label1
-        '
-        resources.ApplyResources(Me.Label1, "Label1")
-        Me.Label1.Name = "Label1"
-        '
-        'CLB_Layers
-        '
-        Me.CLB_Layers.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.CLB_Layers.CheckOnClick = True
-        Me.TableLayoutPanel4.SetColumnSpan(Me.CLB_Layers, 2)
-        resources.ApplyResources(Me.CLB_Layers, "CLB_Layers")
-        Me.CLB_Layers.FormattingEnabled = True
-        Me.CLB_Layers.Name = "CLB_Layers"
-        '
-        'GB_Preview
-        '
-        Me.GB_Preview.Controls.Add(Me.PB_Preview)
-        resources.ApplyResources(Me.GB_Preview, "GB_Preview")
-        Me.GB_Preview.Name = "GB_Preview"
-        Me.GB_Preview.TabStop = False
-        '
-        'PB_Preview
-        '
-        resources.ApplyResources(Me.PB_Preview, "PB_Preview")
-        Me.PB_Preview.Name = "PB_Preview"
-        Me.PB_Preview.TabStop = False
+        Me.WebTiles.DataSetName = "WebTiles"
+        Me.WebTiles.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'OFD_ImportRoute
         '
@@ -572,12 +603,12 @@ Partial Class frm_Main
         '
         resources.ApplyResources(Me.FBD_SaveLayersSeperately, "FBD_SaveLayersSeperately")
         '
-        'TP_Layers
+        'TP_LocalLayers
         '
-        Me.TP_Layers.Controls.Add(Me.SplitContainer3)
-        resources.ApplyResources(Me.TP_Layers, "TP_Layers")
-        Me.TP_Layers.Name = "TP_Layers"
-        Me.TP_Layers.UseVisualStyleBackColor = True
+        Me.TP_LocalLayers.Controls.Add(Me.SplitContainer3)
+        resources.ApplyResources(Me.TP_LocalLayers, "TP_LocalLayers")
+        Me.TP_LocalLayers.Name = "TP_LocalLayers"
+        Me.TP_LocalLayers.UseVisualStyleBackColor = True
         '
         'TP_RouteVisualizer
         '
@@ -589,10 +620,77 @@ Partial Class frm_Main
         'TC_Main
         '
         Me.TC_Main.Controls.Add(Me.TP_RouteVisualizer)
-        Me.TC_Main.Controls.Add(Me.TP_Layers)
+        Me.TC_Main.Controls.Add(Me.TP_LocalLayers)
+        Me.TC_Main.Controls.Add(Me.TP_OnlineLayers)
         resources.ApplyResources(Me.TC_Main, "TC_Main")
         Me.TC_Main.Name = "TC_Main"
         Me.TC_Main.SelectedIndex = 0
+        '
+        'TP_OnlineLayers
+        '
+        Me.TP_OnlineLayers.Controls.Add(Me.TableLayoutPanel2)
+        resources.ApplyResources(Me.TP_OnlineLayers, "TP_OnlineLayers")
+        Me.TP_OnlineLayers.Name = "TP_OnlineLayers"
+        Me.TP_OnlineLayers.UseVisualStyleBackColor = True
+        '
+        'TableLayoutPanel2
+        '
+        resources.ApplyResources(Me.TableLayoutPanel2, "TableLayoutPanel2")
+        Me.TableLayoutPanel2.Controls.Add(Me.CMB_WebTileProvider_Name, 0, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.Label2, 0, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.Label3, 0, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.LL_WebTileProvider_Website, 1, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.L_WebTileProvider_Restrictions, 1, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.Label4, 0, 3)
+        Me.TableLayoutPanel2.Controls.Add(Me.TLP_WebTileProvider_License, 1, 3)
+        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
+        '
+        'CMB_WebTileProvider_Name
+        '
+        Me.TableLayoutPanel2.SetColumnSpan(Me.CMB_WebTileProvider_Name, 2)
+        Me.CMB_WebTileProvider_Name.DataSource = Me.WebTileProviderBindingSource
+        Me.CMB_WebTileProvider_Name.DisplayMember = "Name"
+        resources.ApplyResources(Me.CMB_WebTileProvider_Name, "CMB_WebTileProvider_Name")
+        Me.CMB_WebTileProvider_Name.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CMB_WebTileProvider_Name.FormattingEnabled = True
+        Me.CMB_WebTileProvider_Name.Name = "CMB_WebTileProvider_Name"
+        '
+        'WebTileProviderBindingSource
+        '
+        Me.WebTileProviderBindingSource.DataMember = "WebTileProvider"
+        Me.WebTileProviderBindingSource.DataSource = Me.WebTiles
+        Me.WebTileProviderBindingSource.Sort = "Name ASC"
+        '
+        'Label2
+        '
+        resources.ApplyResources(Me.Label2, "Label2")
+        Me.Label2.Name = "Label2"
+        '
+        'Label3
+        '
+        resources.ApplyResources(Me.Label3, "Label3")
+        Me.Label3.Name = "Label3"
+        '
+        'LL_WebTileProvider_Website
+        '
+        resources.ApplyResources(Me.LL_WebTileProvider_Website, "LL_WebTileProvider_Website")
+        Me.LL_WebTileProvider_Website.Name = "LL_WebTileProvider_Website"
+        Me.LL_WebTileProvider_Website.TabStop = True
+        '
+        'L_WebTileProvider_Restrictions
+        '
+        resources.ApplyResources(Me.L_WebTileProvider_Restrictions, "L_WebTileProvider_Restrictions")
+        Me.L_WebTileProvider_Restrictions.Name = "L_WebTileProvider_Restrictions"
+        '
+        'Label4
+        '
+        resources.ApplyResources(Me.Label4, "Label4")
+        Me.Label4.Name = "Label4"
+        '
+        'TLP_WebTileProvider_License
+        '
+        resources.ApplyResources(Me.TLP_WebTileProvider_License, "TLP_WebTileProvider_License")
+        Me.TLP_WebTileProvider_License.Name = "TLP_WebTileProvider_License"
         '
         'CD_Main
         '
@@ -600,7 +698,7 @@ Partial Class frm_Main
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.LayerToolStripMenuItem, Me.HelpToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.LayerToolStripMenuItem, Me.HelpToolStripMenuItem, Me.WindowToolStripMenuItem})
         resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
         '
@@ -704,6 +802,18 @@ Partial Class frm_Main
         Me.ÜberToolStripMenuItem.Name = "ÜberToolStripMenuItem"
         resources.ApplyResources(Me.ÜberToolStripMenuItem, "ÜberToolStripMenuItem")
         '
+        'WindowToolStripMenuItem
+        '
+        Me.WindowToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ImagePreviewToolStripMenuItem})
+        Me.WindowToolStripMenuItem.Name = "WindowToolStripMenuItem"
+        resources.ApplyResources(Me.WindowToolStripMenuItem, "WindowToolStripMenuItem")
+        '
+        'ImagePreviewToolStripMenuItem
+        '
+        Me.ImagePreviewToolStripMenuItem.CheckOnClick = True
+        Me.ImagePreviewToolStripMenuItem.Name = "ImagePreviewToolStripMenuItem"
+        resources.ApplyResources(Me.ImagePreviewToolStripMenuItem, "ImagePreviewToolStripMenuItem")
+        '
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSSL_EscToAbort, Me.TSSL_Progress, Me.TSPB_Progress})
@@ -712,17 +822,20 @@ Partial Class frm_Main
         '
         'TSSL_EscToAbort
         '
+        Me.TSSL_EscToAbort.BackColor = System.Drawing.SystemColors.Control
         Me.TSSL_EscToAbort.Name = "TSSL_EscToAbort"
         resources.ApplyResources(Me.TSSL_EscToAbort, "TSSL_EscToAbort")
         Me.TSSL_EscToAbort.Spring = True
         '
         'TSSL_Progress
         '
+        Me.TSSL_Progress.BackColor = System.Drawing.SystemColors.Control
         Me.TSSL_Progress.Name = "TSSL_Progress"
         resources.ApplyResources(Me.TSSL_Progress, "TSSL_Progress")
         '
         'TSPB_Progress
         '
+        Me.TSPB_Progress.BackColor = System.Drawing.SystemColors.Control
         Me.TSPB_Progress.Name = "TSPB_Progress"
         resources.ApplyResources(Me.TSPB_Progress, "TSPB_Progress")
         '
@@ -735,6 +848,7 @@ Partial Class frm_Main
         '
         Me.ZoomBindingSource.DataMember = "Zoom"
         Me.ZoomBindingSource.DataSource = Me.Data
+        Me.ZoomBindingSource.Sort = "Zoomvalue ASC"
         '
         'frm_Main
         '
@@ -772,8 +886,11 @@ Partial Class frm_Main
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer1.ResumeLayout(False)
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TLP_Tiles.ResumeLayout(False)
+        Me.GB_Layers.ResumeLayout(False)
+        Me.TableLayoutPanel4.ResumeLayout(False)
+        Me.TableLayoutPanel4.PerformLayout()
+        Me.TableLayoutPanel5.ResumeLayout(False)
+        Me.TableLayoutPanel5.PerformLayout()
         Me.GB_AdditionalTiles.ResumeLayout(False)
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel3.PerformLayout()
@@ -781,14 +898,15 @@ Partial Class frm_Main
         CType(Me.NUD_AdditionalTilesWest, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NUD_AdditionalTilesEast, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NUD_AdditionalTilesNorth, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GB_Layers.ResumeLayout(False)
-        Me.TableLayoutPanel4.ResumeLayout(False)
-        Me.TableLayoutPanel4.PerformLayout()
-        Me.GB_Preview.ResumeLayout(False)
-        CType(Me.PB_Preview, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TP_Layers.ResumeLayout(False)
+        CType(Me.WebTileProviderBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.WebTiles, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TP_LocalLayers.ResumeLayout(False)
         Me.TP_RouteVisualizer.ResumeLayout(False)
         Me.TC_Main.ResumeLayout(False)
+        Me.TP_OnlineLayers.ResumeLayout(False)
+        Me.TableLayoutPanel2.ResumeLayout(False)
+        Me.TableLayoutPanel2.PerformLayout()
+        CType(Me.WebTileProviderBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
@@ -807,7 +925,7 @@ Partial Class frm_Main
     Friend WithEvents RowcountDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ColumncountDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents Data As Data
-    Friend WithEvents TP_Layers As TabPage
+    Friend WithEvents TP_LocalLayers As TabPage
     Friend WithEvents TP_RouteVisualizer As TabPage
     Friend WithEvents GB_Layers As GroupBox
     Friend WithEvents CLB_Layers As CheckedListBox
@@ -825,8 +943,6 @@ Partial Class frm_Main
     Friend WithEvents L_West As Label
     Friend WithEvents L_South As Label
     Friend WithEvents Btn_ResetAdditionalTiles As Button
-    Friend WithEvents GB_Preview As GroupBox
-    Friend WithEvents PB_Preview As PictureBox
     Friend WithEvents TC_Main As TabControl
     Friend WithEvents LayerBindingSource As BindingSource
     Friend WithEvents ZoomBindingSource As BindingSource
@@ -839,7 +955,6 @@ Partial Class frm_Main
     Friend WithEvents CD_Main As ColorDialog
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
     Friend WithEvents SplitContainer1 As SplitContainer
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents SplitContainer2 As SplitContainer
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
@@ -883,7 +998,6 @@ Partial Class frm_Main
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
-    Friend WithEvents TLP_Tiles As TableLayoutPanel
     Friend WithEvents DataGridViewTextBoxColumnVisibility As DataGridViewCheckBoxColumn
     Friend WithEvents DataGridViewTextBoxColumnPath As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumnRouteLineWidth As DataGridViewTextBoxColumn
@@ -896,6 +1010,24 @@ Partial Class frm_Main
     Friend WithEvents CMS_ZoomDataGridView As ContextMenuStrip
     Friend WithEvents DuplicateRowToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AnimationSingleFilesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TP_OnlineLayers As TabPage
+    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
+    Friend WithEvents WebTileProviderBindingSource As BindingSource
+    Friend WithEvents WebTiles As WebTiles
+    Friend WithEvents CMB_WebTileProvider_Name As ComboBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents LL_WebTileProvider_Website As LinkLabel
+    Friend WithEvents L_WebTileProvider_Restrictions As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents TLP_WebTileProvider_License As TableLayoutPanel
+    Friend WithEvents WebTileProviderBindingSource1 As BindingSource
+    Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents CLB_OnlineLayers As CheckedListBox
+    Friend WithEvents WindowToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ImagePreviewToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SingleFilesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GIFToolStripMenuItem1 As ToolStripMenuItem
 End Class
