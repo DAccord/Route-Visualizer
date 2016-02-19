@@ -291,4 +291,16 @@
   <data name="Main_ZoomWizardIntro" xml:space="preserve">
     <value>Please select a tile from the selected layer and with the desired zoom value and remember the zoom value and the row and column index.</value>
   </data>
+  <data name="Main_ZoomTooLarge" xml:space="preserve">
+    <value>You did select an online layer, therefore it was tried to use tiles directly from the web. However, the selected zoom value exceeds the allowed value. Reduce the selected zoom value to {0} or less, reduce the additional tile numbers, the absolute tile indices or import your own local layers and select them. Or, try to continue using only cached tiles. Do you want to continue?</value>
+  </data>
+  <data name="Main_ZoomTooLarge_Title" xml:space="preserve">
+    <value>Selected zoom too large</value>
+  </data>
+  <data name="Preview_ImageSize" xml:space="preserve">
+    <value>Image size (W x H): {0} px x {1} px</value>
+  </data>
+  <data name="Preview_Zoom" xml:space="preserve">
+    <value>Zoom: {0:p0}</value>
+  </data>
 </root>

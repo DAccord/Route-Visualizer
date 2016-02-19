@@ -529,6 +529,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to You did select an online layer, therefore it was tried to use tiles directly from the web. However, the selected zoom value exceeds the allowed value. Reduce the selected zoom value to {0} or less, reduce the additional tile numbers, the absolute tile indices or import your own local layers and select them. Or, try to continue using only cached tiles. Do you want to continue?.
+        '''</summary>
+        Friend ReadOnly Property Main_ZoomTooLarge() As String
+            Get
+                Return ResourceManager.GetString("Main_ZoomTooLarge", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Selected zoom too large.
+        '''</summary>
+        Friend ReadOnly Property Main_ZoomTooLarge_Title() As String
+            Get
+                Return ResourceManager.GetString("Main_ZoomTooLarge_Title", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Please select a tile from the selected layer and with the desired zoom value and remember the zoom value and the row and column index..
         '''</summary>
         Friend ReadOnly Property Main_ZoomWizardIntro() As String
@@ -561,6 +579,24 @@ Namespace My.Resources
         Friend ReadOnly Property OFD_LayerWizardFilter() As String
             Get
                 Return ResourceManager.GetString("OFD_LayerWizardFilter", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Image size (W x H): {0} px x {1} px.
+        '''</summary>
+        Friend ReadOnly Property Preview_ImageSize() As String
+            Get
+                Return ResourceManager.GetString("Preview_ImageSize", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Zoom: {0:p0}.
+        '''</summary>
+        Friend ReadOnly Property Preview_Zoom() As String
+            Get
+                Return ResourceManager.GetString("Preview_Zoom", resourceCulture)
             End Get
         End Property
         
