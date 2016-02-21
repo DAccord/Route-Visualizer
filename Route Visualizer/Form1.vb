@@ -1114,6 +1114,10 @@ Public Class frm_Main
 
     Private Sub DuplicateRowToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DuplicateRowToolStripMenuItem.Click
         Dim DRV As DataRowView = CType(ZoomBindingSource1.Current, DataRowView)
+        If DRV.IsNew Then
+            Media.SystemSounds.Asterisk.Play()
+            Exit Sub
+        End If
         Dim ZR As ZoomRow = CType(DRV.Row, ZoomRow)
         Dim ZR_New As ZoomRow = Data.Zoom.NewZoomRow()
         ZR_New.Path = ZR.Path
