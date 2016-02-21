@@ -118,6 +118,36 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="L_ImageMagick.Size" type="System.Drawing.Size, System.Drawing">
+    <value>286, 40</value>
+  </data>
+  <data name="L_ImageMagick.Text" xml:space="preserve">
+    <value>Route Visualizer verwendet ImageMagick und Magick.NET.</value>
+  </data>
+  <data name="L_ImageMagick.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LL_ImageMagick.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LL_MagickNet.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableLayoutPanel1.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LabelVersion.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="L_Description.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LabelProductName.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LL_Github.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="LogoPictureBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAYAAAB5fY51AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -234,7 +264,28 @@
         5gAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="LogoPictureBox.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LabelCopyright.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableLayoutPanel2.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableLayoutPanel3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="OKButton.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TableLayoutPanel.ToolTip" xml:space="preserve">
+    <value />
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Über </value>
+  </data>
+  <data name="$this.ToolTip" xml:space="preserve">
+    <value />
   </data>
 </root>

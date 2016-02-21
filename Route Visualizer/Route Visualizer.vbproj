@@ -207,6 +207,9 @@
     <Content Include="Help\Images\Fehler.png" />
     <Content Include="Help\Images\Icon.png" />
     <Content Include="Icon_tr.ico" />
+    <Content Include="License ImageMagick.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="License.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

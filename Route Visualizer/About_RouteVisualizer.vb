@@ -30,4 +30,12 @@
     Private Sub LL_Github_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LL_Github.LinkClicked
         Process.Start(My.Resources.About_GithubLinkToReadme)
     End Sub
+
+    Private Sub LL_ImageMagick_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LL_ImageMagick.LinkClicked
+        Process.Start("http://www.imagemagick.org")
+    End Sub
+
+    Private Sub LL_MagickNet_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LL_MagickNet.LinkClicked
+        Process.Start("http://magick.codeplex.com/")
+    End Sub
 End Class
