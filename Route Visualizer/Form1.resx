@@ -1253,6 +1253,7 @@
   </data>
   <data name="L_North.Location" type="System.Drawing.Point, System.Drawing">
     <value>89, 0</value>
+  </data>
   <data name="Btn_ResetAdditionalTiles.Location" type="System.Drawing.Point, System.Drawing">
     <value>71, 162</value>
   </data>
