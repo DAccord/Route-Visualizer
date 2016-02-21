@@ -114,24 +114,6 @@ Public Class frm_Main
         Return Result
     End Function
 
-    Public Function RowColumnZoomReplace(ByVal Str As String, ByVal RowIndex As Integer, ByVal ColumnIndex As Integer, ByVal Zoom As Integer) As String
-        Dim RowStrings() As String = {"{R}", "{Y}", "{r}", "{y}"}
-        Dim ColumnStrings() As String = {"{C}", "{X}", "{c}", "{x}"}
-        Dim ZoomStrings() As String = {"{Z}", "{z}"}
-
-        For Each SearchStr As String In RowStrings
-            Str = Str.Replace(SearchStr, RowIndex.ToString)
-        Next
-        For Each SearchStr As String In ColumnStrings
-            Str = Str.Replace(SearchStr, ColumnIndex.ToString)
-        Next
-        For Each SearchStr As String In ZoomStrings
-            Str = Str.Replace(SearchStr, Zoom.ToString)
-        Next
-
-        Return Str
-    End Function
-
     Public Sub UpdatePreviewNew()
         Dim Starttime As DateTime = DateTime.Now
         Dim TilePen As New Pen(New SolidBrush(Color.Blue), 5)
@@ -423,7 +405,7 @@ Public Class frm_Main
 
         If SaveOption.Preview Then
             Me.Invoke(Sub()
-						  UpdatePreviewPB(Result)
+                          UpdatePreviewPB(Result)
                           GUIEnabling(True)
                       End Sub)
         ElseIf Not SaveOption.Preview AndAlso Not SaveOption.SaveLayersSeparately Then
