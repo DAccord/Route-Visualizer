@@ -451,10 +451,10 @@
     <value>Fill</value>
   </data>
   <data name="CLB_Layers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 23</value>
+    <value>3, 17</value>
   </data>
   <data name="CLB_Layers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 180</value>
+    <value>179, 193</value>
   </data>
   <data name="CLB_Layers.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -491,6 +491,27 @@
   </data>
   <data name="&gt;&gt;CMB_Zoom.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+<data name="Label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 20</value>
+  </data>
+  <data name="Label1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="Label1.Text" xml:space="preserve">
+    <value>Zoom:</value>
   </data>
   <data name="&gt;&gt;Label1.Name" xml:space="preserve">
     <value>Label1</value>
@@ -544,7 +565,7 @@
     <value>3, 0</value>
   </data>
   <data name="Label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 20</value>
+    <value>44, 14</value>
   </data>
   <data name="Label5.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -568,10 +589,10 @@
     <value>True</value>
   </data>
   <data name="Label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>323, 0</value>
+    <value>188, 0</value>
   </data>
   <data name="Label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 20</value>
+    <value>52, 14</value>
   </data>
   <data name="Label6.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -595,7 +616,7 @@
     <value>Fill</value>
   </data>
   <data name="CLB_OnlineLayers.Location" type="System.Drawing.Point, System.Drawing">
-    <value>323, 23</value>
+    <value>188, 17</value>
   </data>
   <data name="CLB_OnlineLayers.Size" type="System.Drawing.Size, System.Drawing">
     <value>314, 180</value>
@@ -646,7 +667,7 @@
     <value>0</value>
   </data>
   <data name="TableLayoutPanel4.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="CLB_Layers" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="TableLayoutPanel5" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="Label5" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Label6" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="CLB_OnlineLayers" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="AutoSize,0,Percent,100,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="CLB_Layers" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="TableLayoutPanel5" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;Control Name="Label5" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Label6" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="CLB_OnlineLayers" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="Percent,100,AutoSize,0,Absolute,20" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="GB_Layers.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -1044,7 +1065,7 @@
   <data name="&gt;&gt;L_East.Parent" xml:space="preserve">
     <value>TableLayoutPanel3</value>
   </data>
-  <data name="&gt;&gt;L_East.ZOrder" xml:space="preserve">
+<data name="&gt;&gt;L_East.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <data name="&gt;&gt;L_West.Name" xml:space="preserve">
@@ -1232,6 +1253,8 @@
   </data>
   <data name="L_North.Location" type="System.Drawing.Point, System.Drawing">
     <value>89, 0</value>
+  <data name="Btn_ResetAdditionalTiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>71, 162</value>
   </data>
   <data name="L_North.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 20</value>
