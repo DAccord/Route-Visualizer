@@ -43,12 +43,13 @@ Public Class frm_Main
         CLB_OnlineLayers.DataSource = WebTileProviderBindingSource1
         CLB_OnlineLayers.DisplayMember = "Name"
 
-        'DistZooms = From row In Data.Zoom
-        '            Select row.Field(Of Int32)("Zoomvalue")
-        '            Distinct.ToList
-        'CMB_Zoom.DataSource = DistZooms
+        CMB_Zoom.DataSource = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20}.ToList()
 
-        CMB_Zoom.DataSource = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18}.ToList()
+        'Setting numeric up downs' maximum values to 2^(2n), where n is the maximum zoom level
+        NUD_AdditionalTilesNorth.Maximum = CDec(2 ^ (2 * 20))
+        NUD_AdditionalTilesSouth.Maximum = CDec(2 ^ (2 * 20))
+        NUD_AdditionalTilesWest.Maximum = CDec(2 ^ (2 * 20))
+        NUD_AdditionalTilesEast.Maximum = CDec(2 ^ (2 * 20))
 
         If My.Application.Info.Version.Major = 0 Then
             Me.Text = "Route Visualizer v" & String.Format("{0}.{1}.{2}", My.Application.Info.Version.Major.ToString, My.Application.Info.Version.Minor, My.Application.Info.Version.Build) & " beta"
@@ -579,7 +580,7 @@ Public Class frm_Main
             PossibleZoomValues.Sort()
             PossibleZoomValues = PossibleZoomValues.Distinct.ToList()
         Else
-            PossibleZoomValues = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18}.ToList()
+            PossibleZoomValues = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20}.ToList()
         End If
         CMB_Zoom.DataSource = PossibleZoomValues
         If PossibleZoomValues.Contains(OldSelectedValue) Then
@@ -1074,6 +1075,7 @@ Public Class frm_Main
             L_West.Text = My.Resources.Main_L_MinCol
             L_East.Text = My.Resources.Main_L_MaxCol
             L_South.Text = My.Resources.Main_L_MaxRow
+
             Btn_ResetAdditionalTiles.Visible = False
             GB_AdditionalTiles.Text = My.Resources.Main_GB_RelativeIndices
             Btn_Switch.Tag = "AbsoluteNumbers"
@@ -1082,10 +1084,25 @@ Public Class frm_Main
             L_West.Text = My.Resources.Main_L_West
             L_South.Text = My.Resources.Main_L_South
             L_East.Text = My.Resources.Main_L_East
+
             Btn_ResetAdditionalTiles.Visible = True
             GB_AdditionalTiles.Text = My.Resources.Main_GB_AdditionalTiles
             Btn_Switch.Tag = "AdditionalTiles"
         End If
+
+        'Restore old values
+        Dim Temp_North As Decimal = NUD_AdditionalTilesNorth.Value
+        Dim Temp_South As Decimal = NUD_AdditionalTilesSouth.Value
+        Dim Temp_East As Decimal = NUD_AdditionalTilesEast.Value
+        Dim Temp_West As Decimal = NUD_AdditionalTilesWest.Value
+        NUD_AdditionalTilesNorth.Value = CDec(NUD_AdditionalTilesNorth.Tag)
+        NUD_AdditionalTilesSouth.Value = CDec(NUD_AdditionalTilesSouth.Tag)
+        NUD_AdditionalTilesEast.Value = CDec(NUD_AdditionalTilesEast.Tag)
+        NUD_AdditionalTilesWest.Value = CDec(NUD_AdditionalTilesWest.Tag)
+        NUD_AdditionalTilesNorth.Tag = Temp_North
+        NUD_AdditionalTilesSouth.Tag = Temp_South
+        NUD_AdditionalTilesEast.Tag = Temp_East
+        NUD_AdditionalTilesWest.Tag = Temp_West
     End Sub
 
     Private Sub SelectAllToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SelectAllToolStripMenuItem.Click
