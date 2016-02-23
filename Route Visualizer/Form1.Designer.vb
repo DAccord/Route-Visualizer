@@ -57,6 +57,10 @@ Partial Class frm_Main
         Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripSeparator()
         Me.OpenPathToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RoutefileBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BindingNavigator1 = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorEditItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.GB_Layers = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
@@ -147,6 +151,8 @@ Partial Class frm_Main
         CType(Me.DGV_Route, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.CMS_DGV_Route.SuspendLayout()
         CType(Me.RoutefileBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.BindingNavigator1.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -325,6 +331,7 @@ Partial Class frm_Main
         'GB_Route
         '
         Me.GB_Route.Controls.Add(Me.DGV_Route)
+        Me.GB_Route.Controls.Add(Me.BindingNavigator1)
         resources.ApplyResources(Me.GB_Route, "GB_Route")
         Me.GB_Route.Name = "GB_Route"
         Me.GB_Route.TabStop = False
@@ -332,6 +339,7 @@ Partial Class frm_Main
         'DGV_Route
         '
         Me.DGV_Route.AllowDrop = True
+        Me.DGV_Route.AllowUserToAddRows = False
         Me.DGV_Route.AutoGenerateColumns = False
         Me.DGV_Route.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
         Me.DGV_Route.BorderStyle = System.Windows.Forms.BorderStyle.None
@@ -341,6 +349,7 @@ Partial Class frm_Main
         Me.DGV_Route.DataSource = Me.RoutefileBindingSource
         resources.ApplyResources(Me.DGV_Route, "DGV_Route")
         Me.DGV_Route.Name = "DGV_Route"
+        Me.DGV_Route.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         '
         'DataGridViewTextBoxColumnVisibility
         '
@@ -365,7 +374,7 @@ Partial Class frm_Main
         '
         'DataGridViewTextBoxColumnRouteColor
         '
-        Me.DataGridViewTextBoxColumnRouteColor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.DataGridViewTextBoxColumnRouteColor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.DataGridViewTextBoxColumnRouteColor.DataPropertyName = "RouteColor"
         resources.ApplyResources(Me.DataGridViewTextBoxColumnRouteColor, "DataGridViewTextBoxColumnRouteColor")
         Me.DataGridViewTextBoxColumnRouteColor.Name = "DataGridViewTextBoxColumnRouteColor"
@@ -412,6 +421,39 @@ Partial Class frm_Main
         '
         Me.RoutefileBindingSource.DataMember = "Routefile"
         Me.RoutefileBindingSource.DataSource = Me.Data
+        '
+        'BindingNavigator1
+        '
+        Me.BindingNavigator1.AddNewItem = Nothing
+        Me.BindingNavigator1.BindingSource = Me.RoutefileBindingSource
+        Me.BindingNavigator1.CountItem = Nothing
+        Me.BindingNavigator1.DeleteItem = Nothing
+        Me.BindingNavigator1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorAddNewItem, Me.BindingNavigatorEditItem, Me.BindingNavigatorDeleteItem})
+        resources.ApplyResources(Me.BindingNavigator1, "BindingNavigator1")
+        Me.BindingNavigator1.MoveFirstItem = Nothing
+        Me.BindingNavigator1.MoveLastItem = Nothing
+        Me.BindingNavigator1.MoveNextItem = Nothing
+        Me.BindingNavigator1.MovePreviousItem = Nothing
+        Me.BindingNavigator1.Name = "BindingNavigator1"
+        Me.BindingNavigator1.PositionItem = Nothing
+        '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        resources.ApplyResources(Me.BindingNavigatorAddNewItem, "BindingNavigatorAddNewItem")
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        '
+        'BindingNavigatorEditItem
+        '
+        Me.BindingNavigatorEditItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        resources.ApplyResources(Me.BindingNavigatorEditItem, "BindingNavigatorEditItem")
+        Me.BindingNavigatorEditItem.Name = "BindingNavigatorEditItem"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        resources.ApplyResources(Me.BindingNavigatorDeleteItem, "BindingNavigatorDeleteItem")
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
         '
         'SplitContainer1
         '
@@ -879,9 +921,13 @@ Partial Class frm_Main
         CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SplitContainer2.ResumeLayout(False)
         Me.GB_Route.ResumeLayout(False)
+        Me.GB_Route.PerformLayout()
         CType(Me.DGV_Route, System.ComponentModel.ISupportInitialize).EndInit()
         Me.CMS_DGV_Route.ResumeLayout(False)
         CType(Me.RoutefileBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BindingNavigator1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.BindingNavigator1.ResumeLayout(False)
+        Me.BindingNavigator1.PerformLayout()
         Me.SplitContainer1.Panel1.ResumeLayout(False)
         Me.SplitContainer1.Panel2.ResumeLayout(False)
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -998,11 +1044,6 @@ Partial Class frm_Main
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumnVisibility As DataGridViewCheckBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumnPath As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumnRouteLineWidth As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumnRouteColor As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumnRouteAlpha As DataGridViewTextBoxColumn
     Friend WithEvents OFD_LayerWizard As OpenFileDialog
     Friend WithEvents LayerToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TilesWizardToolStripMenuItem As ToolStripMenuItem
@@ -1030,4 +1071,13 @@ Partial Class frm_Main
     Friend WithEvents ImagePreviewToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SingleFilesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GIFToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents BindingNavigator1 As BindingNavigator
+    Friend WithEvents BindingNavigatorAddNewItem As ToolStripButton
+    Friend WithEvents BindingNavigatorDeleteItem As ToolStripButton
+    Friend WithEvents BindingNavigatorEditItem As ToolStripButton
+    Friend WithEvents DataGridViewTextBoxColumnVisibility As DataGridViewCheckBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumnPath As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumnRouteLineWidth As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumnRouteColor As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumnRouteAlpha As DataGridViewTextBoxColumn
 End Class

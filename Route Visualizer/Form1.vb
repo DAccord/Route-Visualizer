@@ -643,49 +643,21 @@ Public Class frm_Main
     End Sub
 
     Private Sub DGV_Route_CellBeginEdit(sender As Object, e As DataGridViewCellCancelEventArgs) Handles DGV_Route.CellBeginEdit
-        If DGV_Route.Columns(e.ColumnIndex).Name = "DataGridViewTextBoxColumnPath" Then
-            e.Cancel = True
-            If e.RowIndex = DGV_Route.RowCount - 1 Then 'new row(s) added
-                OFD_ImportRoute.Multiselect = True
-                If OFD_ImportRoute.ShowDialog() = DialogResult.OK Then
-                    If OFD_ImportRoute.Multiselect Then
-                        For Each F As String In OFD_ImportRoute.FileNames
-                            Dim RR As RoutefileRow = Data.Routefile.NewRoutefileRow()
-                            RR.Path = F.Replace(Application.StartupPath() & Path.DirectorySeparatorChar, "")
-                            Data.Routefile.AddRoutefileRow(RR)
-                        Next
-                    End If
-                    DGV_Route.Rows.RemoveAt(e.RowIndex + OFD_ImportRoute.FileNames.Length)
-                End If
-            Else 'row gets edited
-                OFD_ImportRoute.Multiselect = False
-                Dim DRV As DataRowView = CType(RoutefileBindingSource.Current, DataRowView)
+        If DGV_Route.Columns(e.ColumnIndex).Name = "DataGridViewTextBoxColumnPath" OrElse DGV_Route.Columns(e.ColumnIndex).Name = "DataGridViewTextBoxColumnRouteColor" Then
+            Dim Routefilerows(DGV_Route.SelectedRows.Count - 1) As RoutefileRow
+            For i As Integer = 0 To DGV_Route.SelectedRows.Count - 1
+                Dim DGVR As DataGridViewRow = DGV_Route.SelectedRows(i)
+                Dim DRV As DataRowView = CType(DGVR.DataBoundItem, DataRowView)
                 Dim RR As RoutefileRow = CType(DRV.Row, RoutefileRow)
-                If File.Exists(DGV_Route.Rows(e.RowIndex).Cells(e.ColumnIndex).Value.ToString) Then
-                    OFD_ImportRoute.FileName = Path.GetDirectoryName(DGV_Route.Rows(e.RowIndex).Cells(e.ColumnIndex).Value.ToString)
-                Else
-                    OFD_ImportRoute.InitialDirectory = Path.GetDirectoryName(Path.Combine(Application.StartupPath, DGV_Route.Rows(e.RowIndex).Cells(e.ColumnIndex).Value.ToString))
-                End If
+                Routefilerows(i) = RR
+            Next
 
-                If OFD_ImportRoute.ShowDialog() = DialogResult.OK Then
-                    RR.Path = OFD_ImportRoute.FileName
+            Using AERF As New frm_AddEditRoutefile(Routefilerows)
+                If AERF.ShowDialog() = DialogResult.OK Then
+                    UpdateBackground = True
                 End If
-            End If
-            UpdateBackground = True
-        ElseIf DGV_Route.Columns(e.ColumnIndex).Name = "DataGridViewTextBoxColumnRouteColor" OrElse DGV_Route.Columns(e.ColumnIndex).Name = "DataGridViewTextBoxColumnSymbolColor" Then
-            If ValidateColorObject(DGV_Route.Rows(e.RowIndex).Cells(e.ColumnIndex).Value) Then
-                Dim ColStr() As String = DGV_Route.Rows(e.RowIndex).Cells(e.ColumnIndex).Value.ToString.Replace(" ", "").Split(CType(", ", Char()))
-                CD_Main.Color = Color.FromArgb(CInt(ColStr(0)), CInt(ColStr(1)), CInt(ColStr(2)))
-            End If
-            If CD_Main.ShowDialog() = DialogResult.OK Then
-                For Each C As DataGridViewCell In DGV_Route.SelectedCells
-                    If C.ColumnIndex <> e.ColumnIndex Then
-                        Continue For
-                    End If
-                    C.Value = CD_Main.Color.R & ", " & CD_Main.Color.G & ", " & CD_Main.Color.B
-                Next
-            End If
-            e.Cancel = True
+                e.Cancel = True
+            End Using
         End If
     End Sub
 
@@ -832,14 +804,12 @@ Public Class frm_Main
     End Sub
 
     Private Sub DGV_Route_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Route.CellEndEdit
-        If DGV_Route.SelectedCells.Count > 1 Then
+        If DGV_Route.SelectedRows.Count > 1 AndAlso DGV_Route.Columns(e.ColumnIndex).Name <> "DataGridViewTextBoxColumnPath" AndAlso DGV_Route.Columns(e.ColumnIndex).Name <> "DataGridViewTextBoxColumnVisibility" Then
             For Each C As DataGridViewCell In DGV_Route.SelectedCells
-                If DGV_Route.Columns(C.ColumnIndex).Name = "DataGridViewTextBoxColumnPath" _
-                    OrElse DGV_Route.Columns(C.ColumnIndex).Name = "DataGridViewComboBoxColumnSymbol" _
-                    OrElse DGV_Route.Columns(C.ColumnIndex).Name = "DataGridViewTextBoxColumnVisibility" Then
+                If C.ColumnIndex <> e.ColumnIndex Then
                     Continue For
                 End If
-                If DGV_Route.Columns(C.ColumnIndex).Name = "DataGridViewTextBoxColumnRouteColor" OrElse DGV_Route.Columns(C.ColumnIndex).Name = "DataGridViewTextBoxColumnSymbolColor" Then
+                If DGV_Route.Columns(C.ColumnIndex).Name = "DataGridViewTextBoxColumnRouteColor" Then
                     If ValidateColorObject(DGV_Route.Rows(e.RowIndex).Cells(e.ColumnIndex).Value) Then
                         C.Value = DGV_Route.Rows(e.RowIndex).Cells(e.ColumnIndex).Value
                     End If
@@ -1738,6 +1708,77 @@ Public Class frm_Main
         Else 'open preview window
             UpdatePreviewPB(Nothing)
         End If
+    End Sub
+
+    Private Sub BindingNavigatorAddNewItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorAddNewItem.Click
+        OFD_ImportRoute.Multiselect = True
+        If OFD_ImportRoute.ShowDialog() = DialogResult.OK Then
+            For Each F As String In OFD_ImportRoute.FileNames
+                Dim RR As RoutefileRow = Data.Routefile.NewRoutefileRow()
+                RR.Path = F.Replace(Application.StartupPath() & Path.DirectorySeparatorChar, "")
+                Data.Routefile.AddRoutefileRow(RR)
+            Next
+            UpdateBackground = True
+        End If
+    End Sub
+
+    Private Sub BindingNavigatorDeleteItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorDeleteItem.Click
+        For k As Integer = DGV_Route.SelectedRows.Count - 1 To 0 Step -1
+            Dim DGVR As DataGridViewRow = DGV_Route.SelectedRows(k)
+            Dim DRV As DataRowView = CType(DGVR.DataBoundItem, DataRowView)
+            Dim RF As RoutefileRow = CType(DRV.Row, RoutefileRow)
+            Data.Routefile.RemoveRoutefileRow(RF)
+        Next
+        UpdateBackground = True
+    End Sub
+
+    Private Sub DGV_Route_DataError(sender As Object, e As DataGridViewDataErrorEventArgs) Handles DGV_Route.DataError
+
+    End Sub
+
+    Private Sub BindingNavigatorEditItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorEditItem.Click
+        Dim Routefilerows(DGV_Route.SelectedRows.Count - 1) As RoutefileRow
+        For i As Integer = 0 To DGV_Route.SelectedRows.Count - 1
+            Dim DGVR As DataGridViewRow = DGV_Route.SelectedRows(i)
+            Dim DRV As DataRowView = CType(DGVR.DataBoundItem, DataRowView)
+            Dim RR As RoutefileRow = CType(DRV.Row, RoutefileRow)
+            Routefilerows(i) = RR
+        Next
+
+        Using AERF As New frm_AddEditRoutefile(Routefilerows)
+            If AERF.ShowDialog() = DialogResult.OK Then
+                UpdateBackground = True
+            End If
+        End Using
+    End Sub
+
+    Private Sub DGV_Route_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DGV_Route.CellFormatting
+        If DGV_Route.Columns(e.ColumnIndex).Name = "DataGridViewTextBoxColumnRouteColor" Then
+            Dim DRV As DataRowView = CType(DGV_Route.Rows(e.RowIndex).DataBoundItem, DataRowView)
+            Dim RR As RoutefileRow = CType(DRV.Row, RoutefileRow)
+            Dim ColStr() As String = RR.RouteColor.Split(CType(", ", Char()), StringSplitOptions.RemoveEmptyEntries)
+            Dim NewColor As Color = Color.FromArgb(CInt(ColStr(0)), CInt(ColStr(1)), CInt(ColStr(2)))
+            DGV_Route.Rows(e.RowIndex).Cells(e.ColumnIndex).Style.BackColor = NewColor
+            DGV_Route.Rows(e.RowIndex).Cells(e.ColumnIndex).Style.ForeColor = NewColor
+            DGV_Route.Rows(e.RowIndex).Cells(e.ColumnIndex).Style.SelectionBackColor = NewColor
+            DGV_Route.Rows(e.RowIndex).Cells(e.ColumnIndex).Style.SelectionForeColor = NewColor
+        End If
+    End Sub
+
+    Private Sub DGV_Route_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV_Route.CellDoubleClick
+        Dim Routefilerows(DGV_Route.SelectedRows.Count - 1) As RoutefileRow
+        For i As Integer = 0 To DGV_Route.SelectedRows.Count - 1
+            Dim DGVR As DataGridViewRow = DGV_Route.SelectedRows(i)
+            Dim DRV As DataRowView = CType(DGVR.DataBoundItem, DataRowView)
+            Dim RR As RoutefileRow = CType(DRV.Row, RoutefileRow)
+            Routefilerows(i) = RR
+        Next
+
+        Using AERF As New frm_AddEditRoutefile(Routefilerows)
+            If AERF.ShowDialog() = DialogResult.OK Then
+                UpdateBackground = True
+            End If
+        End Using
     End Sub
 End Class
 

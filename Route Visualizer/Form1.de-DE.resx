@@ -162,25 +162,16 @@
     <value>Pfad</value>
   </data>
   <data name="DataGridViewTextBoxColumnRouteLineWidth.HeaderText" xml:space="preserve">
-    <value>RLB</value>
-  </data>
-  <data name="DataGridViewTextBoxColumnRouteLineWidth.ToolTipText" xml:space="preserve">
-    <value>Routenlinienbreite</value>
+    <value>Linienbreite</value>
   </data>
   <data name="DataGridViewTextBoxColumnRouteLineWidth.Width" type="System.Int32, mscorlib">
-    <value>59</value>
+    <value>112</value>
   </data>
   <data name="DataGridViewTextBoxColumnRouteColor.HeaderText" xml:space="preserve">
-    <value>RF</value>
-  </data>
-  <data name="DataGridViewTextBoxColumnRouteColor.ToolTipText" xml:space="preserve">
-    <value>Routenfarbe</value>
+    <value>Farbe</value>
   </data>
   <data name="DataGridViewTextBoxColumnRouteColor.Width" type="System.Int32, mscorlib">
-    <value>50</value>
-  </data>
-  <data name="DataGridViewTextBoxColumnRouteAlpha.ToolTipText" xml:space="preserve">
-    <value>Transparenz</value>
+    <value>70</value>
   </data>
   <data name="SelectAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>176, 22</value>
@@ -212,8 +203,119 @@
   <data name="CMS_DGV_Route.Size" type="System.Drawing.Size, System.Drawing">
     <value>177, 98</value>
   </data>
+  <data name="BindingNavigatorAddNewItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAUpJREFUOE9jGLzg7gL2/7fmcf6/Oofr/8UZvP+hwsSD60CNfx41/v/zsOH/yckC
+        pBtwfjov3ICDPSKkG3B8kiBQc93/Pw+q/u9oFydswKWZPP/PTuX7fxKo8Ui/0P993SJAzeX//94r+r++
+        Qeb/qhq5/0srFf/PL1X+P6tIFdPAU0B//nlYD9RUC8SV///cKwHivP9/72b+/3sn+f/f23H//92MAOKQ
+        /5NyNDENONQrDHbu3/ulQI0FQI3ZQI2pQI0J///digZqDPv/70bQ/3/X/f53peliGrCzXeL/lmap/+vA
+        zpX/v6RC8f/fWzFAjeH/p+Zp/J+QpfW/O0P3f3uq/v/mREPCYTIb6E+Qc//dCPjfk6FDWAM6APnz3w1/
+        IPb735qsT7oB3em6YP+CcH2cEekGtCQZ/G+IN/xfE2v8vzLahHQD6AQYGAAkI9iedfyIaQAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
+  <data name="BindingNavigatorAddNewItem.Text" xml:space="preserve">
+    <value>Routendatei hinzufügen</value>
+  </data>
+  <data name="BindingNavigatorEditItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        SUVORK5CYII=
+</value>
+  </data>
+  <data name="BindingNavigatorEditItem.Text" xml:space="preserve">
+    <value>Gewählte Routendateien bearbeiten</value>
+  </data>
+  <data name="BindingNavigatorDeleteItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAW9JREFUOE+1kE0ow2Ecx3dV3krt4oJaOSCTvIRkMqSxyITIzCQHDouEdnFwIOVC
+        DrhIDiQl5UTiNG/z2ppafy1S2gX/uDwfY6i1v7Hie3nqeb7fz+/7/FR/Ilwn0G0Exw4fV5GJlXlEZxXC
+        rIet9bAQvB5Ymgn2sLYAvSZEux7RUQFzE4qQt4bCXAYjPaHvnDoCkLpsRGMB2JqCTGLIijDlwqQ9bEMV
+        i9OIytR3EMNWcJ/BWH8A6j8/bOGFxwXNxYEvGbMQ9XnQ1/K78KfY3/VXzkMY0qFGG2H4RoLGQshJQNbG
+        86CNhdrsX9a/uQZTPhQl4rMY4OLofbl3aX7I8uwPC7y/g1YdjyVJuEvT8e1tfwUYteHUxCCfHChDeHmG
+        QQvokjlOU+PbWA0x3pZnILVVI3uvQyHsbiLnqnGmRCF1NYD8pDhpRxOH7HQoAKZGkFKjceszQbpSrumX
+        bO+G80MFwKUTxgfgcO/b8D9IpXoFiiMDHIQm0skAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="BindingNavigatorDeleteItem.Text" xml:space="preserve">
+    <value>Gewähle Routendateien löschen</value>
+  </data>
+  <data name="GB_Layers.Text" xml:space="preserve">
+    <value>Ebenen</value>
+  </data>
   <data name="L_North.Location" type="System.Drawing.Point, System.Drawing">
-    <value>71, 0</value>
+    <value>91, 0</value>
   </data>
   <data name="L_North.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 20</value>
@@ -222,7 +324,7 @@
     <value>Nord</value>
   </data>
   <data name="L_East.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 53</value>
+    <value>161, 53</value>
   </data>
   <data name="L_East.Size" type="System.Drawing.Size, System.Drawing">
     <value>31, 20</value>
@@ -231,7 +333,7 @@
     <value>Ost</value>
   </data>
   <data name="L_South.Location" type="System.Drawing.Point, System.Drawing">
-    <value>75, 106</value>
+    <value>96, 106</value>
   </data>
   <data name="L_South.Size" type="System.Drawing.Size, System.Drawing">
     <value>34, 20</value>
@@ -239,11 +341,17 @@
   <data name="L_South.Text" xml:space="preserve">
     <value>Süd</value>
   </data>
+  <data name="Btn_ResetAdditionalTiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>60, 162</value>
+  </data>
+  <data name="Btn_ResetAdditionalTiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 30</value>
+  </data>
   <data name="Btn_ResetAdditionalTiles.Text" xml:space="preserve">
     <value>Zurücksetzen</value>
   </data>
   <data name="Btn_Switch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>52, 200</value>
+    <value>72, 200</value>
   </data>
   <data name="Btn_Switch.Size" type="System.Drawing.Size, System.Drawing">
     <value>81, 30</value>
@@ -253,15 +361,6 @@
   </data>
   <data name="GB_AdditionalTiles.Text" xml:space="preserve">
     <value>Zusätzliche Kacheln</value>
-  </data>
-  <data name="GB_Layers.Text" xml:space="preserve">
-    <value>Ebenen</value>
-  </data>
-  <data name="GB_Preview.Text" xml:space="preserve">
-    <value>Vorschau (Doppelklick für Originalgröße)</value>
-  </data>
-  <data name="TP_Layers.Text" xml:space="preserve">
-    <value>Ebenen</value>
   </data>
   <data name="UpdatePreviewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>216, 22</value>
@@ -283,6 +382,9 @@
   </data>
   <data name="SaveLayersSeparatelyToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Ebenen separat speichern</value>
+  </data>
+  <data name="AnimationSingleFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>216, 22</value>
   </data>
   <data name="ToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
     <value>213, 6</value>
