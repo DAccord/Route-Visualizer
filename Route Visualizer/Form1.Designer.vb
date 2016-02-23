@@ -59,6 +59,7 @@ Partial Class frm_Main
         Me.RoutefileBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BindingNavigator1 = New System.Windows.Forms.BindingNavigator(Me.components)
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorEditItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
         Me.GB_Layers = New System.Windows.Forms.GroupBox()
@@ -129,7 +130,6 @@ Partial Class frm_Main
         Me.TSPB_Progress = New System.Windows.Forms.ToolStripProgressBar()
         Me.OFD_LayerWizard = New System.Windows.Forms.OpenFileDialog()
         Me.ZoomBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BindingNavigatorEditItem = New System.Windows.Forms.ToolStripButton()
         CType(Me.SplitContainer3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer3.Panel1.SuspendLayout()
         Me.SplitContainer3.Panel2.SuspendLayout()
@@ -374,7 +374,7 @@ Partial Class frm_Main
         '
         'DataGridViewTextBoxColumnRouteColor
         '
-        Me.DataGridViewTextBoxColumnRouteColor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.DataGridViewTextBoxColumnRouteColor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.DataGridViewTextBoxColumnRouteColor.DataPropertyName = "RouteColor"
         resources.ApplyResources(Me.DataGridViewTextBoxColumnRouteColor, "DataGridViewTextBoxColumnRouteColor")
         Me.DataGridViewTextBoxColumnRouteColor.Name = "DataGridViewTextBoxColumnRouteColor"
@@ -442,6 +442,12 @@ Partial Class frm_Main
         Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         resources.ApplyResources(Me.BindingNavigatorAddNewItem, "BindingNavigatorAddNewItem")
         Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        '
+        'BindingNavigatorEditItem
+        '
+        Me.BindingNavigatorEditItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        resources.ApplyResources(Me.BindingNavigatorEditItem, "BindingNavigatorEditItem")
+        Me.BindingNavigatorEditItem.Name = "BindingNavigatorEditItem"
         '
         'BindingNavigatorDeleteItem
         '
@@ -886,12 +892,6 @@ Partial Class frm_Main
         Me.ZoomBindingSource.DataSource = Me.Data
         Me.ZoomBindingSource.Sort = "Zoomvalue ASC"
         '
-        'BindingNavigatorEditItem
-        '
-        Me.BindingNavigatorEditItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        resources.ApplyResources(Me.BindingNavigatorEditItem, "BindingNavigatorEditItem")
-        Me.BindingNavigatorEditItem.Name = "BindingNavigatorEditItem"
-        '
         'frm_Main
         '
         resources.ApplyResources(Me, "$this")
@@ -1044,11 +1044,6 @@ Partial Class frm_Main
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumnVisibility As DataGridViewCheckBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumnPath As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumnRouteLineWidth As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumnRouteColor As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumnRouteAlpha As DataGridViewTextBoxColumn
     Friend WithEvents OFD_LayerWizard As OpenFileDialog
     Friend WithEvents LayerToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents TilesWizardToolStripMenuItem As ToolStripMenuItem
@@ -1080,4 +1075,9 @@ Partial Class frm_Main
     Friend WithEvents BindingNavigatorAddNewItem As ToolStripButton
     Friend WithEvents BindingNavigatorDeleteItem As ToolStripButton
     Friend WithEvents BindingNavigatorEditItem As ToolStripButton
+    Friend WithEvents DataGridViewTextBoxColumnVisibility As DataGridViewCheckBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumnPath As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumnRouteLineWidth As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumnRouteColor As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumnRouteAlpha As DataGridViewTextBoxColumn
 End Class
