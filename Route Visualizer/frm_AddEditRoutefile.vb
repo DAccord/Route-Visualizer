@@ -89,4 +89,9 @@ Public Class frm_AddEditRoutefile
             DGV_EditRoutefiles.Rows(e.RowIndex).Cells("Col_Path").Value = OFD_SelectPath.FileName
         End If
     End Sub
+
+    Private Sub NUD_LineWidth_Enter(sender As Object, e As EventArgs) Handles NUD_LineWidth.Enter, NUD_Alpha.Enter
+        Dim NUD As NumericUpDown = CType(sender, NumericUpDown)
+        NUD.Select(0, NUD.Value.ToString.Length)
+    End Sub
 End Class
