@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports System.Net
+Imports System.Resources
 Imports System.Text
 Imports System.Xml.Serialization
 Imports ImageMagick
@@ -9,7 +10,6 @@ Imports Route_Visualizer.WebTiles
 
 Public Class frm_Main
     Dim Coordinates As New List(Of Coordinate)
-    Public Property NUD_RowFrom As Object
     Dim LayerDataView As DataView
     Dim TH_UpdatePreview As New Threading.Thread(AddressOf UpdatePreviewNew)
     Dim TH_AnimationSingleFiles As New Threading.Thread(AddressOf Animation)
@@ -18,12 +18,13 @@ Public Class frm_Main
     Dim UpdateBackground As Boolean = True
     Dim DistZooms As List(Of Integer)
 
+    Dim RVS As New RouteVisualizerSettings
+
     Public Sub New()
         ' This call is required by the designer.
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-
     End Sub
 
     Private Sub frm_Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -32,6 +33,13 @@ Public Class frm_Main
         End If
         If File.Exists(Path.Combine(Application.StartupPath, "WebTiles.xml")) Then
             WebTiles.ReadXml(Path.Combine(Application.StartupPath, "WebTiles.xml"))
+        End If
+        RVS.ReadSettings(Path.Combine(Application.StartupPath, "RouteVisualizerSettings.resx"))
+        Me.WindowState = RVS.MainFormWindowState
+        Me.Location = RVS.MainFormWindowLocation
+        Me.Size = RVS.MainFormWindowSize
+        If RVS.PreviewFormWindowOpen Then
+            UpdatePreviewPB(Nothing)
         End If
 
         LayerDataView = New DataView(Data.Layer)
@@ -59,24 +67,17 @@ Public Class frm_Main
 
         OFD_ImportRoute.Filter = My.Resources.OFD_ImportRouteFilter
         OFD_ImportRoute.Title = My.Resources.OFD_ImportRouteTitle
+        OFD_ImportRoute.InitialDirectory = Path.GetDirectoryName(RVS.ImportRoutePath)
         SFD_SaveImage.Filter = My.Resources.SFD_SaveImageFilter
         SFD_SaveImage.Title = My.Resources.SFD_SaveImageTitle
+        SFD_SaveImage.InitialDirectory = Path.GetDirectoryName(RVS.SaveImagePath)
+        SFD_SaveImage.FileName = Path.GetFileName(RVS.SaveImagePath)
         FBD_SaveLayersSeperately.Description = My.Resources.FBD_SaveLayersSeperatelyDescription
+        FBD_SaveLayersSeperately.SelectedPath = RVS.SaveLayersSeparatelyPath
         OFD_LayerWizard.Filter = My.Resources.OFD_LayerWizardFilter
 
         L_WebTileProvider_Restrictions.DataBindings.Add(New Binding("Text", WebTileProviderBindingSource, "LocalRestriction"))
         LL_WebTileProvider_Website.DataBindings.Add(New Binding("Text", WebTileProviderBindingSource, "Website"))
-
-        'Dim WTP As WebTileProviderRow = WebTiles.WebTileProvider.NewWebTileProviderRow
-        'WTP.Name = "Maps for Free Relief"
-        'WTP.Link = "http://maps-for-free.com/layer/relief/z{z}/row{r}/{z}_{c}-{r}.jpg"
-        'WTP.Path = "MapsForFree_Relief"
-        'WTP.LocalRestriction = ""
-        'WTP.Website = "http://maps-for-free.com/"
-        'WebTiles.WebTileProvider.AddWebTileProviderRow(WTP)
-
-        'WebTiles.License.AddLicenseRow(WTP, "Tiles by Maps for Free, CC0", "http://www.maps-for-free.com")
-        'WebTiles.License.AddLicenseRow(WTP, "Tiles courtesy of Mapquest.", "http://www.mapquest.com/")
     End Sub
 
     Sub GUIEnabling(EnabledState As Boolean)
@@ -114,7 +115,7 @@ Public Class frm_Main
 
         Return Result
     End Function
-    
+
     Public Function RowColumnZoomReplace(ByVal Str As String, ByVal RowIndex As Integer, ByVal ColumnIndex As Integer, ByVal Zoom As Integer) As String
         Dim RowStrings() As String = {"{R}", "{Y}", "{r}", "{y}"}
         Dim ColumnStrings() As String = {"{C}", "{X}", "{c}", "{x}"}
@@ -197,6 +198,8 @@ Public Class frm_Main
                           If Not FBD_SaveLayersSeperately.ShowDialog() = DialogResult.OK Then
                               GUIEnabling(True)
                               Cancel = True
+                          Else
+                              RVS.SaveLayersSeparatelyPath = FBD_SaveLayersSeperately.SelectedPath
                           End If
                       End Sub)
         End If
@@ -428,6 +431,7 @@ Public Class frm_Main
                           GUIEnabling(True)
                       End Sub)
         ElseIf Not SaveOption.Preview AndAlso Not SaveOption.SaveLayersSeparately Then
+            RVS.SaveImagePath = SFD_SaveImage.FileName
             Select Case Path.GetExtension(SFD_SaveImage.FileName).ToLower()
                 Case ".jpg"
                     Result.Save(SFD_SaveImage.FileName, Imaging.ImageFormat.Jpeg)
@@ -607,6 +611,20 @@ Public Class frm_Main
                 TH_AnimationSingleFiles.Abort()
             End If
         End If
+
+        RVS.MainFormWindowLocation = Me.Location
+        RVS.MainFormWindowSize = Me.Size
+        RVS.MainFormWindowState = Me.WindowState
+        If PreviewForm Is Nothing OrElse PreviewForm.IsDisposed Then
+            RVS.PreviewFormWindowOpen = False
+        Else
+            RVS.PreviewFormWindowOpen = True
+            RVS.PreviewFormWindowLocation = PreviewForm.Location
+            RVS.PreviewFormWindowSize = PreviewForm.Size
+            RVS.PreviewFormWindowState = PreviewForm.WindowState
+        End If
+        RVS.SaveSettings(Path.Combine(Application.StartupPath, "RouteVisualizerSettings.resx"))
+
         Data.WriteXml(Path.Combine(Application.StartupPath, "Data.xml"))
         WebTiles.WriteXml(Path.Combine(Application.StartupPath, "WebTiles.xml"))
         If File.Exists(Path.Combine(Application.StartupPath, "TempBackground.png")) Then
@@ -687,13 +705,22 @@ Public Class frm_Main
         TH_UpdatePreview.Start()
     End Sub
 
-    Private Sub PreviewFormClosing()
+    Private Sub frm_PreviewClosing(sender As Object, e As FormClosingEventArgs)
         ImagePreviewToolStripMenuItem.Checked = False
+
+        Dim frm As frm_Preview = CType(sender, frm_Preview)
+        RVS.PreviewFormWindowLocation = frm.Location
+        RVS.PreviewFormWindowSize = frm.Size
+        RVS.PreviewFormWindowState = frm.WindowState
     End Sub
 
     Private Sub UpdatePreviewPB(Img As Image)
         If PreviewForm Is Nothing OrElse PreviewForm.IsDisposed() Then
             PreviewForm = New frm_Preview()
+            AddHandler PreviewForm.FormClosing, AddressOf frm_PreviewClosing
+            PreviewForm.Size = RVS.PreviewFormWindowSize
+            PreviewForm.Location = RVS.PreviewFormWindowLocation
+            PreviewForm.WindowState = RVS.PreviewFormWindowState
             PreviewForm.SetImage(Img)
             PreviewForm.Show()
         Else
@@ -1505,12 +1532,52 @@ Public Class frm_Main
         End If
     End Sub
 
+    Private Sub AnimationSaveDialogGetSettings(frm As frm_AnimationSaveDialog)
+        RVS.AnimationRouteColor = frm.L_RouteColor.BackColor
+        RVS.AnimationRouteLineWidth = CInt(frm.NUD_RouteLineWidth.Value)
+        RVS.AnimationCurrentPositionColor = frm.L_SymbolColor.BackColor
+        RVS.AnimationCurrentPositionWidth = CInt(frm.NUD_SymbolWidth.Value)
+        RVS.AnimationImageSizeWidth = frm.RB_Width.Checked
+        RVS.AnimationImageSizeHeight = frm.RB_Height.Checked
+        RVS.AnimationImageSize = CInt(frm.Nud_Size.Value)
+        RVS.AnimationAlwaysBackground = frm.RB_AlwaysBackground.Checked
+        RVS.AnimationBackgroundOnce = frm.RB_SingleBackground.Checked
+        RVS.AnimationOutputFormat = frm.CMB_Format.SelectedItem.ToString
+        RVS.AnimationOutputPath = frm.L_Path.Text
+        RVS.AnimationStepSize = CInt(frm.NUD_StepSize.Value)
+        RVS.AnimationDelayTime = CInt(frm.NUD_DelayTime.Value)
+        RVS.AnimationLoopCount = CInt(frm.NUD_LoopCount.Value)
+    End Sub
+
+    Private Sub AnimationSaveDialogSetSettings(ASO As AnimationSaving)
+        ASO.BackgroundAlways = RVS.AnimationAlwaysBackground
+        ASO.DelayTime = RVS.AnimationDelayTime
+        ASO.DirectoryPath = RVS.AnimationOutputPath
+        ASO.FilePath = RVS.AnimationOutputPath
+        ASO.LoopCount = RVS.AnimationLoopCount
+        ASO.OutputFormat = RVS.AnimationOutputFormat
+        ASO.RouteColor = RVS.AnimationRouteColor
+        ASO.RouteLineWidth = RVS.AnimationRouteLineWidth
+        ASO.StepSize = RVS.AnimationStepSize
+        ASO.SymbolColor = RVS.AnimationCurrentPositionColor
+        ASO.SymbolWidth = RVS.AnimationCurrentPositionWidth
+        If RVS.AnimationImageSizeWidth Then
+            ASO.Width = RVS.AnimationImageSize
+            ASO.Height = 0
+        Else
+            ASO.Width = 0
+            ASO.Height = RVS.AnimationImageSize
+        End If
+    End Sub
+
     Private Sub SingleFilesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SingleFilesToolStripMenuItem.Click
         AnimationSaveOption.SaveType = SaveType.SingleFiles
+        AnimationSaveDialogSetSettings(AnimationSaveOption)
         Dim frm_Save As New frm_AnimationSaveDialog(AnimationSaveOption)
         If frm_Save.ShowDialog() <> DialogResult.OK Then
             Exit Sub
         End If
+        AnimationSaveDialogGetSettings(frm_Save)
 
         If TH_AnimationSingleFiles.IsAlive() Then
             Exit Sub
@@ -1523,10 +1590,12 @@ Public Class frm_Main
 
     Private Sub GIFToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles GIFToolStripMenuItem1.Click
         AnimationSaveOption.SaveType = SaveType.GIF
+        AnimationSaveDialogSetSettings(AnimationSaveOption)
         Dim frm_Save As New frm_AnimationSaveDialog(AnimationSaveOption)
         If frm_Save.ShowDialog() <> DialogResult.OK Then
             Exit Sub
         End If
+        AnimationSaveDialogGetSettings(frm_Save)
 
         If TH_AnimationSingleFiles.IsAlive() Then
             Exit Sub
@@ -1713,6 +1782,7 @@ Public Class frm_Main
     Private Sub BindingNavigatorAddNewItem_Click(sender As Object, e As EventArgs) Handles BindingNavigatorAddNewItem.Click
         OFD_ImportRoute.Multiselect = True
         If OFD_ImportRoute.ShowDialog() = DialogResult.OK Then
+            RVS.ImportRoutePath = OFD_ImportRoute.FileNames(0)
             For Each F As String In OFD_ImportRoute.FileNames
                 Dim RR As RoutefileRow = Data.Routefile.NewRoutefileRow()
                 RR.Path = F.Replace(Application.StartupPath() & Path.DirectorySeparatorChar, "")

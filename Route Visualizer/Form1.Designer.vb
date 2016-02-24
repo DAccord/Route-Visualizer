@@ -740,7 +740,7 @@ Partial Class frm_Main
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.LayerToolStripMenuItem, Me.HelpToolStripMenuItem, Me.WindowToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.LayerToolStripMenuItem, Me.WindowToolStripMenuItem, Me.HelpToolStripMenuItem})
         resources.ApplyResources(Me.MenuStrip1, "MenuStrip1")
         Me.MenuStrip1.Name = "MenuStrip1"
         '

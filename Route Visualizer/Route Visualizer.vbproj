@@ -158,6 +158,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="RouteVisualizerSettings.vb" />
     <Compile Include="WebTiles1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
