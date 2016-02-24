@@ -119,11 +119,11 @@ Partial Class frm_Main
         Me.QuitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LayerToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TilesWizardToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.WindowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ImagePreviewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HilfeAnzeigenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ÜberToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.WindowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ImagePreviewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.TSSL_EscToAbort = New System.Windows.Forms.ToolStripStatusLabel()
         Me.TSSL_Progress = New System.Windows.Forms.ToolStripStatusLabel()
@@ -828,6 +828,18 @@ Partial Class frm_Main
         resources.ApplyResources(Me.TilesWizardToolStripMenuItem, "TilesWizardToolStripMenuItem")
         Me.TilesWizardToolStripMenuItem.Name = "TilesWizardToolStripMenuItem"
         '
+        'WindowToolStripMenuItem
+        '
+        Me.WindowToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ImagePreviewToolStripMenuItem})
+        Me.WindowToolStripMenuItem.Name = "WindowToolStripMenuItem"
+        resources.ApplyResources(Me.WindowToolStripMenuItem, "WindowToolStripMenuItem")
+        '
+        'ImagePreviewToolStripMenuItem
+        '
+        Me.ImagePreviewToolStripMenuItem.CheckOnClick = True
+        Me.ImagePreviewToolStripMenuItem.Name = "ImagePreviewToolStripMenuItem"
+        resources.ApplyResources(Me.ImagePreviewToolStripMenuItem, "ImagePreviewToolStripMenuItem")
+        '
         'HelpToolStripMenuItem
         '
         Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HilfeAnzeigenToolStripMenuItem, Me.ÜberToolStripMenuItem})
@@ -843,18 +855,6 @@ Partial Class frm_Main
         '
         Me.ÜberToolStripMenuItem.Name = "ÜberToolStripMenuItem"
         resources.ApplyResources(Me.ÜberToolStripMenuItem, "ÜberToolStripMenuItem")
-        '
-        'WindowToolStripMenuItem
-        '
-        Me.WindowToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ImagePreviewToolStripMenuItem})
-        Me.WindowToolStripMenuItem.Name = "WindowToolStripMenuItem"
-        resources.ApplyResources(Me.WindowToolStripMenuItem, "WindowToolStripMenuItem")
-        '
-        'ImagePreviewToolStripMenuItem
-        '
-        Me.ImagePreviewToolStripMenuItem.CheckOnClick = True
-        Me.ImagePreviewToolStripMenuItem.Name = "ImagePreviewToolStripMenuItem"
-        resources.ApplyResources(Me.ImagePreviewToolStripMenuItem, "ImagePreviewToolStripMenuItem")
         '
         'StatusStrip1
         '

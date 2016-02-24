@@ -51,6 +51,13 @@ Public Class frm_Main
         CLB_OnlineLayers.DataSource = WebTileProviderBindingSource1
         CLB_OnlineLayers.DisplayMember = "Name"
 
+        For i As Integer = 0 To Math.Min(CLB_Layers.Items.Count - 1, RVS.CheckedLocalLayers.Count - 1)
+            CLB_Layers.SetItemChecked(i, RVS.CheckedLocalLayers(i))
+        Next
+        For i As Integer = 0 To Math.Min(CLB_OnlineLayers.Items.Count - 1, RVS.CheckedOnlineLayers.Count - 1)
+            CLB_OnlineLayers.SetItemChecked(i, RVS.CheckedOnlineLayers(i))
+        Next
+
         CMB_Zoom.DataSource = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20}.ToList()
 
         'Setting numeric up downs' maximum values to 2^(2n), where n is the maximum zoom level
@@ -58,6 +65,15 @@ Public Class frm_Main
         NUD_AdditionalTilesSouth.Maximum = CDec(2 ^ (2 * 20))
         NUD_AdditionalTilesWest.Maximum = CDec(2 ^ (2 * 20))
         NUD_AdditionalTilesEast.Maximum = CDec(2 ^ (2 * 20))
+
+        Btn_Switch.Tag = RVS.Switch
+        If RVS.Switch = "AbsoluteNumbers" Then
+            Btn_ResetAdditionalTiles.Visible = False
+        End If
+        NUD_AdditionalTilesNorth.Value = RVS.North
+        NUD_AdditionalTilesWest.Value = RVS.West
+        NUD_AdditionalTilesSouth.Value = RVS.South
+        NUD_AdditionalTilesEast.Value = RVS.East
 
         If My.Application.Info.Version.Major = 0 Then
             Me.Text = "Route Visualizer v" & String.Format("{0}.{1}.{2}", My.Application.Info.Version.Major.ToString, My.Application.Info.Version.Minor, My.Application.Info.Version.Build) & " beta"
@@ -615,6 +631,16 @@ Public Class frm_Main
         RVS.MainFormWindowLocation = Me.Location
         RVS.MainFormWindowSize = Me.Size
         RVS.MainFormWindowState = Me.WindowState
+        Dim List_CLB_Layers As New List(Of Boolean)
+        For i As Integer = 0 To CLB_Layers.Items.Count - 1
+            List_CLB_Layers.Add(CLB_Layers.GetItemChecked(i))
+        Next
+        RVS.CheckedLocalLayers = List_CLB_Layers
+        Dim List_CLB_OLayers As New List(Of Boolean)
+        For i As Integer = 0 To CLB_OnlineLayers.Items.Count - 1
+            List_CLB_OLayers.Add(CLB_OnlineLayers.GetItemChecked(i))
+        Next
+        RVS.CheckedOnlineLayers = List_CLB_OLayers
         If PreviewForm Is Nothing OrElse PreviewForm.IsDisposed Then
             RVS.PreviewFormWindowOpen = False
         Else
@@ -623,6 +649,11 @@ Public Class frm_Main
             RVS.PreviewFormWindowSize = PreviewForm.Size
             RVS.PreviewFormWindowState = PreviewForm.WindowState
         End If
+        RVS.Switch = Btn_Switch.Tag.ToString
+        RVS.North = CInt(NUD_AdditionalTilesNorth.Value)
+        RVS.West = CInt(NUD_AdditionalTilesWest.Value)
+        RVS.East = CInt(NUD_AdditionalTilesEast.Value)
+        RVS.South = CInt(NUD_AdditionalTilesSouth.Value)
         RVS.SaveSettings(Path.Combine(Application.StartupPath, "RouteVisualizerSettings.resx"))
 
         Data.WriteXml(Path.Combine(Application.StartupPath, "Data.xml"))

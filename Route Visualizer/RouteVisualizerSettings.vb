@@ -30,10 +30,114 @@ Public Class RouteVisualizerSettings
     Private _PreviewFormWindowLocation As Point = New Point(100, 100)
     Private _PreviewFormWindowOpen As Boolean = False
 
+    Private _CheckedLocalLayers As List(Of Boolean)
+    Private _CheckedOnlineLayers As List(Of Boolean)
+
+    Private _Switch As String = "AdditionalTiles"
+    Private _North As Integer = 0
+    Private _West As Integer = 0
+    Private _South As Integer = 0
+    Private _East As Integer = 0
+
     Public Sub New()
 
     End Sub
 
+    ''' <summary>
+    ''' The value in the additional tiles North numeric up down.
+    ''' </summary>
+    ''' <returns></returns>
+    Public Property North As Integer
+        Get
+            Return _North
+        End Get
+        Set(value As Integer)
+            _North = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' The value in the additional tiles West numeric up down.
+    ''' </summary>
+    ''' <returns></returns>
+    Public Property West As Integer
+        Get
+            Return _West
+        End Get
+        Set(value As Integer)
+            _West = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' The value in the additional tiles South numeric up down.
+    ''' </summary>
+    ''' <returns></returns>
+    Public Property South As Integer
+        Get
+            Return _South
+        End Get
+        Set(value As Integer)
+            _South = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' The value in the additional tiles East numeric up down.
+    ''' </summary>
+    ''' <returns></returns>
+    Public Property East As Integer
+        Get
+            Return _East
+        End Get
+        Set(value As Integer)
+            _East = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' Determines if additional or absolute tiles are entered. Returns "AdditionalTiles" if additional tiles, "AbsoluteNumbers" otherwise.
+    ''' </summary>
+    ''' <returns></returns>
+    Public Property Switch As String
+        Get
+            Return _Switch
+        End Get
+        Set(value As String)
+            _Switch = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' A list of booleans representing the check state of the online layers checked list box.
+    ''' </summary>
+    ''' <returns></returns>
+    Public Property CheckedOnlineLayers As List(Of Boolean)
+        Get
+            Return _CheckedOnlineLayers
+        End Get
+        Set(value As List(Of Boolean))
+            _CheckedOnlineLayers = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' A list of booleans representing the check state of the local layers checked list box.
+    ''' </summary>
+    ''' <returns></returns>
+    Public Property CheckedLocalLayers As List(Of Boolean)
+        Get
+            Return _CheckedLocalLayers
+        End Get
+        Set(value As List(Of Boolean))
+            _CheckedLocalLayers = value
+        End Set
+    End Property
+
+    ''' <summary>
+    ''' The path last used for importing a route file, including file name.
+    ''' </summary>
+    ''' <returns></returns>
     Public Property ImportRoutePath As String
         Get
             Return _ImportRoutePath
@@ -331,6 +435,15 @@ Public Class RouteVisualizerSettings
             Me.AnimationStepSize = CType(resxSet.GetObject("AnimationStepSize"), Integer)
             Me.AnimationDelayTime = CType(resxSet.GetObject("AnimationDelayTime"), Integer)
             Me.AnimationLoopCount = CType(resxSet.GetObject("AnimationLoopCount"), Integer)
+
+            Me.CheckedLocalLayers = CType(resxSet.GetObject("CheckedLocalLayers"), List(Of Boolean))
+            Me.CheckedOnlineLayers = CType(resxSet.GetObject("CheckedOnlineLayers"), List(Of Boolean))
+
+            Me.Switch = resxSet.GetString("Switch")
+            Me.North = CType(resxSet.GetObject("North"), Integer)
+            Me.West = CType(resxSet.GetObject("West"), Integer)
+            Me.East = CType(resxSet.GetObject("East"), Integer)
+            Me.South = CType(resxSet.GetObject("South"), Integer)
         End Using
     End Sub
 
