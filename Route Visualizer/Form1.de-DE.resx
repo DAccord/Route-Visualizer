@@ -362,6 +362,12 @@
   <data name="GB_AdditionalTiles.Text" xml:space="preserve">
     <value>Zusätzliche Kacheln</value>
   </data>
+  <data name="TP_LocalLayers.Text" xml:space="preserve">
+    <value>Ebenen (Lokal)</value>
+  </data>
+  <data name="TP_OnlineLayers.Text" xml:space="preserve">
+    <value>Ebenen (Online)</value>
+  </data>
   <data name="UpdatePreviewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>216, 22</value>
   </data>
@@ -421,6 +427,18 @@
   </data>
   <data name="LayerToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Ebene</value>
+  </data>
+  <data name="ImagePreviewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 22</value>
+  </data>
+  <data name="ImagePreviewToolStripMenuItem.Text" xml:space="preserve">
+    <value>Karten-Vorschau</value>
+  </data>
+  <data name="WindowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 20</value>
+  </data>
+  <data name="WindowToolStripMenuItem.Text" xml:space="preserve">
+    <value>Fenster</value>
   </data>
   <data name="HilfeAnzeigenToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
