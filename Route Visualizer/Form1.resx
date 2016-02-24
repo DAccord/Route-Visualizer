@@ -1830,6 +1830,18 @@
   <data name="LayerToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Layer</value>
   </data>
+  <data name="ImagePreviewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 22</value>
+  </data>
+  <data name="ImagePreviewToolStripMenuItem.Text" xml:space="preserve">
+    <value>Image Preview</value>
+  </data>
+  <data name="WindowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 20</value>
+  </data>
+  <data name="WindowToolStripMenuItem.Text" xml:space="preserve">
+    <value>Window</value>
+  </data>
   <data name="HilfeAnzeigenToolStripMenuItem.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F1</value>
   </data>
@@ -1850,18 +1862,6 @@
   </data>
   <data name="HelpToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Help</value>
-  </data>
-  <data name="ImagePreviewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>151, 22</value>
-  </data>
-  <data name="ImagePreviewToolStripMenuItem.Text" xml:space="preserve">
-    <value>Image Preview</value>
-  </data>
-  <data name="WindowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 20</value>
-  </data>
-  <data name="WindowToolStripMenuItem.Text" xml:space="preserve">
-    <value>Window</value>
   </data>
   <data name="MenuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -8434,6 +8434,18 @@
   <data name="&gt;&gt;TilesWizardToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;WindowToolStripMenuItem.Name" xml:space="preserve">
+    <value>WindowToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;WindowToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ImagePreviewToolStripMenuItem.Name" xml:space="preserve">
+    <value>ImagePreviewToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;ImagePreviewToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;HelpToolStripMenuItem.Name" xml:space="preserve">
     <value>HelpToolStripMenuItem</value>
   </data>
@@ -8450,18 +8462,6 @@
     <value>ÜberToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;ÜberToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;WindowToolStripMenuItem.Name" xml:space="preserve">
-    <value>WindowToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;WindowToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ImagePreviewToolStripMenuItem.Name" xml:space="preserve">
-    <value>ImagePreviewToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;ImagePreviewToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TSSL_EscToAbort.Name" xml:space="preserve">
