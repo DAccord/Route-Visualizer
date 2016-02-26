@@ -51,12 +51,16 @@ Public Class frm_Main
         CLB_OnlineLayers.DataSource = WebTileProviderBindingSource1
         CLB_OnlineLayers.DisplayMember = "Name"
 
-        For i As Integer = 0 To Math.Min(CLB_Layers.Items.Count - 1, RVS.CheckedLocalLayers.Count - 1)
-            CLB_Layers.SetItemChecked(i, RVS.CheckedLocalLayers(i))
-        Next
-        For i As Integer = 0 To Math.Min(CLB_OnlineLayers.Items.Count - 1, RVS.CheckedOnlineLayers.Count - 1)
-            CLB_OnlineLayers.SetItemChecked(i, RVS.CheckedOnlineLayers(i))
-        Next
+        If Not RVS.CheckedLocalLayers Is Nothing Then
+            For i As Integer = 0 To Math.Min(CLB_Layers.Items.Count - 1, RVS.CheckedLocalLayers.Count - 1)
+                CLB_Layers.SetItemChecked(i, RVS.CheckedLocalLayers(i))
+            Next
+        End If
+        If Not RVS.CheckedOnlineLayers Is Nothing Then
+            For i As Integer = 0 To Math.Min(CLB_OnlineLayers.Items.Count - 1, RVS.CheckedOnlineLayers.Count - 1)
+                CLB_OnlineLayers.SetItemChecked(i, RVS.CheckedOnlineLayers(i))
+            Next
+        End If
 
         CMB_Zoom.DataSource = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20}.ToList()
 
@@ -743,7 +747,7 @@ Public Class frm_Main
         If frm_Save.ShowDialog() <> DialogResult.OK Then
             Exit Sub
         End If
-        AnimationSaveDialogGetSettings(frm_Save)
+        AnimationSaveDialogGetSettings(frm_Save, SaveOption)
 
         If TH_UpdatePreview.IsAlive() Then
             Exit Sub
@@ -1009,7 +1013,7 @@ Public Class frm_Main
         If frm_Save.ShowDialog() <> DialogResult.OK Then
             Exit Sub
         End If
-        AnimationSaveDialogGetSettings(frm_Save)
+        AnimationSaveDialogGetSettings(frm_Save, SaveOption)
 
         If TH_UpdatePreview.IsAlive() Then
             Exit Sub
@@ -1028,7 +1032,7 @@ Public Class frm_Main
         If frm_Save.ShowDialog() <> DialogResult.OK Then
             Exit Sub
         End If
-        AnimationSaveDialogGetSettings(frm_Save)
+        AnimationSaveDialogGetSettings(frm_Save, SaveOption)
 
         If TH_UpdatePreview.IsAlive() Then
             Exit Sub
@@ -1770,31 +1774,28 @@ Public Class frm_Main
         End If
     End Sub
 
-    Private Sub AnimationSaveDialogGetSettings(frm As frm_AnimationSaveDialog)
-        RVS.AnimationCurrentPositionColor = frm.L_SymbolColor.BackColor
-        RVS.AnimationCurrentPositionWidth = CInt(frm.NUD_SymbolWidth.Value)
+    Private Sub AnimationSaveDialogGetSettings(frm As frm_AnimationSaveDialog, SO As SaveOption)
         RVS.AnimationImageSizeWidth = frm.RB_Width.Checked
         RVS.AnimationImageSizeHeight = frm.RB_Height.Checked
         RVS.AnimationImageSize = CInt(frm.Nud_Size.Value)
+        RVS.AnimationStepSize = CInt(frm.NUD_StepSize.Value)
+        RVS.AnimationCurrentPositionColor = frm.L_SymbolColor.BackColor
+        RVS.AnimationCurrentPositionWidth = CInt(frm.NUD_SymbolWidth.Value)
+        RVS.AnimationOutputFormat = frm.CMB_Format.SelectedItem.ToString
+        If SO.SaveType = SaveType.Animation_GIF OrElse SO.SaveType = SaveType.SimpleImage Then
+            RVS.SaveImagePath = frm.L_Path.Text
+            RVS.AnimationOutputPath = Path.GetDirectoryName(frm.L_Path.Text)
+        Else
+            RVS.AnimationOutputPath = frm.L_Path.Text
+        End If
         RVS.AnimationAlwaysBackground = frm.RB_AlwaysBackground.Checked
         RVS.AnimationBackgroundOnce = frm.RB_SingleBackground.Checked
-        RVS.AnimationOutputFormat = frm.CMB_Format.SelectedItem.ToString
-        RVS.AnimationOutputPath = frm.L_Path.Text
-        RVS.AnimationStepSize = CInt(frm.NUD_StepSize.Value)
         RVS.AnimationDelayTime = CInt(frm.NUD_DelayTime.Value)
         RVS.AnimationLoopCount = CInt(frm.NUD_LoopCount.Value)
+        RVS.AniSaveType = SO.AnimSaveType
     End Sub
 
     Private Sub AnimationSaveDialogSetSettings(ASO As SaveOption)
-        ASO.BackgroundAlways = RVS.AnimationAlwaysBackground
-        ASO.DelayTime = RVS.AnimationDelayTime
-        ASO.DirectoryPath = RVS.AnimationOutputPath
-        ASO.FilePath = RVS.AnimationOutputPath
-        ASO.LoopCount = RVS.AnimationLoopCount
-        ASO.OutputFormat = RVS.AnimationOutputFormat
-        ASO.StepSize = RVS.AnimationStepSize
-        ASO.SymbolColor = RVS.AnimationCurrentPositionColor
-        ASO.SymbolWidth = RVS.AnimationCurrentPositionWidth
         If RVS.AnimationImageSizeWidth Then
             ASO.Width = RVS.AnimationImageSize
             ASO.Height = 0
@@ -1802,6 +1803,16 @@ Public Class frm_Main
             ASO.Width = 0
             ASO.Height = RVS.AnimationImageSize
         End If
+        ASO.StepSize = RVS.AnimationStepSize
+        ASO.SymbolColor = RVS.AnimationCurrentPositionColor
+        ASO.SymbolWidth = RVS.AnimationCurrentPositionWidth
+        ASO.OutputFormat = RVS.AnimationOutputFormat
+        ASO.DirectoryPath = RVS.AnimationOutputPath
+        ASO.FilePath = RVS.SaveImagePath
+        ASO.BackgroundAlways = RVS.AnimationAlwaysBackground
+        ASO.DelayTime = RVS.AnimationDelayTime
+        ASO.LoopCount = RVS.AnimationLoopCount
+        ASO.AnimSaveType = RVS.AniSaveType
     End Sub
 
     Private Sub SingleFilesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SingleFilesToolStripMenuItem.Click
@@ -1811,7 +1822,7 @@ Public Class frm_Main
         If frm_Save.ShowDialog() <> DialogResult.OK Then
             Exit Sub
         End If
-        AnimationSaveDialogGetSettings(frm_Save)
+        AnimationSaveDialogGetSettings(frm_Save, SaveOption)
 
         If TH_AnimationSingleFiles.IsAlive() Then
             Exit Sub
@@ -1829,7 +1840,7 @@ Public Class frm_Main
         If frm_Save.ShowDialog() <> DialogResult.OK Then
             Exit Sub
         End If
-        AnimationSaveDialogGetSettings(frm_Save)
+        AnimationSaveDialogGetSettings(frm_Save, SaveOption)
 
         If TH_AnimationSingleFiles.IsAlive() Then
             Exit Sub

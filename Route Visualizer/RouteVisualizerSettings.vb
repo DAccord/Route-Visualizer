@@ -6,7 +6,7 @@ Public Class RouteVisualizerSettings
     Private _MainFormWindowSize As Size = New Size(912, 669)
     Private _MainFormWindowLocation As Point = New Point(100, 100)
 
-    Private _SaveImagePath As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+    Private _SaveImagePath As String = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Output.jpg")
     Private _SaveLayersSeparatelyPath As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
     Private _ImportRoutePath As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
 
@@ -14,7 +14,7 @@ Public Class RouteVisualizerSettings
     Private _AnimationCurrentPositionWidth As Integer = 20
     Private _AnimationImageSizeWidth As Boolean = True
     Private _AnimationImageSizeHeight As Boolean = False
-    Private _AnimationImageSize As Integer = 500
+    Private _AnimationImageSize As Integer = 0
     Private _AnimationAlwaysBackground As Boolean = True
     Private _AnimationBackgroundOnce As Boolean = False
     Private _AnimationOutputFormat As String = ".jpg"
@@ -37,9 +37,20 @@ Public Class RouteVisualizerSettings
     Private _South As Integer = 0
     Private _East As Integer = 0
 
+    Private _AST As AnimationSaveType
+
     Public Sub New()
 
     End Sub
+
+    Public Property AniSaveType As AnimationSaveType
+        Get
+            Return _AST
+        End Get
+        Set(value As AnimationSaveType)
+            _AST = value
+        End Set
+    End Property
 
     ''' <summary>
     ''' The value in the additional tiles North numeric up down.
@@ -414,6 +425,8 @@ Public Class RouteVisualizerSettings
             Me.West = CType(resxSet.GetObject("West"), Integer)
             Me.East = CType(resxSet.GetObject("East"), Integer)
             Me.South = CType(resxSet.GetObject("South"), Integer)
+
+            Me.AniSaveType = CType(resxSet.GetObject("AniSaveType"), AnimationSaveType)
         End Using
     End Sub
 

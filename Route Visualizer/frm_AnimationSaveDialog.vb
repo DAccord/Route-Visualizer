@@ -42,7 +42,11 @@ Public Class frm_AnimationSaveDialog
                 NUD_DelayTime.Visible = True
                 L_LoopCount.Visible = True
                 NUD_LoopCount.Visible = True
-                L_Path.Text = Desired_AS.FilePath
+                If Not Desired_AS.FilePath.Substring(Desired_AS.FilePath.Length - 4, 4).ToLower = ".gif" Then
+                    L_Path.Text = Path.Combine(Desired_AS.FilePath, "Output.gif")
+                Else
+                    L_Path.Text = Desired_AS.FilePath
+                End If
                 'Current Position
                 L_SymbolColor.BackColor = Desired_AS.SymbolColor
                 NUD_SymbolWidth.Value = Desired_AS.SymbolWidth
@@ -64,6 +68,7 @@ Public Class frm_AnimationSaveDialog
                 NUD_DelayTime.Value = Desired_AS.DelayTime
 
                 SFD_SaveFile.Filter = My.Resources.AnimationSaveDialog_SFDFilter_GIF
+                SFD_SaveFile.FilterIndex = 0
 
                 Me.Text = String.Format(My.Resources.AnimationSaveDialog_WindowTitle1 & " ({0})", My.Resources.AnimationSaveDialog_WindowTitleGIF)
             Case SaveType.Animation_SingleFiles
@@ -130,8 +135,10 @@ Public Class frm_AnimationSaveDialog
                 L_AnimationType.Visible = False
                 CMB_AnimationType.Visible = False
                 CMB_Format.DataSource = NotSupportingTransparency
-                SFD_SaveFile.Filter = My.Resources.SFD_SaveImageFilter
+                CMB_Format.SelectedItem = Desired_AS.OutputFormat
 
+                SFD_SaveFile.Filter = My.Resources.SFD_SaveImageFilter
+                SFD_SaveFile.FilterIndex = InList(NotSupportingTransparency, Desired_AS.OutputFormat)
                 Me.Text = My.Resources.AnimationSaveDialog_WindowTitleSimpleImage
         End Select
         SFD_SaveFile.Title = My.Resources.SFD_SaveImageTitle
@@ -142,6 +149,15 @@ Public Class frm_AnimationSaveDialog
             L_Size.Text = My.Resources.Height & " (px):"
         End If
     End Sub
+
+    Private Function InList(ByVal L As IEnumerable(Of Object), ByVal S As Object) As Integer
+        For i As Integer = 0 To L.Count - 1
+            If L(i) Is S Then
+                Return i
+            End If
+        Next
+        Return 0
+    End Function
 
     Dim OverWriteCheck As Boolean = False
 

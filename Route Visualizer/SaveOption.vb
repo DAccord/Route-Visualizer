@@ -16,7 +16,7 @@ Public Enum AnimationSaveType
 End Enum
 
 Public Class SaveOption
-    Private _Width As Integer = 500
+    Private _Width As Integer = 0
     Private _Height As Integer = 0
     Private _StepSize As Integer = 5
     Private _SymbolColor As Color = Color.Red
