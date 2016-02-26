@@ -112,6 +112,12 @@ Public Class frm_AnimationSaveDialog
                 L_AnimationType.Visible = False
                 CMB_AnimationType.Visible = False
                 CMB_Format.DataSource = SupportingTransparency
+
+                If Desired_AS.SaveType = SaveType.LayersSeparately_MergeRoutes Then
+                    Me.Text = String.Format(My.Resources.AnimationSaveDialog_WindowTitle2 & " ({0})", My.Resources.AnimationSaveDialog_WindowTitleMergeRoutes)
+                ElseIf Desired_AS.SaveType = SaveType.LayersSeparately_RoutesSeparately Then
+                    Me.Text = String.Format(My.Resources.AnimationSaveDialog_WindowTitle2 & " ({0})", My.Resources.AnimationSaveDialog_WindowTitleRoutesSeparately)
+                End If
             Case SaveType.SimpleImage
                 GB_CurrentPosition.Visible = False
                 RB_AlwaysBackground.Visible = False
@@ -125,6 +131,8 @@ Public Class frm_AnimationSaveDialog
                 CMB_AnimationType.Visible = False
                 CMB_Format.DataSource = NotSupportingTransparency
                 SFD_SaveFile.Filter = My.Resources.SFD_SaveImageFilter
+
+                Me.Text = My.Resources.AnimationSaveDialog_WindowTitleSimpleImage
         End Select
         SFD_SaveFile.Title = My.Resources.SFD_SaveImageTitle
         FBD_SavePath.Description = My.Resources.FBD_SaveLayersSeperatelyDescription
@@ -135,19 +143,29 @@ Public Class frm_AnimationSaveDialog
         End If
     End Sub
 
+    Dim OverWriteCheck As Boolean = False
+
     Private Sub Btn_SelectPath_Click(sender As Object, e As EventArgs) Handles Btn_SelectPath.Click
         If Desired_AS.SaveType = SaveType.Animation_SingleFiles OrElse Desired_AS.SaveType = SaveType.LayersSeparately_MergeRoutes OrElse Desired_AS.SaveType = SaveType.LayersSeparately_RoutesSeparately Then
             If FBD_SavePath.ShowDialog() = DialogResult.OK Then
                 L_Path.Text = FBD_SavePath.SelectedPath
+                OverWriteCheck = True
             End If
         Else
             If SFD_SaveFile.ShowDialog() = DialogResult.OK Then
                 L_Path.Text = SFD_SaveFile.FileName
+                OverWriteCheck = True
             End If
         End If
     End Sub
 
     Private Sub Btn_OK_Click(sender As Object, e As EventArgs) Handles Btn_OK.Click
+        If Not OverWriteCheck AndAlso File.Exists(L_Path.Text) AndAlso (Desired_AS.SaveType = SaveType.Animation_GIF OrElse Desired_AS.SaveType = SaveType.SimpleImage) Then
+            If MessageBox.Show(My.Resources.AnimationSaveDialog_OverwriteFile, My.Resources.AnimationSaveDialog_OverwriteFile_Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
+                Me.DialogResult = DialogResult.Abort
+                Exit Sub
+            End If
+        End If
         If RB_Height.Checked Then
             Desired_AS.Height = CInt(Nud_Size.Value)
             Desired_AS.Width = 0
@@ -218,6 +236,12 @@ Public Class frm_AnimationSaveDialog
             L_Size.Text = My.Resources.Width & " (px):"
         Else
             L_Size.Text = My.Resources.Height & " (px):"
+        End If
+    End Sub
+
+    Private Sub frm_AnimationSaveDialog_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If Me.DialogResult = DialogResult.Abort Then
+            e.Cancel = True
         End If
     End Sub
 End Class

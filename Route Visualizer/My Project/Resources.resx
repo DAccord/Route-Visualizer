@@ -330,4 +330,22 @@
   <data name="AnimationSaveType3" xml:space="preserve">
     <value>Plot all routes together.</value>
   </data>
+  <data name="AnimationSaveDialog_OverwriteFile" xml:space="preserve">
+    <value>The selected file already exists. Do you want to overwrite it?</value>
+  </data>
+  <data name="AnimationSaveDialog_OverwriteFile_Title" xml:space="preserve">
+    <value>Overwrite existing file?</value>
+  </data>
+  <data name="AnimationSaveDialog_WindowTitle2" xml:space="preserve">
+    <value>Save Layers Separately</value>
+  </data>
+  <data name="AnimationSaveDialog_WindowTitleMergeRoutes" xml:space="preserve">
+    <value>Merge Routes</value>
+  </data>
+  <data name="AnimationSaveDialog_WindowTitleRoutesSeparately" xml:space="preserve">
+    <value>Routes Separately</value>
+  </data>
+  <data name="AnimationSaveDialog_WindowTitleSimpleImage" xml:space="preserve">
+    <value>Save Image</value>
+  </data>
 </root>

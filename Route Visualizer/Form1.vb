@@ -148,12 +148,11 @@ Public Class frm_Main
     End Function
 
     Function ResizeImage(ByVal Img As Image, ByVal DesiredSize_Fct As Size) As Image
-        Using Res As Bitmap = New Bitmap(DesiredSize_Fct.Width, DesiredSize_Fct.Height)
-            Using g_Res As Graphics = Graphics.FromImage(Res)
-                g_Res.DrawImage(Img, 0, 0, DesiredSize_Fct.Width, DesiredSize_Fct.Height)
-            End Using
-            Return Res
+        Dim Res As Bitmap = New Bitmap(DesiredSize_Fct.Width, DesiredSize_Fct.Height)
+        Using g_Res As Graphics = Graphics.FromImage(Res)
+            g_Res.DrawImage(Img, 0, 0, DesiredSize_Fct.Width, DesiredSize_Fct.Height)
         End Using
+        Return Res
     End Function
 
     Public Sub UpdatePreviewNew()
@@ -753,15 +752,6 @@ Public Class frm_Main
             TH_UpdatePreview = New Threading.Thread(AddressOf UpdatePreviewNew)
         End If
         TH_UpdatePreview.Start()
-
-        'SaveOption = New SaveOptions(False, False, False)
-        'If TH_UpdatePreview.IsAlive() Then
-        '    Exit Sub
-        'End If
-        'If TH_UpdatePreview.ThreadState = Threading.ThreadState.Stopped OrElse TH_UpdatePreview.ThreadState = Threading.ThreadState.Aborted Then
-        '    TH_UpdatePreview = New Threading.Thread(AddressOf UpdatePreviewNew)
-        'End If
-        'TH_UpdatePreview.Start()
     End Sub
 
     Private Sub QuitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuitToolStripMenuItem.Click
