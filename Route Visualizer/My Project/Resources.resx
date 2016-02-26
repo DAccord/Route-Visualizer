@@ -303,7 +303,7 @@
   <data name="Preview_Zoom" xml:space="preserve">
     <value>Zoom: {0:p0}</value>
   </data>
-  <data name="AnimationSaveDialog_SFDFilter" xml:space="preserve">
+  <data name="AnimationSaveDialog_SFDFilter_GIF" xml:space="preserve">
     <value>gif file|*.gif</value>
   </data>
   <data name="AnimationSaveDialog_WindowTitle1" xml:space="preserve">
@@ -314,5 +314,38 @@
   </data>
   <data name="AnimationSaveDialog_WindowTitleSingleFiles" xml:space="preserve">
     <value>Single Files</value>
+  </data>
+  <data name="Height" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="Width" xml:space="preserve">
+    <value>Width</value>
+  </data>
+  <data name="AnimationSaveType1" xml:space="preserve">
+    <value>Route for route. Hold finished routes.</value>
+  </data>
+  <data name="AnimationSaveType2" xml:space="preserve">
+    <value>Route for route. Do not hold finished routes.</value>
+  </data>
+  <data name="AnimationSaveType3" xml:space="preserve">
+    <value>Plot all routes together.</value>
+  </data>
+  <data name="AnimationSaveDialog_OverwriteFile" xml:space="preserve">
+    <value>The selected file already exists. Do you want to overwrite it?</value>
+  </data>
+  <data name="AnimationSaveDialog_OverwriteFile_Title" xml:space="preserve">
+    <value>Overwrite existing file?</value>
+  </data>
+  <data name="AnimationSaveDialog_WindowTitle2" xml:space="preserve">
+    <value>Save Layers Separately</value>
+  </data>
+  <data name="AnimationSaveDialog_WindowTitleMergeRoutes" xml:space="preserve">
+    <value>Merge Routes</value>
+  </data>
+  <data name="AnimationSaveDialog_WindowTitleRoutesSeparately" xml:space="preserve">
+    <value>Routes Separately</value>
+  </data>
+  <data name="AnimationSaveDialog_WindowTitleSimpleImage" xml:space="preserve">
+    <value>Save Image</value>
   </data>
 </root>

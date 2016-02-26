@@ -6,17 +6,15 @@ Public Class RouteVisualizerSettings
     Private _MainFormWindowSize As Size = New Size(912, 669)
     Private _MainFormWindowLocation As Point = New Point(100, 100)
 
-    Private _SaveImagePath As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
+    Private _SaveImagePath As String = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Output.jpg")
     Private _SaveLayersSeparatelyPath As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
     Private _ImportRoutePath As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
 
-    Private _AnimationRouteColor As Color = Color.Blue
-    Private _AnimationRouteLineWidth As Integer = 15
     Private _AnimationCurrentPositionColor As Color = Color.Red
     Private _AnimationCurrentPositionWidth As Integer = 20
     Private _AnimationImageSizeWidth As Boolean = True
     Private _AnimationImageSizeHeight As Boolean = False
-    Private _AnimationImageSize As Integer = 500
+    Private _AnimationImageSize As Integer = 0
     Private _AnimationAlwaysBackground As Boolean = True
     Private _AnimationBackgroundOnce As Boolean = False
     Private _AnimationOutputFormat As String = ".jpg"
@@ -39,9 +37,20 @@ Public Class RouteVisualizerSettings
     Private _South As Integer = 0
     Private _East As Integer = 0
 
+    Private _AST As AnimationSaveType
+
     Public Sub New()
 
     End Sub
+
+    Public Property AniSaveType As AnimationSaveType
+        Get
+            Return _AST
+        End Get
+        Set(value As AnimationSaveType)
+            _AST = value
+        End Set
+    End Property
 
     ''' <summary>
     ''' The value in the additional tiles North numeric up down.
@@ -157,32 +166,6 @@ Public Class RouteVisualizerSettings
         End Get
         Set(value As Boolean)
             _PreviewFormWindowOpen = value
-        End Set
-    End Property
-
-    ''' <summary>
-    ''' The route color used in the animation (GIF or single files).
-    ''' </summary>
-    ''' <returns></returns>
-    Public Property AnimationRouteColor As Color
-        Get
-            Return _AnimationRouteColor
-        End Get
-        Set(value As Color)
-            _AnimationRouteColor = value
-        End Set
-    End Property
-
-    ''' <summary>
-    ''' The line width of the route used in the animation (GIF or single files).
-    ''' </summary>
-    ''' <returns></returns>
-    Public Property AnimationRouteLineWidth As Integer
-        Get
-            Return _AnimationRouteLineWidth
-        End Get
-        Set(value As Integer)
-            _AnimationRouteLineWidth = value
         End Set
     End Property
 
@@ -421,8 +404,6 @@ Public Class RouteVisualizerSettings
             Me.PreviewFormWindowSize = CType(resxSet.GetObject("PreviewFormWindowSize"), Size)
             Me.PreviewFormWindowLocation = CType(resxSet.GetObject("PreviewFormWindowLocation"), Point)
 
-            Me.AnimationRouteColor = CType(resxSet.GetObject("AnimationRouteColor"), Color)
-            Me.AnimationRouteLineWidth = CType(resxSet.GetObject("AnimationRouteLineWidth"), Integer)
             Me.AnimationCurrentPositionColor = CType(resxSet.GetObject("AnimationCurrentPositionColor"), Color)
             Me.AnimationCurrentPositionWidth = CType(resxSet.GetObject("AnimationCurrentPositionWidth"), Integer)
             Me.AnimationImageSizeWidth = CType(resxSet.GetObject("AnimationImageSizeWidth"), Boolean)
@@ -444,6 +425,8 @@ Public Class RouteVisualizerSettings
             Me.West = CType(resxSet.GetObject("West"), Integer)
             Me.East = CType(resxSet.GetObject("East"), Integer)
             Me.South = CType(resxSet.GetObject("South"), Integer)
+
+            Me.AniSaveType = CType(resxSet.GetObject("AniSaveType"), AnimationSaveType)
         End Using
     End Sub
 

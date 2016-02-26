@@ -118,1171 +118,607 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="TableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="GB_Route.AutoSize" type="System.Boolean, mscorlib">
+  <data name="TableLayoutPanel8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="TableLayoutPanel2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="TableLayoutPanel2.ColumnCount" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="Btn_RouteColor.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Btn_RouteColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="Btn_RouteColor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 30</value>
-  </data>
-  <data name="Btn_RouteColor.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="Btn_RouteColor.Text" xml:space="preserve">
-    <value>Select Colour</value>
-  </data>
-  <data name="&gt;&gt;Btn_RouteColor.Name" xml:space="preserve">
-    <value>Btn_RouteColor</value>
-  </data>
-  <data name="&gt;&gt;Btn_RouteColor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Btn_RouteColor.Parent" xml:space="preserve">
-    <value>TableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;Btn_RouteColor.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="L_RouteColor.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="L_RouteColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 3</value>
-  </data>
-  <data name="L_RouteColor.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="L_RouteColor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 30</value>
-  </data>
-  <data name="L_RouteColor.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;L_RouteColor.Name" xml:space="preserve">
-    <value>L_RouteColor</value>
-  </data>
-  <data name="&gt;&gt;L_RouteColor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;L_RouteColor.Parent" xml:space="preserve">
-    <value>TableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;L_RouteColor.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="Label4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="L_AnimationType.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
   </data>
-  <data name="Label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 42</value>
-  </data>
-  <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 20</value>
-  </data>
-  <data name="Label4.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="Label4.Text" xml:space="preserve">
-    <value>Line Width</value>
-  </data>
-  <data name="&gt;&gt;Label4.Name" xml:space="preserve">
-    <value>Label4</value>
-  </data>
-  <data name="&gt;&gt;Label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label4.Parent" xml:space="preserve">
-    <value>TableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="NUD_RouteLineWidth.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="NUD_RouteLineWidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 39</value>
-  </data>
-  <data name="NUD_RouteLineWidth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 27</value>
-  </data>
-  <data name="NUD_RouteLineWidth.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;NUD_RouteLineWidth.Name" xml:space="preserve">
-    <value>NUD_RouteLineWidth</value>
-  </data>
-  <data name="&gt;&gt;NUD_RouteLineWidth.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NUD_RouteLineWidth.Parent" xml:space="preserve">
-    <value>TableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;NUD_RouteLineWidth.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="TableLayoutPanel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="TableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 23</value>
-  </data>
-  <data name="TableLayoutPanel2.RowCount" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="TableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 69</value>
-  </data>
-  <data name="TableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;TableLayoutPanel2.Name" xml:space="preserve">
-    <value>TableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;TableLayoutPanel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TableLayoutPanel2.Parent" xml:space="preserve">
-    <value>GB_Route</value>
-  </data>
-  <data name="&gt;&gt;TableLayoutPanel2.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="TableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="Btn_RouteColor" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="L_RouteColor" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Label4" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="NUD_RouteLineWidth" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="GB_Route.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="GB_Route.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="GB_Route.Size" type="System.Drawing.Size, System.Drawing">
-    <value>373, 95</value>
-  </data>
-  <data name="GB_Route.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="GB_Route.Text" xml:space="preserve">
-    <value>Route</value>
-  </data>
-  <data name="&gt;&gt;GB_Route.Name" xml:space="preserve">
-    <value>GB_Route</value>
-  </data>
-  <data name="&gt;&gt;GB_Route.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GB_Route.Parent" xml:space="preserve">
-    <value>TableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;GB_Route.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="GB_ImageSize.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="TableLayoutPanel3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="TableLayoutPanel3.ColumnCount" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="RB_Width.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="RB_Width.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="RB_Width.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 24</value>
-  </data>
-  <data name="RB_Width.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="RB_Width.Text" xml:space="preserve">
-    <value>Width</value>
-  </data>
-  <data name="&gt;&gt;RB_Width.Name" xml:space="preserve">
-    <value>RB_Width</value>
-  </data>
-  <data name="&gt;&gt;RB_Width.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RB_Width.Parent" xml:space="preserve">
-    <value>TableLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;RB_Width.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="RB_Height.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="RB_Height.Location" type="System.Drawing.Point, System.Drawing">
-    <value>76, 3</value>
-  </data>
-  <data name="RB_Height.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 24</value>
-  </data>
-  <data name="RB_Height.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="RB_Height.Text" xml:space="preserve">
-    <value>Height</value>
-  </data>
-  <data name="&gt;&gt;RB_Height.Name" xml:space="preserve">
-    <value>RB_Height</value>
-  </data>
-  <data name="&gt;&gt;RB_Height.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RB_Height.Parent" xml:space="preserve">
-    <value>TableLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;RB_Height.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="Nud_Size.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="Nud_Size.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 33</value>
-  </data>
-  <data name="Nud_Size.Size" type="System.Drawing.Size, System.Drawing">
-    <value>361, 27</value>
-  </data>
-  <data name="Nud_Size.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;Nud_Size.Name" xml:space="preserve">
-    <value>Nud_Size</value>
-  </data>
-  <data name="&gt;&gt;Nud_Size.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Nud_Size.Parent" xml:space="preserve">
-    <value>TableLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;Nud_Size.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="TableLayoutPanel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="TableLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 23</value>
-  </data>
-  <data name="TableLayoutPanel3.RowCount" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="TableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 63</value>
-  </data>
-  <data name="TableLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;TableLayoutPanel3.Name" xml:space="preserve">
-    <value>TableLayoutPanel3</value>
-  </data>
-  <data name="&gt;&gt;TableLayoutPanel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TableLayoutPanel3.Parent" xml:space="preserve">
-    <value>GB_ImageSize</value>
-  </data>
-  <data name="&gt;&gt;TableLayoutPanel3.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="TableLayoutPanel3.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="RB_Width" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="RB_Height" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Nud_Size" Row="1" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="GB_ImageSize.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="GB_ImageSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 205</value>
-  </data>
-  <data name="GB_ImageSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>373, 89</value>
-  </data>
-  <data name="GB_ImageSize.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="GB_ImageSize.Text" xml:space="preserve">
-    <value>Image Size</value>
-  </data>
-  <data name="&gt;&gt;GB_ImageSize.Name" xml:space="preserve">
-    <value>GB_ImageSize</value>
-  </data>
-  <data name="&gt;&gt;GB_ImageSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GB_ImageSize.Parent" xml:space="preserve">
-    <value>TableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;GB_ImageSize.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="TableLayoutPanel4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="TableLayoutPanel4.ColumnCount" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="L_LoopCount.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="L_LoopCount.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="L_LoopCount.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="L_LoopCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 72</value>
-  </data>
-  <data name="L_LoopCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 20</value>
-  </data>
-  <data name="L_LoopCount.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="L_LoopCount.Text" xml:space="preserve">
-    <value>Loops (0 = infinite)</value>
-  </data>
-  <data name="&gt;&gt;L_LoopCount.Name" xml:space="preserve">
-    <value>L_LoopCount</value>
-  </data>
-  <data name="&gt;&gt;L_LoopCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;L_LoopCount.Parent" xml:space="preserve">
-    <value>TableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;L_LoopCount.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="NUD_StepSize.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="NUD_StepSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 3</value>
-  </data>
-  <data name="NUD_StepSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 27</value>
-  </data>
-  <data name="NUD_StepSize.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;NUD_StepSize.Name" xml:space="preserve">
-    <value>NUD_StepSize</value>
-  </data>
-  <data name="&gt;&gt;NUD_StepSize.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NUD_StepSize.Parent" xml:space="preserve">
-    <value>TableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;NUD_StepSize.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="Label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="Label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 6</value>
-  </data>
-  <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 20</value>
-  </data>
-  <data name="Label2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="Label2.Text" xml:space="preserve">
-    <value>Step Size</value>
-  </data>
-  <data name="&gt;&gt;Label2.Name" xml:space="preserve">
-    <value>Label2</value>
-  </data>
-  <data name="&gt;&gt;Label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label2.Parent" xml:space="preserve">
-    <value>TableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="L_DelayTime.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="L_DelayTime.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="L_DelayTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 39</value>
-  </data>
-  <data name="L_DelayTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 20</value>
-  </data>
-  <data name="L_DelayTime.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="L_DelayTime.Text" xml:space="preserve">
-    <value>Delay Time (ms)</value>
-  </data>
-  <data name="&gt;&gt;L_DelayTime.Name" xml:space="preserve">
-    <value>L_DelayTime</value>
-  </data>
-  <data name="&gt;&gt;L_DelayTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;L_DelayTime.Parent" xml:space="preserve">
-    <value>TableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;L_DelayTime.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="NUD_DelayTime.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="NUD_DelayTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 36</value>
-  </data>
-  <data name="NUD_DelayTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 27</value>
-  </data>
-  <data name="NUD_DelayTime.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;NUD_DelayTime.Name" xml:space="preserve">
-    <value>NUD_DelayTime</value>
-  </data>
-  <data name="&gt;&gt;NUD_DelayTime.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NUD_DelayTime.Parent" xml:space="preserve">
-    <value>TableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;NUD_DelayTime.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="NUD_LoopCount.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="NUD_LoopCount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>144, 69</value>
-  </data>
-  <data name="NUD_LoopCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 27</value>
-  </data>
-  <data name="NUD_LoopCount.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="&gt;&gt;NUD_LoopCount.Name" xml:space="preserve">
-    <value>NUD_LoopCount</value>
-  </data>
-  <data name="&gt;&gt;NUD_LoopCount.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NUD_LoopCount.Parent" xml:space="preserve">
-    <value>TableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;NUD_LoopCount.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="TableLayoutPanel4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="TableLayoutPanel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 432</value>
-  </data>
-  <data name="TableLayoutPanel4.RowCount" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="TableLayoutPanel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>373, 99</value>
-  </data>
-  <data name="TableLayoutPanel4.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;TableLayoutPanel4.Name" xml:space="preserve">
-    <value>TableLayoutPanel4</value>
-  </data>
-  <data name="&gt;&gt;TableLayoutPanel4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TableLayoutPanel4.Parent" xml:space="preserve">
-    <value>TableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;TableLayoutPanel4.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="TableLayoutPanel4.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="L_LoopCount" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="NUD_StepSize" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Label2" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="L_DelayTime" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="NUD_DelayTime" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="NUD_LoopCount" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="TableLayoutPanel5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="TableLayoutPanel5.ColumnCount" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="Btn_Cancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
-  </data>
-  <data name="Btn_Cancel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Btn_Cancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>295, 3</value>
-  </data>
-  <data name="Btn_Cancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 6</value>
-  </data>
-  <data name="Btn_Cancel.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="Btn_Cancel.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="&gt;&gt;Btn_Cancel.Name" xml:space="preserve">
-    <value>Btn_Cancel</value>
-  </data>
-  <data name="&gt;&gt;Btn_Cancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Btn_Cancel.Parent" xml:space="preserve">
-    <value>TableLayoutPanel5</value>
-  </data>
-  <data name="&gt;&gt;Btn_Cancel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="Btn_OK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Right</value>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
   </data>
   <data name="Btn_OK.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Btn_OK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>214, 3</value>
-  </data>
-  <data name="Btn_OK.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 6</value>
-  </data>
-  <data name="Btn_OK.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="Btn_OK.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="&gt;&gt;Btn_OK.Name" xml:space="preserve">
-    <value>Btn_OK</value>
-  </data>
-  <data name="&gt;&gt;Btn_OK.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Btn_OK.Parent" xml:space="preserve">
-    <value>TableLayoutPanel5</value>
-  </data>
-  <data name="&gt;&gt;Btn_OK.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="TableLayoutPanel5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="TableLayoutPanel5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 537</value>
-  </data>
-  <data name="TableLayoutPanel5.RowCount" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="TableLayoutPanel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>373, 12</value>
-  </data>
-  <data name="TableLayoutPanel5.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;TableLayoutPanel5.Name" xml:space="preserve">
-    <value>TableLayoutPanel5</value>
-  </data>
-  <data name="&gt;&gt;TableLayoutPanel5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TableLayoutPanel5.Parent" xml:space="preserve">
-    <value>TableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;TableLayoutPanel5.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="TableLayoutPanel5.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="Btn_Cancel" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Btn_OK" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,AutoSize,0" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="GroupBox1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="TableLayoutPanel6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="TableLayoutPanel6.ColumnCount" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="Btn_SymbolColor.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Btn_SymbolColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="Btn_SymbolColor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 30</value>
-  </data>
-  <data name="Btn_SymbolColor.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="Btn_SymbolColor.Text" xml:space="preserve">
-    <value>Select Colour</value>
-  </data>
-  <data name="&gt;&gt;Btn_SymbolColor.Name" xml:space="preserve">
-    <value>Btn_SymbolColor</value>
-  </data>
-  <data name="&gt;&gt;Btn_SymbolColor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Btn_SymbolColor.Parent" xml:space="preserve">
-    <value>TableLayoutPanel6</value>
-  </data>
-  <data name="&gt;&gt;Btn_SymbolColor.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="L_SymbolColor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 3</value>
-  </data>
-  <data name="L_SymbolColor.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="L_SymbolColor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 30</value>
-  </data>
-  <data name="L_SymbolColor.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;L_SymbolColor.Name" xml:space="preserve">
-    <value>L_SymbolColor</value>
-  </data>
-  <data name="&gt;&gt;L_SymbolColor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;L_SymbolColor.Parent" xml:space="preserve">
-    <value>TableLayoutPanel6</value>
-  </data>
-  <data name="&gt;&gt;L_SymbolColor.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="NUD_SymbolWidth.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="NUD_SymbolWidth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 39</value>
-  </data>
-  <data name="NUD_SymbolWidth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 27</value>
-  </data>
-  <data name="NUD_SymbolWidth.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;NUD_SymbolWidth.Name" xml:space="preserve">
-    <value>NUD_SymbolWidth</value>
-  </data>
-  <data name="&gt;&gt;NUD_SymbolWidth.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;NUD_SymbolWidth.Parent" xml:space="preserve">
-    <value>TableLayoutPanel6</value>
-  </data>
-  <data name="&gt;&gt;NUD_SymbolWidth.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="Label5.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="Label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="Label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 42</value>
-  </data>
-  <data name="Label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 20</value>
-  </data>
-  <data name="Label5.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="Label5.Text" xml:space="preserve">
-    <value>Width</value>
-  </data>
-  <data name="&gt;&gt;Label5.Name" xml:space="preserve">
-    <value>Label5</value>
-  </data>
-  <data name="&gt;&gt;Label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label5.Parent" xml:space="preserve">
-    <value>TableLayoutPanel6</value>
-  </data>
-  <data name="&gt;&gt;Label5.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="TableLayoutPanel6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="TableLayoutPanel6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 23</value>
-  </data>
-  <data name="TableLayoutPanel6.RowCount" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="TableLayoutPanel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 69</value>
-  </data>
-  <data name="TableLayoutPanel6.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;TableLayoutPanel6.Name" xml:space="preserve">
-    <value>TableLayoutPanel6</value>
-  </data>
-  <data name="&gt;&gt;TableLayoutPanel6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TableLayoutPanel6.Parent" xml:space="preserve">
-    <value>GroupBox1</value>
-  </data>
-  <data name="&gt;&gt;TableLayoutPanel6.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="TableLayoutPanel6.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="Btn_SymbolColor" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="L_SymbolColor" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="NUD_SymbolWidth" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Label5" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="GroupBox1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="GroupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 104</value>
-  </data>
-  <data name="GroupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>373, 95</value>
-  </data>
-  <data name="GroupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="GroupBox1.Text" xml:space="preserve">
-    <value>Current Position</value>
-  </data>
-  <data name="&gt;&gt;GroupBox1.Name" xml:space="preserve">
-    <value>GroupBox1</value>
-  </data>
-  <data name="&gt;&gt;GroupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GroupBox1.Parent" xml:space="preserve">
-    <value>TableLayoutPanel1</value>
-  </data>
-  <data name="&gt;&gt;GroupBox1.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="GroupBox2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="TableLayoutPanel7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="TableLayoutPanel7.ColumnCount" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="Label3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="Label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 72</value>
-  </data>
-  <data name="Label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
-  </data>
-  <data name="Label3.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="Label3.Text" xml:space="preserve">
-    <value>Path</value>
-  </data>
-  <data name="&gt;&gt;Label3.Name" xml:space="preserve">
-    <value>Label3</value>
-  </data>
-  <data name="&gt;&gt;Label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Label3.Parent" xml:space="preserve">
-    <value>TableLayoutPanel7</value>
-  </data>
-  <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="L_Output.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="L_Output.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="L_Output.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 37</value>
-  </data>
-  <data name="L_Output.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 20</value>
-  </data>
-  <data name="L_Output.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="L_Output.Text" xml:space="preserve">
-    <value>Output Format</value>
-  </data>
-  <data name="&gt;&gt;L_Output.Name" xml:space="preserve">
-    <value>L_Output</value>
-  </data>
-  <data name="&gt;&gt;L_Output.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;L_Output.Parent" xml:space="preserve">
-    <value>TableLayoutPanel7</value>
-  </data>
-  <data name="&gt;&gt;L_Output.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="Btn_SelectPath.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Btn_SelectPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>336, 67</value>
-  </data>
-  <data name="Btn_SelectPath.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 30</value>
-  </data>
-  <data name="Btn_SelectPath.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="Btn_SelectPath.Text" xml:space="preserve">
-    <value>...</value>
-  </data>
-  <data name="&gt;&gt;Btn_SelectPath.Name" xml:space="preserve">
-    <value>Btn_SelectPath</value>
-  </data>
-  <data name="&gt;&gt;Btn_SelectPath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Btn_SelectPath.Parent" xml:space="preserve">
-    <value>TableLayoutPanel7</value>
-  </data>
-  <data name="&gt;&gt;Btn_SelectPath.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="L_Path.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="L_Path.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="L_Path.Location" type="System.Drawing.Point, System.Drawing">
-    <value>115, 72</value>
-  </data>
-  <data name="L_Path.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
-  </data>
-  <data name="L_Path.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="L_Path.Text" xml:space="preserve">
-    <value>Path</value>
-  </data>
-  <data name="&gt;&gt;L_Path.Name" xml:space="preserve">
-    <value>L_Path</value>
-  </data>
-  <data name="&gt;&gt;L_Path.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;L_Path.Parent" xml:space="preserve">
-    <value>TableLayoutPanel7</value>
-  </data>
-  <data name="&gt;&gt;L_Path.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="CMB_Format.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="CMB_Format.Items" xml:space="preserve">
-    <value>.bmp</value>
-  </data>
-  <data name="CMB_Format.Items1" xml:space="preserve">
-    <value>.gif</value>
-  </data>
-  <data name="CMB_Format.Items2" xml:space="preserve">
-    <value>.jpg</value>
-  </data>
-  <data name="CMB_Format.Items3" xml:space="preserve">
-    <value>.png</value>
-  </data>
-  <data name="CMB_Format.Items4" xml:space="preserve">
-    <value>.tif</value>
-  </data>
-  <data name="CMB_Format.Location" type="System.Drawing.Point, System.Drawing">
-    <value>115, 33</value>
-  </data>
-  <data name="CMB_Format.Size" type="System.Drawing.Size, System.Drawing">
-    <value>249, 28</value>
-  </data>
-  <data name="CMB_Format.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;CMB_Format.Name" xml:space="preserve">
-    <value>CMB_Format</value>
-  </data>
-  <data name="&gt;&gt;CMB_Format.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CMB_Format.Parent" xml:space="preserve">
-    <value>TableLayoutPanel7</value>
-  </data>
-  <data name="&gt;&gt;CMB_Format.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="TableLayoutPanel8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="TableLayoutPanel8.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="RB_SingleBackground.AutoSize" type="System.Boolean, mscorlib">
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Nud_Size.Size" type="System.Drawing.Size, System.Drawing">
+    <value>288, 27</value>
+  </data>
+  <data name="Nud_Size.Location" type="System.Drawing.Point, System.Drawing">
+    <value>76, 33</value>
+  </data>
+  <data name="RB_Width.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="RB_SingleBackground.Location" type="System.Drawing.Point, System.Drawing">
-    <value>165, 3</value>
+  <data name="&gt;&gt;GB_ImageSize.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
   </data>
-  <data name="RB_SingleBackground.Size" type="System.Drawing.Size, System.Drawing">
-    <value>142, 24</value>
+  <data name="TLP_Animation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>373, 133</value>
   </data>
-  <data name="RB_SingleBackground.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="RB_SingleBackground.Text" xml:space="preserve">
-    <value>Background once</value>
-  </data>
-  <data name="&gt;&gt;RB_SingleBackground.Name" xml:space="preserve">
-    <value>RB_SingleBackground</value>
-  </data>
-  <data name="&gt;&gt;RB_SingleBackground.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RB_SingleBackground.Parent" xml:space="preserve">
-    <value>TableLayoutPanel8</value>
-  </data>
-  <data name="&gt;&gt;RB_SingleBackground.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="RB_AlwaysBackground.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="RB_AlwaysBackground.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="RB_AlwaysBackground.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 24</value>
-  </data>
-  <data name="RB_AlwaysBackground.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="RB_AlwaysBackground.Text" xml:space="preserve">
-    <value>Always Background</value>
-  </data>
-  <data name="&gt;&gt;RB_AlwaysBackground.Name" xml:space="preserve">
-    <value>RB_AlwaysBackground</value>
-  </data>
-  <data name="&gt;&gt;RB_AlwaysBackground.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;RB_AlwaysBackground.Parent" xml:space="preserve">
-    <value>TableLayoutPanel8</value>
-  </data>
-  <data name="&gt;&gt;RB_AlwaysBackground.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="TableLayoutPanel8.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="TableLayoutPanel8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="TableLayoutPanel8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="TableLayoutPanel8.RowCount" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="TableLayoutPanel8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 30</value>
-  </data>
-  <data name="TableLayoutPanel8.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;TableLayoutPanel8.Name" xml:space="preserve">
-    <value>TableLayoutPanel8</value>
-  </data>
-  <data name="&gt;&gt;TableLayoutPanel8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TableLayoutPanel8.Parent" xml:space="preserve">
-    <value>TableLayoutPanel7</value>
-  </data>
-  <data name="&gt;&gt;TableLayoutPanel8.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="TableLayoutPanel8.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="RB_SingleBackground" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="RB_AlwaysBackground" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
-  <data name="TableLayoutPanel7.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="TableLayoutPanel7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 23</value>
-  </data>
-  <data name="TableLayoutPanel7.RowCount" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="TableLayoutPanel7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 100</value>
-  </data>
-  <data name="TableLayoutPanel7.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;TableLayoutPanel7.Name" xml:space="preserve">
-    <value>TableLayoutPanel7</value>
+  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
+    <value>TableLayoutPanel3</value>
   </data>
   <data name="&gt;&gt;TableLayoutPanel7.Type" xml:space="preserve">
     <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;TableLayoutPanel7.Parent" xml:space="preserve">
-    <value>GroupBox2</value>
+  <data name="Btn_Cancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="L_Size.Text" xml:space="preserve">
+    <value>Width:</value>
+  </data>
+  <data name="&gt;&gt;RB_Width.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CMB_AnimationType.Parent" xml:space="preserve">
+    <value>TLP_Animation</value>
+  </data>
+  <data name="TLP_Animation.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="TableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>379, 554</value>
+  </data>
+  <data name="L_Output.Text" xml:space="preserve">
+    <value>Output Format</value>
+  </data>
+  <data name="&gt;&gt;L_LoopCount.Name" xml:space="preserve">
+    <value>L_LoopCount</value>
+  </data>
+  <data name="TableLayoutPanel6.RowCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;Label5.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;CD_Colour.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColorDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GB_CurrentPosition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>373, 95</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="RB_AlwaysBackground.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 24</value>
+  </data>
+  <data name="&gt;&gt;Btn_SymbolColor.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TLP_Animation.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TableLayoutPanel8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>367, 30</value>
+  </data>
+  <data name="TLP_Animation.RowCount" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="TableLayoutPanel8.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="L_AnimationType.Text" xml:space="preserve">
+    <value>Animation Type</value>
+  </data>
+  <data name="Btn_SymbolColor.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;Btn_OK.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Label1.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel7.Name" xml:space="preserve">
+    <value>TableLayoutPanel7</value>
+  </data>
+  <data name="GB_CurrentPosition.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="TableLayoutPanel8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="&gt;&gt;GB_Output.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;L_AnimationType.Name" xml:space="preserve">
+    <value>L_AnimationType</value>
+  </data>
+  <data name="&gt;&gt;RB_AlwaysBackground.Parent" xml:space="preserve">
+    <value>TableLayoutPanel8</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel6.Name" xml:space="preserve">
+    <value>TableLayoutPanel6</value>
+  </data>
+  <data name="TableLayoutPanel6.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="Btn_SymbolColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="CMB_Format.Items" xml:space="preserve">
+    <value>.bmp</value>
+  </data>
+  <data name="&gt;&gt;RB_Height.Parent" xml:space="preserve">
+    <value>TableLayoutPanel3</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel6.Parent" xml:space="preserve">
+    <value>GB_CurrentPosition</value>
+  </data>
+  <data name="CMB_AnimationType.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;Label5.Parent" xml:space="preserve">
+    <value>TableLayoutPanel6</value>
+  </data>
+  <data name="CMB_Format.Items4" xml:space="preserve">
+    <value>.tif</value>
+  </data>
+  <data name="L_Path.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;L_Size.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="TableLayoutPanel5.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="Btn_Cancel" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Btn_OK" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100,AutoSize,0" /&gt;&lt;Rows Styles="Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="RB_AlwaysBackground.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="RB_SingleBackground.Location" type="System.Drawing.Point, System.Drawing">
+    <value>165, 3</value>
+  </data>
+  <data name="&gt;&gt;Label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TableLayoutPanel7.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;Btn_SelectPath.Parent" xml:space="preserve">
+    <value>TableLayoutPanel7</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>frm_AnimationSaveDialog</value>
+  </data>
+  <data name="Label3.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="L_DelayTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 20</value>
+  </data>
+  <data name="TableLayoutPanel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 23</value>
+  </data>
+  <data name="L_Size.Size" type="System.Drawing.Size, System.Drawing">
+    <value>52, 20</value>
+  </data>
+  <data name="L_LoopCount.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="TableLayoutPanel5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;Btn_SelectPath.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;L_SymbolColor.Parent" xml:space="preserve">
+    <value>TableLayoutPanel6</value>
+  </data>
+  <data name="&gt;&gt;RB_Width.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;Btn_Cancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CMB_AnimationType.Items2" xml:space="preserve">
+    <value>Alle Routen gleichzeitig zeichnen.</value>
+  </data>
+  <data name="&gt;&gt;L_DelayTime.Parent" xml:space="preserve">
+    <value>TLP_Animation</value>
+  </data>
+  <data name="Btn_SelectPath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;SFD_SaveFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;L_DelayTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GB_Output.Size" type="System.Drawing.Size, System.Drawing">
+    <value>373, 126</value>
+  </data>
+  <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="GB_Output.Text" xml:space="preserve">
+    <value>Output</value>
+  </data>
+  <data name="L_DelayTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 39</value>
+  </data>
+  <data name="TableLayoutPanel6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 23</value>
+  </data>
+  <data name="CMB_AnimationType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 102</value>
+  </data>
+  <data name="&gt;&gt;GB_ImageSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;TableLayoutPanel7.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="TableLayoutPanel7.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="Label3" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="L_Output" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Btn_SelectPath" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="L_Path" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="CMB_Format" Row="1" RowSpan="1" Column="1" ColumnSpan="2" /&gt;&lt;Control Name="TableLayoutPanel8" Row="0" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  <data name="&gt;&gt;RB_SingleBackground.Name" xml:space="preserve">
+    <value>RB_SingleBackground</value>
   </data>
-  <data name="GroupBox2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="&gt;&gt;TableLayoutPanel6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="GroupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 300</value>
+  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="GroupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>373, 126</value>
+  <data name="Btn_SelectPath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>336, 67</value>
   </data>
-  <data name="GroupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+  <data name="CMB_AnimationType.Items" xml:space="preserve">
+    <value>Routen nacheinander. Fertige Routen erhalten.</value>
   </data>
-  <data name="GroupBox2.Text" xml:space="preserve">
-    <value>Output</value>
+  <data name="CMB_Format.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
   </data>
-  <data name="&gt;&gt;GroupBox2.Name" xml:space="preserve">
-    <value>GroupBox2</value>
+  <data name="TLP_Animation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 351</value>
   </data>
-  <data name="&gt;&gt;GroupBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="Btn_OK.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
   </data>
-  <data name="&gt;&gt;GroupBox2.Parent" xml:space="preserve">
-    <value>TableLayoutPanel1</value>
+  <data name="L_Output.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;GroupBox2.ZOrder" xml:space="preserve">
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 20</value>
+  </data>
+  <data name="&gt;&gt;NUD_LoopCount.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="TableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="&gt;&gt;RB_Height.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="TableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="RB_AlwaysBackground.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
   </data>
-  <data name="TableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+  <data name="TLP_Animation.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="TableLayoutPanel5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 490</value>
+  </data>
+  <data name="&gt;&gt;L_AnimationType.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="TableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>379, 552</value>
+  <data name="RB_Height.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 24</value>
   </data>
-  <data name="TableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;NUD_SymbolWidth.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;L_LoopCount.Parent" xml:space="preserve">
+    <value>TLP_Animation</value>
+  </data>
+  <data name="L_AnimationType.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="TableLayoutPanel5.RowCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="NUD_SymbolWidth.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="TableLayoutPanel7.ColumnCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;Btn_SymbolColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CMB_AnimationType.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;Label3.Name" xml:space="preserve">
+    <value>Label3</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel5.Name" xml:space="preserve">
+    <value>TableLayoutPanel5</value>
+  </data>
+  <data name="Btn_OK.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 30</value>
+  </data>
+  <data name="L_Path.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="L_LoopCount.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GB_ImageSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 104</value>
+  </data>
+  <data name="TableLayoutPanel3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;CMB_Format.Name" xml:space="preserve">
+    <value>CMB_Format</value>
+  </data>
+  <data name="GB_ImageSize.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="RB_Width.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 5, 4, 5</value>
+  </data>
+  <data name="&gt;&gt;Label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CMB_AnimationType.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="L_Output.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;TableLayoutPanel1.Name" xml:space="preserve">
-    <value>TableLayoutPanel1</value>
+  <data name="TableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="GB_ImageSize" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="TLP_Animation" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="TableLayoutPanel5" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="GB_CurrentPosition" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="GB_Output" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
-  <data name="&gt;&gt;TableLayoutPanel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;L_Output.Name" xml:space="preserve">
+    <value>L_Output</value>
+  </data>
+  <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="Label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;Label2.Parent" xml:space="preserve">
+    <value>TLP_Animation</value>
+  </data>
+  <data name="&gt;&gt;L_Size.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RB_SingleBackground.Parent" xml:space="preserve">
+    <value>TableLayoutPanel8</value>
+  </data>
+  <data name="GB_ImageSize.Text" xml:space="preserve">
+    <value>Image Size</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel3.Parent" xml:space="preserve">
+    <value>GB_ImageSize</value>
+  </data>
+  <data name="RB_Height.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;Btn_Cancel.Parent" xml:space="preserve">
+    <value>TableLayoutPanel5</value>
+  </data>
+  <data name="&gt;&gt;NUD_SymbolWidth.Name" xml:space="preserve">
+    <value>NUD_SymbolWidth</value>
+  </data>
+  <data name="L_Size.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 36</value>
+  </data>
+  <data name="&gt;&gt;CMB_AnimationType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="L_AnimationType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 106</value>
+  </data>
+  <data name="TableLayoutPanel7.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="Label3" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="L_Output" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Btn_SelectPath" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="L_Path" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="CMB_Format" Row="1" RowSpan="1" Column="1" ColumnSpan="2" /&gt;&lt;Control Name="TableLayoutPanel8" Row="0" RowSpan="1" Column="0" ColumnSpan="3" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="&gt;&gt;TableLayoutPanel1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;TableLayoutPanel1.ZOrder" xml:space="preserve">
+  <data name="Btn_Cancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>295, 28</value>
+  </data>
+  <data name="RB_AlwaysBackground.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;TLP_Animation.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="NUD_LoopCount.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="CMB_Format.Items1" xml:space="preserve">
+    <value>.gif</value>
+  </data>
+  <data name="&gt;&gt;NUD_SymbolWidth.Parent" xml:space="preserve">
+    <value>TableLayoutPanel6</value>
+  </data>
+  <data name="CMB_Format.Items3" xml:space="preserve">
+    <value>.png</value>
+  </data>
+  <data name="&gt;&gt;L_Output.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GB_Output.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="Label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 72</value>
+  </data>
+  <data name="RB_SingleBackground.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;L_AnimationType.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RB_Height.Name" xml:space="preserve">
+    <value>RB_Height</value>
+  </data>
+  <data name="L_LoopCount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 72</value>
+  </data>
+  <data name="&gt;&gt;CMB_AnimationType.Name" xml:space="preserve">
+    <value>CMB_AnimationType</value>
+  </data>
+  <data name="NUD_SymbolWidth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 27</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RB_SingleBackground.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="L_DelayTime.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;CD_Colour.Name" xml:space="preserve">
+    <value>CD_Colour</value>
+  </data>
+  <data name="Label2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="TableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="GB_Route" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="GB_ImageSize" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="TableLayoutPanel4" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="TableLayoutPanel5" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="GroupBox1" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="GroupBox2" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0,Percent,100" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  <data name="&gt;&gt;L_Path.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
-  <metadata name="CD_Colour.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="FBD_SavePath.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>126, 17</value>
-  </metadata>
-  <metadata name="SFD_SaveFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>254, 17</value>
-  </metadata>
-  <data name="SFD_SaveFile.Filter" xml:space="preserve">
-    <value>gif file|*.gif</value>
+  <data name="&gt;&gt;L_Path.Parent" xml:space="preserve">
+    <value>TableLayoutPanel7</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="&gt;&gt;L_Output.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Label3.Text" xml:space="preserve">
+    <value>Path</value>
+  </data>
+  <data name="&gt;&gt;Label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TableLayoutPanel7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 23</value>
+  </data>
+  <data name="&gt;&gt;L_Path.Name" xml:space="preserve">
+    <value>L_Path</value>
+  </data>
+  <data name="GB_Output.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 219</value>
+  </data>
+  <data name="TableLayoutPanel7.RowCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;Nud_Size.Parent" xml:space="preserve">
+    <value>TableLayoutPanel3</value>
+  </data>
+  <data name="NUD_StepSize.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;GB_ImageSize.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;Label2.Name" xml:space="preserve">
+    <value>Label2</value>
+  </data>
+  <data name="GB_Output.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="L_Output.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="TLP_Animation.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="L_LoopCount" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="NUD_StepSize" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Label2" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="L_DelayTime" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="NUD_DelayTime" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="NUD_LoopCount" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="L_AnimationType" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="CMB_AnimationType" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="L_DelayTime.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="RB_Width.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GB_ImageSize.Name" xml:space="preserve">
+    <value>GB_ImageSize</value>
+  </data>
+  <data name="Btn_SymbolColor.Text" xml:space="preserve">
+    <value>Select Colour</value>
+  </data>
+  <data name="L_LoopCount.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 20</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>379, 552</value>
+  <data name="&gt;&gt;Nud_Size.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 11.25pt</value>
+  <data name="CMB_Format.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 33</value>
+  </data>
+  <data name="TableLayoutPanel6.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="Btn_SymbolColor" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="L_SymbolColor" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="NUD_SymbolWidth" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Label5" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="&gt;&gt;NUD_LoopCount.Parent" xml:space="preserve">
+    <value>TLP_Animation</value>
+  </data>
+  <data name="&gt;&gt;Btn_OK.Name" xml:space="preserve">
+    <value>Btn_OK</value>
+  </data>
+  <data name="L_Path.Text" xml:space="preserve">
+    <value>Path</value>
+  </data>
+  <data name="Btn_SelectPath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>28, 30</value>
+  </data>
+  <data name="RB_Width.Text" xml:space="preserve">
+    <value>Width</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel5.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="CMB_AnimationType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 28</value>
+  </data>
+  <data name="GB_CurrentPosition.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;GB_CurrentPosition.Parent" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel6.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="L_SymbolColor.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="Label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 20</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -7456,37 +6892,550 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
 </value>
   </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 5, 4, 5</value>
+  <data name="NUD_LoopCount.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
   </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
+  <data name="Label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 6</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>frm_AnimationSaveDialog</value>
+  <data name="TableLayoutPanel8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="&gt;&gt;CD_Colour.Name" xml:space="preserve">
-    <value>CD_Colour</value>
+  <data name="&gt;&gt;CMB_Format.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
-  <data name="&gt;&gt;CD_Colour.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColorDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="RB_Height.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TableLayoutPanel7.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;RB_Width.Parent" xml:space="preserve">
+    <value>TableLayoutPanel3</value>
+  </data>
+  <data name="TableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>367, 83</value>
+  </data>
+  <data name="&gt;&gt;L_Output.Parent" xml:space="preserve">
+    <value>TableLayoutPanel7</value>
+  </data>
+  <data name="&gt;&gt;Nud_Size.Name" xml:space="preserve">
+    <value>Nud_Size</value>
+  </data>
+  <data name="Btn_SelectPath.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="GB_ImageSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>373, 109</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel8.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="L_Size.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="GB_ImageSize.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="TableLayoutPanel3.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="TableLayoutPanel6.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;NUD_LoopCount.Name" xml:space="preserve">
+    <value>NUD_LoopCount</value>
+  </data>
+  <data name="TableLayoutPanel6.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="TLP_Animation.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="L_LoopCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>135, 20</value>
+  </data>
+  <data name="SFD_SaveFile.Filter" xml:space="preserve">
+    <value>gif file|*.gif</value>
+  </data>
+  <data name="&gt;&gt;RB_AlwaysBackground.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="Btn_Cancel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Btn_Cancel.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel8.Name" xml:space="preserve">
+    <value>TableLayoutPanel8</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GB_CurrentPosition.Text" xml:space="preserve">
+    <value>Current Position</value>
+  </data>
+  <data name="&gt;&gt;GB_CurrentPosition.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="RB_SingleBackground.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 24</value>
+  </data>
+  <data name="&gt;&gt;L_DelayTime.Name" xml:space="preserve">
+    <value>L_DelayTime</value>
+  </data>
+  <data name="L_LoopCount.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;NUD_DelayTime.Name" xml:space="preserve">
+    <value>NUD_DelayTime</value>
+  </data>
+  <data name="Nud_Size.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="L_Path.Location" type="System.Drawing.Point, System.Drawing">
+    <value>115, 72</value>
+  </data>
+  <data name="&gt;&gt;NUD_SymbolWidth.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;L_LoopCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NUD_DelayTime.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;GB_Output.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="GB_CurrentPosition.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="L_DelayTime.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Btn_OK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>214, 28</value>
+  </data>
+  <data name="&gt;&gt;TLP_Animation.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 11.25pt</value>
+  </data>
+  <data name="NUD_LoopCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 27</value>
+  </data>
+  <data name="Btn_SymbolColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 30</value>
+  </data>
+  <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>349, 20</value>
+  </data>
+  <data name="&gt;&gt;NUD_StepSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="TableLayoutPanel7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>367, 100</value>
   </data>
   <data name="&gt;&gt;FBD_SavePath.Name" xml:space="preserve">
     <value>FBD_SavePath</value>
   </data>
-  <data name="&gt;&gt;FBD_SavePath.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="NUD_DelayTime.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;L_DelayTime.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 63</value>
+  </data>
+  <data name="TableLayoutPanel3.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;Btn_SymbolColor.Name" xml:space="preserve">
+    <value>Btn_SymbolColor</value>
+  </data>
+  <data name="TableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="NUD_SymbolWidth.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;CMB_Format.Parent" xml:space="preserve">
+    <value>TableLayoutPanel7</value>
+  </data>
+  <data name="L_SymbolColor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 30</value>
+  </data>
+  <data name="TableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="GB_Output.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
   </data>
   <data name="&gt;&gt;SFD_SaveFile.Name" xml:space="preserve">
     <value>SFD_SaveFile</value>
   </data>
-  <data name="&gt;&gt;SFD_SaveFile.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SaveFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="NUD_SymbolWidth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 39</value>
+  </data>
+  <data name="RB_Height.Location" type="System.Drawing.Point, System.Drawing">
+    <value>76, 3</value>
+  </data>
+  <data name="TableLayoutPanel6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>367, 69</value>
+  </data>
+  <data name="TableLayoutPanel6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;NUD_DelayTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RB_Width.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 24</value>
+  </data>
+  <data name="TableLayoutPanel1.ColumnCount" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;NUD_StepSize.Name" xml:space="preserve">
+    <value>NUD_StepSize</value>
+  </data>
+  <data name="Label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 42</value>
+  </data>
+  <data name="NUD_StepSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 3</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frm_AnimationSaveDialog</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;NUD_StepSize.Parent" xml:space="preserve">
+    <value>TLP_Animation</value>
   </data>
+  <data name="TableLayoutPanel5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="L_Path.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel1.Name" xml:space="preserve">
+    <value>TableLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;L_AnimationType.Parent" xml:space="preserve">
+    <value>TLP_Animation</value>
+  </data>
+  <data name="Label5.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="Btn_SymbolColor.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;TLP_Animation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;L_Path.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TableLayoutPanel5.ColumnCount" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;L_SymbolColor.Name" xml:space="preserve">
+    <value>L_SymbolColor</value>
+  </data>
+  <data name="Nud_Size.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="RB_AlwaysBackground.Text" xml:space="preserve">
+    <value>Always Background</value>
+  </data>
+  <data name="Label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="GB_ImageSize.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;CMB_Format.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="L_AnimationType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 20</value>
+  </data>
+  <data name="&gt;&gt;Btn_OK.Parent" xml:space="preserve">
+    <value>TableLayoutPanel5</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel7.Parent" xml:space="preserve">
+    <value>GB_Output</value>
+  </data>
+  <data name="&gt;&gt;RB_AlwaysBackground.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Btn_OK.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="L_Output.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 37</value>
+  </data>
+  <data name="RB_SingleBackground.Text" xml:space="preserve">
+    <value>Background once</value>
+  </data>
+  <data name="&gt;&gt;GB_Output.Name" xml:space="preserve">
+    <value>GB_Output</value>
+  </data>
+  <data name="L_SymbolColor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 3</value>
+  </data>
+  <data name="&gt;&gt;RB_SingleBackground.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TableLayoutPanel7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;NUD_StepSize.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="GB_Output.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="L_Size.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="Btn_SelectPath.Text" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="&gt;&gt;RB_SingleBackground.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TLP_Animation.Name" xml:space="preserve">
+    <value>TLP_Animation</value>
+  </data>
+  <data name="Label2.Text" xml:space="preserve">
+    <value>Step Size</value>
+  </data>
+  <data name="&gt;&gt;GB_CurrentPosition.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RB_Height.Text" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="L_DelayTime.Text" xml:space="preserve">
+    <value>Delay Time (ms)</value>
+  </data>
+  <data name="CMB_Format.Size" type="System.Drawing.Size, System.Drawing">
+    <value>249, 28</value>
+  </data>
+  <data name="&gt;&gt;Btn_SymbolColor.Parent" xml:space="preserve">
+    <value>TableLayoutPanel6</value>
+  </data>
+  <data name="NUD_DelayTime.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label1.Text" xml:space="preserve">
+    <value>Set this value to zero to use the original image size.</value>
+  </data>
+  <data name="NUD_DelayTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 36</value>
+  </data>
+  <data name="&gt;&gt;Btn_Cancel.Name" xml:space="preserve">
+    <value>Btn_Cancel</value>
+  </data>
+  <data name="&gt;&gt;RB_Width.Name" xml:space="preserve">
+    <value>RB_Width</value>
+  </data>
+  <data name="&gt;&gt;L_LoopCount.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="L_Path.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="NUD_StepSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 27</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel3.Name" xml:space="preserve">
+    <value>TableLayoutPanel3</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TableLayoutPanel3.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="Btn_Cancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>379, 554</value>
+  </data>
+  <data name="TableLayoutPanel8.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="RB_SingleBackground" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="RB_AlwaysBackground" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
+    <value>Label1</value>
+  </data>
+  <data name="&gt;&gt;NUD_LoopCount.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;RB_AlwaysBackground.Name" xml:space="preserve">
+    <value>RB_AlwaysBackground</value>
+  </data>
+  <data name="L_Size.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="TableLayoutPanel3.RowCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="TableLayoutPanel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>373, 61</value>
+  </data>
+  <data name="Label3.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="L_AnimationType.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CMB_Format.Items2" xml:space="preserve">
+    <value>.jpg</value>
+  </data>
+  <data name="&gt;&gt;L_SymbolColor.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TableLayoutPanel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 20</value>
+  </data>
+  <data name="L_Output.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 20</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel8.Parent" xml:space="preserve">
+    <value>TableLayoutPanel7</value>
+  </data>
+  <data name="GB_CurrentPosition.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;TableLayoutPanel5.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;Btn_SelectPath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Btn_Cancel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Btn_Cancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 30</value>
+  </data>
+  <data name="CMB_AnimationType.Items1" xml:space="preserve">
+    <value>Routen nacheinander. Fertige Routen nicht erhalten.</value>
+  </data>
+  <data name="L_LoopCount.Text" xml:space="preserve">
+    <value>Loops (0 = infinite)</value>
+  </data>
+  <data name="&gt;&gt;Label5.Name" xml:space="preserve">
+    <value>Label5</value>
+  </data>
+  <data name="NUD_StepSize.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="NUD_LoopCount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>144, 69</value>
+  </data>
+  <data name="TableLayoutPanel8.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="Label5.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;Nud_Size.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TableLayoutPanel8.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;L_Size.Name" xml:space="preserve">
+    <value>L_Size</value>
+  </data>
+  <data name="TableLayoutPanel5.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;L_SymbolColor.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TableLayoutPanel3.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="RB_Width" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="RB_Height" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Nud_Size" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="L_Size" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="Label1" Row="2" RowSpan="1" Column="0" ColumnSpan="2" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="AutoSize,0,Percent,100,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="Label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="&gt;&gt;RB_Height.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Label5.Text" xml:space="preserve">
+    <value>Width</value>
+  </data>
+  <data name="&gt;&gt;L_Size.Parent" xml:space="preserve">
+    <value>TableLayoutPanel3</value>
+  </data>
+  <data name="&gt;&gt;Btn_OK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="L_SymbolColor.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="&gt;&gt;Label3.Parent" xml:space="preserve">
+    <value>TableLayoutPanel7</value>
+  </data>
+  <data name="TableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;FBD_SavePath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NUD_DelayTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 27</value>
+  </data>
+  <data name="CMB_Format.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;NUD_DelayTime.Parent" xml:space="preserve">
+    <value>TLP_Animation</value>
+  </data>
+  <data name="&gt;&gt;Btn_SelectPath.Name" xml:space="preserve">
+    <value>Btn_SelectPath</value>
+  </data>
+  <data name="&gt;&gt;GB_CurrentPosition.Name" xml:space="preserve">
+    <value>GB_CurrentPosition</value>
+  </data>
+  <data name="Btn_OK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <metadata name="SFD_SaveFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>254, 17</value>
+  </metadata>
+  <metadata name="CD_Colour.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="FBD_SavePath.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>126, 17</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>de-DE</value>
+  </metadata>
 </root>

@@ -70,11 +70,29 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to The selected file already exists. Do you want to overwrite it?.
+        '''</summary>
+        Friend ReadOnly Property AnimationSaveDialog_OverwriteFile() As String
+            Get
+                Return ResourceManager.GetString("AnimationSaveDialog_OverwriteFile", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Overwrite existing file?.
+        '''</summary>
+        Friend ReadOnly Property AnimationSaveDialog_OverwriteFile_Title() As String
+            Get
+                Return ResourceManager.GetString("AnimationSaveDialog_OverwriteFile_Title", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to gif file|*.gif.
         '''</summary>
-        Friend ReadOnly Property AnimationSaveDialog_SFDFilter() As String
+        Friend ReadOnly Property AnimationSaveDialog_SFDFilter_GIF() As String
             Get
-                Return ResourceManager.GetString("AnimationSaveDialog_SFDFilter", resourceCulture)
+                Return ResourceManager.GetString("AnimationSaveDialog_SFDFilter_GIF", resourceCulture)
             End Get
         End Property
         
@@ -88,6 +106,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Save Layers Separately.
+        '''</summary>
+        Friend ReadOnly Property AnimationSaveDialog_WindowTitle2() As String
+            Get
+                Return ResourceManager.GetString("AnimationSaveDialog_WindowTitle2", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to GIF.
         '''</summary>
         Friend ReadOnly Property AnimationSaveDialog_WindowTitleGIF() As String
@@ -97,11 +124,65 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Merge Routes.
+        '''</summary>
+        Friend ReadOnly Property AnimationSaveDialog_WindowTitleMergeRoutes() As String
+            Get
+                Return ResourceManager.GetString("AnimationSaveDialog_WindowTitleMergeRoutes", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Routes Separately.
+        '''</summary>
+        Friend ReadOnly Property AnimationSaveDialog_WindowTitleRoutesSeparately() As String
+            Get
+                Return ResourceManager.GetString("AnimationSaveDialog_WindowTitleRoutesSeparately", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Save Image.
+        '''</summary>
+        Friend ReadOnly Property AnimationSaveDialog_WindowTitleSimpleImage() As String
+            Get
+                Return ResourceManager.GetString("AnimationSaveDialog_WindowTitleSimpleImage", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Single Files.
         '''</summary>
         Friend ReadOnly Property AnimationSaveDialog_WindowTitleSingleFiles() As String
             Get
                 Return ResourceManager.GetString("AnimationSaveDialog_WindowTitleSingleFiles", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Route for route. Hold finished routes..
+        '''</summary>
+        Friend ReadOnly Property AnimationSaveType1() As String
+            Get
+                Return ResourceManager.GetString("AnimationSaveType1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Route for route. Do not hold finished routes..
+        '''</summary>
+        Friend ReadOnly Property AnimationSaveType2() As String
+            Get
+                Return ResourceManager.GetString("AnimationSaveType2", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Plot all routes together..
+        '''</summary>
+        Friend ReadOnly Property AnimationSaveType3() As String
+            Get
+                Return ResourceManager.GetString("AnimationSaveType3", resourceCulture)
             End Get
         End Property
         
@@ -120,6 +201,15 @@ Namespace My.Resources
         Friend ReadOnly Property FBD_SaveLayersSeperatelyDescription() As String
             Get
                 Return ResourceManager.GetString("FBD_SaveLayersSeperatelyDescription", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Height.
+        '''</summary>
+        Friend ReadOnly Property Height() As String
+            Get
+                Return ResourceManager.GetString("Height", resourceCulture)
             End Get
         End Property
         
@@ -651,6 +741,15 @@ Namespace My.Resources
         Friend ReadOnly Property SFD_SaveImageTitle() As String
             Get
                 Return ResourceManager.GetString("SFD_SaveImageTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Width.
+        '''</summary>
+        Friend ReadOnly Property Width() As String
+            Get
+                Return ResourceManager.GetString("Width", resourceCulture)
             End Get
         End Property
     End Module

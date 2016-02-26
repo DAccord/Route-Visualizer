@@ -24,34 +24,32 @@ Partial Class frm_AnimationSaveDialog
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_AnimationSaveDialog))
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.GB_Route = New System.Windows.Forms.GroupBox()
-        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Btn_RouteColor = New System.Windows.Forms.Button()
-        Me.L_RouteColor = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.NUD_RouteLineWidth = New System.Windows.Forms.NumericUpDown()
         Me.GB_ImageSize = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.RB_Width = New System.Windows.Forms.RadioButton()
         Me.RB_Height = New System.Windows.Forms.RadioButton()
         Me.Nud_Size = New System.Windows.Forms.NumericUpDown()
-        Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
+        Me.L_Size = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TLP_Animation = New System.Windows.Forms.TableLayoutPanel()
         Me.L_LoopCount = New System.Windows.Forms.Label()
         Me.NUD_StepSize = New System.Windows.Forms.NumericUpDown()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.L_DelayTime = New System.Windows.Forms.Label()
         Me.NUD_DelayTime = New System.Windows.Forms.NumericUpDown()
         Me.NUD_LoopCount = New System.Windows.Forms.NumericUpDown()
+        Me.L_AnimationType = New System.Windows.Forms.Label()
+        Me.CMB_AnimationType = New System.Windows.Forms.ComboBox()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.Btn_Cancel = New System.Windows.Forms.Button()
         Me.Btn_OK = New System.Windows.Forms.Button()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GB_CurrentPosition = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
         Me.Btn_SymbolColor = New System.Windows.Forms.Button()
         Me.L_SymbolColor = New System.Windows.Forms.Label()
         Me.NUD_SymbolWidth = New System.Windows.Forms.NumericUpDown()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.GB_Output = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.L_Output = New System.Windows.Forms.Label()
@@ -65,21 +63,18 @@ Partial Class frm_AnimationSaveDialog
         Me.FBD_SavePath = New System.Windows.Forms.FolderBrowserDialog()
         Me.SFD_SaveFile = New System.Windows.Forms.SaveFileDialog()
         Me.TableLayoutPanel1.SuspendLayout()
-        Me.GB_Route.SuspendLayout()
-        Me.TableLayoutPanel2.SuspendLayout()
-        CType(Me.NUD_RouteLineWidth, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GB_ImageSize.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         CType(Me.Nud_Size, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TableLayoutPanel4.SuspendLayout()
+        Me.TLP_Animation.SuspendLayout()
         CType(Me.NUD_StepSize, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NUD_DelayTime, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NUD_LoopCount, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel5.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
+        Me.GB_CurrentPosition.SuspendLayout()
         Me.TableLayoutPanel6.SuspendLayout()
         CType(Me.NUD_SymbolWidth, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox2.SuspendLayout()
+        Me.GB_Output.SuspendLayout()
         Me.TableLayoutPanel7.SuspendLayout()
         Me.TableLayoutPanel8.SuspendLayout()
         Me.SuspendLayout()
@@ -87,52 +82,12 @@ Partial Class frm_AnimationSaveDialog
         'TableLayoutPanel1
         '
         resources.ApplyResources(Me.TableLayoutPanel1, "TableLayoutPanel1")
-        Me.TableLayoutPanel1.Controls.Add(Me.GB_Route, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.GB_ImageSize, 0, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel4, 0, 4)
-        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel5, 0, 5)
-        Me.TableLayoutPanel1.Controls.Add(Me.GroupBox1, 0, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.GroupBox2, 0, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.GB_ImageSize, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.TLP_Animation, 0, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.TableLayoutPanel5, 0, 4)
+        Me.TableLayoutPanel1.Controls.Add(Me.GB_CurrentPosition, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.GB_Output, 0, 2)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        '
-        'GB_Route
-        '
-        resources.ApplyResources(Me.GB_Route, "GB_Route")
-        Me.GB_Route.Controls.Add(Me.TableLayoutPanel2)
-        Me.GB_Route.Name = "GB_Route"
-        Me.GB_Route.TabStop = False
-        '
-        'TableLayoutPanel2
-        '
-        resources.ApplyResources(Me.TableLayoutPanel2, "TableLayoutPanel2")
-        Me.TableLayoutPanel2.Controls.Add(Me.Btn_RouteColor, 0, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.L_RouteColor, 1, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.Label4, 0, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.NUD_RouteLineWidth, 1, 1)
-        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        '
-        'Btn_RouteColor
-        '
-        resources.ApplyResources(Me.Btn_RouteColor, "Btn_RouteColor")
-        Me.Btn_RouteColor.Name = "Btn_RouteColor"
-        Me.Btn_RouteColor.UseVisualStyleBackColor = True
-        '
-        'L_RouteColor
-        '
-        resources.ApplyResources(Me.L_RouteColor, "L_RouteColor")
-        Me.L_RouteColor.Name = "L_RouteColor"
-        '
-        'Label4
-        '
-        resources.ApplyResources(Me.Label4, "Label4")
-        Me.Label4.Name = "Label4"
-        '
-        'NUD_RouteLineWidth
-        '
-        resources.ApplyResources(Me.NUD_RouteLineWidth, "NUD_RouteLineWidth")
-        Me.NUD_RouteLineWidth.Maximum = New Decimal(New Integer() {1000, 0, 0, 0})
-        Me.NUD_RouteLineWidth.Name = "NUD_RouteLineWidth"
-        Me.NUD_RouteLineWidth.Value = New Decimal(New Integer() {15, 0, 0, 0})
         '
         'GB_ImageSize
         '
@@ -146,7 +101,9 @@ Partial Class frm_AnimationSaveDialog
         resources.ApplyResources(Me.TableLayoutPanel3, "TableLayoutPanel3")
         Me.TableLayoutPanel3.Controls.Add(Me.RB_Width, 0, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.RB_Height, 1, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.Nud_Size, 0, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.Nud_Size, 1, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.L_Size, 0, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.Label1, 0, 2)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         '
         'RB_Width
@@ -165,23 +122,34 @@ Partial Class frm_AnimationSaveDialog
         '
         'Nud_Size
         '
-        Me.TableLayoutPanel3.SetColumnSpan(Me.Nud_Size, 2)
         resources.ApplyResources(Me.Nud_Size, "Nud_Size")
         Me.Nud_Size.Maximum = New Decimal(New Integer() {5000, 0, 0, 0})
-        Me.Nud_Size.Minimum = New Decimal(New Integer() {25, 0, 0, 0})
         Me.Nud_Size.Name = "Nud_Size"
         Me.Nud_Size.Value = New Decimal(New Integer() {500, 0, 0, 0})
         '
-        'TableLayoutPanel4
+        'L_Size
         '
-        resources.ApplyResources(Me.TableLayoutPanel4, "TableLayoutPanel4")
-        Me.TableLayoutPanel4.Controls.Add(Me.L_LoopCount, 0, 2)
-        Me.TableLayoutPanel4.Controls.Add(Me.NUD_StepSize, 1, 0)
-        Me.TableLayoutPanel4.Controls.Add(Me.Label2, 0, 0)
-        Me.TableLayoutPanel4.Controls.Add(Me.L_DelayTime, 0, 1)
-        Me.TableLayoutPanel4.Controls.Add(Me.NUD_DelayTime, 1, 1)
-        Me.TableLayoutPanel4.Controls.Add(Me.NUD_LoopCount, 1, 2)
-        Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
+        resources.ApplyResources(Me.L_Size, "L_Size")
+        Me.L_Size.Name = "L_Size"
+        '
+        'Label1
+        '
+        resources.ApplyResources(Me.Label1, "Label1")
+        Me.TableLayoutPanel3.SetColumnSpan(Me.Label1, 2)
+        Me.Label1.Name = "Label1"
+        '
+        'TLP_Animation
+        '
+        resources.ApplyResources(Me.TLP_Animation, "TLP_Animation")
+        Me.TLP_Animation.Controls.Add(Me.L_LoopCount, 0, 2)
+        Me.TLP_Animation.Controls.Add(Me.NUD_StepSize, 1, 0)
+        Me.TLP_Animation.Controls.Add(Me.Label2, 0, 0)
+        Me.TLP_Animation.Controls.Add(Me.L_DelayTime, 0, 1)
+        Me.TLP_Animation.Controls.Add(Me.NUD_DelayTime, 1, 1)
+        Me.TLP_Animation.Controls.Add(Me.NUD_LoopCount, 1, 2)
+        Me.TLP_Animation.Controls.Add(Me.L_AnimationType, 0, 3)
+        Me.TLP_Animation.Controls.Add(Me.CMB_AnimationType, 1, 3)
+        Me.TLP_Animation.Name = "TLP_Animation"
         '
         'L_LoopCount
         '
@@ -220,6 +188,19 @@ Partial Class frm_AnimationSaveDialog
         resources.ApplyResources(Me.NUD_LoopCount, "NUD_LoopCount")
         Me.NUD_LoopCount.Name = "NUD_LoopCount"
         '
+        'L_AnimationType
+        '
+        resources.ApplyResources(Me.L_AnimationType, "L_AnimationType")
+        Me.L_AnimationType.Name = "L_AnimationType"
+        '
+        'CMB_AnimationType
+        '
+        resources.ApplyResources(Me.CMB_AnimationType, "CMB_AnimationType")
+        Me.CMB_AnimationType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CMB_AnimationType.FormattingEnabled = True
+        Me.CMB_AnimationType.Items.AddRange(New Object() {resources.GetString("CMB_AnimationType.Items"), resources.GetString("CMB_AnimationType.Items1"), resources.GetString("CMB_AnimationType.Items2")})
+        Me.CMB_AnimationType.Name = "CMB_AnimationType"
+        '
         'TableLayoutPanel5
         '
         resources.ApplyResources(Me.TableLayoutPanel5, "TableLayoutPanel5")
@@ -241,12 +222,12 @@ Partial Class frm_AnimationSaveDialog
         Me.Btn_OK.Name = "Btn_OK"
         Me.Btn_OK.UseVisualStyleBackColor = True
         '
-        'GroupBox1
+        'GB_CurrentPosition
         '
-        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
-        Me.GroupBox1.Controls.Add(Me.TableLayoutPanel6)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.TabStop = False
+        resources.ApplyResources(Me.GB_CurrentPosition, "GB_CurrentPosition")
+        Me.GB_CurrentPosition.Controls.Add(Me.TableLayoutPanel6)
+        Me.GB_CurrentPosition.Name = "GB_CurrentPosition"
+        Me.GB_CurrentPosition.TabStop = False
         '
         'TableLayoutPanel6
         '
@@ -280,12 +261,12 @@ Partial Class frm_AnimationSaveDialog
         resources.ApplyResources(Me.Label5, "Label5")
         Me.Label5.Name = "Label5"
         '
-        'GroupBox2
+        'GB_Output
         '
-        resources.ApplyResources(Me.GroupBox2, "GroupBox2")
-        Me.GroupBox2.Controls.Add(Me.TableLayoutPanel7)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.TabStop = False
+        resources.ApplyResources(Me.GB_Output, "GB_Output")
+        Me.GB_Output.Controls.Add(Me.TableLayoutPanel7)
+        Me.GB_Output.Name = "GB_Output"
+        Me.GB_Output.TabStop = False
         '
         'TableLayoutPanel7
         '
@@ -321,8 +302,8 @@ Partial Class frm_AnimationSaveDialog
         '
         'CMB_Format
         '
-        Me.TableLayoutPanel7.SetColumnSpan(Me.CMB_Format, 2)
         resources.ApplyResources(Me.CMB_Format, "CMB_Format")
+        Me.TableLayoutPanel7.SetColumnSpan(Me.CMB_Format, 2)
         Me.CMB_Format.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CMB_Format.FormattingEnabled = True
         Me.CMB_Format.Items.AddRange(New Object() {resources.GetString("CMB_Format.Items"), resources.GetString("CMB_Format.Items1"), resources.GetString("CMB_Format.Items2"), resources.GetString("CMB_Format.Items3"), resources.GetString("CMB_Format.Items4")})
@@ -350,6 +331,10 @@ Partial Class frm_AnimationSaveDialog
         Me.RB_AlwaysBackground.TabStop = True
         Me.RB_AlwaysBackground.UseVisualStyleBackColor = True
         '
+        'FBD_SavePath
+        '
+        resources.ApplyResources(Me.FBD_SavePath, "FBD_SavePath")
+        '
         'SFD_SaveFile
         '
         resources.ApplyResources(Me.SFD_SaveFile, "SFD_SaveFile")
@@ -366,30 +351,25 @@ Partial Class frm_AnimationSaveDialog
         Me.ShowInTaskbar = False
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
-        Me.GB_Route.ResumeLayout(False)
-        Me.GB_Route.PerformLayout()
-        Me.TableLayoutPanel2.ResumeLayout(False)
-        Me.TableLayoutPanel2.PerformLayout()
-        CType(Me.NUD_RouteLineWidth, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GB_ImageSize.ResumeLayout(False)
         Me.GB_ImageSize.PerformLayout()
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel3.PerformLayout()
         CType(Me.Nud_Size, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TableLayoutPanel4.ResumeLayout(False)
-        Me.TableLayoutPanel4.PerformLayout()
+        Me.TLP_Animation.ResumeLayout(False)
+        Me.TLP_Animation.PerformLayout()
         CType(Me.NUD_StepSize, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NUD_DelayTime, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NUD_LoopCount, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel5.ResumeLayout(False)
         Me.TableLayoutPanel5.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        Me.GB_CurrentPosition.ResumeLayout(False)
+        Me.GB_CurrentPosition.PerformLayout()
         Me.TableLayoutPanel6.ResumeLayout(False)
         Me.TableLayoutPanel6.PerformLayout()
         CType(Me.NUD_SymbolWidth, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
+        Me.GB_Output.ResumeLayout(False)
+        Me.GB_Output.PerformLayout()
         Me.TableLayoutPanel7.ResumeLayout(False)
         Me.TableLayoutPanel7.PerformLayout()
         Me.TableLayoutPanel8.ResumeLayout(False)
@@ -399,9 +379,6 @@ Partial Class frm_AnimationSaveDialog
     End Sub
 
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents GB_Route As GroupBox
-    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-    Friend WithEvents Btn_RouteColor As Button
     Friend WithEvents Btn_SymbolColor As Button
     Friend WithEvents L_SymbolColor As Label
     Friend WithEvents CD_Colour As ColorDialog
@@ -410,7 +387,7 @@ Partial Class frm_AnimationSaveDialog
     Friend WithEvents RB_Width As RadioButton
     Friend WithEvents RB_Height As RadioButton
     Friend WithEvents Nud_Size As NumericUpDown
-    Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
+    Friend WithEvents TLP_Animation As TableLayoutPanel
     Friend WithEvents L_Output As Label
     Friend WithEvents CMB_Format As ComboBox
     Friend WithEvents Label3 As Label
@@ -420,16 +397,13 @@ Partial Class frm_AnimationSaveDialog
     Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
     Friend WithEvents Btn_Cancel As Button
     Friend WithEvents Btn_OK As Button
-    Friend WithEvents L_RouteColor As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents NUD_RouteLineWidth As NumericUpDown
-    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents GB_CurrentPosition As GroupBox
     Friend WithEvents TableLayoutPanel6 As TableLayoutPanel
     Friend WithEvents NUD_SymbolWidth As NumericUpDown
     Friend WithEvents Label5 As Label
     Friend WithEvents NUD_StepSize As NumericUpDown
     Friend WithEvents Label2 As Label
-    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents GB_Output As GroupBox
     Friend WithEvents TableLayoutPanel7 As TableLayoutPanel
     Friend WithEvents TableLayoutPanel8 As TableLayoutPanel
     Friend WithEvents RB_SingleBackground As RadioButton
@@ -439,4 +413,8 @@ Partial Class frm_AnimationSaveDialog
     Friend WithEvents L_LoopCount As Label
     Friend WithEvents NUD_LoopCount As NumericUpDown
     Friend WithEvents SFD_SaveFile As SaveFileDialog
+    Friend WithEvents L_Size As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents L_AnimationType As Label
+    Friend WithEvents CMB_AnimationType As ComboBox
 End Class
