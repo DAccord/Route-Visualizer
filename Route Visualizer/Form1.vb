@@ -159,6 +159,37 @@ Public Class frm_Main
         Return Res
     End Function
 
+    Private Function CheckImagePrerequisites() As Boolean
+        If CMB_Zoom.SelectedItem Is Nothing Then
+            MessageBox.Show(Me, My.Resources.Main_SelectZoom, My.Resources.Main_SelectZoom_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+        Dim RRs() As RoutefileRow = CType(Data.Routefile.Select("Visibility = " & True & " And RouteLineWidth > 0"), RoutefileRow())
+        If RRs.Length = 0 Then
+            MessageBox.Show(Me, String.Format(My.Resources.Main_NoRoutesToPlot, Environment.NewLine), My.Resources.Main_NoRoutesToPlot_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return false
+        End If
+        If CLB_Layers.CheckedItems.Count = 0 AndAlso CLB_OnlineLayers.CheckedItems.Count = 0 Then
+            MessageBox.Show(Me, My.Resources.Main_SelectLayer, My.Resources.Main_SelectLayer_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+        If Data.Routefile.Rows.Count = 0 Then
+            MessageBox.Show(Me, My.Resources.Main_ImportFile, My.Resources.Main_ImportFile_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
+        End If
+        If Btn_Switch.Tag.ToString = "AbsoluteNumbers" Then
+            If NUD_AdditionalTilesNorth.Value > NUD_AdditionalTilesSouth.Value Then
+                MessageBox.Show(Me, String.Format(My.Resources.Main_SmallerOrEqual, My.Resources.Main_L_MinRow, My.Resources.Main_L_MaxRow), My.Resources.Main_WrongInputFormat_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Return False
+            End If
+            If NUD_AdditionalTilesWest.Value > NUD_AdditionalTilesEast.Value Then
+                MessageBox.Show(Me, String.Format(My.Resources.Main_SmallerOrEqual, My.Resources.Main_L_MinCol, My.Resources.Main_L_MaxCol), My.Resources.Main_WrongInputFormat_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Return False
+            End If
+        End If
+        Return True
+    End Function
+
     Public Sub UpdatePreviewNew()
         Dim Starttime As DateTime = DateTime.Now
         Dim TilePen As New Pen(New SolidBrush(Color.Blue), 5)
@@ -177,48 +208,8 @@ Public Class frm_Main
 
         Dim Zoom As Integer
         Me.Invoke(Sub()
-                      If CMB_Zoom.SelectedItem Is Nothing AndAlso Not Cancel Then
-                          MessageBox.Show(Me, My.Resources.Main_SelectZoom, My.Resources.Main_SelectZoom_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                          Cancel = True
-                      End If
-                      If Not Cancel Then
-                          Zoom = CInt(CMB_Zoom.SelectedItem.ToString)
-                      End If
+                      Zoom = CInt(CMB_Zoom.SelectedItem.ToString)
                   End Sub)
-
-        Me.Invoke(Sub()
-                      If CLB_Layers.CheckedItems.Count = 0 AndAlso CLB_OnlineLayers.CheckedItems.Count = 0 AndAlso Not Cancel Then
-                          MessageBox.Show(Me, My.Resources.Main_SelectLayer, My.Resources.Main_SelectZoom_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                          Cancel = True
-                      End If
-                  End Sub)
-
-        Me.Invoke(Sub()
-                      If Data.Routefile.Rows.Count = 0 AndAlso Not Cancel Then
-                          MessageBox.Show(Me, My.Resources.Main_ImportFile, My.Resources.Main_ImportFile_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                          Cancel = True
-                      End If
-                  End Sub)
-
-        Me.Invoke(Sub()
-                      If Btn_Switch.Tag.ToString = "AbsoluteNumbers" Then
-                          If NUD_AdditionalTilesNorth.Value > NUD_AdditionalTilesSouth.Value AndAlso Not Cancel Then
-                              MessageBox.Show(Me, String.Format(My.Resources.Main_SmallerOrEqual, My.Resources.Main_L_MinRow, My.Resources.Main_L_MaxRow))
-                              Cancel = True
-                          End If
-                          If NUD_AdditionalTilesWest.Value > NUD_AdditionalTilesEast.Value AndAlso Not Cancel Then
-                              MessageBox.Show(Me, String.Format(My.Resources.Main_SmallerOrEqual, My.Resources.Main_L_MinCol, My.Resources.Main_L_MaxCol))
-                              Cancel = True
-                          End If
-                      End If
-                  End Sub)
-
-        If Cancel Then
-            Me.Invoke(Sub()
-                          GUIEnabling(True)
-                      End Sub)
-            Exit Sub
-        End If
 
         Me.Invoke(Sub()
                       TSPB_Progress.Value = 0
@@ -231,13 +222,6 @@ Public Class frm_Main
         Dim Result As Image = Nothing
         Dim MyCoordinates As New List(Of Coordinate)
         Dim RRs() As RoutefileRow = CType(Data.Routefile.Select("Visibility = " & True & " And RouteLineWidth > 0"), RoutefileRow())
-        If RRs.Length = 0 Then
-            Me.Invoke(Sub()
-                          MessageBox.Show(Me, String.Format(My.Resources.Main_NoRoutesToPlot, Environment.NewLine), My.Resources.Main_NoRoutesToPlot_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                          GUIEnabling(True)
-                      End Sub)
-            Exit Sub
-        End If
         Dim ReadCoordinates(RRs.Length - 1) As List(Of Coordinate)
         Dim cnt As Integer = -1
         For Each RR As RoutefileRow In RRs
@@ -740,6 +724,9 @@ Public Class frm_Main
     End Sub
 
     Private Sub SaveAsImageToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveAsImageToolStripMenuItem.Click
+        If Not CheckImagePrerequisites() Then
+            Exit Sub
+        End If
         SaveOption.SaveType = SaveType.SimpleImage
 
         AnimationSaveDialogSetSettings(SaveOption)
@@ -763,6 +750,9 @@ Public Class frm_Main
     End Sub
 
     Private Sub UpdatePreviewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UpdatePreviewToolStripMenuItem.Click
+        If Not CheckImagePrerequisites() Then
+            Exit Sub
+        End If
         If TH_UpdatePreview.IsAlive() Then
             Exit Sub
         End If
@@ -1006,6 +996,9 @@ Public Class frm_Main
     End Sub
 
     Private Sub RoutenZusammenfassenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RoutenZusammenfassenToolStripMenuItem.Click
+        If Not CheckImagePrerequisites() Then
+            Exit Sub
+        End If
         UpdateBackground = True
         SaveOption.SaveType = SaveType.LayersSeparately_MergeRoutes
         AnimationSaveDialogSetSettings(SaveOption)
@@ -1025,6 +1018,9 @@ Public Class frm_Main
     End Sub
 
     Private Sub RoutenSeparatToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RoutenSeparatToolStripMenuItem.Click
+        If Not CheckImagePrerequisites() Then
+            Exit Sub
+        End If
         UpdateBackground = True
         SaveOption.SaveType = SaveType.LayersSeparately_RoutesSeparately
         AnimationSaveDialogSetSettings(SaveOption)
@@ -1261,40 +1257,7 @@ Public Class frm_Main
 
         Dim Zoom As Integer
         Me.Invoke(Sub()
-                      If CMB_Zoom.SelectedItem Is Nothing AndAlso Not Cancel Then
-                          MessageBox.Show(Me, My.Resources.Main_SelectZoom, My.Resources.Main_SelectZoom_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                          Cancel = True
-                      End If
-                      If Not Cancel Then
-                          Zoom = CInt(CMB_Zoom.SelectedItem.ToString)
-                      End If
-                  End Sub)
-
-        Me.Invoke(Sub()
-                      If CLB_Layers.CheckedItems.Count = 0 AndAlso CLB_OnlineLayers.CheckedItems.Count = 0 AndAlso Not Cancel Then
-                          MessageBox.Show(Me, My.Resources.Main_SelectLayer, My.Resources.Main_SelectZoom_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                          Cancel = True
-                      End If
-                  End Sub)
-
-        Me.Invoke(Sub()
-                      If Data.Routefile.Rows.Count = 0 AndAlso Not Cancel Then
-                          MessageBox.Show(Me, My.Resources.Main_ImportFile, My.Resources.Main_ImportFile_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                          Cancel = True
-                      End If
-                  End Sub)
-
-        Me.Invoke(Sub()
-                      If Btn_Switch.Tag.ToString = "AbsoluteNumbers" Then
-                          If NUD_AdditionalTilesNorth.Value > NUD_AdditionalTilesSouth.Value AndAlso Not Cancel Then
-                              MessageBox.Show(Me, String.Format(My.Resources.Main_SmallerOrEqual, My.Resources.Main_L_MinRow, My.Resources.Main_L_MaxRow))
-                              Cancel = True
-                          End If
-                          If NUD_AdditionalTilesWest.Value > NUD_AdditionalTilesEast.Value AndAlso Not Cancel Then
-                              MessageBox.Show(Me, String.Format(My.Resources.Main_SmallerOrEqual, My.Resources.Main_L_MinCol, My.Resources.Main_L_MaxCol))
-                              Cancel = True
-                          End If
-                      End If
+                      Zoom = CInt(CMB_Zoom.SelectedItem.ToString)
                   End Sub)
 
         If Cancel Then
@@ -1816,6 +1779,9 @@ Public Class frm_Main
     End Sub
 
     Private Sub SingleFilesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SingleFilesToolStripMenuItem.Click
+        If Not CheckImagePrerequisites() Then
+            Exit Sub
+        End If
         SaveOption.SaveType = SaveType.Animation_SingleFiles
         AnimationSaveDialogSetSettings(SaveOption)
         Dim frm_Save As New frm_AnimationSaveDialog(SaveOption)
@@ -1834,6 +1800,9 @@ Public Class frm_Main
     End Sub
 
     Private Sub GIFToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles GIFToolStripMenuItem1.Click
+        If Not CheckImagePrerequisites() Then
+            Exit Sub
+        End If
         SaveOption.SaveType = SaveType.Animation_GIF
         AnimationSaveDialogSetSettings(SaveOption)
         Dim frm_Save As New frm_AnimationSaveDialog(SaveOption)
