@@ -72,9 +72,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized string similar to gif file|*.gif.
         '''</summary>
-        Friend ReadOnly Property AnimationSaveDialog_SFDFilter() As String
+        Friend ReadOnly Property AnimationSaveDialog_SFDFilter_GIF() As String
             Get
-                Return ResourceManager.GetString("AnimationSaveDialog_SFDFilter", resourceCulture)
+                Return ResourceManager.GetString("AnimationSaveDialog_SFDFilter_GIF", resourceCulture)
             End Get
         End Property
         
@@ -106,6 +106,33 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Route for route. Hold finished routes..
+        '''</summary>
+        Friend ReadOnly Property AnimationSaveType1() As String
+            Get
+                Return ResourceManager.GetString("AnimationSaveType1", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Route for route. Do not hold finished routes..
+        '''</summary>
+        Friend ReadOnly Property AnimationSaveType2() As String
+            Get
+                Return ResourceManager.GetString("AnimationSaveType2", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Plot all routes together..
+        '''</summary>
+        Friend ReadOnly Property AnimationSaveType3() As String
+            Get
+                Return ResourceManager.GetString("AnimationSaveType3", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Route Visualizer is a program to plot coordinates from kml or gpx files onto a map. This results in a highly resolved image file..
         '''</summary>
         Friend ReadOnly Property Assembly_Description() As String
@@ -120,6 +147,15 @@ Namespace My.Resources
         Friend ReadOnly Property FBD_SaveLayersSeperatelyDescription() As String
             Get
                 Return ResourceManager.GetString("FBD_SaveLayersSeperatelyDescription", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Height.
+        '''</summary>
+        Friend ReadOnly Property Height() As String
+            Get
+                Return ResourceManager.GetString("Height", resourceCulture)
             End Get
         End Property
         
@@ -651,6 +687,15 @@ Namespace My.Resources
         Friend ReadOnly Property SFD_SaveImageTitle() As String
             Get
                 Return ResourceManager.GetString("SFD_SaveImageTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Width.
+        '''</summary>
+        Friend ReadOnly Property Width() As String
+            Get
+                Return ResourceManager.GetString("Width", resourceCulture)
             End Get
         End Property
     End Module

@@ -303,7 +303,7 @@
   <data name="Preview_Zoom" xml:space="preserve">
     <value>Zoom: {0:p0}</value>
   </data>
-  <data name="AnimationSaveDialog_SFDFilter" xml:space="preserve">
+  <data name="AnimationSaveDialog_SFDFilter_GIF" xml:space="preserve">
     <value>gif file|*.gif</value>
   </data>
   <data name="AnimationSaveDialog_WindowTitle1" xml:space="preserve">
@@ -314,5 +314,20 @@
   </data>
   <data name="AnimationSaveDialog_WindowTitleSingleFiles" xml:space="preserve">
     <value>Single Files</value>
+  </data>
+  <data name="Height" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="Width" xml:space="preserve">
+    <value>Width</value>
+  </data>
+  <data name="AnimationSaveType1" xml:space="preserve">
+    <value>Route for route. Hold finished routes.</value>
+  </data>
+  <data name="AnimationSaveType2" xml:space="preserve">
+    <value>Route for route. Do not hold finished routes.</value>
+  </data>
+  <data name="AnimationSaveType3" xml:space="preserve">
+    <value>Plot all routes together.</value>
   </data>
 </root>

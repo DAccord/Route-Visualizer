@@ -10,8 +10,6 @@ Public Class RouteVisualizerSettings
     Private _SaveLayersSeparatelyPath As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
     Private _ImportRoutePath As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
 
-    Private _AnimationRouteColor As Color = Color.Blue
-    Private _AnimationRouteLineWidth As Integer = 15
     Private _AnimationCurrentPositionColor As Color = Color.Red
     Private _AnimationCurrentPositionWidth As Integer = 20
     Private _AnimationImageSizeWidth As Boolean = True
@@ -157,32 +155,6 @@ Public Class RouteVisualizerSettings
         End Get
         Set(value As Boolean)
             _PreviewFormWindowOpen = value
-        End Set
-    End Property
-
-    ''' <summary>
-    ''' The route color used in the animation (GIF or single files).
-    ''' </summary>
-    ''' <returns></returns>
-    Public Property AnimationRouteColor As Color
-        Get
-            Return _AnimationRouteColor
-        End Get
-        Set(value As Color)
-            _AnimationRouteColor = value
-        End Set
-    End Property
-
-    ''' <summary>
-    ''' The line width of the route used in the animation (GIF or single files).
-    ''' </summary>
-    ''' <returns></returns>
-    Public Property AnimationRouteLineWidth As Integer
-        Get
-            Return _AnimationRouteLineWidth
-        End Get
-        Set(value As Integer)
-            _AnimationRouteLineWidth = value
         End Set
     End Property
 
@@ -421,8 +393,6 @@ Public Class RouteVisualizerSettings
             Me.PreviewFormWindowSize = CType(resxSet.GetObject("PreviewFormWindowSize"), Size)
             Me.PreviewFormWindowLocation = CType(resxSet.GetObject("PreviewFormWindowLocation"), Point)
 
-            Me.AnimationRouteColor = CType(resxSet.GetObject("AnimationRouteColor"), Color)
-            Me.AnimationRouteLineWidth = CType(resxSet.GetObject("AnimationRouteLineWidth"), Integer)
             Me.AnimationCurrentPositionColor = CType(resxSet.GetObject("AnimationCurrentPositionColor"), Color)
             Me.AnimationCurrentPositionWidth = CType(resxSet.GetObject("AnimationCurrentPositionWidth"), Integer)
             Me.AnimationImageSizeWidth = CType(resxSet.GetObject("AnimationImageSizeWidth"), Boolean)
