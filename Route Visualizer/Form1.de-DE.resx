@@ -311,6 +311,9 @@
   <data name="BindingNavigatorDeleteItem.Text" xml:space="preserve">
     <value>Gewähle Routendateien löschen</value>
   </data>
+  <data name="Label5.Text" xml:space="preserve">
+    <value>Lokal</value>
+  </data>
   <data name="GB_Layers.Text" xml:space="preserve">
     <value>Ebenen</value>
   </data>
@@ -388,6 +391,15 @@
   </data>
   <data name="SaveLayersSeparatelyToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Ebenen separat speichern</value>
+  </data>
+  <data name="SingleFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 22</value>
+  </data>
+  <data name="SingleFilesToolStripMenuItem.Text" xml:space="preserve">
+    <value>Einzelne Dateien</value>
+  </data>
+  <data name="GIFToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 22</value>
   </data>
   <data name="AnimationSingleFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>216, 22</value>
