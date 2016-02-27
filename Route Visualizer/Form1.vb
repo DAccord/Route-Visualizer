@@ -802,6 +802,7 @@ Public Class frm_Main
 
     Private Sub SpeichernToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SpeichernToolStripMenuItem.Click
         Data.WriteXml(Path.Combine(Application.StartupPath, "Data.xml"))
+        RVS.SaveSettings(Path.Combine(Application.StartupPath, "RouteVisualizerSettings.resx"))
     End Sub
 
     Private Sub DGV_Route_CellValidating(sender As Object, e As DataGridViewCellValidatingEventArgs) Handles DGV_Route.CellValidating
