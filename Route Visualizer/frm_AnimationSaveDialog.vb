@@ -1,8 +1,6 @@
 ﻿Imports System.IO
 
 Public Class frm_AnimationSaveDialog
-    Dim RouteCol As Color = Color.Blue
-    Dim SymbolCol As Color = Color.Red
     Dim Desired_AS As SaveOption
     Dim SupportingTransparency() As String = {".png", ".tif"}
     Dim NotSupportingTransparency() As String = {".bmp", ".gif", ".jpg", ".png", ".tif"}
@@ -20,6 +18,7 @@ Public Class frm_AnimationSaveDialog
         CMB_AnimationType.Items.Add(My.Resources.AnimationSaveType1)
         CMB_AnimationType.Items.Add(My.Resources.AnimationSaveType2)
         CMB_AnimationType.Items.Add(My.Resources.AnimationSaveType3)
+
         If Desired_AS.AnimSaveType = AnimationSaveType.InRow_Hold Then
             CMB_AnimationType.SelectedIndex = 0
         ElseIf Desired_AS.AnimSaveType = AnimationSaveType.InRow_NoHold Then
@@ -190,7 +189,7 @@ Public Class frm_AnimationSaveDialog
             Desired_AS.Height = 0
         End If
         Desired_AS.StepSize = CInt(NUD_StepSize.Value)
-        Desired_AS.SymbolColor = SymbolCol
+        Desired_AS.SymbolColor = L_SymbolColor.BackColor
         Desired_AS.SymbolWidth = CInt(NUD_SymbolWidth.Value)
 
         If Desired_AS.SaveType = SaveType.Animation_SingleFiles Then
@@ -240,10 +239,9 @@ Public Class frm_AnimationSaveDialog
     End Sub
 
     Private Sub Btn_SymbolColor_Click(sender As Object, e As EventArgs) Handles Btn_SymbolColor.Click
-        CD_Colour.Color = SymbolCol
+        CD_Colour.Color = L_SymbolColor.BackColor
         If CD_Colour.ShowDialog() = DialogResult.OK Then
-            SymbolCol = CD_Colour.Color
-            L_SymbolColor.BackColor = SymbolCol
+            L_SymbolColor.BackColor = CD_Colour.Color
         End If
     End Sub
 

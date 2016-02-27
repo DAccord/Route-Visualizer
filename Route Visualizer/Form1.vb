@@ -1575,7 +1575,7 @@ Public Class frm_Main
             RoutePen2.LineJoin = Drawing2D.LineJoin.Round
             For j As Integer = 0 To FinalPoints.Length - 1
                 RoutePen1.Color = Color.FromArgb(RRs(j).RouteAlpha, CInt(RRs(j).RouteColor.Split(CType(",", Char()), StringSplitOptions.RemoveEmptyEntries)(0)), CInt(RRs(j).RouteColor.Split(CType(",", Char()), StringSplitOptions.RemoveEmptyEntries)(1)), CInt(RRs(j).RouteColor.Split(CType(",", Char()), StringSplitOptions.RemoveEmptyEntries)(2)))
-                RoutePen1.Width = CSng(RRs(j).RouteLineWidth * DesiredSize.Width / OrigSize.Width)
+                RoutePen1.Width = RRs(j).RouteLineWidth
                 Dim PointsToDraw As New List(Of Point)
                 For i As Integer = 0 To FinalPoints(j).Count - 1
                     If PointsToDraw.Count = 0 Then
@@ -1599,7 +1599,7 @@ Public Class frm_Main
                         If SaveOption.AnimSaveType = AnimationSaveType.InRow_Hold Then
                             For k As Integer = 0 To j - 1
                                 RoutePen2.Color = Color.FromArgb(RRs(k).RouteAlpha, CInt(RRs(k).RouteColor.Split(CType(",", Char()), StringSplitOptions.RemoveEmptyEntries)(0)), CInt(RRs(k).RouteColor.Split(CType(",", Char()), StringSplitOptions.RemoveEmptyEntries)(1)), CInt(RRs(k).RouteColor.Split(CType(",", Char()), StringSplitOptions.RemoveEmptyEntries)(2)))
-                                RoutePen2.Width = CSng(RRs(k).RouteLineWidth * DesiredSize.Width / OrigSize.Width)
+                                RoutePen2.Width = RRs(k).RouteLineWidth
                                 g.DrawLines(RoutePen2, FinalPoints(k).ToArray())
                             Next
                         End If
@@ -1653,7 +1653,7 @@ Public Class frm_Main
                         End If
                         For k As Integer = 0 To PointsToDraw.Length - 1
                             RoutePen1.Color = Color.FromArgb(RRs(k).RouteAlpha, CInt(RRs(k).RouteColor.Split(CType(",", Char()), StringSplitOptions.RemoveEmptyEntries)(0)), CInt(RRs(k).RouteColor.Split(CType(",", Char()), StringSplitOptions.RemoveEmptyEntries)(1)), CInt(RRs(k).RouteColor.Split(CType(",", Char()), StringSplitOptions.RemoveEmptyEntries)(2)))
-                            RoutePen1.Width = CSng(RRs(k).RouteLineWidth * DesiredSize.Width / OrigSize.Width)
+                            RoutePen1.Width = RRs(k).RouteLineWidth
                             If PointsToDraw(k).Count > 1 Then
                                 g.DrawLines(RoutePen1, PointsToDraw(k).ToArray())
                             End If
