@@ -117,11 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Sortindex.HeaderText" xml:space="preserve">
-    <value>Sortierindex</value>
-  </data>
   <data name="GroupBox1.Text" xml:space="preserve">
     <value>Ebenen</value>
+  </data>
+  <data name="GroupBox2.Text" xml:space="preserve">
+    <value>Kacheln/Zoomwerte</value>
+  </data>
+  <data name="Sortindex.HeaderText" xml:space="preserve">
+    <value>Sortierindex</value>
   </data>
   <data name="DataGridViewTextBoxColumn4.HeaderText" xml:space="preserve">
     <value>Ebene</value>
@@ -136,17 +139,20 @@
     <value>Pfad</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="CMS_ZoomDataGridView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 26</value>
+  </data>
   <data name="DuplicateRowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 22</value>
   </data>
   <data name="DuplicateRowToolStripMenuItem.Text" xml:space="preserve">
     <value>Zeile duplizieren</value>
   </data>
-  <data name="CMS_ZoomDataGridView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 26</value>
+  <data name="GB_Layers.Text" xml:space="preserve">
+    <value>Ebenen</value>
   </data>
-  <data name="GroupBox2.Text" xml:space="preserve">
-    <value>Kacheln/Zoomwerte</value>
+  <data name="GB_AdditionalTiles.Text" xml:space="preserve">
+    <value>Zusätzliche Kacheln</value>
   </data>
   <data name="DataGridViewTextBoxColumnVisibility.HeaderText" xml:space="preserve">
     <value>SB</value>
@@ -172,6 +178,9 @@
   </data>
   <data name="DataGridViewTextBoxColumnRouteColor.Width" type="System.Int32, mscorlib">
     <value>70</value>
+  </data>
+  <data name="CMS_DGV_Route.Size" type="System.Drawing.Size, System.Drawing">
+    <value>177, 98</value>
   </data>
   <data name="SelectAllToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>176, 22</value>
@@ -199,9 +208,6 @@
   </data>
   <data name="OpenPathToolStripMenuItem.Text" xml:space="preserve">
     <value>Speicherort öffnen</value>
-  </data>
-  <data name="CMS_DGV_Route.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 98</value>
   </data>
   <data name="BindingNavigatorAddNewItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -314,9 +320,6 @@
   <data name="Label5.Text" xml:space="preserve">
     <value>Lokal</value>
   </data>
-  <data name="GB_Layers.Text" xml:space="preserve">
-    <value>Ebenen</value>
-  </data>
   <data name="L_North.Location" type="System.Drawing.Point, System.Drawing">
     <value>91, 0</value>
   </data>
@@ -362,14 +365,41 @@
   <data name="Btn_Switch.Text" xml:space="preserve">
     <value>Wechseln</value>
   </data>
-  <data name="GB_AdditionalTiles.Text" xml:space="preserve">
-    <value>Zusätzliche Kacheln</value>
-  </data>
   <data name="TP_LocalLayers.Text" xml:space="preserve">
     <value>Ebenen (Lokal)</value>
   </data>
   <data name="TP_OnlineLayers.Text" xml:space="preserve">
     <value>Ebenen (Online)</value>
+  </data>
+  <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>149, 20</value>
+  </data>
+  <data name="Label2.Text" xml:space="preserve">
+    <value>Ortseinschränkungen:</value>
+  </data>
+  <data name="LL_WebTileProvider_Website.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 54</value>
+  </data>
+  <data name="L_WebTileProvider_Restrictions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>158, 34</value>
+  </data>
+  <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 20</value>
+  </data>
+  <data name="Label4.Text" xml:space="preserve">
+    <value>Lizenz:</value>
+  </data>
+  <data name="TLP_WebTileProvider_License.Location" type="System.Drawing.Point, System.Drawing">
+    <value>155, 74</value>
+  </data>
+  <data name="TLP_WebTileProvider_License.Size" type="System.Drawing.Size, System.Drawing">
+    <value>727, 471</value>
+  </data>
+  <data name="FileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 20</value>
+  </data>
+  <data name="FileToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Karte</value>
   </data>
   <data name="UpdatePreviewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>216, 22</value>
@@ -392,6 +422,9 @@
   <data name="SaveLayersSeparatelyToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Ebenen separat speichern</value>
   </data>
+  <data name="AnimationSingleFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>216, 22</value>
+  </data>
   <data name="SingleFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 22</value>
   </data>
@@ -400,9 +433,6 @@
   </data>
   <data name="GIFToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 22</value>
-  </data>
-  <data name="AnimationSingleFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 22</value>
   </data>
   <data name="ToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
     <value>213, 6</value>
@@ -422,11 +452,11 @@
   <data name="QuitToolStripMenuItem.Text" xml:space="preserve">
     <value>B&amp;eenden</value>
   </data>
-  <data name="FileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 20</value>
+  <data name="LayerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 20</value>
   </data>
-  <data name="FileToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Karte</value>
+  <data name="LayerToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Ebene</value>
   </data>
   <data name="TilesWizardToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>158, 22</value>
@@ -434,11 +464,11 @@
   <data name="TilesWizardToolStripMenuItem.Text" xml:space="preserve">
     <value>&amp;Zoom-Assistent</value>
   </data>
-  <data name="LayerToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 20</value>
+  <data name="WindowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 20</value>
   </data>
-  <data name="LayerToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Ebene</value>
+  <data name="WindowToolStripMenuItem.Text" xml:space="preserve">
+    <value>Fenster</value>
   </data>
   <data name="ImagePreviewToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 22</value>
@@ -446,11 +476,8 @@
   <data name="ImagePreviewToolStripMenuItem.Text" xml:space="preserve">
     <value>Karten-Vorschau</value>
   </data>
-  <data name="WindowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 20</value>
-  </data>
-  <data name="WindowToolStripMenuItem.Text" xml:space="preserve">
-    <value>Fenster</value>
+  <data name="HelpToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Hilfe</value>
   </data>
   <data name="HilfeAnzeigenToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 22</value>
@@ -463,9 +490,6 @@
   </data>
   <data name="ÜberToolStripMenuItem.Text" xml:space="preserve">
     <value>Ü&amp;ber...</value>
-  </data>
-  <data name="HelpToolStripMenuItem.Text" xml:space="preserve">
-    <value>&amp;Hilfe</value>
   </data>
   <data name="TSSL_EscToAbort.Size" type="System.Drawing.Size, System.Drawing">
     <value>718, 17</value>
