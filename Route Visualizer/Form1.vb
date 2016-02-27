@@ -1907,6 +1907,13 @@ Public Class frm_Main
 
         Try
             Using Client As New WebClient
+                Dim VersStr As String
+                If My.Application.Info.Version.Major = 0 Then
+                    VersStr = String.Format("{0}.{1}.{2}", My.Application.Info.Version.Major.ToString, My.Application.Info.Version.Minor, My.Application.Info.Version.Build) & " beta"
+                Else
+                    VersStr = String.Format("{0}.{1}.{2}", My.Application.Info.Version.Major.ToString, My.Application.Info.Version.Minor, My.Application.Info.Version.Build)
+                End If
+                Client.Headers.Add(HttpRequestHeader.UserAgent, "Route Visualizer/" & VersStr & " (https://github.com/DAccord/Route-Visualizer)")
                 Client.DownloadFile(Link, LocalPath)
             End Using
             Return "Downloaded"
