@@ -95,6 +95,7 @@ Public Class frm_Main
 
         L_WebTileProvider_Restrictions.DataBindings.Add(New Binding("Text", WebTileProviderBindingSource, "LocalRestriction"))
         LL_WebTileProvider_Website.DataBindings.Add(New Binding("Text", WebTileProviderBindingSource, "Website"))
+        CMB_WebTileProvider_Name.SelectedIndex = 0
     End Sub
 
     Sub GUIEnabling(EnabledState As Boolean)
@@ -1947,8 +1948,10 @@ Public Class frm_Main
         If WebTileProviderBindingSource.Current Is Nothing Then
             Exit Sub
         End If
-        Dim WTPR As WebTileProviderRow = CType((CType(WebTileProviderBindingSource.Current, DataRowView).Row), WebTileProviderRow)
-        Dim LRs() As LicenseRow = CType(WTPR.GetChildRows("WebTileProvider_License"), LicenseRow())
+        Dim DRV As DataRowView = CType(CMB_WebTileProvider_Name.SelectedItem, DataRowView)
+        Dim WTPR As WebTileProviderRow = CType(DRV.Row, WebTileProviderRow)
+        'Dim WTPR As WebTileProviderRow = CType((CType(WebTileProviderBindingSource.Current, DataRowView).Row), WebTileProviderRow)
+        Dim LRs() As LicenseRow = CType(WebTiles.License.Select("ProviderID = " & WTPR.ID), LicenseRow())
 
         TLP_WebTileProvider_License.Controls.Clear()
 
@@ -2091,6 +2094,10 @@ Public Class frm_Main
         'End If
 
         'UpdateBackground = True
+    End Sub
+
+    Private Sub LL_WebTileProvider_Website_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LL_WebTileProvider_Website.LinkClicked
+        Process.Start(LL_WebTileProvider_Website.Text)
     End Sub
 End Class
 
