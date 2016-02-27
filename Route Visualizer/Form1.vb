@@ -429,10 +429,11 @@ Public Class frm_Main
         Next
 
         Using g As Graphics = Graphics.FromImage(Result)
+            g.SmoothingMode = Drawing2D.SmoothingMode.AntiAlias
             Dim RR As RoutefileRow
             For j As Integer = 0 To ReadCoordinates.Length - 1
                 RR = RRs(j)
-                Dim RoutePen As New Pen(Color.FromArgb(RR.RouteAlpha, CInt(RR.RouteColor.Replace(" ", "").Split(CType(", ", Char()))(0)), CInt(RR.RouteColor.Replace(" ", "").Split(CType(", ", Char()))(1)), CInt(RR.RouteColor.Replace(" ", "").Split(CType(", ", Char()))(2))), RR.RouteLineWidth)
+                Dim RoutePen As New Pen(Color.FromArgb(RR.RouteAlpha, CInt(RR.RouteColor.Replace(" ", "").Split(CType(", ", Char()))(0)), CInt(RR.RouteColor.Replace(" ", "").Split(CType(", ", Char()))(1)), CInt(RR.RouteColor.Replace(" ", "").Split(CType(", ", Char()))(2))), CSng(RR.RouteLineWidth * DesiredSize.Width / OrigSize.Width))
                 RoutePen.EndCap = Drawing2D.LineCap.Round
                 RoutePen.StartCap = Drawing2D.LineCap.Round
                 RoutePen.LineJoin = Drawing2D.LineJoin.Round
@@ -1510,6 +1511,7 @@ Public Class frm_Main
             For i As Integer = FinalPoints(j).Count - 2 To 0 Step -1
                 If FinalPoints(j).Item(i) = FinalPoints(j).Item(i + 1) Then
                     FinalPoints(j).RemoveAt(i + 1)
+                    CoordCounter -= 1
                 End If
             Next
         Next
@@ -1524,7 +1526,7 @@ Public Class frm_Main
         End If
 
         Me.Invoke(Sub()
-                      TSPB_Progress.Maximum = CLB_Layers.CheckedIndices.Count + Data.Routefile.Select("Visibility = " & True & " AND RouteLineWidth > 0").Length + 1 + CInt(Math.Ceiling(FinalPoints.Count / SaveOption.StepSize))
+                      TSPB_Progress.Maximum = CLB_Layers.CheckedIndices.Count + Data.Routefile.Select("Visibility = " & True & " AND RouteLineWidth > 0").Length + 1 + CInt(Math.Ceiling(CoordCounter / SaveOption.StepSize))
                       If SaveOption.SaveType = SaveType.Animation_GIF Then
                           TSPB_Progress.Maximum += CInt(Math.Ceiling(CoordCounter / SaveOption.StepSize)) + 6
                       End If
@@ -1573,7 +1575,7 @@ Public Class frm_Main
             RoutePen2.LineJoin = Drawing2D.LineJoin.Round
             For j As Integer = 0 To FinalPoints.Length - 1
                 RoutePen1.Color = Color.FromArgb(RRs(j).RouteAlpha, CInt(RRs(j).RouteColor.Split(CType(",", Char()), StringSplitOptions.RemoveEmptyEntries)(0)), CInt(RRs(j).RouteColor.Split(CType(",", Char()), StringSplitOptions.RemoveEmptyEntries)(1)), CInt(RRs(j).RouteColor.Split(CType(",", Char()), StringSplitOptions.RemoveEmptyEntries)(2)))
-                RoutePen1.Width = RRs(j).RouteLineWidth
+                RoutePen1.Width = CSng(RRs(j).RouteLineWidth * DesiredSize.Width / OrigSize.Width)
                 Dim PointsToDraw As New List(Of Point)
                 For i As Integer = 0 To FinalPoints(j).Count - 1
                     If PointsToDraw.Count = 0 Then
@@ -1588,6 +1590,7 @@ Public Class frm_Main
                     End If
                     newBMP = New Bitmap(OrigSize.Width, OrigSize.Height)
                     Using g As Graphics = System.Drawing.Graphics.FromImage(newBMP)
+                        g.SmoothingMode = Drawing2D.SmoothingMode.AntiAlias
                         If SaveOption.BackgroundAlways Then
                             g.DrawImage(Result, 0, 0, newBMP.Width, newBMP.Height)
                         Else
@@ -1596,7 +1599,7 @@ Public Class frm_Main
                         If SaveOption.AnimSaveType = AnimationSaveType.InRow_Hold Then
                             For k As Integer = 0 To j - 1
                                 RoutePen2.Color = Color.FromArgb(RRs(k).RouteAlpha, CInt(RRs(k).RouteColor.Split(CType(",", Char()), StringSplitOptions.RemoveEmptyEntries)(0)), CInt(RRs(k).RouteColor.Split(CType(",", Char()), StringSplitOptions.RemoveEmptyEntries)(1)), CInt(RRs(k).RouteColor.Split(CType(",", Char()), StringSplitOptions.RemoveEmptyEntries)(2)))
-                                RoutePen2.Width = RRs(k).RouteLineWidth
+                                RoutePen2.Width = CSng(RRs(k).RouteLineWidth * DesiredSize.Width / OrigSize.Width)
                                 g.DrawLines(RoutePen2, FinalPoints(k).ToArray())
                             Next
                         End If
@@ -1618,7 +1621,7 @@ Public Class frm_Main
                     End Using
                     newBMP.Dispose()
                     Me.Invoke(Sub()
-                                  'TSPB_Progress.Value += 1
+                                  TSPB_Progress.Value += 1
                               End Sub)
                     cnt2 += 1
                 Next
@@ -1642,6 +1645,7 @@ Public Class frm_Main
 
                 Using newBMP2 As New Bitmap(OrigSize.Width, OrigSize.Height)
                     Using g As Graphics = Graphics.FromImage(newBMP2)
+                        g.SmoothingMode = Drawing2D.SmoothingMode.AntiAlias
                         If SaveOption.BackgroundAlways Then
                             g.DrawImage(Result, 0, 0, newBMP2.Width, newBMP2.Height)
                         Else
@@ -1649,7 +1653,7 @@ Public Class frm_Main
                         End If
                         For k As Integer = 0 To PointsToDraw.Length - 1
                             RoutePen1.Color = Color.FromArgb(RRs(k).RouteAlpha, CInt(RRs(k).RouteColor.Split(CType(",", Char()), StringSplitOptions.RemoveEmptyEntries)(0)), CInt(RRs(k).RouteColor.Split(CType(",", Char()), StringSplitOptions.RemoveEmptyEntries)(1)), CInt(RRs(k).RouteColor.Split(CType(",", Char()), StringSplitOptions.RemoveEmptyEntries)(2)))
-                            RoutePen1.Width = RRs(k).RouteLineWidth
+                            RoutePen1.Width = CSng(RRs(k).RouteLineWidth * DesiredSize.Width / OrigSize.Width)
                             If PointsToDraw(k).Count > 1 Then
                                 g.DrawLines(RoutePen1, PointsToDraw(k).ToArray())
                             End If
