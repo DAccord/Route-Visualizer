@@ -1114,7 +1114,7 @@ Public Class frm_Main
         If Not LayerBindingSource.Current Is Nothing Then
             Dim DRV As DataRowView = CType(LayerBindingSource.Current, DataRowView)
         End If
-        If TC_Main.SelectedTab.Name = "TP_Layers" AndAlso Not LayerBindingSource.Current Is Nothing AndAlso Not CType(LayerBindingSource.Current, DataRowView).IsNew Then
+        If TC_Main.SelectedTab.Name = "TP_LocalLayers" AndAlso Not LayerBindingSource.Current Is Nothing AndAlso Not CType(LayerBindingSource.Current, DataRowView).IsNew Then
             TilesWizardToolStripMenuItem.Enabled = True
         Else
             TilesWizardToolStripMenuItem.Enabled = False
