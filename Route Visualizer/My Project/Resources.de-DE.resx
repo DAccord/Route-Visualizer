@@ -348,4 +348,7 @@
   <data name="AnimationSaveDialog_WindowTitleSimpleImage" xml:space="preserve">
     <value>Bild speichern</value>
   </data>
+  <data name="Help" xml:space="preserve">
+    <value>Hilfe</value>
+  </data>
 </root>

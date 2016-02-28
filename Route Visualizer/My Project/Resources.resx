@@ -322,10 +322,10 @@
     <value>Width</value>
   </data>
   <data name="AnimationSaveType1" xml:space="preserve">
-    <value>Route for route. Hold finished routes.</value>
+    <value>Route after route. Hold finished routes.</value>
   </data>
   <data name="AnimationSaveType2" xml:space="preserve">
-    <value>Route for route. Do not hold finished routes.</value>
+    <value>Route after route. Do not hold finished routes.</value>
   </data>
   <data name="AnimationSaveType3" xml:space="preserve">
     <value>Plot all routes together.</value>
@@ -347,5 +347,8 @@
   </data>
   <data name="AnimationSaveDialog_WindowTitleSimpleImage" xml:space="preserve">
     <value>Save Image</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Help</value>
   </data>
 </root>

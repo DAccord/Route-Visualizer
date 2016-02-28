@@ -664,7 +664,7 @@
     <value>3, 23</value>
   </data>
   <data name="CLB_Layers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 173</value>
+    <value>314, 156</value>
   </data>
   <data name="CLB_Layers.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -688,31 +688,7 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="TableLayoutPanel5.ColumnCount" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="CMB_Zoom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="CMB_Zoom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>61, 3</value>
-  </data>
-  <data name="CMB_Zoom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>576, 28</value>
-  </data>
-  <data name="CMB_Zoom.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;CMB_Zoom.Name" xml:space="preserve">
-    <value>CMB_Zoom</value>
-  </data>
-  <data name="&gt;&gt;CMB_Zoom.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;CMB_Zoom.Parent" xml:space="preserve">
-    <value>TableLayoutPanel5</value>
-  </data>
-  <data name="&gt;&gt;CMB_Zoom.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>3</value>
   </data>
   <data name="Label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
@@ -724,7 +700,7 @@
     <value>NoControl</value>
   </data>
   <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 7</value>
+    <value>3, 15</value>
   </data>
   <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>52, 20</value>
@@ -745,13 +721,67 @@
     <value>TableLayoutPanel5</value>
   </data>
   <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TB_Zoom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="TB_Zoom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>61, 3</value>
+  </data>
+  <data name="TB_Zoom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>553, 45</value>
+  </data>
+  <data name="TB_Zoom.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
+  </data>
+  <data name="&gt;&gt;TB_Zoom.Name" xml:space="preserve">
+    <value>TB_Zoom</value>
+  </data>
+  <data name="&gt;&gt;TB_Zoom.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TB_Zoom.Parent" xml:space="preserve">
+    <value>TableLayoutPanel5</value>
+  </data>
+  <data name="&gt;&gt;TB_Zoom.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="L_ZoomValue.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="L_ZoomValue.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="L_ZoomValue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>620, 15</value>
+  </data>
+  <data name="L_ZoomValue.Size" type="System.Drawing.Size, System.Drawing">
+    <value>17, 20</value>
+  </data>
+  <data name="L_ZoomValue.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="L_ZoomValue.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;L_ZoomValue.Name" xml:space="preserve">
+    <value>L_ZoomValue</value>
+  </data>
+  <data name="&gt;&gt;L_ZoomValue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;L_ZoomValue.Parent" xml:space="preserve">
+    <value>TableLayoutPanel5</value>
+  </data>
+  <data name="&gt;&gt;L_ZoomValue.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="TableLayoutPanel5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="TableLayoutPanel5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 199</value>
+    <value>0, 182</value>
   </data>
   <data name="TableLayoutPanel5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -760,7 +790,7 @@
     <value>1</value>
   </data>
   <data name="TableLayoutPanel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>640, 34</value>
+    <value>640, 51</value>
   </data>
   <data name="TableLayoutPanel5.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -778,7 +808,7 @@
     <value>1</value>
   </data>
   <data name="TableLayoutPanel5.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="CMB_Zoom" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="Label1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="Label1" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="TB_Zoom" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="L_ZoomValue" Row="0" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0,Percent,100,AutoSize,0" /&gt;&lt;Rows Styles="AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="Label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -841,7 +871,7 @@
     <value>323, 23</value>
   </data>
   <data name="CLB_OnlineLayers.Size" type="System.Drawing.Size, System.Drawing">
-    <value>314, 173</value>
+    <value>314, 156</value>
   </data>
   <data name="CLB_OnlineLayers.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1759,19 +1789,19 @@
     <value>132, 22</value>
   </data>
   <data name="SingleFilesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Single Files</value>
+    <value>&amp;Single Files</value>
   </data>
   <data name="GIFToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>132, 22</value>
   </data>
   <data name="GIFToolStripMenuItem1.Text" xml:space="preserve">
-    <value>GIF</value>
+    <value>&amp;GIF</value>
   </data>
   <data name="AnimationSingleFilesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>197, 22</value>
   </data>
   <data name="AnimationSingleFilesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Animation</value>
+    <value>&amp;Animation</value>
   </data>
   <data name="ToolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
     <value>194, 6</value>

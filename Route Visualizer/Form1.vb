@@ -62,8 +62,6 @@ Public Class frm_Main
             Next
         End If
 
-        CMB_Zoom.DataSource = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20}.ToList()
-
         'Setting numeric up downs' maximum values to 2^(2n), where n is the maximum zoom level
         NUD_AdditionalTilesNorth.Maximum = CDec(2 ^ (2 * 20))
         NUD_AdditionalTilesSouth.Maximum = CDec(2 ^ (2 * 20))
@@ -78,6 +76,8 @@ Public Class frm_Main
         NUD_AdditionalTilesWest.Value = RVS.West
         NUD_AdditionalTilesSouth.Value = RVS.South
         NUD_AdditionalTilesEast.Value = RVS.East
+
+        TB_Zoom.Value = RVS.Zoom
 
         If My.Application.Info.Version.Major = 0 Then
             Me.Text = "Route Visualizer v" & String.Format("{0}.{1}.{2}", My.Application.Info.Version.Major.ToString, My.Application.Info.Version.Minor, My.Application.Info.Version.Build) & " beta"
@@ -102,6 +102,7 @@ Public Class frm_Main
         UpdatePreviewToolStripMenuItem.Enabled = EnabledState
         SaveAsImageToolStripMenuItem.Enabled = EnabledState
         SaveLayersSeparatelyToolStripMenuItem.Enabled = EnabledState
+        AnimationSingleFilesToolStripMenuItem.Enabled = EnabledState
 
         GB_Route.Enabled = EnabledState
         GB_AdditionalTiles.Enabled = EnabledState
@@ -161,10 +162,6 @@ Public Class frm_Main
     End Function
 
     Private Function CheckImagePrerequisites() As Boolean
-        If CMB_Zoom.SelectedItem Is Nothing Then
-            MessageBox.Show(Me, My.Resources.Main_SelectZoom, My.Resources.Main_SelectZoom_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return False
-        End If
         Dim RRs() As RoutefileRow = CType(Data.Routefile.Select("Visibility = " & True & " And RouteLineWidth > 0"), RoutefileRow())
         If RRs.Length = 0 Then
             MessageBox.Show(Me, String.Format(My.Resources.Main_NoRoutesToPlot, Environment.NewLine), My.Resources.Main_NoRoutesToPlot_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
@@ -209,7 +206,7 @@ Public Class frm_Main
 
         Dim Zoom As Integer
         Me.Invoke(Sub()
-                      Zoom = CInt(CMB_Zoom.SelectedItem.ToString)
+                      Zoom = TB_Zoom.Value
                   End Sub)
 
         Me.Invoke(Sub()
@@ -406,7 +403,15 @@ Public Class frm_Main
         End If
 
         If Result Is Nothing OrElse SaveOption.SaveType = SaveType.LayersSeparately_MergeRoutes OrElse SaveOption.SaveType = SaveType.LayersSeparately_RoutesSeparately Then
-            Result = New Bitmap(DesiredSize.Width, DesiredSize.Height)
+            If DesiredSize.Width = 0 AndAlso DesiredSize.Height = 0 Then
+                WriteLog(Starttime, Log)
+                Me.Invoke(Sub()
+                              GUIEnabling(True)
+                          End Sub)
+                Exit Sub
+            Else
+                Result = New Bitmap(DesiredSize.Width, DesiredSize.Height)
+            End If
         End If
         cnt = 0
 
@@ -669,6 +674,7 @@ Public Class frm_Main
         RVS.West = CInt(NUD_AdditionalTilesWest.Value)
         RVS.East = CInt(NUD_AdditionalTilesEast.Value)
         RVS.South = CInt(NUD_AdditionalTilesSouth.Value)
+        RVS.Zoom = TB_Zoom.Value
         RVS.SaveSettings(Path.Combine(Application.StartupPath, "RouteVisualizerSettings.resx"))
 
         Data.WriteXml(Path.Combine(Application.StartupPath, "Data.xml"))
@@ -909,7 +915,22 @@ Public Class frm_Main
     End Sub
 
     Private Sub HilfeAnzeigenToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HilfeAnzeigenToolStripMenuItem.Click
-        Process.Start("https://github.com/DAccord/Route-Visualizer/wiki")
+        Dim GI As Globalization.CultureInfo = System.Globalization.CultureInfo.CurrentUICulture
+        If TC_Main.SelectedTab Is TP_RouteVisualizer Then
+            If GI.TwoLetterISOLanguageName = "de" Then
+                Process.Start("https://github.com/DAccord/Route-Visualizer/wiki/Der-Route-Visualizer%E2%80%90Tab")
+            Else
+                Process.Start("https://github.com/DAccord/Route-Visualizer/wiki/The-Route-Visualizer-Tab")
+            End If
+        ElseIf TC_Main.SelectedTab Is TP_LocalLayers Then
+            If GI.TwoLetterISOLanguageName = "de" Then
+                Process.Start("https://github.com/DAccord/Route-Visualizer/wiki/Der-Ebenen%E2%80%90Tab")
+            Else
+                Process.Start("https://github.com/DAccord/Route-Visualizer/wiki/The-Layers-Tab")
+            End If
+        Else
+            Process.Start("https://github.com/DAccord/Route-Visualizer/wiki/")
+        End If
     End Sub
 
     Public Function CalcMinMaxTiles(Coords As List(Of Coordinate), ZR As ZoomRow) As Point()
@@ -1053,29 +1074,7 @@ Public Class frm_Main
         About_Box.ShowDialog()
     End Sub
 
-    Private Sub ZoomDataGridView_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles ZoomDataGridView.CellValueChanged
-        If ZoomDataGridView.Columns(e.ColumnIndex).Name = "DataGridViewTextBoxColumn4" OrElse ZoomDataGridView.Columns(e.ColumnIndex).Name = "DataGridViewTextBoxColumn5" Then
-            Dim OldSelectedValue As Integer = CInt(CMB_Zoom.SelectedItem)
-            Dim PossibleZoomValues As New List(Of Integer)
-            For i As Integer = 0 To CLB_Layers.Items.Count - 1
-                If CLB_Layers.GetItemChecked(i) Then
-                    Dim DRV As DataRowView = CType(CLB_Layers.Items(i), DataRowView)
-                    Dim LR As LayerRow = CType(DRV.Row, LayerRow)
-                    For Each ZR As ZoomRow In LR.GetChildRows("Layer_Zoom")
-                        PossibleZoomValues.Add(ZR.Zoomvalue)
-                    Next
-                End If
-            Next
-            PossibleZoomValues = PossibleZoomValues.Distinct.ToList()
-            PossibleZoomValues.Sort()
-            CMB_Zoom.DataSource = PossibleZoomValues
-            If PossibleZoomValues.Contains(OldSelectedValue) Then
-                CMB_Zoom.SelectedItem = OldSelectedValue
-            End If
-        End If
-    End Sub
-
-    Private Sub CMB_Zoom_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CMB_Zoom.SelectedIndexChanged
+    Private Sub CMB_Zoom_SelectedIndexChanged(sender As Object, e As EventArgs)
         UpdateBackground = True
     End Sub
 
@@ -1260,7 +1259,7 @@ Public Class frm_Main
 
         Dim Zoom As Integer
         Me.Invoke(Sub()
-                      Zoom = CInt(CMB_Zoom.SelectedItem.ToString)
+                      Zoom = TB_Zoom.Value
                   End Sub)
 
         If Cancel Then
@@ -2080,36 +2079,13 @@ Public Class frm_Main
         End Using
     End Sub
 
-    Private Sub CLB_Layers_ItemCheck(sender As Object, e As ItemCheckEventArgs) Handles CLB_Layers.ItemCheck
-        CMB_Zoom.DataSource = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20}
-        'Dim OldSelectedValue As Integer = CInt(CMB_Zoom.SelectedItem)
-        'Dim PossibleZoomValues As New List(Of Integer)
-
-        'If CLB_Layers.SelectedItems.Count > 0 Then
-        '    For i As Integer = 0 To CLB_Layers.Items.Count - 1
-        '        If CLB_Layers.GetItemChecked(i) Then
-        '            Dim DRV As DataRowView = CType(CLB_Layers.Items(i), DataRowView)
-        '            Dim LR As LayerRow = CType(DRV.Row, LayerRow)
-        '            For Each ZR As ZoomRow In LR.GetChildRows("Layer_Zoom")
-        '                PossibleZoomValues.Add(ZR.Zoomvalue)
-        '            Next
-        '        End If
-        '    Next
-        '    PossibleZoomValues.Sort()
-        '    PossibleZoomValues = PossibleZoomValues.Distinct.ToList()
-        'Else
-        '    PossibleZoomValues = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20}.ToList()
-        'End If
-        'CMB_Zoom.DataSource = PossibleZoomValues
-        'If PossibleZoomValues.Contains(OldSelectedValue) Then
-        '    CMB_Zoom.SelectedItem = OldSelectedValue
-        'End If
-
-        'UpdateBackground = True
-    End Sub
-
     Private Sub LL_WebTileProvider_Website_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LL_WebTileProvider_Website.LinkClicked
         Process.Start(LL_WebTileProvider_Website.Text)
+    End Sub
+
+    Private Sub TB_Zoom_ValueChanged(sender As Object, e As EventArgs) Handles TB_Zoom.ValueChanged
+        L_ZoomValue.Text = TB_Zoom.Value.ToString
+        UpdateBackground = True
     End Sub
 End Class
 

@@ -66,8 +66,9 @@ Partial Class frm_Main
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.CLB_Layers = New System.Windows.Forms.CheckedListBox()
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
-        Me.CMB_Zoom = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.TB_Zoom = New System.Windows.Forms.TrackBar()
+        Me.L_ZoomValue = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.CLB_OnlineLayers = New System.Windows.Forms.CheckedListBox()
@@ -158,6 +159,7 @@ Partial Class frm_Main
         Me.GB_Layers.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         Me.TableLayoutPanel5.SuspendLayout()
+        CType(Me.TB_Zoom, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GB_AdditionalTiles.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         CType(Me.NUD_AdditionalTilesSouth, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -496,21 +498,29 @@ Partial Class frm_Main
         '
         resources.ApplyResources(Me.TableLayoutPanel5, "TableLayoutPanel5")
         Me.TableLayoutPanel4.SetColumnSpan(Me.TableLayoutPanel5, 2)
-        Me.TableLayoutPanel5.Controls.Add(Me.CMB_Zoom, 1, 0)
         Me.TableLayoutPanel5.Controls.Add(Me.Label1, 0, 0)
+        Me.TableLayoutPanel5.Controls.Add(Me.TB_Zoom, 1, 0)
+        Me.TableLayoutPanel5.Controls.Add(Me.L_ZoomValue, 2, 0)
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
-        '
-        'CMB_Zoom
-        '
-        resources.ApplyResources(Me.CMB_Zoom, "CMB_Zoom")
-        Me.CMB_Zoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CMB_Zoom.FormattingEnabled = True
-        Me.CMB_Zoom.Name = "CMB_Zoom"
         '
         'Label1
         '
         resources.ApplyResources(Me.Label1, "Label1")
         Me.Label1.Name = "Label1"
+        '
+        'TB_Zoom
+        '
+        Me.TB_Zoom.BackColor = System.Drawing.SystemColors.Window
+        resources.ApplyResources(Me.TB_Zoom, "TB_Zoom")
+        Me.TB_Zoom.LargeChange = 1
+        Me.TB_Zoom.Maximum = 20
+        Me.TB_Zoom.Name = "TB_Zoom"
+        Me.TB_Zoom.TickStyle = System.Windows.Forms.TickStyle.TopLeft
+        '
+        'L_ZoomValue
+        '
+        resources.ApplyResources(Me.L_ZoomValue, "L_ZoomValue")
+        Me.L_ZoomValue.Name = "L_ZoomValue"
         '
         'Label5
         '
@@ -927,6 +937,7 @@ Partial Class frm_Main
         Me.TableLayoutPanel4.PerformLayout()
         Me.TableLayoutPanel5.ResumeLayout(False)
         Me.TableLayoutPanel5.PerformLayout()
+        CType(Me.TB_Zoom, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GB_AdditionalTiles.ResumeLayout(False)
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel3.PerformLayout()
@@ -965,7 +976,6 @@ Partial Class frm_Main
     Friend WithEvents CLB_Layers As CheckedListBox
     Friend WithEvents GB_Route As GroupBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents CMB_Zoom As ComboBox
     Friend WithEvents GB_AdditionalTiles As GroupBox
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents NUD_AdditionalTilesSouth As NumericUpDown
@@ -1068,4 +1078,6 @@ Partial Class frm_Main
     Friend WithEvents DataGridViewTextBoxColumnRouteLineWidth As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumnRouteColor As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumnRouteAlpha As DataGridViewTextBoxColumn
+    Friend WithEvents TB_Zoom As TrackBar
+    Friend WithEvents L_ZoomValue As Label
 End Class

@@ -140,8 +140,19 @@ Public Class frm_Preview
             DrawImage(ImgToDraw, New Point(Offset.X + 25, Offset.Y), DesiredSize)
         ElseIf e.KeyCode = Keys.D OrElse e.KeyCode = Keys.Right Then
             DrawImage(ImgToDraw, New Point(Offset.X - 25, Offset.Y), DesiredSize)
+        ElseIf e.KeyCode = Keys.F1 Then
+            CallHelp()
         Else
             CtrlHold = False
+        End If
+    End Sub
+
+    Private Sub CallHelp()
+        Dim GI As Globalization.CultureInfo = System.Globalization.CultureInfo.CurrentUICulture
+        If GI.TwoLetterISOLanguageName = "de" Then
+            Process.Start("https://github.com/DAccord/Route-Visualizer/wiki/Vorschau%E2%80%90Fenster")
+        Else
+            Process.Start("https://github.com/DAccord/Route-Visualizer/wiki/Preview-Window")
         End If
     End Sub
 
@@ -195,11 +206,7 @@ Public Class frm_Preview
     End Sub
 
     Private Sub TSB_Help_Click(sender As Object, e As EventArgs) Handles TSB_Help.Click
-        Dim SB As New StringBuilder
-        SB.AppendLine("Mouse Wheel: Scroll map vertically")
-        SB.AppendLine("Ctrl + Mouse Wheel or plus and minus key: Zoom in and out")
-        SB.AppendLine("Mouse click and drag or w, a, s, d or arrow keys: move map")
-        MessageBox.Show(SB.ToString, "Help", MessageBoxButtons.OK)
+        CallHelp()
     End Sub
 
     Private Sub HSB_Image_Scroll(sender As Object, e As ScrollEventArgs)
@@ -215,7 +222,7 @@ Public Class frm_Preview
             Media.SystemSounds.Beep.Play()
             Exit Sub
         End If
-
+        Fitted = False
         Dim X_Percent As Double = 0.5
         Dim Y_Percent As Double = 0.5
         If Not CursorPosition = Nothing Then
@@ -231,6 +238,7 @@ Public Class frm_Preview
             Media.SystemSounds.Beep.Play()
             Exit Sub
         End If
+        Fitted = False
         Dim X_Percent As Double = 0.5
         Dim Y_Percent As Double = 0.5
         If Not CursorPosition = Nothing Then

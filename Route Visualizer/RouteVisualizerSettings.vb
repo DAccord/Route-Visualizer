@@ -37,11 +37,22 @@ Public Class RouteVisualizerSettings
     Private _South As Integer = 0
     Private _East As Integer = 0
 
+    Private _Zoom As Integer = 0
+
     Private _AST As AnimationSaveType
 
     Public Sub New()
 
     End Sub
+
+    Public Property Zoom As Integer
+        Get
+            Return _Zoom
+        End Get
+        Set(value As Integer)
+            _Zoom = value
+        End Set
+    End Property
 
     Public Property AniSaveType As AnimationSaveType
         Get
@@ -427,6 +438,8 @@ Public Class RouteVisualizerSettings
             Me.South = CType(resxSet.GetObject("South"), Integer)
 
             Me.AniSaveType = CType(resxSet.GetObject("AniSaveType"), AnimationSaveType)
+
+            Me.Zoom = CType(resxSet.GetObject("Zoom"), Integer)
         End Using
     End Sub
 

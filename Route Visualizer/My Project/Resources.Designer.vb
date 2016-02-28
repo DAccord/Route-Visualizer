@@ -160,7 +160,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Route for route. Hold finished routes..
+        '''  Looks up a localized string similar to Route after route. Hold finished routes..
         '''</summary>
         Friend ReadOnly Property AnimationSaveType1() As String
             Get
@@ -169,7 +169,7 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Route for route. Do not hold finished routes..
+        '''  Looks up a localized string similar to Route after route. Do not hold finished routes..
         '''</summary>
         Friend ReadOnly Property AnimationSaveType2() As String
             Get
@@ -210,6 +210,15 @@ Namespace My.Resources
         Friend ReadOnly Property Height() As String
             Get
                 Return ResourceManager.GetString("Height", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Help.
+        '''</summary>
+        Friend ReadOnly Property Help() As String
+            Get
+                Return ResourceManager.GetString("Help", resourceCulture)
             End Get
         End Property
         

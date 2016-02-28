@@ -258,5 +258,16 @@ Public Class frm_AnimationSaveDialog
             e.Cancel = True
         End If
     End Sub
+
+    Private Sub frm_AnimationSaveDialog_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        If e.KeyCode = Keys.F1 Then
+            Dim GI As Globalization.CultureInfo = System.Globalization.CultureInfo.CurrentUICulture
+            If GI.TwoLetterISOLanguageName = "de" Then
+                Process.Start("https://github.com/DAccord/Route-Visualizer/wiki/Speichern%E2%80%90Dialog")
+            Else
+                Process.Start("https://github.com/DAccord/Route-Visualizer/wiki/Save-Dialog")
+            End If
+        End If
+    End Sub
 End Class
 

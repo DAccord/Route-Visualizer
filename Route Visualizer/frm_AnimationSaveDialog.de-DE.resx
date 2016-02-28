@@ -118,6 +118,36 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="GB_ImageSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>416, 109</value>
+  </data>
+  <data name="GB_ImageSize.Text" xml:space="preserve">
+    <value>Bildgröße</value>
+  </data>
+  <data name="TLP_Animation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>416, 133</value>
+  </data>
+  <data name="TableLayoutPanel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>416, 51</value>
+  </data>
+  <data name="GB_CurrentPosition.Size" type="System.Drawing.Size, System.Drawing">
+    <value>416, 95</value>
+  </data>
+  <data name="GB_CurrentPosition.Text" xml:space="preserve">
+    <value>Aktuelle Position</value>
+  </data>
+  <data name="GB_Output.Size" type="System.Drawing.Size, System.Drawing">
+    <value>416, 126</value>
+  </data>
+  <data name="GB_Output.Text" xml:space="preserve">
+    <value>Ausgabe</value>
+  </data>
+  <data name="TableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>422, 544</value>
+  </data>
+  <data name="TableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>410, 83</value>
+  </data>
   <data name="RB_Width.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 24</value>
   </data>
@@ -145,15 +175,6 @@
   <data name="Label1.Text" xml:space="preserve">
     <value>Setze diesen Wert Null um die Originalgröße zu verwenden.</value>
   </data>
-  <data name="TableLayoutPanel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>410, 83</value>
-  </data>
-  <data name="GB_ImageSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>416, 109</value>
-  </data>
-  <data name="GB_ImageSize.Text" xml:space="preserve">
-    <value>Bildgröße</value>
-  </data>
   <data name="L_LoopCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>223, 20</value>
   </data>
@@ -173,10 +194,10 @@
     <value>Schrittweite</value>
   </data>
   <data name="L_DelayTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 20</value>
+    <value>191, 20</value>
   </data>
   <data name="L_DelayTime.Text" xml:space="preserve">
-    <value>Anzeigedauer (ms)</value>
+    <value>Anzeigedauer pro Bild (ms)</value>
   </data>
   <data name="NUD_DelayTime.Location" type="System.Drawing.Point, System.Drawing">
     <value>232, 36</value>
@@ -202,9 +223,6 @@
   <data name="CMB_AnimationType.Size" type="System.Drawing.Size, System.Drawing">
     <value>181, 28</value>
   </data>
-  <data name="TLP_Animation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>416, 133</value>
-  </data>
   <data name="Btn_Cancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>322, 18</value>
   </data>
@@ -217,8 +235,8 @@
   <data name="Btn_OK.Location" type="System.Drawing.Point, System.Drawing">
     <value>241, 18</value>
   </data>
-  <data name="TableLayoutPanel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>416, 51</value>
+  <data name="TableLayoutPanel6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>410, 69</value>
   </data>
   <data name="Btn_SymbolColor.Text" xml:space="preserve">
     <value>Farbe wählen</value>
@@ -232,14 +250,8 @@
   <data name="Label5.Text" xml:space="preserve">
     <value>Durchmesser</value>
   </data>
-  <data name="TableLayoutPanel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>410, 69</value>
-  </data>
-  <data name="GB_CurrentPosition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>416, 95</value>
-  </data>
-  <data name="GB_CurrentPosition.Text" xml:space="preserve">
-    <value>Aktuelle Position</value>
+  <data name="TableLayoutPanel7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>410, 100</value>
   </data>
   <data name="Label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 20</value>
@@ -265,6 +277,9 @@
   <data name="CMB_Format.Size" type="System.Drawing.Size, System.Drawing">
     <value>286, 28</value>
   </data>
+  <data name="TableLayoutPanel8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>410, 30</value>
+  </data>
   <data name="RB_SingleBackground.Location" type="System.Drawing.Point, System.Drawing">
     <value>184, 3</value>
   </data>
@@ -279,21 +294,6 @@
   </data>
   <data name="RB_AlwaysBackground.Text" xml:space="preserve">
     <value>Hintergrund jedes Mal</value>
-  </data>
-  <data name="TableLayoutPanel8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>410, 30</value>
-  </data>
-  <data name="TableLayoutPanel7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>410, 100</value>
-  </data>
-  <data name="GB_Output.Size" type="System.Drawing.Size, System.Drawing">
-    <value>416, 126</value>
-  </data>
-  <data name="GB_Output.Text" xml:space="preserve">
-    <value>Ausgabe</value>
-  </data>
-  <data name="TableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>422, 544</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>422, 544</value>

@@ -148,6 +148,24 @@
   <data name="DuplicateRowToolStripMenuItem.Text" xml:space="preserve">
     <value>Zeile duplizieren</value>
   </data>
+  <data name="CLB_Layers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 187</value>
+  </data>
+  <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 0</value>
+  </data>
+  <data name="TableLayoutPanel5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 213</value>
+  </data>
+  <data name="TableLayoutPanel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>640, 20</value>
+  </data>
+  <data name="Label5.Text" xml:space="preserve">
+    <value>Lokal</value>
+  </data>
+  <data name="CLB_OnlineLayers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>314, 187</value>
+  </data>
   <data name="GB_Layers.Text" xml:space="preserve">
     <value>Ebenen</value>
   </data>
@@ -317,9 +335,6 @@
   <data name="BindingNavigatorDeleteItem.Text" xml:space="preserve">
     <value>Gewähle Routendateien löschen</value>
   </data>
-  <data name="Label5.Text" xml:space="preserve">
-    <value>Lokal</value>
-  </data>
   <data name="L_North.Location" type="System.Drawing.Point, System.Drawing">
     <value>91, 0</value>
   </data>
@@ -429,7 +444,7 @@
     <value>160, 22</value>
   </data>
   <data name="SingleFilesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Einzelne Dateien</value>
+    <value>&amp;Einzelne Dateien</value>
   </data>
   <data name="GIFToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 22</value>
