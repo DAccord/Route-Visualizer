@@ -17,8 +17,8 @@ Die deutsche Version dieses Dokuments gibt es [hier](https://github.com/DAccord/
 Screenshot of the application:  
 ![Screenshot](https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Screenshot_EN.png)
 
-Example output as <tt>jpg</tt> file (zoom level 8 with layers Relief, Water and Admin from [maps-for-free.com](http://maps-for-free.com/)):
-![Beispielbild](https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Testbild.jpg)
+Example output as <tt>png</tt> file (zoom level 8 with layers Relief, Water and Admin from [maps-for-free.com](http://maps-for-free.com/)), image height reduced to 500 px:  
+![Beispielbild](https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Testbild.png)
 
 ### Source Code
 *Route Visualizer* is developed in Visual Basic (Windows Forms Application). To comfortably view the source code, download ["Visual Studio Community 2015"](https://www.visualstudio.com/de-de/downloads/download-visual-studio-vs.aspx) and install it. Download the [source code as zip file](https://github.com/DAccord/Route-Visualizer/archive/master.zip), extract it and open <tt>Route Visualizer.sln</tt> in "Visual Studio".
