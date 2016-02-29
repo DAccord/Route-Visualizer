@@ -205,6 +205,15 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to It is not recommended to create GIF files with step sizes below ca. 20, images in original size or very big images. Do you want to continue?.
+        '''</summary>
+        Friend ReadOnly Property GIF_Warning() As String
+            Get
+                Return ResourceManager.GetString("GIF_Warning", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Height.
         '''</summary>
         Friend ReadOnly Property Height() As String
@@ -466,7 +475,10 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to There are no route files to plot. Possible reasons for that:{0}- The visibility of all route files is off.{0}- No route has a line width larger than zero..
+        '''  Looks up a localized string similar to There are no route files to plot. Possible reasons for that:
+        '''- No routes are imported. To import a route, click on the yellow plus sign.
+        '''- The visibility of all route files is off.
+        '''- No route has a line width larger than zero..
         '''</summary>
         Friend ReadOnly Property Main_NoRoutesToPlot() As String
             Get
@@ -750,6 +762,24 @@ Namespace My.Resources
         Friend ReadOnly Property SFD_SaveImageTitle() As String
             Get
                 Return ResourceManager.GetString("SFD_SaveImageTitle", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Error while downloading tile from layer &quot;{0}&quot; with row index {1} and column index {2} at zoom level {3}: {4}.
+        '''</summary>
+        Friend ReadOnly Property WebTile_DownloadError() As String
+            Get
+                Return ResourceManager.GetString("WebTile_DownloadError", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Tile from layer &quot;{0}&quot; with row index {1} and column index {2} at zoom level {3} is not cached..
+        '''</summary>
+        Friend ReadOnly Property WebTile_NotCached() As String
+            Get
+                Return ResourceManager.GetString("WebTile_NotCached", resourceCulture)
             End Get
         End Property
         

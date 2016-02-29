@@ -163,7 +163,10 @@
     <value>No coordinates could be imported from any of the selected files. Cancelled producing the map.</value>
   </data>
   <data name="Main_NoRoutesToPlot" xml:space="preserve">
-    <value>There are no route files to plot. Possible reasons for that:{0}- The visibility of all route files is off.{0}- No route has a line width larger than zero.</value>
+    <value>There are no route files to plot. Possible reasons for that:
+- No routes are imported. To import a route, click on the yellow plus sign.
+- The visibility of all route files is off.
+- No route has a line width larger than zero.</value>
   </data>
   <data name="Main_NoRoutesToPlot_Title" xml:space="preserve">
     <value>No route files to plot</value>
@@ -350,5 +353,14 @@
   </data>
   <data name="Help" xml:space="preserve">
     <value>Help</value>
+  </data>
+  <data name="GIF_Warning" xml:space="preserve">
+    <value>It is not recommended to create GIF files with step sizes below ca. 20, images in original size or very big images. Do you want to continue?</value>
+  </data>
+  <data name="WebTile_DownloadError" xml:space="preserve">
+    <value>Error while downloading tile from layer "{0}" with row index {1} and column index {2} at zoom level {3}: {4}</value>
+  </data>
+  <data name="WebTile_NotCached" xml:space="preserve">
+    <value>Tile from layer "{0}" with row index {1} and column index {2} at zoom level {3} is not cached.</value>
   </data>
 </root>

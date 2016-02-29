@@ -1,0 +1,237 @@
+<?xml version="1.0" standalone="yes"?>
+<WebTiles xmlns="http://tempuri.org/WebTiles.xsd">
+  <WebTileProvider>
+    <ID>1</ID>
+    <Name>Stamen Watercolor</Name>
+    <Link>http://tile.stamen.com/watercolor/{z}/{x}/{y}.png</Link>
+    <Path>Stamen_Watercolor</Path>
+    <LocalRestriction />
+    <Website>http://maps.stamen.com/watercolor</Website>
+  </WebTileProvider>
+  <WebTileProvider>
+    <ID>2</ID>
+    <Name>Stamen Toner</Name>
+    <Link>http://tile.stamen.com/Toner/{z}/{x}/{y}.png</Link>
+    <Path>Stamen_Toner</Path>
+    <LocalRestriction />
+    <Website>http://maps.stamen.com/toner</Website>
+  </WebTileProvider>
+  <WebTileProvider>
+    <ID>3</ID>
+    <Name>Stamen Terrain</Name>
+    <Link>http://tile.stamen.com/terrain/{z}/{x}/{y}.png</Link>
+    <Path>Stamen_Terrain</Path>
+    <LocalRestriction>USA only</LocalRestriction>
+    <Website>http://maps.stamen.com/terrain</Website>
+  </WebTileProvider>
+  <WebTileProvider>
+    <ID>4</ID>
+    <Name>CartoDB Light ("Positron")</Name>
+    <Link>http://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png</Link>
+    <Path>CartoDB_Light</Path>
+    <LocalRestriction />
+    <Website>https://cartodb.com/basemaps</Website>
+  </WebTileProvider>
+  <WebTileProvider>
+    <ID>5</ID>
+    <Name>CartoDB Dark ("Dark Matter")</Name>
+    <Link>http://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png</Link>
+    <Path>CartoDB_Dark</Path>
+    <LocalRestriction />
+    <Website>https://cartodb.com/basemaps</Website>
+  </WebTileProvider>
+  <WebTileProvider>
+    <ID>6</ID>
+    <Name>Thunderforest OpenCycleMap</Name>
+    <Link>https://a.tile.thunderforest.com/cycle/{z}/{x}/{y}.png</Link>
+    <Path>Thunderforest_OpenCycleMap</Path>
+    <LocalRestriction />
+    <Website>http://www.thunderforest.com/maps/opencyclemap/</Website>
+  </WebTileProvider>
+  <WebTileProvider>
+    <ID>7</ID>
+    <Name>Thunderforest Landscape</Name>
+    <Link>https://a.tile.thunderforest.com/landscape/{z}/{x}/{y}.png</Link>
+    <Path>Thunderforest_Landscape</Path>
+    <LocalRestriction />
+    <Website>http://www.thunderforest.com/maps/landscape/</Website>
+  </WebTileProvider>
+  <WebTileProvider>
+    <ID>8</ID>
+    <Name>Thunderforest Outdoors</Name>
+    <Link>https://a.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png</Link>
+    <Path>Thunderforest_Outdoor</Path>
+    <LocalRestriction />
+    <Website>http://www.thunderforest.com/maps/outdoors/</Website>
+  </WebTileProvider>
+  <WebTileProvider>
+    <ID>9</ID>
+    <Name>Open Street Map Carto</Name>
+    <Link>http://a.tile.openstreetmap.org/{z}/{x}/{y}.png</Link>
+    <Path>OpenStreetMap_Carto</Path>
+    <LocalRestriction />
+    <Website>http://www.openstreetmap.org</Website>
+  </WebTileProvider>
+  <WebTileProvider>
+    <ID>10</ID>
+    <Name>Mapquest OSM</Name>
+    <Link>http://otile1.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png</Link>
+    <Path>Mapquest_OSM</Path>
+    <LocalRestriction />
+    <Website>http://www.openstreetmap.org/?layers=Q</Website>
+  </WebTileProvider>
+  <WebTileProvider>
+    <ID>11</ID>
+    <Name>Mapquest Sat</Name>
+    <Link>http://otile1.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.png</Link>
+    <Path>Mapquest_Sat</Path>
+    <LocalRestriction />
+    <Website>http://www.mapquest.com/?satellite=true</Website>
+  </WebTileProvider>
+  <WebTileProvider>
+    <ID>12</ID>
+    <Name>Maps for Free Relief</Name>
+    <Link>http://maps-for-free.com/layer/relief/z{z}/row{r}/{z}_{c}-{r}.jpg</Link>
+    <Path>MapsForFree_Relief</Path>
+    <LocalRestriction />
+    <Website>http://maps-for-free.com/</Website>
+  </WebTileProvider>
+  <License>
+    <ID>1</ID>
+    <ProviderID>1</ProviderID>
+    <Text>Map tiles by Stamen Design, under CC BY 3.0.</Text>
+    <Link>http://stamen.com</Link>
+  </License>
+  <License>
+    <ID>2</ID>
+    <ProviderID>1</ProviderID>
+    <Text>Data by OpenStreetMap, under CC BY SA.</Text>
+    <Link>http://www.openstreetmap.org/copyright</Link>
+  </License>
+  <License>
+    <ID>3</ID>
+    <ProviderID>2</ProviderID>
+    <Text>Map tiles by Stamen Design, under CC BY 3.0.</Text>
+    <Link>http://stamen.com</Link>
+  </License>
+  <License>
+    <ID>4</ID>
+    <ProviderID>2</ProviderID>
+    <Text>Data by OpenStreetMap, under CC BY SA.</Text>
+    <Link>http://www.openstreetmap.org/copyright</Link>
+  </License>
+  <License>
+    <ID>5</ID>
+    <ProviderID>3</ProviderID>
+    <Text>Map tiles by Stamen Design, under CC BY 3.0.</Text>
+    <Link>http://stamen.com</Link>
+  </License>
+  <License>
+    <ID>6</ID>
+    <ProviderID>3</ProviderID>
+    <Text>Data by OpenStreetMap, under CC BY SA.</Text>
+    <Link>http://www.openstreetmap.org/copyright</Link>
+  </License>
+  <License>
+    <ID>7</ID>
+    <ProviderID>4</ProviderID>
+    <Text>Map tiles by CartoDB, under CC BY 3.0.</Text>
+    <Link />
+  </License>
+  <License>
+    <ID>8</ID>
+    <ProviderID>4</ProviderID>
+    <Text>Data by OpenStreetMap, under ODbL.</Text>
+    <Link>http://www.openstreetmap.org/copyright</Link>
+  </License>
+  <License>
+    <ID>9</ID>
+    <ProviderID>5</ProviderID>
+    <Text>Map tiles by CartoDB, under CC BY 3.0.</Text>
+    <Link />
+  </License>
+  <License>
+    <ID>10</ID>
+    <ProviderID>5</ProviderID>
+    <Text>Data by OpenStreetMap, under ODbL.</Text>
+    <Link>http://www.openstreetmap.org/copyright</Link>
+  </License>
+  <License>
+    <ID>11</ID>
+    <ProviderID>6</ProviderID>
+    <Text>Map tiles by Thunderforest.</Text>
+    <Link>http://www.thunderforest.com/</Link>
+  </License>
+  <License>
+    <ID>12</ID>
+    <ProviderID>6</ProviderID>
+    <Text>Data by OpenStreetMap, under ODbL.</Text>
+    <Link>http://www.openstreetmap.org/copyright</Link>
+  </License>
+  <License>
+    <ID>13</ID>
+    <ProviderID>7</ProviderID>
+    <Text>Map tiles by Thunderforest.</Text>
+    <Link>http://www.thunderforest.com/</Link>
+  </License>
+  <License>
+    <ID>14</ID>
+    <ProviderID>7</ProviderID>
+    <Text>Data by OpenStreetMap, under ODbL.</Text>
+    <Link>http://www.openstreetmap.org/copyright</Link>
+  </License>
+  <License>
+    <ID>15</ID>
+    <ProviderID>8</ProviderID>
+    <Text>Map tiles by Thunderforest.</Text>
+    <Link>http://www.thunderforest.com/</Link>
+  </License>
+  <License>
+    <ID>16</ID>
+    <ProviderID>8</ProviderID>
+    <Text>Data by OpenStreetMap, under ODbL.</Text>
+    <Link>http://www.openstreetmap.org/copyright</Link>
+  </License>
+  <License>
+    <ID>17</ID>
+    <ProviderID>9</ProviderID>
+    <Text>© OpenStreetMap, Tiles CC BY-SA</Text>
+    <Link>http://www.openstreetmap.org/copyright</Link>
+  </License>
+  <License>
+    <ID>18</ID>
+    <ProviderID>10</ProviderID>
+    <Text>Data by OpenStreetMap, under ODbL.</Text>
+    <Link>http://www.openstreetmap.org/copyright</Link>
+  </License>
+  <License>
+    <ID>19</ID>
+    <ProviderID>10</ProviderID>
+    <Text>Tiles courtesy of Mapquest.</Text>
+    <Link>http://www.mapquest.com/</Link>
+  </License>
+  <License>
+    <ID>20</ID>
+    <ProviderID>11</ProviderID>
+    <Text>Data by OpenStreetMap, under ODbL.</Text>
+    <Link>http://www.openstreetmap.org/copyright</Link>
+  </License>
+  <License>
+    <ID>21</ID>
+    <ProviderID>11</ProviderID>
+    <Text>Mapquest.</Text>
+    <Link>http://www.mapquest.com/</Link>
+  </License>
+  <License>
+    <ID>22</ID>
+    <ProviderID>12</ProviderID>
+    <Text>Tiles by Maps for Free, CC0.</Text>
+    <Link>http://www.maps-for-free.com</Link>
+  </License>
+  <License>
+    <ID>23</ID>
+    <ProviderID>11</ProviderID>
+    <Text>Mapbox.</Text>
+    <Link>http://hello.mapquest.com/attributions-mapbox</Link>
+  </License>
+</WebTiles>

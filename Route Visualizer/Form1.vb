@@ -13,10 +13,9 @@ Public Class frm_Main
     Dim LayerDataView As DataView
     Dim TH_UpdatePreview As New Threading.Thread(AddressOf UpdatePreviewNew)
     Dim TH_AnimationSingleFiles As New Threading.Thread(AddressOf Animation)
-    'Dim SaveOption_old As New SaveOptions
     Dim SaveOption As New SaveOption
     Dim UpdateBackground As Boolean = True
-    Dim DistZooms As List(Of Integer)
+    Dim CancelThread As Boolean = False
 
     Dim RVS As New RouteVisualizerSettings
 
@@ -39,7 +38,7 @@ Public Class frm_Main
         Me.Location = RVS.MainFormWindowLocation
         Me.Size = RVS.MainFormWindowSize
         If RVS.PreviewFormWindowOpen Then
-            UpdatePreviewPB(Nothing)
+            'UpdatePreviewPB(Nothing)
         End If
 
         LayerDataView = New DataView(Data.Layer)
@@ -95,7 +94,12 @@ Public Class frm_Main
 
         L_WebTileProvider_Restrictions.DataBindings.Add(New Binding("Text", WebTileProviderBindingSource, "LocalRestriction"))
         LL_WebTileProvider_Website.DataBindings.Add(New Binding("Text", WebTileProviderBindingSource, "Website"))
-        CMB_WebTileProvider_Name.SelectedIndex = 0
+        If CMB_WebTileProvider_Name.Items.Count > 0 Then
+            CMB_WebTileProvider_Name.SelectedIndex = 0
+        Else
+            LL_WebTileProvider_Website.Text = ""
+            L_WebTileProvider_Restrictions.Text = ""
+        End If
     End Sub
 
     Sub GUIEnabling(EnabledState As Boolean)
@@ -164,7 +168,7 @@ Public Class frm_Main
     Private Function CheckImagePrerequisites() As Boolean
         Dim RRs() As RoutefileRow = CType(Data.Routefile.Select("Visibility = " & True & " And RouteLineWidth > 0"), RoutefileRow())
         If RRs.Length = 0 Then
-            MessageBox.Show(Me, String.Format(My.Resources.Main_NoRoutesToPlot, Environment.NewLine), My.Resources.Main_NoRoutesToPlot_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show(Me, My.Resources.Main_NoRoutesToPlot, My.Resources.Main_NoRoutesToPlot_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return false
         End If
         If CLB_Layers.CheckedItems.Count = 0 AndAlso CLB_OnlineLayers.CheckedItems.Count = 0 Then
@@ -644,7 +648,8 @@ Public Class frm_Main
                 e.Cancel = True
                 Exit Sub
             Else
-                TH_AnimationSingleFiles.Abort()
+                CancelThread = True
+                'TH_AnimationSingleFiles.Abort()
             End If
         End If
 
@@ -802,7 +807,8 @@ Public Class frm_Main
             TH_UpdatePreview.Abort()
             GUIEnabling(True)
         ElseIf e.KeyCode = Keys.Escape AndAlso TH_AnimationSingleFiles.ThreadState = Threading.ThreadState.Running Then
-            TH_AnimationSingleFiles.Abort()
+            CancelThread = True
+            'TH_AnimationSingleFiles.Abort()
             GUIEnabling(True)
         End If
     End Sub
@@ -1277,12 +1283,19 @@ Public Class frm_Main
                       TSSL_EscToAbort.Visible = True
                   End Sub)
 
+        If CancelThread Then
+            Me.Invoke(Sub()
+                          GUIEnabling(True)
+                      End Sub)
+            Exit Sub
+        End If
+
         Dim Result As Image = Nothing
         Dim MyCoordinates As New List(Of Coordinate)
         Dim RRs() As RoutefileRow = CType(Data.Routefile.Select("Visibility = " & True & " And RouteLineWidth > 0"), RoutefileRow())
         If RRs.Length = 0 Then
             Me.Invoke(Sub()
-                          MessageBox.Show(Me, String.Format(My.Resources.Main_NoRoutesToPlot, Environment.NewLine), My.Resources.Main_NoRoutesToPlot_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                          MessageBox.Show(Me, My.Resources.Main_NoRoutesToPlot, My.Resources.Main_NoRoutesToPlot_Title, MessageBoxButtons.OK, MessageBoxIcon.Warning)
                           GUIEnabling(True)
                       End Sub)
             Exit Sub
@@ -1290,6 +1303,12 @@ Public Class frm_Main
         Dim ReadCoordinates(RRs.Length - 1) As List(Of Coordinate)
         Dim cnt As Integer = -1
         For Each RR As RoutefileRow In RRs
+            If CancelThread Then
+                Me.Invoke(Sub()
+                              GUIEnabling(True)
+                          End Sub)
+                Exit Sub
+            End If
             cnt += 1
             Dim Res As New List(Of Coordinate)
             Try
@@ -1362,6 +1381,12 @@ Public Class frm_Main
         Dim OrigSize As Size
         Dim Tiles() As Point 'array for minimum and maximum tiles
         For k As Integer = 0 To CLB_OnlineLayers.Items.Count - 1
+            If CancelThread Then
+                Me.Invoke(Sub()
+                              GUIEnabling(True)
+                          End Sub)
+                Exit Sub
+            End If
             If Not CLB_OnlineLayers.GetItemChecked(k) Then
                 Continue For
             End If
@@ -1402,6 +1427,12 @@ Public Class frm_Main
         CurrentZoomRow = OnlineZoomRow
 
         For k As Integer = 0 To CLB_Layers.Items.Count - 1
+            If CancelThread Then
+                Me.Invoke(Sub()
+                              GUIEnabling(True)
+                          End Sub)
+                Exit Sub
+            End If
             If Not CLB_Layers.GetItemChecked(k) Then
                 Continue For
             End If
@@ -1481,6 +1512,12 @@ Public Class frm_Main
         Dim CoordCounter As Integer = 0
         For j As Integer = 0 To FinalPoints.Length - 1
             For i As Integer = 1 To ReadCoordinates(j).Count - 1
+                If CancelThread Then
+                    Me.Invoke(Sub()
+                                  GUIEnabling(True)
+                              End Sub)
+                    Exit Sub
+                End If
                 Dim LP As New List(Of Point)
                 Dim P1 As Point = New Point(ReadCoordinates(j).Item(i - 1).PixelCoordinate(CurrentZoomRow).X - Tiles(0).X * CurrentZoomRow.Tilewidth, ReadCoordinates(j).Item(i - 1).PixelCoordinate(CurrentZoomRow).Y - Tiles(0).Y * CurrentZoomRow.Tileheight)
                 Dim P2 As Point = New Point(ReadCoordinates(j).Item(i).PixelCoordinate(CurrentZoomRow).X - Tiles(0).X * CurrentZoomRow.Tilewidth, ReadCoordinates(j).Item(i).PixelCoordinate(CurrentZoomRow).Y - Tiles(0).Y * CurrentZoomRow.Tileheight)
@@ -1508,6 +1545,12 @@ Public Class frm_Main
             Next
 
             For i As Integer = FinalPoints(j).Count - 2 To 0 Step -1
+                If CancelThread Then
+                    Me.Invoke(Sub()
+                                  GUIEnabling(True)
+                              End Sub)
+                    Exit Sub
+                End If
                 If FinalPoints(j).Item(i) = FinalPoints(j).Item(i + 1) Then
                     FinalPoints(j).RemoveAt(i + 1)
                     CoordCounter -= 1
@@ -1561,7 +1604,7 @@ Public Class frm_Main
                 Using g_Res As Graphics = Graphics.FromImage(newBMP_Res)
                     g_Res.DrawImage(Result, 0, 0, newBMP_Res.Width + 1, newBMP_Res.Height + 1)
                 End Using
-                newBMP_Res.Save(Path.Combine(SaveOption.DirectoryPath, "_Background" & SaveOption.OutputFormat), ImgFormat)
+                newBMP_Res.Save(Path.Combine(SaveOption.DirectoryPath, "_Background" & ".png"), Imaging.ImageFormat.Png)
             End Using
         End If
 
@@ -1573,6 +1616,17 @@ Public Class frm_Main
             RoutePen2.StartCap = Drawing2D.LineCap.Round
             RoutePen2.LineJoin = Drawing2D.LineJoin.Round
             For j As Integer = 0 To FinalPoints.Length - 1
+                If CancelThread Then
+                    For Each F As String In SavedImagesFileNames
+                        If File.Exists(F) Then
+                            File.Delete(F)
+                        End If
+                    Next
+                    Me.Invoke(Sub()
+                                  GUIEnabling(True)
+                              End Sub)
+                    Exit Sub
+                End If
                 RoutePen1.Color = Color.FromArgb(RRs(j).RouteAlpha, CInt(RRs(j).RouteColor.Split(CType(",", Char()), StringSplitOptions.RemoveEmptyEntries)(0)), CInt(RRs(j).RouteColor.Split(CType(",", Char()), StringSplitOptions.RemoveEmptyEntries)(1)), CInt(RRs(j).RouteColor.Split(CType(",", Char()), StringSplitOptions.RemoveEmptyEntries)(2)))
                 RoutePen1.Width = RRs(j).RouteLineWidth
                 Dim PointsToDraw As New List(Of Point)
@@ -1597,6 +1651,17 @@ Public Class frm_Main
                         End If
                         If SaveOption.AnimSaveType = AnimationSaveType.InRow_Hold Then
                             For k As Integer = 0 To j - 1
+                                If CancelThread Then
+                                    For Each F As String In SavedImagesFileNames
+                                        If File.Exists(F) Then
+                                            File.Delete(F)
+                                        End If
+                                    Next
+                                    Me.Invoke(Sub()
+                                                  GUIEnabling(True)
+                                              End Sub)
+                                    Exit Sub
+                                End If
                                 RoutePen2.Color = Color.FromArgb(RRs(k).RouteAlpha, CInt(RRs(k).RouteColor.Split(CType(",", Char()), StringSplitOptions.RemoveEmptyEntries)(0)), CInt(RRs(k).RouteColor.Split(CType(",", Char()), StringSplitOptions.RemoveEmptyEntries)(1)), CInt(RRs(k).RouteColor.Split(CType(",", Char()), StringSplitOptions.RemoveEmptyEntries)(2)))
                                 RoutePen2.Width = RRs(k).RouteLineWidth
                                 g.DrawLines(RoutePen2, FinalPoints(k).ToArray())
@@ -1615,8 +1680,13 @@ Public Class frm_Main
                         Using g_Res As Graphics = Graphics.FromImage(newBMP_Res)
                             g_Res.DrawImage(newBMP, 0, 0, newBMP_Res.Width + 1, newBMP_Res.Height + 1)
                         End Using
-                        newBMP_Res.Save(Path.Combine(SaveOption.DirectoryPath, cnt2.ToString("D6") & SaveOption.OutputFormat), ImgFormat)
-                        SavedImagesFileNames.Add(Path.Combine(SaveOption.DirectoryPath, cnt2.ToString("D6") & SaveOption.OutputFormat))
+                        If SaveOption.SaveType = SaveType.Animation_GIF Then
+                            newBMP_Res.Save(Path.Combine(SaveOption.DirectoryPath, cnt2.ToString("D6") & ".png"), Imaging.ImageFormat.Png)
+                            SavedImagesFileNames.Add(Path.Combine(SaveOption.DirectoryPath, cnt2.ToString("D6") & ".png"))
+                        Else
+                            newBMP_Res.Save(Path.Combine(SaveOption.DirectoryPath, cnt2.ToString("D6") & SaveOption.OutputFormat), ImgFormat)
+                            SavedImagesFileNames.Add(Path.Combine(SaveOption.DirectoryPath, cnt2.ToString("D6") & SaveOption.OutputFormat))
+                        End If
                     End Using
                     newBMP.Dispose()
                     Me.Invoke(Sub()
@@ -1632,12 +1702,34 @@ Public Class frm_Main
                 MaxCount = Math.Max(MaxCount, FinalPoints(k).Count)
             Next
             For i As Integer = 1 To MaxCount - 1
+                If CancelThread Then
+                    For Each F As String In SavedImagesFileNames
+                        If File.Exists(F) Then
+                            File.Delete(F)
+                        End If
+                    Next
+                    Me.Invoke(Sub()
+                                  GUIEnabling(True)
+                              End Sub)
+                    Exit Sub
+                End If
                 If i <> 1 AndAlso i Mod StepSize <> 0 Then
                     Continue For
                 End If
                 For k As Integer = 0 To FinalPoints.Length - 1
                     PointsToDraw(k) = New List(Of Point)
                     For j As Integer = 0 To Math.Min(FinalPoints(k).Count, i) - 1
+                        If CancelThread Then
+                            For Each F As String In SavedImagesFileNames
+                                If File.Exists(F) Then
+                                    File.Delete(F)
+                                End If
+                            Next
+                            Me.Invoke(Sub()
+                                          GUIEnabling(True)
+                                      End Sub)
+                            Exit Sub
+                        End If
                         PointsToDraw(k).Add(FinalPoints(k).Item(j))
                     Next
                 Next
@@ -1651,6 +1743,17 @@ Public Class frm_Main
                             g.Clear(Color.Transparent)
                         End If
                         For k As Integer = 0 To PointsToDraw.Length - 1
+                            If CancelThread Then
+                                For Each F As String In SavedImagesFileNames
+                                    If File.Exists(F) Then
+                                        File.Delete(F)
+                                    End If
+                                Next
+                                Me.Invoke(Sub()
+                                              GUIEnabling(True)
+                                          End Sub)
+                                Exit Sub
+                            End If
                             RoutePen1.Color = Color.FromArgb(RRs(k).RouteAlpha, CInt(RRs(k).RouteColor.Split(CType(",", Char()), StringSplitOptions.RemoveEmptyEntries)(0)), CInt(RRs(k).RouteColor.Split(CType(",", Char()), StringSplitOptions.RemoveEmptyEntries)(1)), CInt(RRs(k).RouteColor.Split(CType(",", Char()), StringSplitOptions.RemoveEmptyEntries)(2)))
                             RoutePen1.Width = RRs(k).RouteLineWidth
                             If PointsToDraw(k).Count > 1 Then
@@ -1666,10 +1769,18 @@ Public Class frm_Main
                         Using g_Res As Graphics = Graphics.FromImage(newBMP_Res)
                             g_Res.DrawImage(newBMP2, 0, 0, newBMP_Res.Width + 1, newBMP_Res.Height + 1)
                         End Using
-                        newBMP_Res.Save(Path.Combine(SaveOption.DirectoryPath, cnt2.ToString("D6") & SaveOption.OutputFormat), ImgFormat)
-                        SavedImagesFileNames.Add(Path.Combine(SaveOption.DirectoryPath, cnt2.ToString("D6") & SaveOption.OutputFormat))
+                        If SaveOption.SaveType = SaveType.Animation_GIF Then
+                            newBMP_Res.Save(Path.Combine(SaveOption.DirectoryPath, cnt2.ToString("D6") & ".png"), Imaging.ImageFormat.Png)
+                            SavedImagesFileNames.Add(Path.Combine(SaveOption.DirectoryPath, cnt2.ToString("D6") & ".png"))
+                        Else
+                            newBMP_Res.Save(Path.Combine(SaveOption.DirectoryPath, cnt2.ToString("D6") & SaveOption.OutputFormat), ImgFormat)
+                            SavedImagesFileNames.Add(Path.Combine(SaveOption.DirectoryPath, cnt2.ToString("D6") & SaveOption.OutputFormat))
+                        End If
                     End Using
                 End Using
+                Me.Invoke(Sub()
+                              TSPB_Progress.Value += 1
+                          End Sub)
                 cnt2 += 1
             Next
         End If
@@ -1683,6 +1794,17 @@ Public Class frm_Main
             Using background As New MagickImage(Path.Combine(SaveOption.DirectoryPath, "_Background.png"))
                 Using collection As New MagickImageCollection
                     For Each F As String In SavedImagesFileNames
+                        If CancelThread Then
+                            For Each F2 As String In SavedImagesFileNames
+                                If File.Exists(F2) Then
+                                    File.Delete(F2)
+                                End If
+                            Next
+                            Me.Invoke(Sub()
+                                          GUIEnabling(True)
+                                      End Sub)
+                            Exit Sub
+                        End If
                         If F.Contains("_") Then
                             Continue For
                         End If
@@ -1723,6 +1845,18 @@ Public Class frm_Main
                       End Sub)
         End If
 
+        If CancelThread Then
+            For Each F As String In SavedImagesFileNames
+                If File.Exists(F) Then
+                    File.Delete(F)
+                End If
+            Next
+            Me.Invoke(Sub()
+                          GUIEnabling(True)
+                      End Sub)
+            Exit Sub
+        End If
+
         Me.Invoke(Sub()
                       GUIEnabling(True)
                   End Sub)
@@ -1749,7 +1883,7 @@ Public Class frm_Main
         RVS.AnimationStepSize = CInt(frm.NUD_StepSize.Value)
         RVS.AnimationCurrentPositionColor = frm.L_SymbolColor.BackColor
         RVS.AnimationCurrentPositionWidth = CInt(frm.NUD_SymbolWidth.Value)
-        RVS.AnimationOutputFormat = frm.CMB_Format.SelectedItem.ToString
+        RVS.AnimationOutputFormat = SO.OutputFormat
         If SO.SaveType = SaveType.Animation_GIF OrElse SO.SaveType = SaveType.SimpleImage Then
             RVS.SaveImagePath = frm.L_Path.Text
             RVS.AnimationOutputPath = Path.GetDirectoryName(frm.L_Path.Text)
@@ -1787,6 +1921,7 @@ Public Class frm_Main
         If Not CheckImagePrerequisites() Then
             Exit Sub
         End If
+        CancelThread = False
         SaveOption.SaveType = SaveType.Animation_SingleFiles
         AnimationSaveDialogSetSettings(SaveOption)
         Dim frm_Save As New frm_AnimationSaveDialog(SaveOption)
@@ -1808,6 +1943,7 @@ Public Class frm_Main
         If Not CheckImagePrerequisites() Then
             Exit Sub
         End If
+        CancelThread = False
         SaveOption.SaveType = SaveType.Animation_GIF
         AnimationSaveDialogSetSettings(SaveOption)
         Dim frm_Save As New frm_AnimationSaveDialog(SaveOption)
@@ -1817,7 +1953,7 @@ Public Class frm_Main
         AnimationSaveDialogGetSettings(frm_Save, SaveOption)
 
         If TH_AnimationSingleFiles.IsAlive() Then
-            Exit Sub
+            TH_AnimationSingleFiles.Abort()
         End If
         If TH_AnimationSingleFiles.ThreadState = Threading.ThreadState.Stopped OrElse TH_AnimationSingleFiles.ThreadState = Threading.ThreadState.Aborted Then
             TH_AnimationSingleFiles = New Threading.Thread(AddressOf Animation)
@@ -1864,14 +2000,14 @@ Public Class frm_Main
                         End If
 
                         If Downloaded <> "Downloaded" Then
-                            LogSB.AppendLine("Error while downloading tile from layer " & WTP.Name & " with row index " & i & " and column index " & j & " at zoom level " & ZR.Zoomvalue & ": " & Downloaded)
+                            LogSB.AppendLine(String.Format(My.Resources.WebTile_DownloadError, WTP.Name, i, j, ZR.Zoomvalue, Downloaded))
                             Continue For
                         End If
                     End If
 
                     Dim CurrentPath As String = CreateLocalPathForWebTile(WTP, j, i, ZR.Zoomvalue)
                     If OnlyCached AndAlso Not File.Exists(CurrentPath) Then
-                        LogSB.AppendLine("Tile from layer " & WTP.Name & " with row index " & i & " and column index " & j & " at zoom level " & ZR.Zoomvalue & " is not cached.")
+                        LogSB.AppendLine(String.Format(My.Resources.WebTile_NotCached, WTP.Name, i, j, ZR.Zoomvalue))
                         Continue For
                     End If
                     Using img As Image = New Bitmap(CurrentPath)
@@ -2085,6 +2221,10 @@ Public Class frm_Main
 
     Private Sub TB_Zoom_ValueChanged(sender As Object, e As EventArgs) Handles TB_Zoom.ValueChanged
         L_ZoomValue.Text = TB_Zoom.Value.ToString
+        UpdateBackground = True
+    End Sub
+
+    Private Sub CLB_Layers_ItemCheck(sender As Object, e As ItemCheckEventArgs) Handles CLB_Layers.ItemCheck
         UpdateBackground = True
     End Sub
 End Class

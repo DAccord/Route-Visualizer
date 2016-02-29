@@ -230,6 +230,9 @@
     <Content Include="ReadMe.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="WebTiles.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Data.xsc">
       <DependentUpon>Data.xsd</DependentUpon>
     </None>

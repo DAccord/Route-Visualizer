@@ -3,7 +3,7 @@
 Public Class frm_AnimationSaveDialog
     Dim Desired_AS As SaveOption
     Dim SupportingTransparency() As String = {".png", ".tif"}
-    Dim NotSupportingTransparency() As String = {".bmp", ".gif", ".jpg", ".png", ".tif"}
+    Dim NotSupportingTransparency() As String = {".jpg", ".png", ".bmp", ".gif", ".tif"}
 
     Public Sub New(ByRef C_AS As SaveOption)
         ' This call is required by the designer.
@@ -42,21 +42,13 @@ Public Class frm_AnimationSaveDialog
                 L_LoopCount.Visible = True
                 NUD_LoopCount.Visible = True
                 If Not Desired_AS.FilePath.Substring(Desired_AS.FilePath.Length - 4, 4).ToLower = ".gif" Then
-                    L_Path.Text = Path.Combine(Desired_AS.FilePath, "Output.gif")
+                    L_Path.Text = Path.Combine(Path.GetDirectoryName(Desired_AS.FilePath), Path.GetFileNameWithoutExtension(Desired_AS.FilePath) & ".gif")
                 Else
                     L_Path.Text = Desired_AS.FilePath
                 End If
                 'Current Position
                 L_SymbolColor.BackColor = Desired_AS.SymbolColor
                 NUD_SymbolWidth.Value = Desired_AS.SymbolWidth
-                'Image Size
-                If Desired_AS.Width > 0 Then
-                    RB_Width.Checked = True
-                    Nud_Size.Value = Desired_AS.Width
-                Else
-                    RB_Height.Checked = True
-                    Nud_Size.Value = Desired_AS.Height
-                End If
                 'Output
                 RB_AlwaysBackground.Checked = Desired_AS.BackgroundAlways
                 RB_SingleBackground.Checked = Not Desired_AS.BackgroundAlways
@@ -88,14 +80,6 @@ Public Class frm_AnimationSaveDialog
                 'Current Position
                 L_SymbolColor.BackColor = Desired_AS.SymbolColor
                 NUD_SymbolWidth.Value = Desired_AS.SymbolWidth
-                'Image Size
-                If Desired_AS.Width > 0 Then
-                    RB_Width.Checked = True
-                    Nud_Size.Value = Desired_AS.Width
-                Else
-                    RB_Height.Checked = True
-                    Nud_Size.Value = Desired_AS.Height
-                End If
                 'Output
                 RB_AlwaysBackground.Checked = Desired_AS.BackgroundAlways
                 RB_SingleBackground.Checked = Not Desired_AS.BackgroundAlways
@@ -116,6 +100,7 @@ Public Class frm_AnimationSaveDialog
                 L_AnimationType.Visible = False
                 CMB_AnimationType.Visible = False
                 CMB_Format.DataSource = SupportingTransparency
+                CMB_Format.SelectedItem = Desired_AS.OutputFormat
 
                 If Desired_AS.SaveType = SaveType.LayersSeparately_MergeRoutes Then
                     Me.Text = String.Format(My.Resources.AnimationSaveDialog_WindowTitle2 & " ({0})", My.Resources.AnimationSaveDialog_WindowTitleMergeRoutes)
@@ -140,6 +125,14 @@ Public Class frm_AnimationSaveDialog
                 SFD_SaveFile.FilterIndex = InList(NotSupportingTransparency, Desired_AS.OutputFormat)
                 Me.Text = My.Resources.AnimationSaveDialog_WindowTitleSimpleImage
         End Select
+        'Image Size
+        If Desired_AS.Width > 0 Then
+            RB_Width.Checked = True
+            Nud_Size.Value = Desired_AS.Width
+        Else
+            RB_Height.Checked = True
+            Nud_Size.Value = Desired_AS.Height
+        End If
         SFD_SaveFile.Title = My.Resources.SFD_SaveImageTitle
         FBD_SavePath.Description = My.Resources.FBD_SaveLayersSeperatelyDescription
         If RB_Width.Checked Then
@@ -149,10 +142,10 @@ Public Class frm_AnimationSaveDialog
         End If
     End Sub
 
-    Private Function InList(ByVal L As IEnumerable(Of Object), ByVal S As Object) As Integer
+    Private Function InList(ByVal L() As String, ByVal S As String) As Integer
         For i As Integer = 0 To L.Count - 1
-            If L(i) Is S Then
-                Return i
+            If L(i) = S Then
+                Return i + 1
             End If
         Next
         Return 0
@@ -181,6 +174,14 @@ Public Class frm_AnimationSaveDialog
                 Exit Sub
             End If
         End If
+        If Desired_AS.SaveType = SaveType.Animation_GIF Then
+            If NUD_StepSize.Value <= 20 OrElse Nud_Size.Value = 0 OrElse Nud_Size.Value > 1000 Then
+                If MessageBox.Show(My.Resources.GIF_Warning, "", MessageBoxButtons.YesNo) = DialogResult.No Then
+                    Me.DialogResult = DialogResult.Abort
+                    Exit Sub
+                End If
+            End If
+        End If
         If RB_Height.Checked Then
             Desired_AS.Height = CInt(Nud_Size.Value)
             Desired_AS.Width = 0
@@ -197,7 +198,6 @@ Public Class frm_AnimationSaveDialog
             Desired_AS.BackgroundAlways = RB_AlwaysBackground.Checked
             Desired_AS.DirectoryPath = L_Path.Text
         ElseIf Desired_AS.SaveType = SaveType.Animation_GIF Then
-            Desired_AS.OutputFormat = ".png"
             Desired_AS.BackgroundAlways = False
             Desired_AS.FilePath = L_Path.Text
             Desired_AS.DirectoryPath = Path.GetDirectoryName(Desired_AS.FilePath)

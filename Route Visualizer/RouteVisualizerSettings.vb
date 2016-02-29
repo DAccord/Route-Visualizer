@@ -19,7 +19,7 @@ Public Class RouteVisualizerSettings
     Private _AnimationBackgroundOnce As Boolean = False
     Private _AnimationOutputFormat As String = ".jpg"
     Private _AnimationOutputPath As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
-    Private _AnimationStepSize As Integer = 25
+    Private _AnimationStepSize As Integer = 50
     Private _AnimationDelayTime As Integer = 60
     Private _AnimationLoopCount As Integer = 0
 

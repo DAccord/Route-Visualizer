@@ -163,7 +163,10 @@
     <value>Aus keiner der gewählten Dateien konnten Koordinaten importiert werden. Kartenerstellung abgebrochen.</value>
   </data>
   <data name="Main_NoRoutesToPlot" xml:space="preserve">
-    <value>Es gibt keine Routendateien, die gezeichnet werden können. Das kann folgende Gründe haben:{0}- Die Sichtbarkeit aller Routen ist deaktiviert.{0}- Keine Route hat eine Linienbreite größer als 0.</value>
+    <value>Es gibt keine Routendateien, die gezeichnet werden können. Das kann folgende Gründe haben:
+- Es sind keine Routen importiert. Klicke auf das gelbe Plus-Symbol um Routen zu importieren.
+- Die Sichtbarkeit aller Routen ist deaktiviert.
+- Keine Route hat eine Linienbreite größer als 0.</value>
   </data>
   <data name="Main_NoRoutesToPlot_Title" xml:space="preserve">
     <value>Keine Routendateien</value>
@@ -350,5 +353,14 @@
   </data>
   <data name="Help" xml:space="preserve">
     <value>Hilfe</value>
+  </data>
+  <data name="GIF_Warning" xml:space="preserve">
+    <value>Es nicht empfehlenswert, eine GIF-Datei mit Schrittweiten unter ca. 20, Bildern in Originalgröße oder sehr großen Bildern zu erstellen. Möchtest du trotzdem fortfahren?</value>
+  </data>
+  <data name="WebTile_DownloadError" xml:space="preserve">
+    <value>Fehler beim Herunterladen der Kacheln der Ebene "{0}" mit dem Zeilenindex {1} und dem Spaltenindex {2} der Zoomstufe {3}: {4}</value>
+  </data>
+  <data name="WebTile_NotCached" xml:space="preserve">
+    <value>Kacheln der Ebene "{0}" mit Zeilenindex {1} und Spaltenindex {2} der Zoomstufe {3} ist nicht zwischengespeichert.</value>
   </data>
 </root>
