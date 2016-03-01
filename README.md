@@ -15,7 +15,7 @@ An english version of this document can be found [here](https://github.com/DAcco
 *Route Visualizer* wurde auf Windows 10 getestet. Wenn die [Systemvoraussetzungen](https://github.com/DAccord/Route-Visualizer/wiki/Systemvoraussetzungen) erfüllt sind, sollte es aber ab Windows Vista laufen.
 
 Screenshot des Programms:  
-![Screenshot](https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Screenshot_0_4.png)
 
 Beispielbild als <tt>png</tt>-Datei (Zoomstufe 8 mit Kacheln Relief, Water und Admin von [maps-for-free.com](http://maps-for-free.com/)), Bildhöhe auf 500 px reduziert:  
 ![Beispielbild](https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Testbild.png)
