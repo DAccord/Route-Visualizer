@@ -32,6 +32,12 @@ $(document).ready(function(){
   $('img').load(sectionHeight);
 });
 
+$(window).load(function() {
+  $('.flexslider').flexslider({
+    animation: "slide"
+  });
+});
+
 fixScale = function(doc) {
 
   var addEvent = 'addEventListener',

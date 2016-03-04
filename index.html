@@ -13,6 +13,24 @@
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Icon/Icon_tr.ico" type="image/x-icon" />
+	
+	<!-- stuff for gallery -->
+	<link rel="stylesheet" href="stylesheets/Gallery-CSS.css">
+	
+    <!-- Core CSS file -->
+	<link rel="stylesheet" href="stylesheets/photoswipe.css"> 
+
+	<!-- Skin CSS file (styling of UI - buttons, caption, etc.)
+		 In the folder of skin CSS file there are also:
+		 - .png and .svg icons sprite, 
+		 - preloader.gif (for browsers that do not support CSS animations) -->
+	<link rel="stylesheet" href="stylesheets/default-skin.css"> 
+
+	<!-- Core JS file -->
+	<script src="javascripts/photoswipe.min.js"></script> 
+
+	<!-- UI JS file -->
+	<script src="javascripts/photoswipe-ui-default.min.js"></script> 
   </head>
   <body>
 
@@ -24,12 +42,9 @@
       <div id="banner">
          <span id="logo"></span>
          
-        <a href="https://github.com/DAccord/Route-Visualizer" class="button fork"><strong>English</strong></a>
+        <!--<a href="https://github.com/DAccord/Route-Visualizer" class="button fork"><strong>English</strong></a>-->
  
-         <!--<a href="https://github.com/DAccord/Route-Visualizer" class="button fork">Deutsch</a>-->
-         <!--<a href="https://github.com/DAccord/Route-Visualizer" class="button fork">English</a>-->
-         <div class="downloads">
-          <span>Downloads:</span>
+        <div class="downloads">
            <ul>
 			<li><a href="https://github.com/DAccord/Route-Visualizer/releases/latest" class="button">EXE herunterladen</a></li>
 			<li><a href="https://github.com/DAccord/Route-Visualizer" class="button">Auf GitHub anzeigen</a></li>
@@ -44,7 +59,97 @@
       <section>
         <p><em>Route Visualizer</em> ist ein Programm um Koordinaten aus <tt>kml</tt>- oder <tt>gpx</tt>-Dateien (ab v0.2.0-beta) auf eine Karte zu zeichnen. Das Resultat ist eine hochaufgelöste Bilddatei.</p>
 
-<ul>
+
+<h3>
+<a id="quellcode" class="anchor" href="#quellcode" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Beispielbilder</h3>
+<p>Klicke auf ein Bild, um es zu vergrößern.</p>
+<div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+		<a href="https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Testbild.png" itemprop="contentUrl" data-size="300x500">
+			<img src="https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Testbild.png" itemprop="thumbnail" alt="Image description" />
+		</a>
+		<figcaption itemprop="caption description">Beispielbild als png-Datei (Zoomstufe 8 mit Kacheln Relief, Water und Admin von <a href="http://maps-for-free.com/">maps-for-free.com</a>), Bildhöhe auf 500 px reduziert.</figcaption>
+    </figure>
+	
+	<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+		<a href="https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Transparency.png" itemprop="contentUrl" data-size="768x1280">
+			<img src="https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Transparency.png" itemprop="thumbnail" alt="Image description" />
+		</a>
+		<figcaption itemprop="caption description">Beispielbild mit Transparenz als png-Datei (Zoomstufe 8 mit Kacheln Relief, Water und Admin von <a href="http://maps-for-free.com/">maps-for-free.com</a>).</figcaption>
+    </figure>
+	
+	<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+		<a href="https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Animation_infinite.gif" itemprop="contentUrl" data-size="400x640">
+			<img src="https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Animation_infinite.gif" itemprop="thumbnail" alt="Image description" />
+		</a>
+		<figcaption itemprop="caption description">Animierte GIF-Datei (Zoomstufe 9 mit Kacheln Relief, Water und Admin von <a href="http://maps-for-free.com/">maps-for-free.com</a>). Stepsize 50, Anzeigedauer pro Bild 6/100 Sekunden.</figcaption>
+    </figure>
+	
+	<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+		<a href="https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/InRow_Hold.gif" itemprop="contentUrl" data-size="400x400">
+			<img src="https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/InRow_Hold.gif" itemprop="thumbnail" alt="Image description" />
+		</a>
+		<figcaption itemprop="caption description">Animierte GIF-Datei (Zoomstufe 8 mit Kacheln Relief, Water und Admin von <a href="http://maps-for-free.com/">maps-for-free.com</a>). Hier wird zuerst die Route in Italien gezeichnet, dann die in Kroatien. Die Route in Italien bleibt bestehen, während die Kroatien-Route gezeichnet wird.</figcaption>
+    </figure>
+	
+	<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+		<a href="https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/InRow_NoHold.gif" itemprop="contentUrl" data-size="400x400">
+			<img src="https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/InRow_NoHold.gif" itemprop="thumbnail" alt="Image description" />
+		</a>
+		<figcaption itemprop="caption description">Animierte GIF-Datei (Zoomstufe 8 mit Kacheln Relief, Water und Admin von <a href="http://maps-for-free.com/">maps-for-free.com</a>). Auch hier wird die Route in Italien zuerst gezeichnet, dann die in Kroatien. Allerdings wird die Route in Italien nicht mehr angezeigt, wenn die Route in Kroatien gezeichnet wird.</figcaption>
+    </figure>
+	
+	<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+		<a href="https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Together.gif" itemprop="contentUrl" data-size="400x400">
+			<img src="https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Together.gif" itemprop="thumbnail" alt="Image description" />
+		</a>
+		<figcaption itemprop="caption description">Animierte GIF-Datei (Zoomstufe 8 mit Kacheln Relief, Water und Admin von <a href="http://maps-for-free.com/">maps-for-free.com</a>). Hier werden beide Routen gleichzeitig gezeichnet.</figcaption>
+    </figure>
+	
+	
+	<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+		<a href="https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/CartoDBLight.png" itemprop="contentUrl" data-size="500x750">
+			<img src="https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/CartoDBLight.png" itemprop="thumbnail" alt="Image description" />
+		</a>
+		<figcaption itemprop="caption description">Zoomstufe 7, Kacheln von <a href="https://cartodb.com/basemaps">Carto DB Light</a>.</figcaption>
+    </figure>
+	
+	<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+		<a href="https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Mapquest_OSM.png" itemprop="contentUrl" data-size="500x750">
+			<img src="https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Mapquest_OSM.png" itemprop="thumbnail" alt="Image description" />
+		</a>
+		<figcaption itemprop="caption description">Zoomstufe 7, Kacheln von <a href="http://www.openstreetmap.org/#map=5/51.500/-0.100&layers=Q">Mapquest OSM</a>.</figcaption>
+    </figure>
+	
+	<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+		<a href="https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Mapquest_Sat.png" itemprop="contentUrl" data-size="500x750">
+			<img src="https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Mapquest_Sat.png" itemprop="thumbnail" alt="Image description" />
+		</a>
+		<figcaption itemprop="caption description">Zoomstufe 7, Kacheln von <a href="http://www.mapquest.com/?satellite=true">Mapquest Satellite</a>.</figcaption>
+    </figure>
+	
+	<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+		<a href="https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/OSM_Carto.png" itemprop="contentUrl" data-size="500x750">
+			<img src="https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/OSM_Carto.png" itemprop="thumbnail" alt="Image description" />
+		</a>
+		<figcaption itemprop="caption description">Zoomstufe 7, Kacheln von <a href="http://www.openstreetmap.org/#map=5/51.495/-5.581">OSM Carto</a>.</figcaption>
+    </figure>
+	
+	<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+		<a href="https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Thunderforest_Landscape.png" itemprop="contentUrl" data-size="500x750">
+			<img src="https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Thunderforest_Landscape.png" itemprop="thumbnail" alt="Image description" />
+		</a>
+		<figcaption itemprop="caption description">Zoomstufe 7, Kacheln von <a href="http://thunderforest.com/maps/landscape/">Tunderforest Landscape</a>.</figcaption>
+    </figure>
+  </div>
+
+  <h3>
+<a id="quellcode" class="anchor" href="#quellcode" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Screenshot des Programms</h3>
+<a href="https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Screenshot_0_4.png"><img src="https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Screenshot_0_4.png" alt="Screenshot"></p></a>
+  
+  <h3>
+<a id="quellcode" class="anchor" href="#quellcode" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sonstiges</h3>
+  <ul>
 <li>Die aktuelle Version kannst du <a href="https://github.com/DAccord/Route-Visualizer/releases/latest">hier</a> herunter laden. Zum Ausführen wird mindestens das Microsoft .NET Framework 4 benötigt. Wenn nicht installiert, kannst du es <a href="https://www.microsoft.com/de-de/download/details.aspx?id=17851">hier</a> (Webinstaller) oder <a href="https://www.microsoft.com/de-de/download/details.aspx?id=17718">hier</a> (eigenständiger Installer) herunter laden.</li>
 <li>Schnelle Hilfe findest du im <a href="https://github.com/DAccord/Route-Visualizer/wiki">Wiki</a>.</li>
 <li>Dort findest du auch das komplette <a href="https://github.com/DAccord/Route-Visualizer/wiki/Changelog">Changelog</a>.</li>
@@ -54,12 +159,7 @@
 
 <p><em>Route Visualizer</em> wurde auf Windows 10 getestet. Wenn die <a href="https://github.com/DAccord/Route-Visualizer/wiki/Systemvoraussetzungen">Systemvoraussetzungen</a> erfüllt sind, sollte es aber ab Windows Vista laufen.</p>
 
-<p>Screenshot des Programms:<br>
-<a href="https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Screenshot_0_4.png"><img src="https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Screenshot_0_4.png" alt="Screenshot"></p></a>
-
-<p>Beispielbild als <tt>png</tt>-Datei (Zoomstufe 8 mit Kacheln Relief, Water und Admin von <a href="http://maps-for-free.com/">maps-for-free.com</a>), Bildhöhe auf 500 px reduziert:<br>
-<center><a href="https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Testbild.png"><img src="https://raw.githubusercontent.com/DAccord/Route-Visualizer/master/Route%20Visualizer/Help/Images/Testbild.png" alt="Beispielbild"></p></a></center>
-
+  
 <h3>
 <a id="quellcode" class="anchor" href="#quellcode" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Quellcode</h3>
 
@@ -72,5 +172,75 @@
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
+	
+	<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element, as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+        <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+          </div>
+
+        </div>
+
+</div>
+    <script src='http://photoswipe.s3-eu-west-1.amazonaws.com/pswp/dist/photoswipe.min.js'></script>
+<script src='http://photoswipe.s3-eu-west-1.amazonaws.com/pswp/dist/photoswipe-ui-default.min.js'></script>
+
+        <script src="javascripts/Gallery-JS.js"></script>
   </body>
 </html>
